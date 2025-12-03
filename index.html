@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnOffus | Online × Offline System Studio</title>
+  <meta name="description" content="OnOffus(오노퍼스)는 온라인과 오프라인을 하나의 흐름으로 연결하는 시스템 운영·자동화 스튜디오입니다. 서버 운영, 로그·에러 알림, 데이터 수집·정제, 예약·정산 모듈을 제공합니다.">
+
+  <style>
+    /* ---------- 색상 팔레트 (CSS 변수) ---------- */
+    :root {
+      /* 공통 */
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.25);
+      --transition-fast: 0.18s ease-out;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      /* 메인 팔레트 */
+      --primary: #2f7dff;
+      --primary-soft: #5faaff;
+      --primary-strong: #1d4ed8;
+      --secondary: #9333ea;
+      --accent: #ff6b82;
+
+      /* 다크 테마 기본값 */
+      --bg: #020617;
+      --bg-elevated: #0b1220;
+      --bg-softer: #111827;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --text-main: #e2e8f0;
+      --text-sub: #94a3b8;
+      --hero-gradient: radial-gradient(circle at top, #1e293b 0, #020617 58%, #000 100%);
+    }
+
+    /* 라이트 테마 오버라이드 */
+    [data-theme="light"] {
+      --bg: #f9fafb;
+      --bg-elevated: #ffffff;
+      --bg-softer: #e5e7eb;
+      --border-subtle: rgba(148, 163, 184, 0.45);
+      --text-main: #020617;
+      --text-sub: #6b7280;
+      --hero-gradient: radial-gradient(circle at top, #e5f0ff 0, #eff4ff 40%, #e5e7eb 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: var(--hero-gradient);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom,
+        rgba(2,6,23,0.96),
+        rgba(2,6,23,0.7),
+        transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.3);
+    }
+    [data-theme="light"] header {
+      background: linear-gradient(to bottom,
+        rgba(249,250,251,0.98),
+        rgba(249,250,251,0.9),
+        transparent);
+      border-bottom-color: rgba(148,163,184,0.4);
+    }
+
+    .nav {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 30px;
+      filter: drop-shadow(0 0 8px rgba(15,23,42,0.7));
+    }
+    [data-theme="light"] .logo-img {
+      filter: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      color: var(--text-sub);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+      white-space: nowrap;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--primary-soft), var(--accent));
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .theme-toggle {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 0.3rem 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: rgba(15,23,42,0.9);
+      color: var(--text-sub);
+    }
+    [data-theme="light"] .theme-toggle {
+      background: #ffffff;
+    }
+
+    .theme-toggle span.icon {
+      font-size: 0.9rem;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.86rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: #f9fafb;
+      box-shadow: 0 10px 24px rgba(37,99,235,0.35);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(37,99,235,0.5);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top left,
+        rgba(96,165,250,0.25),
+        transparent 55%);
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      margin-bottom: 1rem;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.3);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3.2vw, 2.8rem);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #5faaff, #c084fc, #ff6b82);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-sub);
+      max-width: 480px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+      color: #f9fafb;
+      box-shadow: 0 16px 30px rgba(37,99,235,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(37,99,235,0.6);
+    }
+
+    .btn-ghost {
+      background: rgba(15,23,42,0.7);
+      border-color: var(--border-subtle);
+      color: var(--text-sub);
+    }
+    [data-theme="light"] .btn-ghost {
+      background: rgba(255,255,255,0.9);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--primary-soft);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    .hero-meta strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      background: radial-gradient(circle at top, rgba(148,163,184,0.25), transparent 60%);
+      border-radius: var(--radius-xl);
+      padding: 1.4rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual-grid {
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,0.3);
+      background: linear-gradient(to bottom right,
+          rgba(15,23,42,0.95),
+          rgba(15,23,42,1));
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 0.8rem;
+      font-size: 0.78rem;
+    }
+    [data-theme="light"] .hero-visual-grid {
+      background: linear-gradient(to bottom right,
+          #ffffff,
+          #eef2ff);
+    }
+
+    .hero-panel {
+      background: rgba(15,23,42,0.96);
+      border-radius: 12px;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid rgba(51,65,85,0.85);
+    }
+    [data-theme="light"] .hero-panel {
+      background: rgba(255,255,255,0.96);
+      border-color: rgba(148,163,184,0.6);
+    }
+
+    .hero-panel h3 {
+      font-size: 0.82rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-list {
+      list-style: none;
+      display: grid;
+      gap: 0.25rem;
+      color: var(--text-sub);
+    }
+
+    .hero-list li {
+      display: flex;
+      gap: 0.3rem;
+      align-items: center;
+    }
+
+    .hero-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #5faaff;
+    }
+
+    .hero-kpi {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+
+    .hero-kpi-item {
+      background: rgba(15,23,42,0.95);
+      border-radius: 10px;
+      padding: 0.45rem 0.5rem;
+      border: 1px solid rgba(51,65,85,0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    [data-theme="light"] .hero-kpi-item {
+      background: rgba(255,255,255,0.96);
+      border-color: rgba(148,163,184,0.6);
+    }
+
+    .hero-kpi-label {
+      font-size: 0.68rem;
+      color: var(--text-sub);
+    }
+
+    .hero-kpi-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-floating {
+      position: absolute;
+      right: 1.2rem;
+      top: 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15,23,42,0.96);
+      padding: 0.3rem 0.7rem;
+      font-size: 0.7rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      color: var(--text-sub);
+    }
+    [data-theme="light"] .hero-floating {
+      background: rgba(255,255,255,0.98);
+    }
+
+    .hero-floating span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom right, #22c55e, #16a34a);
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.35);
+    }
+
+    /* ---------- Section 공통 ---------- */
+    main {
+      background: radial-gradient(circle at top, rgba(15,23,42,0.05), transparent 60%), var(--bg);
+    }
+
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-sub);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      max-width: 540px;
+    }
+
+    /* ---------- Services ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      background: var(--bg-elevated);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(37,99,235,0.6);
+      box-shadow: 0 10px 24px rgba(15,23,42,0.8);
+      position: relative;
+      font-size: 0.86rem;
+    }
+    .service-card:nth-child(2) {
+      border-color: rgba(147,51,234,0.7);
+    }
+    .service-card:nth-child(3) {
+      border-color: rgba(248,113,113,0.8);
+    }
+    [data-theme="light"] .service-card {
+      box-shadow: 0 10px 24px rgba(15,23,42,0.08);
+    }
+
+    .service-chip {
+      position: absolute;
+      top: 0.7rem;
+      right: 0.7rem;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15,23,42,0.96);
+      color: var(--text-sub);
+    }
+    [data-theme="light"] .service-chip {
+      background: #ffffff;
+    }
+
+    .service-label {
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      margin-bottom: 0.35rem;
+    }
+
+    .service-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .service-desc {
+      font-size: 0.84rem;
+      color: var(--text-sub);
+      margin-bottom: 0.55rem;
+    }
+
+    .service-list {
+      list-style: none;
+      display: grid;
+      gap: 0.25rem;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-list li::before {
+      content: "•";
+      color: var(--primary-soft);
+      margin-right: 0.3rem;
+    }
+
+    /* ---------- Process ---------- */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.82rem;
+    }
+
+    .process-step {
+      background: var(--bg-elevated);
+      border-radius: 16px;
+      padding: 0.9rem;
+      border: 1px solid rgba(51,65,85,0.85);
+    }
+    [data-theme="light"] .process-step {
+      border-color: rgba(148,163,184,0.7);
+    }
+
+    .process-step-number {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      margin-bottom: 0.2rem;
+    }
+
+    .process-step-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .process-step-desc {
+      color: var(--text-sub);
+    }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .about-card {
+      background: var(--bg-elevated);
+      border-radius: 18px;
+      padding: 1.1rem;
+      border: 1px solid rgba(51,65,85,0.85);
+    }
+    [data-theme="light"] .about-card {
+      border-color: rgba(148,163,184,0.7);
+    }
+
+    .about-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-list {
+      list-style: none;
+      display: grid;
+      gap: 0.25rem;
+      color: var(--text-sub);
+      font-size: 0.84rem;
+    }
+
+    .about-list li::before {
+      content: "›";
+      color: #38bdf8;
+      margin-right: 0.3rem;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact {
+      padding-bottom: 3.5rem;
+    }
+
+    .contact-inner {
+      background: radial-gradient(circle at top left,
+        rgba(96,165,250,0.35),
+        rgba(15,23,42,0.98));
+      border-radius: 24px;
+      padding: 1.6rem;
+      border: 1px solid rgba(191,219,254,0.5);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+    [data-theme="light"] .contact-inner {
+      background: radial-gradient(circle at top left,
+        rgba(191,219,254,0.8),
+        #ffffff);
+    }
+
+    .contact-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-text {
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-sub {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-bottom: 1rem;
+    }
+
+    .contact-highlight {
+      font-weight: 600;
+      color: #bfdbfe;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--text-sub);
+    }
+
+    .contact-info-row {
+      display: flex;
+      gap: 0.4rem;
+      align-items: flex-start;
+    }
+
+    .contact-info-label {
+      width: 70px;
+      flex-shrink: 0;
+      color: var(--text-sub);
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(191,219,254,0.7);
+      font-size: 0.78rem;
+      color: var(--text-main);
+      background: rgba(15,23,42,0.85);
+    }
+    [data-theme="light"] .contact-pill {
+      background: rgba(255,255,255,0.8);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      border-top: 1px solid rgba(30,64,175,0.7);
+      padding: 1rem 0 1.4rem;
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      background: var(--bg-elevated);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-visual-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-kpi {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .contact-inner {
+        padding: 1.3rem;
+      }
+
+      .nav {
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <!-- 로고 이미지 경로는 실제 파일명에 맞게 수정 -->
+          <img src="logo-onoffus.png" alt="OnOffus 로고" class="logo-img" />
+        </div>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#services">서비스</a>
+            <a href="#process">진행 방식</a>
+            <a href="#about">OnOffus 소개</a>
+            <a href="#contact">문의</a>
+          </div>
+          <button class="theme-toggle" id="themeToggle" type="button">
+            <span class="icon" id="themeIcon">🌙</span>
+            <span id="themeLabel">Dark</span>
+          </button>
+          <a href="#contact" class="nav-cta">프로젝트 상담</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div>
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Online × Offline · 시스템 운영 · 자동화
+            </div>
+            <h1 class="hero-title">
+              온라인과 오프라인을 하나의 흐름으로,  
+              <span>OnOffus</span>가 운영합니다.
+            </h1>
+            <p class="hero-subtitle">
+              OnOffus(오노퍼스)는 온라인 서비스와 오프라인 비즈니스를 함께 운영하는 팀을 위한
+              <strong>시스템 운영·로그 알림·데이터 자동화 스튜디오</strong>입니다.
+              매장과 웹, 내부 시스템을 하나의 서비스처럼 다룹니다.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">도입 상담 요청하기</a>
+              <a href="#services" class="btn btn-ghost">제공 서비스 보기</a>
+            </div>
+            <div class="hero-meta">
+              <span><strong>· Online</strong> 웹·앱 · 예약/정산 시스템</span>
+              <span><strong>· Offline</strong> 매장 · 콜센터 · 내부 운영</span>
+              <span><strong>· All in One</strong> 운영·자동화 파트너</span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-floating">
+              <span class="dot"></span>
+              Online × Offline, All in One.
+            </div>
+            <div class="hero-visual-grid">
+              <div class="hero-panel">
+                <h3>시스템 운영 대행</h3>
+                <ul class="hero-list">
+                  <li><span class="hero-dot"></span> Docker · Nginx · SSL · 도메인 구성</li>
+                  <li><span class="hero-dot"></span> 배포/백업 스크립트 정리</li>
+                  <li><span class="hero-dot"></span> 서버·로그 기본 모니터링</li>
+                </ul>
+              </div>
+              <div class="hero-panel">
+                <h3>OnOffus mini SaaS</h3>
+                <ul class="hero-list">
+                  <li><span class="hero-dot"></span> 에러·로그 Slack 알림</li>
+                  <li><span class="hero-dot"></span> 데이터 수집·정제 자동화</li>
+                  <li><span class="hero-dot"></span> 예약·정산 모듈 (준비 중)</li>
+                </ul>
+                <div class="hero-kpi">
+                  <div class="hero-kpi-item">
+                    <div class="hero-kpi-label">수동 운영 작업</div>
+                    <div class="hero-kpi-value">최대 70% 절감</div>
+                  </div>
+                  <div class="hero-kpi-item">
+                    <div class="hero-kpi-label">장애 인지 시간</div>
+                    <div class="hero-kpi-value">실시간 알림</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- hero-visual -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Services</div>
+          <h2 class="section-title">OnOffus가 지금 제공하는 것들</h2>
+          <p class="section-description">
+            인프라 전담 인력을 두기엔 부담스럽지만,  
+            서비스는 안정적으로 운영하고 싶은 팀을 위한 <strong>가벼운 운영·자동화 패키지</strong>입니다.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <article class="service-card">
+            <div class="service-chip">운영 대행</div>
+            <div class="service-label">Service 01</div>
+            <h3 class="service-title">시스템 운영 대행 (Light MSP)</h3>
+            <p class="service-desc">
+              서버·도메인·SSL·배포·백업 등, “누가 맡아서 좀 정리해줬으면 하는 부분”을 대신 정리해 드립니다.
+            </p>
+            <ul class="service-list">
+              <li>Docker / Nginx / SSL / 도메인 구성</li>
+              <li>배포 스크립트·자동 백업 작업 정리</li>
+              <li>자원/장애 기본 모니터링 구성</li>
+              <li>월 단위 운영 계약 (Light 플랜)</li>
+            </ul>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="service-card">
+            <div class="service-chip">Mini SaaS</div>
+            <div class="service-label">Service 02</div>
+            <h3 class="service-title">에러·로그 Slack 알림 서비스</h3>
+            <p class="service-desc">
+              서버·API 에러와 중요한 로그를 Slack으로 실시간 전달합니다.
+              기존 시스템에 Webhook 하나만 붙여 시작할 수 있습니다.
+            </p>
+            <ul class="service-list">
+              <li>HTTP/Webhook 로그 수집 API 제공</li>
+              <li>Slack / Telegram / 이메일 알림 연동</li>
+              <li>기본 에러/요청 통계 대시보드</li>
+              <li>파일/DB 로그 연동 (협의)</li>
+            </ul>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="service-card">
+            <div class="service-chip">Data Automation</div>
+            <div class="service-label">Service 03</div>
+            <h3 class="service-title">데이터 수집·정제 자동화</h3>
+            <p class="service-desc">
+              매일 혹은 매주 엑셀로 정리하던 데이터를, 스크립트와 스케줄러로 자동 수집·정제합니다.
+            </p>
+            <ul class="service-list">
+              <li>웹/오픈 API 기반 데이터 크롤링</li>
+              <li>필요 컬럼만 추출·정제·가공</li>
+              <li>DB · Google Sheet · CSV 저장</li>
+              <li>운영팀 반복 작업 최소화</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Process</div>
+          <h2 class="section-title">OnOffus와 일하는 방식</h2>
+          <p class="section-description">
+            대규모 전면 재구축보다는,  
+            <strong>작게 시작해 효과를 확인하고, 점진적으로 확장하는 것</strong>을 기본 원칙으로 삼습니다.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-step-number">Step 01</div>
+            <div class="process-step-title">현재 환경 파악</div>
+            <p class="process-step-desc">
+              서버/도메인/배포/로그 등 현재 운영 방식을 공유받고,
+              가장 먼저 정리했을 때 효과가 큰 부분부터 찾습니다.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">Step 02</div>
+            <div class="process-step-title">작은 파일럿</div>
+            <p class="process-step-desc">
+              서버 한 대, 서비스 한 파트부터 시작해
+              장애 없이 적용 가능한지 확인합니다.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">Step 03</div>
+            <div class="process-step-title">자동화 · 정리</div>
+            <p class="process-step-desc">
+              알림, 백업, 배포, 데이터 수집 등 반복되는 작업을  
+              도구와 스크립트로 정리합니다.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-number">Step 04</div>
+            <div class="process-step-title">확장 & 운영</div>
+            <p class="process-step-desc">
+              검증된 방식으로 다른 서비스/매장/지역으로 확장하고,  
+              운영 데이터를 보며 점점 다듬어 갑니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">About</div>
+          <h2 class="section-title">OnOffus(오노퍼스)는</h2>
+          <p class="section-description">
+            “On”과 “Off”, <strong>Online과 Offline을 모두 아우른다</strong>는 의미에서 시작된 이름입니다.  
+            웹 서비스와 실제 매장/현장을 함께 운영하는 팀을 위해,
+            두 세계를 하나의 시스템처럼 다루는 것을 목표로 합니다.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>우리가 지향하는 것</h3>
+            <ul class="about-list">
+              <li>온라인과 오프라인을 하나의 사용자 여정으로 바라봅니다.</li>
+              <li>매장, 콜센터, 백오피스, 웹/앱을 연결하는 시스템을 선호합니다.</li>
+              <li>“사람이 매번 손으로 하지 않아도 되는 일”을 자동화합니다.</li>
+              <li>한 번 쓰고 버려지는 코드보다, 오래 굴러가는 운영 방식을 선택합니다.</li>
+            </ul>
+          </div>
+          <div class="about-card">
+            <h3>OnOffus가 잘하는 것</h3>
+            <ul class="about-list">
+              <li>실제 운영 환경(실서버, 실제 고객)이 있는 서비스 경험</li>
+              <li>백엔드와 인프라 사이를 잇는 설계 · 구현 · 운영</li>
+              <li>여행/예약/정산 등 B2B 도메인 업무 경험</li>
+              <li>“지금 있는 시스템 위에” 얹는 현실적인 접근</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-inner">
+          <div>
+            <div class="contact-title">프로젝트를 함께 이야기해 볼까요?</div>
+            <p class="contact-text">
+              “이 정도면 자동화할 수 있을까?” 싶은 부분이 있다면 편하게 이야기 주세요.<br/>
+              명확한 요구서가 없어도 괜찮습니다. 현재 상황을 듣고,
+              <span class="contact-highlight">가장 현실적인 시작 지점</span>부터 제안드릴게요.
+            </p>
+            <p class="contact-sub">
+              아직은 작은 스튜디오이기 때문에,  
+              많은 고객을 받기보다 <strong>소수의 팀과 깊게 협업</strong>하는 방식을 더 좋아합니다.
+            </p>
+            <div class="hero-actions">
+              <a href="mailto:support@onoffus.com" class="btn btn-primary">
+                support@onoffus.com 으로 메일 보내기
+              </a>
+              <span class="contact-pill">우선은 이메일·메신저 중심 비대면 협업</span>
+            </div>
+          </div>
+          <div>
+            <div class="contact-info">
+              <div class="contact-info-row">
+                <span class="contact-info-label">회사명</span>
+                <span>OnOffus (오노퍼스)</span>
+              </div>
+              <div class="contact-info-row">
+                <span class="contact-info-label">웹사이트</span>
+                <span><a href="http://onoffus.com">onoffus.com</a></span>
+              </div>
+              <div class="contact-info-row">
+                <span class="contact-info-label">이메일</span>
+                <span><a href="mailto:support@onoffus.com">support@onoffus.com</a></span>
+              </div>
+              <div class="contact-info-row">
+                <span class="contact-info-label">가능 영역</span>
+                <span>온라인 서비스 · 오프라인 매장/비즈니스의 운영 시스템, 로그/에러 알림, 데이터 수집·정제, 예약·정산 모듈</span>
+              </div>
+              <div class="contact-info-row">
+                <span class="contact-info-label">협업 형태</span>
+                <span>월 단위 운영 계약 · 프로젝트 단위 개발 · PoC(파일럿)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> OnOffus. Online × Offline, All in One.</div>
+        <div class="footer-links">
+          <span>system · automation studio</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // 연도 표시
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // 다크/라이트 테마 토글
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById('themeToggle');
+  const iconEl = document.getElementById('themeIcon');
+  const labelEl = document.getElementById('themeLabel');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (theme === 'light') {
+      iconEl.textContent = '☀️';
+      labelEl.textContent = 'Light';
+    } else {
+      iconEl.textContent = '🌙';
+      labelEl.textContent = 'Dark';
+    }
+    localStorage.setItem('onoffus-theme', theme);
+  }
+
+  // 초기 테마 (localStorage 기준)
+  const savedTheme = localStorage.getItem('onoffus-theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    applyTheme(savedTheme);
+  } else {
+    applyTheme('dark');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+</script>
+</body>
+</html>
