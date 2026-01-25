@@ -256,3 +256,107 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Floating CTA Button
+document.addEventListener('DOMContentLoaded', () => {
+  const floatingCTA = document.getElementById('floatingCTA');
+  if (!floatingCTA) return;
+
+  let lastScroll = 0;
+  let isVisible = false;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const scrollThreshold = 300; // Hero 섹션을 지나면 표시
+
+    if (currentScroll > scrollThreshold && !isVisible) {
+      floatingCTA.style.opacity = '1';
+      floatingCTA.style.transform = 'translateY(0)';
+      floatingCTA.style.pointerEvents = 'auto';
+      isVisible = true;
+    } else if (currentScroll <= scrollThreshold && isVisible) {
+      floatingCTA.style.opacity = '0';
+      floatingCTA.style.transform = 'translateY(20px)';
+      floatingCTA.style.pointerEvents = 'none';
+      isVisible = false;
+    }
+
+    lastScroll = currentScroll;
+  });
+});
+
+// Google Analytics 전환 추적
+function trackEvent(category, action, label = '') {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', action, {
+      'event_category': category,
+      'event_label': label,
+      'value': 1
+    });
+  }
+}
+
+// CTA 버튼 클릭 추적
+document.addEventListener('DOMContentLoaded', () => {
+  // Hero CTA 버튼
+  const heroCTA = document.querySelector('.hero-actions .btn-primary');
+  if (heroCTA) {
+    heroCTA.addEventListener('click', () => {
+      trackEvent('CTA', 'click', 'Hero - AI 프로젝트 상담 요청');
+    });
+  }
+
+  // Revenue Services CTA 버튼
+  const revenueCTA = document.querySelector('#revenue-services .btn-primary');
+  if (revenueCTA) {
+    revenueCTA.addEventListener('click', () => {
+      trackEvent('CTA', 'click', 'Revenue Services - 무료 기술 상담 신청');
+    });
+  }
+
+  // Contact CTA 버튼
+  const contactCTA = document.querySelector('#contact .btn-primary');
+  if (contactCTA) {
+    contactCTA.addEventListener('click', () => {
+      trackEvent('CTA', 'click', 'Contact - 맞춤 견적 요청하기');
+    });
+  }
+
+  // Floating CTA 버튼
+  const floatingCTA = document.querySelector('#floatingCTA .btn-primary');
+  if (floatingCTA) {
+    floatingCTA.addEventListener('click', () => {
+      trackEvent('CTA', 'click', 'Floating - 무료 기술 상담 신청');
+    });
+  }
+
+  // 이메일 링크 클릭 추적
+  const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  emailLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      trackEvent('Contact', 'email_click', link.href);
+    });
+  });
+
+  // 섹션 스크롤 추적 (페이지뷰 깊이 측정)
+  const sections = document.querySelectorAll('section[id]');
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+  };
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+        trackEvent('Engagement', 'section_view', sectionId);
+        sectionObserver.unobserve(entry.target); // 한 번만 추적
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    sectionObserver.observe(section);
+  });
+});

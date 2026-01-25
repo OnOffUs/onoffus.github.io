@@ -12,17 +12,23 @@ const translations = {
     },
     hero: {
       title: {
-        line1: "2005년부터 이어진 20년의 경력, 시스템의 격을 높입니다.",
+        line1: "AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축",
         line2: ""
       },
       subtitle: {
-        line1: "삼성, 현대, KB 등 대형 프로젝트를 성공시킨 노하우를 바탕으로, ",
-        strong: "단순 개발을 넘어 비즈니스의 지속 가능성을 설계합니다.",
+        main: "비즈니스 성장을 이끄는 안정적 개발 파트너",
+        line1: "",
+        strong: "",
         line2: ""
       },
       cta: {
-        primary: "무료 기술 진단 받기",
-        secondary: "포트폴리오 보기"
+        primary: "AI 프로젝트 상담 요청",
+        secondary: "상세 서비스 보기"
+      },
+      evidence: {
+        experience: "금융·항공·대형 시스템 구축 20년 이상 실무 경험",
+        ai: "AI/LLM 자동화, RAG 기반 검색/추천 솔루션 적용",
+        roi: "빠른 ROI와 유지보수 용이한 확장 아키텍처"
       },
       meta: {
         years: "기술 리더 경력",
@@ -72,44 +78,39 @@ const translations = {
       }
     },
     services: {
-      title: "기업용 시스템 개발 서비스",
-      desc: {
-        line1: "SaaS 플랫폼부터 엔터프라이즈 시스템, AI·LLM 솔루션까지.",
-        strong: "Python, Kotlin, Spring Boot 기반의 AI 자동화 솔루션",
-        line2: "으로 데이터 마이그레이션, 고객 응대, 백오피스 업무를 지능형 에이전트가 처리합니다.",
-        line3: "확장 가능한 아키텍처와 검증된 기술 스택으로 안정적인 서비스를 제공합니다."
-      },
+      title: "비즈니스 성장을 위한 시스템 구축",
+      desc: "기술보다 효과에 집중합니다. 빠른 시장 출시, 운영 안정성, AI 자동화로 비즈니스 성장을 가속화합니다.",
       s1: {
-        title: "기업용 SaaS 플랫폼 개발",
-        desc: "Kotlin/Spring Boot 기반의 확장 가능한 SaaS 아키텍처 구축. 멀티테넌트 구조, 사용자 권한 관리, 결제 시스템 통합까지.",
+        title: "비즈니스 성장을 위한 SaaS 시스템 구축",
+        desc: "빠른 시장 출시(Go-to-market)와 확장성, 운영 효율을 갖춘 SaaS 플랫폼을 구축합니다. 사용자 증가에 따라 자동으로 확장되는 아키텍처로 안정적인 성장을 지원합니다.",
         items: [
-          "Kotlin · Java · Spring Boot · Python · Oracle · Kafka 기반 아키텍처",
-          "멀티테넌트 SaaS 구조 설계",
-          "관리자 대시보드 및 사용자 포털",
-          "결제 시스템 연동 (PG사, 구독 관리)",
-          "API Gateway 및 마이크로서비스 구조"
+          "빠른 시장 출시를 위한 MVP부터 프로덕션까지",
+          "사용자 증가에 따른 자동 확장 아키텍처",
+          "운영 효율 극대화를 위한 자동화 시스템",
+          "멀티테넌트 구조로 비용 효율적 운영",
+          "결제 시스템 통합으로 즉시 수익화 가능"
         ]
       },
       s2: {
-        title: "AI·LLM 솔루션 구축",
-        desc: "RAG 시스템, LLM 자동화, AI 추천 엔진 등 실제 비즈니스에 적용 가능한 AI 솔루션. 프로덕션 환경에서 안정적으로 운영되는 AI 시스템을 구축합니다.",
+        title: "AI 도입 & 자동화 서비스",
+        desc: "고객 상담 자동화, 문서 요약/검색/추천 엔진, RAG 기반 내부 데이터 검색으로 업무 효율을 극대화합니다. 실제 비즈니스에 즉시 적용 가능한 AI 솔루션을 제공합니다.",
         items: [
-          "RAG (Retrieval-Augmented Generation) 시스템",
-          "LLM 파이프라인 자동화 및 오케스트레이션",
-          "AI 기반 추천 엔진 및 분석 시스템",
-          "자연어 처리 자동화 (문서 요약, 분류 등)",
-          "AI 거버넌스 및 모델 관리 시스템"
+          "고객 상담 자동화로 응대 시간 단축 및 인건비 절감",
+          "문서 요약/검색 자동화로 업무 효율 향상",
+          "AI 추천 엔진으로 매출 증대 및 고객 만족도 향상",
+          "RAG 기반 내부 데이터 검색으로 의사결정 속도 개선",
+          "프로덕션 환경에서 안정적으로 운영되는 AI 시스템"
         ]
       },
       s3: {
-        title: "엔터프라이즈 시스템 개발",
-        desc: "금융, 항공, 여행 등 대규모 트랜잭션을 처리하는 엔터프라이즈 시스템. 고가용성, 확장성, 보안을 고려한 아키텍처 설계 및 개발.",
+        title: "엔터프라이즈 안정성 중심 시스템",
+        desc: "장애 대비 운영 전략과 보안, 백업, 운영 자동화를 갖춘 안정적인 시스템을 구축합니다. 금융권 수준의 신뢰성으로 비즈니스 연속성을 보장합니다.",
         items: [
-          "백오피스 시스템 및 관리자 대시보드",
-          "예약·정산·결제 시스템 개발",
-          "실시간 데이터 처리 및 동기화",
-          "외부 API 연동 및 통합 시스템",
-          "보안 및 규정 준수 (PCI-DSS 등)"
+          "장애 대비 자동 복구 및 장애 대응 전략",
+          "보안 강화 및 규정 준수 (PCI-DSS 등)",
+          "자동 백업 및 재해 복구 시스템",
+          "운영 자동화로 인건비 절감",
+          "24/7 모니터링으로 사전 장애 예방"
         ]
       },
       s4: {
@@ -199,7 +200,8 @@ const translations = {
         desc: "낙후된 레거시 시스템을 최신 아키텍처로 안전하게 마이그레이션합니다.",
         model: "중대형 프로젝트",
         modelDesc: "전면 현대화 프로젝트로 높은 수익성과 장기 파트너십 구축"
-      }
+      },
+      cta: "무료 기술 상담 신청"
     },
     techStack: {
       title: "풀스택 전문가 - C부터 Python AI까지",
@@ -443,39 +445,31 @@ const translations = {
     },
     faq: {
       title: "자주 묻는 질문",
-      desc: "AI 거버넌스, 보안, 데이터 소유권 등 기업 고객이 궁금해하는 사항을 정리했습니다.",
+      desc: "AI 도입, 프로젝트 비용, 유지보수, 데이터 보안 등 기업 고객이 가장 궁금해하는 사항을 정리했습니다.",
       q1: {
-        q: "AI 모델의 거버넌스는 어떻게 관리하나요?",
-        a: "모델 버전 관리, A/B 테스트 인프라, 성능 모니터링 시스템을 구축하여 AI 모델의 품질과 안정성을 지속적으로 관리합니다. 편향성 검사 및 윤리적 사용 가이드라인을 준수합니다."
+        q: "AI 도입하면 비즈니스 변화는 어떤가요?",
+        a: "AI 도입으로 고객 상담 자동화, 문서 처리 자동화, 업무 효율 향상을 실현할 수 있습니다. 실제 사례에서 응대 시간 70% 단축, 인건비 30% 절감, 의사결정 속도 2배 향상 등의 효과를 확인했습니다. 초기 PoC부터 단계적으로 도입하여 리스크를 최소화하면서 비즈니스 성장을 가속화합니다."
       },
       q2: {
-        q: "데이터 보안 및 개인정보 보호는 어떻게 보장하나요?",
-        a: "엔드투엔드 암호화, 역할 기반 접근 제어(RBAC), 정기적인 보안 감사를 실시합니다. GDPR, 개인정보보호법 등 관련 규정을 준수하며, 고객 데이터는 고객사가 완전한 소유권을 가집니다."
+        q: "프로젝트 기간/비용은 어떻게 되나요?",
+        a: "프로젝트 규모와 요구사항에 따라 기간과 비용이 달라집니다. MVP(최소 기능 제품)는 2-3개월, 전체 시스템 구축은 6-12개월 정도 소요됩니다. 초기에는 작은 PoC(파일럿)부터 시작하여 점진적으로 확장하는 방식을 권장합니다. 정확한 견적은 무료 상담을 통해 프로젝트 범위를 논의한 후 제공해드립니다."
       },
       q3: {
-        q: "개발된 시스템의 소유권은 누구에게 있나요?",
-        a: "고객사가 개발된 시스템의 완전한 소유권을 가집니다. 소스 코드, 데이터베이스, 문서 등 모든 산출물은 고객사에 인도되며, 필요시 지속적인 운영 지원을 제공합니다."
+        q: "유지보수/운영은 지원하나요?",
+        a: "네, 24/7 모니터링, 자동 백업, 보안 패치, 장애 대응 등 완전한 운영 지원을 제공합니다. 월 고정 수익형 MSP(관리형 서비스 제공) 모델로 예측 가능한 비용으로 안정적인 운영을 보장합니다. 개발 완료 후에도 지속적인 기술 지원과 시스템 개선을 통해 비즈니스 성장을 함께합니다."
       },
       q4: {
-        q: "AI 모델 학습에 사용된 데이터는 어떻게 관리되나요?",
-        a: "고객사 데이터는 고객사의 명시적 동의 없이 다른 목적으로 사용되지 않습니다. 모델 학습 시 데이터 익명화 및 최소화 원칙을 적용하며, 필요시 온프레미스 또는 전용 클라우드 환경에서 학습을 진행할 수 있습니다."
-      },
-      q5: {
-        q: "시스템 장애 시 대응 절차는 어떻게 되나요?",
-        a: "24/7 모니터링 시스템을 통해 장애를 실시간으로 감지하고, SLA에 따라 즉시 대응합니다. 자동 복구 메커니즘과 롤백 시스템을 구축하여 장애 복구 시간을 최소화합니다."
-      },
-      q6: {
-        q: "협업 형태와 계약 방식은 어떻게 되나요?",
-        a: "프로젝트 단위 개발, 월 단위 운영 계약, PoC(파일럿) 등 다양한 형태로 협업 가능합니다. 초기에는 작은 PoC부터 시작하여 점진적으로 확장하는 방식을 권장합니다. 계약 조건은 프로젝트 규모와 요구사항에 따라 협의합니다."
+        q: "데이터 보안/프라이버시는 어떻게 처리하나요?",
+        a: "엔드투엔드 암호화, 역할 기반 접근 제어(RBAC), 정기 보안 감사를 실시합니다. GDPR, 개인정보보호법 등 관련 규정을 준수하며, 고객 데이터는 고객사가 완전한 소유권을 가집니다. AI 모델 학습 시에도 고객사 명시적 동의 없이 다른 목적으로 사용하지 않으며, 필요시 온프레미스 또는 전용 클라우드 환경에서 운영할 수 있습니다."
       }
     },
     contact: {
-      title: "AI 도입 및 시스템 개발을 논의해볼까요?",
-      text: "AI 솔루션 도입, 엔터프라이즈 시스템 구축, SaaS 플랫폼 개발 등 어떤 프로젝트든 현재 상황을 공유해 주시면 ",
-      textHighlight: "기술적으로 현실적이고 실행 가능한 제안",
-      textEnd: "을 드리겠습니다.",
-      sub: "명확한 요구서가 없어도 괜찮습니다. 비즈니스 목표와 기술적 제약사항을 듣고, 단계적 접근 방안부터 제안드립니다.",
-      cta: "support@onoffus.com 으로 문의하기",
+      title: "꾸준히 수익이 발생하는 프로젝트를 찾고 계신가요?",
+      text: "월 고정 수익형 MSP, 고부가가치 AI 자동화, 중대형 현대화 프로젝트 등 ",
+      textHighlight: "지속적 수익이 발생하는 프로젝트",
+      textEnd: "에 대해 무료 상담을 제공합니다.",
+      sub: "✓ 무료 기술 진단 · ✓ 명확한 제안서 · ✓ 빠른 응답",
+      cta: "맞춤 견적 요청하기",
       pill: "이메일·메신저 중심 비대면 협업",
       info: {
         company: "회사명",
@@ -488,6 +482,9 @@ const translations = {
         tech: "기술 스택",
         techValue: "C, C++, Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, React, Vue, AI/LLM"
       }
+    },
+    floatingCTA: {
+      text: "무료 기술 상담 신청"
     },
     footer: {
       tagline: "AI-Powered B2B SaaS & Enterprise Systems.",
@@ -506,17 +503,23 @@ const translations = {
     },
     hero: {
       title: {
-        line1: "20 Years of Experience Since 2005, Elevating System Excellence",
+        line1: "AI-Based B2B SaaS & Enterprise System Development Company",
         line2: ""
       },
       subtitle: {
-        line1: "Based on proven expertise from successful projects with Samsung, Hyundai, KB, and other major corporations, ",
-        strong: "we design business sustainability beyond simple development.",
+        main: "A Reliable Development Partner Driving Business Growth",
+        line1: "",
+        strong: "",
         line2: ""
       },
       cta: {
-        primary: "Request Free Technical Assessment",
-        secondary: "View Portfolio"
+        primary: "Request AI Project Consultation",
+        secondary: "View Detailed Services"
+      },
+      evidence: {
+        experience: "20+ years of hands-on experience in finance, aviation, and large-scale system development",
+        ai: "AI/LLM automation, RAG-based search/recommendation solutions implementation",
+        roi: "Fast ROI with maintainable and scalable architecture"
       },
       meta: {
         years: "Technical Leadership",
@@ -566,44 +569,39 @@ const translations = {
       }
     },
     services: {
-      title: "Enterprise System Development Services",
-      desc: {
-        line1: "From SaaS platforms to enterprise systems and AI·LLM solutions.",
-        strong: "AI automation solutions based on Python, Kotlin, Spring Boot",
-        line2: " handle data migration, customer service, and back-office tasks through intelligent agents.",
-        line3: "We provide stable services with scalable architecture and proven technology stacks."
-      },
+      title: "System Development for Business Growth",
+      desc: "We focus on results, not just technology. Accelerate business growth with fast time-to-market, operational stability, and AI automation.",
       s1: {
-        title: "Enterprise SaaS Platform Development",
-        desc: "Building scalable SaaS architecture based on Kotlin/Spring Boot. From multi-tenant structure to user permission management and payment system integration.",
+        title: "SaaS System Development for Business Growth",
+        desc: "Build SaaS platforms with fast time-to-market (Go-to-market), scalability, and operational efficiency. Support stable growth with architecture that automatically scales as users increase.",
         items: [
-          "Architecture based on Kotlin · Java · Spring Boot · Python · Oracle · Kafka",
-          "Multi-tenant SaaS structure design",
-          "Admin dashboard and user portal",
-          "Payment system integration (PG companies, subscription management)",
-          "API Gateway and microservices structure"
+          "From MVP to production for fast market launch",
+          "Auto-scaling architecture as users grow",
+          "Automation systems for maximum operational efficiency",
+          "Multi-tenant structure for cost-effective operations",
+          "Payment system integration for immediate monetization"
         ]
       },
       s2: {
-        title: "AI·LLM Solution Development",
-        desc: "AI solutions applicable to real business including RAG systems, LLM automation, and AI recommendation engines. We build AI systems that operate stably in production environments.",
+        title: "AI Adoption & Automation Services",
+        desc: "Maximize operational efficiency with customer service automation, document summarization/search/recommendation engines, and RAG-based internal data search. Provide AI solutions immediately applicable to real business.",
         items: [
-          "RAG (Retrieval-Augmented Generation) systems",
-          "LLM pipeline automation and orchestration",
-          "AI-based recommendation engines and analytics systems",
-          "Natural language processing automation (document summarization, classification, etc.)",
-          "AI governance and model management systems"
+          "Customer service automation to reduce response time and labor costs",
+          "Document summarization/search automation to improve work efficiency",
+          "AI recommendation engines to increase revenue and customer satisfaction",
+          "RAG-based internal data search to improve decision-making speed",
+          "AI systems that operate stably in production environments"
         ]
       },
       s3: {
-        title: "Enterprise System Development",
-        desc: "Enterprise systems handling large-scale transactions in finance, aviation, and travel. Architecture design and development considering high availability, scalability, and security.",
+        title: "Enterprise Stability-Focused Systems",
+        desc: "Build stable systems with failure prevention strategies, security, backup, and operational automation. Ensure business continuity with financial-sector-level reliability.",
         items: [
-          "Back-office systems and admin dashboards",
-          "Reservation, settlement, and payment system development",
-          "Real-time data processing and synchronization",
-          "External API integration and unified systems",
-          "Security and compliance (PCI-DSS, etc.)"
+          "Automatic recovery and failure response strategies",
+          "Enhanced security and compliance (PCI-DSS, etc.)",
+          "Automatic backup and disaster recovery systems",
+          "Operational automation to reduce labor costs",
+          "24/7 monitoring for proactive failure prevention"
         ]
       },
       s4: {
@@ -693,7 +691,8 @@ const translations = {
         desc: "Safely migrate outdated legacy systems to modern architectures.",
         model: "Large-Scale Projects",
         modelDesc: "Building high profitability and long-term partnerships through comprehensive modernization projects"
-      }
+      },
+      cta: "Request Free Technical Consultation"
     },
     techStack: {
       title: "Full-Stack Expert - From C to Python AI",
@@ -937,39 +936,31 @@ const translations = {
     },
     faq: {
       title: "Frequently Asked Questions",
-      desc: "We've organized questions that enterprise customers are curious about regarding AI governance, security, and data ownership.",
+      desc: "We've organized the most frequently asked questions by enterprise customers regarding AI adoption, project costs, maintenance, and data security.",
       q1: {
-        q: "How is AI model governance managed?",
-        a: "We continuously manage the quality and stability of AI models by building model version management, A/B testing infrastructure, and performance monitoring systems. We comply with bias checks and ethical usage guidelines."
+        q: "What business changes can we expect from AI adoption?",
+        a: "AI adoption enables customer service automation, document processing automation, and improved operational efficiency. In actual cases, we've confirmed effects such as 70% reduction in response time, 30% reduction in labor costs, and 2x improvement in decision-making speed. We start with an initial PoC and gradually expand to minimize risk while accelerating business growth."
       },
       q2: {
-        q: "How is data security and privacy protection ensured?",
-        a: "We implement end-to-end encryption, role-based access control (RBAC), and regular security audits. We comply with relevant regulations such as GDPR and privacy laws, and customers have complete ownership of their data."
+        q: "What are the project timeline and costs?",
+        a: "Timeline and costs vary depending on project scale and requirements. MVP (Minimum Viable Product) takes 2-3 months, while full system construction takes approximately 6-12 months. We recommend starting with a small PoC (pilot) and gradually expanding. Accurate quotes are provided after discussing project scope through free consultation."
       },
       q3: {
-        q: "Who owns the developed system?",
-        a: "Customers have complete ownership of the developed system. All deliverables including source code, databases, and documentation are delivered to customers, and we provide ongoing operational support as needed."
+        q: "Do you provide maintenance and operational support?",
+        a: "Yes, we provide complete operational support including 24/7 monitoring, automatic backups, security patches, and failure response. Our monthly fixed-revenue MSP (Managed Service Provider) model ensures stable operations with predictable costs. We continue to provide ongoing technical support and system improvements after development completion to grow together."
       },
       q4: {
-        q: "How is data used for AI model training managed?",
-        a: "Customer data is not used for other purposes without explicit customer consent. We apply data anonymization and minimization principles during model training, and training can be conducted in on-premises or dedicated cloud environments as needed."
-      },
-      q5: {
-        q: "What is the procedure for responding to system failures?",
-        a: "We detect failures in real-time through 24/7 monitoring systems and respond immediately according to SLA. We minimize failure recovery time by building automatic recovery mechanisms and rollback systems."
-      },
-      q6: {
-        q: "What are the collaboration forms and contract methods?",
-        a: "We can collaborate in various forms including project-based development, monthly operational contracts, and PoC (pilot). We recommend starting with a small PoC and gradually expanding. Contract terms are negotiated according to project scale and requirements."
+        q: "How is data security and privacy handled?",
+        a: "We implement end-to-end encryption, role-based access control (RBAC), and regular security audits. We comply with relevant regulations such as GDPR and privacy laws, and customers have complete ownership of their data. Customer data is not used for other purposes without explicit customer consent, even for AI model training, and can be operated in on-premises or dedicated cloud environments as needed."
       }
     },
     contact: {
-      title: "Let's Discuss AI Adoption & System Development",
-      text: "AI solution adoption, enterprise system construction, SaaS platform development - share your current situation and we'll provide ",
-      textHighlight: "technically realistic and executable proposals",
-      textEnd: ".",
-      sub: "You don't need a clear requirements document. We listen to business goals and technical constraints and propose step-by-step approaches from the start.",
-      cta: "Contact us at support@onoffus.com",
+      title: "Looking for Projects with Steady Revenue?",
+      text: "We provide free consultation on ",
+      textHighlight: "projects that generate steady revenue",
+      textEnd: " including monthly fixed-revenue MSP, high-value AI automation, and large-scale modernization projects.",
+      sub: "✓ Free Technical Assessment · ✓ Clear Proposal · ✓ Quick Response",
+      cta: "Request Custom Quote",
       pill: "Email·Messenger-based remote collaboration",
       info: {
         company: "Company Name",
@@ -982,6 +973,9 @@ const translations = {
         tech: "Technology Stack",
         techValue: "C, C++, Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, React, Vue, AI/LLM"
       }
+    },
+    floatingCTA: {
+      text: "Request Free Technical Consultation"
     },
     footer: {
       tagline: "AI-Powered B2B SaaS & Enterprise Systems.",
