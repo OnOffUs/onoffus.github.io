@@ -12,17 +12,17 @@ const translations = {
     },
     hero: {
       title: {
-        line1: "20년의 엔터프라이즈 경험,",
-        line2: "AI로 자동화의 정점을 찍다"
+        line1: "2005년부터 이어진 20년의 경력, 시스템의 격을 높입니다.",
+        line2: ""
       },
       subtitle: {
-        line1: "단순한 개발을 넘어, ",
-        strong: "AI 에이전트가 귀사의 비즈니스 로직을 학습하고 운영합니다.",
-        line2: "금융, 항공 등 대규모 시스템을 구축해온 20년 경력과 AI 기술이 만나 자동화의 새로운 차원을 제시합니다."
+        line1: "삼성, 현대, KB 등 대형 프로젝트를 성공시킨 노하우를 바탕으로, ",
+        strong: "단순 개발을 넘어 비즈니스의 지속 가능성을 설계합니다.",
+        line2: ""
       },
       cta: {
-        primary: "AI 도입 상담 요청",
-        secondary: "AI 솔루션 살펴보기"
+        primary: "무료 기술 진단 받기",
+        secondary: "포트폴리오 보기"
       },
       meta: {
         years: "기술 리더 경력",
@@ -39,6 +39,7 @@ const translations = {
     trust: {
       title: "20년의 엔터프라이즈 경험, 검증된 신뢰성",
       desc: "삼성, 현대, KB손해보험 등 대기업 프로젝트를 성공적으로 수행한 실적과 최신 AI 기술을 레거시 시스템과 완벽하게 통합하는 역량을 보유하고 있습니다.",
+      yearsText: "2005년부터 이어진 20년의 경력",
       years: {
         title: "Years",
         desc: "엔터프라이즈 시스템 구축 경력",
@@ -68,13 +69,6 @@ const translations = {
           "기존 CTI 시스템과 AI 상담 솔루션 통합",
           "마이크로서비스 아키텍처 기반 점진적 AI 도입"
         ]
-      },
-      companies: {
-        title: "주요 대기업 프로젝트 수행 실적",
-        samsung: { name: "삼성그룹", desc: "삼성화재, 삼성네트웍스\n삼성닷컴 서포트 글로벌 확산" },
-        hyundai: { name: "현대자동차", desc: "자동차 관련 시스템\n엔터프라이즈 프로젝트" },
-        kb: { name: "KB손해보험", desc: "금융 서비스 시스템\n보험 업무 프로세스" },
-        others: { name: "기타 대기업", desc: "SK텔링크, 아모레퍼시픽\n우리카드, 기타 금융권" }
       }
     },
     services: {
@@ -89,7 +83,7 @@ const translations = {
         title: "기업용 SaaS 플랫폼 개발",
         desc: "Kotlin/Spring Boot 기반의 확장 가능한 SaaS 아키텍처 구축. 멀티테넌트 구조, 사용자 권한 관리, 결제 시스템 통합까지.",
         items: [
-          "Kotlin · Spring Boot · Kafka 기반 아키텍처",
+          "Kotlin · Java · Spring Boot · Python · Oracle · Kafka 기반 아키텍처",
           "멀티테넌트 SaaS 구조 설계",
           "관리자 대시보드 및 사용자 포털",
           "결제 시스템 연동 (PG사, 구독 관리)",
@@ -185,9 +179,31 @@ const translations = {
         ]
       }
     },
+    revenueServices: {
+      title: "수익형 서비스 라인업",
+      desc: "20년 경력의 엔터프라이즈 전문가가 제공하는 안정적이고 지속 가능한 비즈니스 솔루션",
+      msp: {
+        title: "안정적 운영 (MSP)",
+        desc: "서버 장애는 곧 손실입니다. 금융권 시스템을 다루던 꼼꼼함으로 귀사의 인프라를 24시간 지킵니다.",
+        model: "월 고정 수익",
+        modelDesc: "예측 가능한 수익 구조와 안정적인 서비스 제공으로 지속적인 비즈니스 성장 지원"
+      },
+      automation: {
+        title: "비즈니스 자동화",
+        desc: "반복 업무를 제거하고 AI 에이전트를 도입하여 운영 효율을 극대화합니다.",
+        model: "고부가가치 프로젝트",
+        modelDesc: "AI 솔루션 구축으로 높은 ROI와 장기적 비용 절감 효과 제공"
+      },
+      modernization: {
+        title: "SI 및 시스템 현대화",
+        desc: "낙후된 레거시 시스템을 최신 아키텍처로 안전하게 마이그레이션합니다.",
+        model: "중대형 프로젝트",
+        modelDesc: "전면 현대화 프로젝트로 높은 수익성과 장기 파트너십 구축"
+      }
+    },
     techStack: {
-      title: "검증된 엔터프라이즈 기술 스택",
-      desc: "대규모 시스템에서 검증된 기술을 활용하여 안정적이고 확장 가능한 솔루션을 구축합니다."
+      title: "풀스택 전문가 - C부터 Python AI까지",
+      desc: "C, C++, Java/Spring부터 최신 Python AI 프레임워크까지 다룰 수 있는 풀스택 전문가입니다. 20년간 대규모 시스템에서 검증된 기술을 활용하여 안정적이고 확장 가능한 솔루션을 구축합니다."
     },
     aiSolutions: {
       title: "프로덕션에서 운영 중인 AI 솔루션",
@@ -367,22 +383,27 @@ const translations = {
       }
     },
     founder: {
-      title: "20년 이상의 기술 리더십",
-      desc: "금융, 항공 등 엔터프라이즈 시스템을 리드해온 기술 리더가 AI 시대의 시스템 개발을 이끕니다.",
+      title: "2005년부터 이어진 20년의 경력",
+      desc: "2005년 이라온테크에서의 첫 시작부터 지금의 오노퍼스까지, 대한민국 IT의 격변기를 온몸으로 겪어온 개발팀장이 직접 프로젝트를 리드합니다.",
       name: "최경훈",
-      title: "Choi Gyeong Hun · 대표이사 / 기술 리더",
+      titleText: "Choi Gyeong Hun · 대표이사 / 기술 리더",
       info: {
         career: "경력",
         careerValue: "20년 이상 (2005년 ~ 현재)",
         expertise: "전문분야",
         expertiseValue: "엔터프라이즈 시스템, AI·LLM 솔루션, B2B/B2C 플랫폼",
         tech: "핵심 기술",
-        techValue: "Kotlin, Spring Boot, Kafka, Docker, AWS, AI/LLM"
+        techValue: "C, C++, Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, AI/LLM"
       },
-      descText: "2005년부터 시작된 개발 경력으로, 삼성화재, 삼성네트웍스, SK텔링크, 아모레퍼시픽, 삼성닷컴, 우리카드 등 다양한 엔터프라이즈 프로젝트를 리드해왔습니다. 2019년부터 2023년까지 ㈜오노퍼스 대표를 역임하며 온라인과 오프라인을 연결하는 시스템 개발에 집중했고, 현재는 AI·LLM 솔루션을 실제 서비스에 통합하는 프로젝트를 진행 중입니다.",
-        highlights: [
+      descText: "초등학교 3학년 때 GW-BASIC으로 가졌던 프로그래머의 꿈이 20년의 실무 경력이 되었습니다. 2005년 이라온테크에서의 첫 시작부터 지금의 오노퍼스까지, 대한민국 IT의 격변기를 온몸으로 겪어온 개발팀장이 직접 프로젝트를 리드합니다.",
+      story: {
+        p1: "초등학교 3학년 때 GW-BASIC으로 가졌던 프로그래머의 꿈이 20년의 실무 경력이 되었습니다.",
+        p2: "<strong>2005년 이라온테크에서의 첫 시작</strong>부터 지금의 오노퍼스까지, 대한민국 IT의 격변기를 온몸으로 겪어온 개발팀장이 직접 프로젝트를 리드합니다.",
+        p3: "삼성화재, 현대증권, SK텔링크, KB손해보험, 우리카드 등 대형 프로젝트를 성공시킨 노하우를 바탕으로, 단순 개발을 넘어 비즈니스의 지속 가능성을 설계합니다."
+      },
+      highlights: [
         "금융·항공 대규모 엔터프라이즈 시스템 PL/PM 경험",
-        "Kotlin/Java/Spring Boot, Python, Oracle, Kafka 기반 마이크로서비스 아키텍처 전문",
+        "C, C++, Java/Spring부터 최신 Python AI까지 풀스택 전문가",
         "AI·LLM 솔루션 프로덕션 운영 경험",
         "AWS, Docker, Kubernetes 클라우드 인프라 전문"
       ],
@@ -407,13 +428,15 @@ const translations = {
           ]
         },
         skills: {
-          title: "기술 스택 전문성",
+          title: "풀스택 전문가 - 기술 스택 전문성",
+          desc: "C, C++, Java/Spring부터 최신 Python AI 프레임워크까지 다룰 수 있는 풀스택 전문가입니다.",
           items: [
-            "Backend: Kotlin, Java, Spring Boot, Node.js",
+            "Low-level: C, C++ (시스템 프로그래밍 기반)",
+            "Backend: Java, Spring Boot, Kotlin, Node.js, Python",
             "Infrastructure: AWS, Docker, Kubernetes, Kafka, CI/CD",
             "Frontend: React, Vue, JavaScript, TypeScript",
             "Database: Oracle, MySQL, MongoDB, PostgreSQL",
-            "AI/ML: LLM API, RAG, Vector DB, AI Pipeline"
+            "AI/ML: LLM API, RAG, Vector DB, Python AI 프레임워크"
           ]
         }
       }
@@ -463,7 +486,7 @@ const translations = {
         collaboration: "협업 형태",
         collaborationValue: "프로젝트 단위 개발 · 월 단위 운영 계약 · PoC(파일럿) · 장기 파트너십",
         tech: "기술 스택",
-        techValue: "Kotlin, Spring Boot, Kafka, Docker, AWS, React, Vue, AI/LLM"
+        techValue: "C, C++, Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, React, Vue, AI/LLM"
       }
     },
     footer: {
@@ -483,17 +506,17 @@ const translations = {
     },
     hero: {
       title: {
-        line1: "20+ Years of Enterprise Experience,",
-        line2: "Reaching the Pinnacle of Automation with AI"
+        line1: "20 Years of Experience Since 2005, Elevating System Excellence",
+        line2: ""
       },
       subtitle: {
-        line1: "Beyond simple development, ",
-        strong: "AI agents learn and operate your business logic.",
-        line2: "20 years of experience building large-scale systems in finance and aviation, combined with AI technology, presents a new dimension of automation."
+        line1: "Based on proven expertise from successful projects with Samsung, Hyundai, KB, and other major corporations, ",
+        strong: "we design business sustainability beyond simple development.",
+        line2: ""
       },
       cta: {
-        primary: "Request AI Consultation",
-        secondary: "Explore AI Solutions"
+        primary: "Request Free Technical Assessment",
+        secondary: "View Portfolio"
       },
       meta: {
         years: "Technical Leadership",
@@ -508,8 +531,9 @@ const translations = {
       uptime: "System Uptime"
     },
     trust: {
-      title: "20+ Years of Enterprise Experience, Proven Reliability",
+      title: "20 Years of Enterprise Experience, Proven Reliability",
       desc: "With a track record of successfully executing projects for major corporations including Samsung, Hyundai, and KB Insurance, we possess the capability to perfectly integrate cutting-edge AI technology with legacy systems.",
+      yearsText: "20 Years of Experience Since 2005",
       years: {
         title: "Years",
         desc: "Enterprise System Development Experience",
@@ -539,13 +563,6 @@ const translations = {
           "Integration of existing CTI systems with AI consultation solutions",
           "Gradual AI adoption based on microservices architecture"
         ]
-      },
-      companies: {
-        title: "Major Enterprise Project Track Record",
-        samsung: { name: "Samsung Group", desc: "Samsung Fire & Marine, Samsung Networks\nSamsung.com Support Global Expansion" },
-        hyundai: { name: "Hyundai Motor", desc: "Automotive-related systems\nEnterprise projects" },
-        kb: { name: "KB Insurance", desc: "Financial service systems\nInsurance business processes" },
-        others: { name: "Other Enterprises", desc: "SK Telink, Amorepacific\nWoori Card, Other financial institutions" }
       }
     },
     services: {
@@ -560,7 +577,7 @@ const translations = {
         title: "Enterprise SaaS Platform Development",
         desc: "Building scalable SaaS architecture based on Kotlin/Spring Boot. From multi-tenant structure to user permission management and payment system integration.",
         items: [
-          "Architecture based on Kotlin · Spring Boot · Kafka",
+          "Architecture based on Kotlin · Java · Spring Boot · Python · Oracle · Kafka",
           "Multi-tenant SaaS structure design",
           "Admin dashboard and user portal",
           "Payment system integration (PG companies, subscription management)",
@@ -656,9 +673,31 @@ const translations = {
         ]
       }
     },
+    revenueServices: {
+      title: "Revenue Service Lineup",
+      desc: "Stable and sustainable business solutions provided by 20-year enterprise experts",
+      msp: {
+        title: "Stable Operations (MSP)",
+        desc: "Server downtime means loss. We protect your infrastructure 24/7 with the meticulousness honed from handling financial sector systems.",
+        model: "Monthly Fixed Revenue",
+        modelDesc: "Supporting continuous business growth with predictable revenue structure and stable service delivery"
+      },
+      automation: {
+        title: "Business Automation",
+        desc: "Eliminate repetitive tasks and maximize operational efficiency by introducing AI agents.",
+        model: "High-Value Projects",
+        modelDesc: "Providing high ROI and long-term cost savings through AI solution implementation"
+      },
+      modernization: {
+        title: "SI & System Modernization",
+        desc: "Safely migrate outdated legacy systems to modern architectures.",
+        model: "Large-Scale Projects",
+        modelDesc: "Building high profitability and long-term partnerships through comprehensive modernization projects"
+      }
+    },
     techStack: {
-      title: "Proven Enterprise Technology Stack",
-      desc: "We build stable and scalable solutions using technologies proven in large-scale systems."
+      title: "Full-Stack Expert - From C to Python AI",
+      desc: "Full-stack expert capable of handling everything from C, C++, Java/Spring to the latest Python AI frameworks. We build stable and scalable solutions using technologies proven over 20 years in large-scale systems."
     },
     aiSolutions: {
       title: "AI Solutions Operating in Production",
@@ -838,8 +877,8 @@ const translations = {
       }
     },
     founder: {
-      title: "20+ Years of Technical Leadership",
-      desc: "Technical leaders who have led enterprise systems in finance, aviation, etc., are leading system development in the AI era.",
+      title: "20 Years of Experience Since 2005",
+      desc: "From the first start at Eraon Tech in 2005 to OnOffus today, a development team leader who has experienced Korea's IT transformation firsthand leads projects directly.",
       name: "Choi Gyeong Hun",
       titleText: "Choi Gyeong Hun · CEO / Technical Leader",
       info: {
@@ -848,12 +887,17 @@ const translations = {
         expertise: "Expertise",
         expertiseValue: "Enterprise systems, AI·LLM solutions, B2B/B2C platforms",
         tech: "Core Technologies",
-        techValue: "Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, AI/LLM"
+        techValue: "C, C++, Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, AI/LLM"
       },
-      descText: "With a development career starting in 2005, I have led various enterprise projects including Samsung Fire & Marine, Samsung Networks, SK Telink, Amorepacific, Samsung.com, and Woori Card. I served as CEO of OnOffus from 2019 to 2023, focusing on system development connecting online and offline, and currently working on projects integrating AI·LLM solutions into real services.",
+      descText: "The programmer's dream that started with GW-BASIC in the 3rd grade of elementary school has become 20 years of practical experience. From the first start at Eraon Tech in 2005 to OnOffus today, a development team leader who has experienced Korea's IT transformation firsthand leads projects directly.",
+      story: {
+        p1: "The programmer's dream that started with GW-BASIC in the 3rd grade of elementary school has become 20 years of practical experience.",
+        p2: "From <strong>the first start at Eraon Tech in 2005</strong> to OnOffus today, a development team leader who has experienced Korea's IT transformation firsthand leads projects directly.",
+        p3: "Based on proven expertise from successful projects with Samsung Fire & Marine, Hyundai Securities, SK Telink, KB Insurance, and Woori Card, we design business sustainability beyond simple development."
+      },
       highlights: [
         "PL/PM experience in large-scale enterprise systems in finance and aviation",
-        "Expert in microservices architecture based on Kotlin/Java/Spring Boot, Python, Oracle, Kafka",
+        "Full-stack expert from C, C++, Java/Spring to latest Python AI",
         "Production operation experience with AI·LLM solutions",
         "Expert in cloud infrastructure: AWS, Docker, Kubernetes"
       ],
@@ -878,13 +922,15 @@ const translations = {
           ]
         },
         skills: {
-          title: "Technology Stack Expertise",
+          title: "Full-Stack Expert - Technology Stack Expertise",
+          desc: "Full-stack expert capable of handling everything from C, C++, Java/Spring to the latest Python AI frameworks.",
           items: [
-            "Backend: Kotlin, Java, Spring Boot, Node.js",
+            "Low-level: C, C++ (System programming foundation)",
+            "Backend: Java, Spring Boot, Kotlin, Node.js, Python",
             "Infrastructure: AWS, Docker, Kubernetes, Kafka, CI/CD",
             "Frontend: React, Vue, JavaScript, TypeScript",
             "Database: Oracle, MySQL, MongoDB, PostgreSQL",
-            "AI/ML: LLM API, RAG, Vector DB, AI Pipeline"
+            "AI/ML: LLM API, RAG, Vector DB, Python AI frameworks"
           ]
         }
       }
@@ -934,7 +980,7 @@ const translations = {
         collaboration: "Collaboration Forms",
         collaborationValue: "Project-based development · Monthly operational contracts · PoC (pilot) · Long-term partnerships",
         tech: "Technology Stack",
-        techValue: "Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, React, Vue, AI/LLM"
+        techValue: "C, C++, Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, React, Vue, AI/LLM"
       }
     },
     footer: {
@@ -973,6 +1019,9 @@ function updateAllTexts() {
         element.textContent = value;
       } else if (typeof value === 'object' && !Array.isArray(value)) {
         // 객체인 경우는 처리하지 않음 (중첩된 키)
+      } else if (value && value.includes && value.includes('<strong>')) {
+        // HTML 포함된 경우 (예: founder.story.p2)
+        element.innerHTML = value;
       } else {
         element.textContent = value;
       }
@@ -981,6 +1030,30 @@ function updateAllTexts() {
   
   // 특별 처리: 리스트 아이템들
   updateListItems();
+  
+  // Hero 섹션 특별 처리
+  updateHeroSection();
+  
+  // Contact 섹션 특별 처리
+  updateContactSection();
+}
+
+function updateHeroSection() {
+  // Hero title은 data-i18n으로 처리되므로 별도 처리 불필요
+  // Hero subtitle은 내부 span과 strong이 data-i18n으로 처리되므로 별도 처리 불필요
+}
+
+function updateContactSection() {
+  const contactText = document.querySelector('.contact-text');
+  if (contactText && translations[currentLang].contact.text) {
+    const text = translations[currentLang].contact.text;
+    const highlight = translations[currentLang].contact.textHighlight;
+    const textEnd = translations[currentLang].contact.textEnd;
+    
+    if (text && highlight && textEnd) {
+      contactText.innerHTML = text + '<span class="contact-highlight">' + highlight + '</span>' + textEnd;
+    }
+  }
 }
 
 function updateListItems() {
