@@ -9,13 +9,66 @@ function initNeuralNetwork() {
   const ctx = canvas.getContext('2d');
   let animationId;
 
-  // Canvas 크기 설정
+  // Canvas 크기 설정 (강제 리플로우 방지)
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = canvas.parentElement.offsetHeight || window.innerHeight;
+    // 부모 요소의 실제 크기 가져오기
+    const parent = canvas.parentElement;
+    if (parent) {
+      const rect = parent.getBoundingClientRect();
+      // CSS 픽셀 크기와 실제 픽셀 크기 설정 (고해상도 디스플레이 대응)
+      const dpr = window.devicePixelRatio || 1;
+      const width = rect.width || window.innerWidth;
+      const height = rect.height || window.innerHeight;
+      
+      // 실제 픽셀 크기 설정
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      
+      // CSS 크기 설정
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      
+      // 컨텍스트 스케일 조정 (매번 리셋 필요)
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // 리셋
+      ctx.scale(dpr, dpr);
+      
+      // 노드 재생성 (새로운 크기에 맞춰)
+      createNodes();
+    } else {
+      // 폴백: 전체 화면 크기
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // 리셋
+      ctx.scale(dpr, dpr);
+      
+      // 노드 재생성
+      createNodes();
+    }
   }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
+  
+  // 초기 크기 설정 - DOMContentLoaded 후 실행
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      resizeCanvas();
+    });
+  } else {
+    // DOM이 이미 로드된 경우 즉시 실행
+    setTimeout(() => {
+      resizeCanvas();
+    }, 0);
+  }
+  
+  // Resize 이벤트에 throttle 적용하여 리플로우 최소화
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      resizeCanvas();
+    }, 150); // 150ms throttle
+  });
 
   // 노드와 연결선 설정
   const nodeCount = 25;
@@ -23,16 +76,25 @@ function initNeuralNetwork() {
   const connections = [];
   const maxDistance = 200;
 
-  // 노드 생성
-  for (let i = 0; i < nodeCount; i++) {
-    nodes.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      radius: Math.random() * 2 + 1
-    });
+  // 노드 생성 함수 (canvas 크기에 맞춰 재생성)
+  function createNodes() {
+    nodes.length = 0; // 기존 노드 제거
+    const width = canvas.width / (window.devicePixelRatio || 1);
+    const height = canvas.height / (window.devicePixelRatio || 1);
+    
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        radius: Math.random() * 2 + 1
+      });
+    }
   }
+  
+  // 초기 노드 생성
+  createNodes();
 
   // 연결선 생성
   function updateConnections() {
@@ -64,12 +126,15 @@ function initNeuralNetwork() {
       node.x += node.vx;
       node.y += node.vy;
 
-      // 경계 처리
-      if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
-      if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+      // 경계 처리 (CSS 픽셀 크기 기준)
+      const width = canvas.width / (window.devicePixelRatio || 1);
+      const height = canvas.height / (window.devicePixelRatio || 1);
+      
+      if (node.x < 0 || node.x > width) node.vx *= -1;
+      if (node.y < 0 || node.y > height) node.vy *= -1;
 
-      node.x = Math.max(0, Math.min(canvas.width, node.x));
-      node.y = Math.max(0, Math.min(canvas.height, node.y));
+      node.x = Math.max(0, Math.min(width, node.x));
+      node.y = Math.max(0, Math.min(height, node.y));
     });
 
     // 연결선 업데이트
@@ -167,21 +232,29 @@ toggleBtn.addEventListener('click', () => {
   applyTheme(current === 'dark' ? 'light' : 'dark');
 });
 
-// Header scroll effect
+// Header scroll effect (강제 리플로우 방지)
 let lastScroll = 0;
+let scrollTimeout;
 const header = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-  
-  if (currentScroll > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
+  // requestAnimationFrame으로 배치 처리하여 리플로우 최적화
+  if (scrollTimeout) {
+    cancelAnimationFrame(scrollTimeout);
   }
   
-  lastScroll = currentScroll;
-});
+  scrollTimeout = requestAnimationFrame(() => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
+  });
+}, { passive: true });
 
 // Intersection Observer for scroll animations
 const observerOptions = {
@@ -236,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Smooth scroll for anchor links
+// Smooth scroll for anchor links (강제 리플로우 방지)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
@@ -244,13 +317,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       e.preventDefault();
       const target = document.querySelector(href);
       if (target) {
-        const headerOffset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        // requestAnimationFrame으로 배치 처리하여 리플로우 최적화
+        requestAnimationFrame(() => {
+          const headerOffset = 80;
+          // getBoundingClientRect를 한 번만 호출
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         });
       }
     }
@@ -265,30 +342,48 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastScroll = 0;
   let isVisible = false;
 
+  let scrollRAF;
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    const scrollThreshold = 300; // Hero 섹션을 지나면 표시
-
-    if (currentScroll > scrollThreshold && !isVisible) {
-      floatingCTA.style.opacity = '1';
-      floatingCTA.style.transform = 'translateY(0)';
-      floatingCTA.style.pointerEvents = 'auto';
-      isVisible = true;
-    } else if (currentScroll <= scrollThreshold && isVisible) {
-      floatingCTA.style.opacity = '0';
-      floatingCTA.style.transform = 'translateY(20px)';
-      floatingCTA.style.pointerEvents = 'none';
-      isVisible = false;
+    // requestAnimationFrame으로 배치 처리하여 리플로우 최적화
+    if (scrollRAF) {
+      cancelAnimationFrame(scrollRAF);
     }
+    
+    scrollRAF = requestAnimationFrame(() => {
+      const currentScroll = window.pageYOffset;
+      const scrollThreshold = 300; // Hero 섹션을 지나면 표시
 
-    lastScroll = currentScroll;
-  });
+      if (currentScroll > scrollThreshold && !isVisible) {
+        floatingCTA.style.opacity = '1';
+        floatingCTA.style.transform = 'translateY(0)';
+        floatingCTA.style.pointerEvents = 'auto';
+        isVisible = true;
+      } else if (currentScroll <= scrollThreshold && isVisible) {
+        floatingCTA.style.opacity = '0';
+        floatingCTA.style.transform = 'translateY(20px)';
+        floatingCTA.style.pointerEvents = 'none';
+        isVisible = false;
+      }
+
+      lastScroll = currentScroll;
+    });
+  }, { passive: true });
 });
 
-// Google Analytics 전환 추적
+// Google Analytics 전환 추적 (지연 로드 대응)
 function trackEvent(category, action, label = '') {
-  if (typeof gtag !== 'undefined') {
-    gtag('event', action, {
+  // gtag가 로드되지 않았을 수 있으므로 안전하게 처리
+  if (typeof window.gtag !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', action, {
+      'event_category': category,
+      'event_label': label,
+      'value': 1
+    });
+  } else {
+    // gtag가 아직 로드되지 않은 경우 dataLayer에 큐잉
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': action,
       'event_category': category,
       'event_label': label,
       'value': 1

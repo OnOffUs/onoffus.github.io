@@ -18,6 +18,9 @@ img {
   --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.25);
   --transition-fast: 0.18s ease-out;
   --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  
+  /* Font display optimization to prevent layout shift */
+  font-display: swap;
 
   /* 메인 팔레트 - 다크 네이비 & 블루 계열 */
   --primary: #2563eb;
