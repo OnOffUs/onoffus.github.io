@@ -146,6 +146,8 @@ header.scrolled {
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo:hover {
@@ -550,6 +552,25 @@ header.scrolled {
   border-color: var(--primary-soft);
 }
 
+/* 정량적 성과 섹션 */
+.result-card {
+  position: relative;
+}
+
+.result-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-soft);
+}
+
+[data-theme="light"] .result-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .result-card:hover {
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.15);
+}
+
 /* Hero Evidence Section */
 .hero-evidence {
   background: var(--bg-elevated);
@@ -832,9 +853,34 @@ section {
 }
 
 .service-list li::before {
-  content: "•";
-  color: var(--primary-soft);
-  margin-right: 0.3rem;
+  content: none;
+  display: none;
+}
+
+/* 체크마크가 있는 리스트는 점 제거 */
+.checkmark-list li::before,
+ul.checkmark-list li::before,
+ul[data-i18n-list*="revenueServices"] li::before,
+ul[data-i18n-list*="cases.case1.businessResult"] li::before,
+ul[data-i18n-list*="cases.case2.businessResult"] li::before,
+ul[data-i18n-list*="cases.case3.businessResult"] li::before,
+ul[data-i18n-list*="cases.case4.businessResult"] li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* list-style: none이 있는 리스트의 점 제거 (단, checkmark-list나 체크마크가 있는 경우만) */
+ul.checkmark-list[style*="list-style: none"] li::before,
+ul[data-i18n-list*="revenueServices"][style*="list-style: none"] li::before,
+ul[data-i18n-list*="cases"][style*="list-style: none"] li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* li에 list-style: none이 인라인으로 설정된 경우 */
+li[style*="list-style: none"]::before {
+  content: none !important;
+  display: none !important;
 }
 
 /* ---------- Process ---------- */
@@ -1397,6 +1443,27 @@ footer {
         width: 100% !important;
         font-size: 1rem !important;
         padding: 1rem 2rem !important;
+      }
+
+      /* 정량적 성과 섹션 모바일 */
+      #quantitative-results {
+        padding: 3rem 0 !important;
+      }
+
+      #quantitative-results .result-card {
+        padding: 1.5rem !important;
+      }
+
+      #quantitative-results .result-card > div:first-child {
+        font-size: 2.5rem !important;
+      }
+
+      #quantitative-results .result-card h3 {
+        font-size: 1rem !important;
+      }
+
+      #quantitative-results .result-card p {
+        font-size: 0.9rem !important;
       }
 
       .contact-inner {

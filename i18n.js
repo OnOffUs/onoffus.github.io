@@ -423,7 +423,7 @@ const translations = {
     cases: {
       kicker: "Case Studies",
       title: "엔터프라이즈 프로젝트 사례",
-      desc: "금융, 항공 등 대규모 엔터프라이즈 시스템 구축 경험. 실제 운영 중인 시스템의 아키텍처와 성과를 공유합니다.",
+      desc: "금융, 항공 등 대규모 엔터프라이즈 시스템 구축 경험. 기술적 성과뿐만 아니라 비즈니스 성과와 수익 개선 사례를 공유합니다.",
       case1: {
         chip: "Finance",
         label: "금융 서비스",
@@ -439,7 +439,20 @@ const translations = {
           "Kafka 기반 이벤트 처리 시스템"
         ],
         result: "성과",
-        value: "일 평균 10,000+ 트랜잭션 처리, 99.9% 가동률"
+        value: "일 평균 10,000+ 트랜잭션 처리, 99.9% 가동률",
+        techResult: {
+          label: "기술 성과",
+          value: "거래 처리량 10,000+ TPS, 월 99.9% 가동률"
+        },
+        businessResult: {
+          label: "비즈니스 성과",
+          items: [
+            "자동화로 운영비 25% 절감",
+            "신규 매출 15% 상승",
+            "고객 만족도 30% 향상"
+          ]
+        },
+        cta: "맞춤 상담 받기"
       },
       case2: {
         chip: "Aviation",
@@ -455,7 +468,20 @@ const translations = {
           "관리자 대시보드 및 리포트 시스템"
         ],
         result: "성과",
-        value: "초당 500+ 요청 처리, 실시간 동기화"
+        value: "초당 500+ 요청 처리, 실시간 동기화",
+        techResult: {
+          label: "기술 성과",
+          value: "초당 500+ 요청 처리, 실시간 동기화"
+        },
+        businessResult: {
+          label: "비즈니스 성과",
+          items: [
+            "예약 처리 시간 60% 단축",
+            "인건비 20% 절감",
+            "정산 오류 90% 감소"
+          ]
+        },
+        cta: "맞춤 상담 받기"
       },
       case3: {
         chip: "AI Integration",
@@ -471,7 +497,20 @@ const translations = {
           "실시간 문서 처리 및 분류"
         ],
         result: "성과",
-        value: "평균 응답 시간 1.3초, 정확도 92%"
+        value: "평균 응답 시간 1.3초, 정확도 92%",
+        techResult: {
+          label: "기술 성과",
+          value: "평균 응답 시간 1.3초, 정확도 92%"
+        },
+        businessResult: {
+          label: "비즈니스 성과",
+          items: [
+            "문서 처리 시간 80% 단축",
+            "검색 정확도 향상으로 업무 효율 40% 개선",
+            "인건비 35% 절감"
+          ]
+        },
+        cta: "맞춤 상담 받기"
       },
       case4: {
         chip: "Enterprise",
@@ -487,7 +526,24 @@ const translations = {
           "AWS 기반 클라우드 인프라"
         ],
         result: "성과",
-        value: "16개국 동시 운영, 글로벌 트래픽 처리"
+        value: "16개국 동시 운영, 글로벌 트래픽 처리",
+        techResult: {
+          label: "기술 성과",
+          value: "16개국 동시 운영, 글로벌 트래픽 처리"
+        },
+        businessResult: {
+          label: "비즈니스 성과",
+          items: [
+            "글로벌 시장 진출 비용 50% 절감",
+            "사이트 운영 비용 30% 절감",
+            "다국가 통합 관리로 효율성 2배 향상"
+          ]
+        },
+        cta: "맞춤 상담 받기"
+      },
+      cta: {
+        subtext: "비슷한 프로젝트를 진행하고 싶으신가요?",
+        text: "프로젝트 문의하기"
       }
     },
     founder: {
@@ -519,7 +575,7 @@ const translations = {
       projects: {
         title: "주요 프로젝트 리드 경험",
         project1: {
-          title: "우리카드 WON트래블 (2024.01 ~ 2025.06)",
+          title: "항공 B2C 서비스 플랫폼 (2024.01 ~ 2025.06)",
           desc: "항공 B2C 서비스 플랫폼 - 프로젝트 리더 (PL, AA, TA, DA, QA, BA)",
           tech: "Kotlin, Java, Spring Boot, Python, Oracle, React, Kafka, Docker, AWS 기반 마이크로서비스 아키텍처"
         },
@@ -556,19 +612,32 @@ const translations = {
       desc: "AI 도입, 프로젝트 비용, 유지보수, 데이터 보안 등 기업 고객이 가장 궁금해하는 사항을 정리했습니다.",
       q1: {
         q: "AI 도입하면 비즈니스 변화는 어떤가요?",
-        a: "AI 도입으로 고객 상담 자동화, 문서 처리 자동화, 업무 효율 향상을 실현할 수 있습니다. 실제 사례에서 응대 시간 70% 단축, 인건비 30% 절감, 의사결정 속도 2배 향상 등의 효과를 확인했습니다. 초기 PoC부터 단계적으로 도입하여 리스크를 최소화하면서 비즈니스 성장을 가속화합니다."
+        a: "AI 도입으로 고객 상담 자동화, 문서 처리 자동화, 업무 효율 향상을 실현할 수 있습니다. 실제 사례에서 응대 시간 70% 단축, 인건비 30% 절감, 의사결정 속도 2배 향상 등의 효과를 확인했습니다. 초기 PoC부터 단계적으로 도입하여 리스크를 최소화하면서 비즈니스 성장을 가속화합니다.",
+        ctaText: "무료 AI 도입 상담을 통해 귀사에 맞는 AI 솔루션을 제안해드립니다.",
+        cta: "지금 무료 AI 상담 신청하기"
       },
       q2: {
         q: "프로젝트 기간/비용은 어떻게 되나요?",
-        a: "프로젝트 규모와 요구사항에 따라 기간과 비용이 달라집니다. MVP(최소 기능 제품)는 2-3개월, 전체 시스템 구축은 6-12개월 정도 소요됩니다. 초기에는 작은 PoC(파일럿)부터 시작하여 점진적으로 확장하는 방식을 권장합니다. 정확한 견적은 무료 상담을 통해 프로젝트 범위를 논의한 후 제공해드립니다."
+        a: "프로젝트 규모와 요구사항에 따라 기간과 비용이 달라집니다. MVP(최소 기능 제품)는 2-3개월, 전체 시스템 구축은 6-12개월 정도 소요됩니다. 초기에는 작은 PoC(파일럿)부터 시작하여 점진적으로 확장하는 방식을 권장합니다.",
+        ctaText: "보다 정확한 견적은 무료 상담 신청을 통해 프로젝트 범위 논의 후 제공됩니다.",
+        cta: "지금 무료 상담 신청하기"
       },
       q3: {
         q: "유지보수/운영은 지원하나요?",
-        a: "네, 24/7 모니터링, 자동 백업, 보안 패치, 장애 대응 등 완전한 운영 지원을 제공합니다. 월 고정 수익형 MSP(관리형 서비스 제공) 모델로 예측 가능한 비용으로 안정적인 운영을 보장합니다. 개발 완료 후에도 지속적인 기술 지원과 시스템 개선을 통해 비즈니스 성장을 함께합니다."
+        a: "네, 24/7 모니터링, 자동 백업, 보안 패치, 장애 대응 등 완전한 운영 지원을 제공합니다. 월 고정 수익형 MSP(관리형 서비스 제공) 모델로 예측 가능한 비용으로 안정적인 운영을 보장합니다. 개발 완료 후에도 지속적인 기술 지원과 시스템 개선을 통해 비즈니스 성장을 함께합니다.",
+        ctaText: "MSP 운영 상담을 통해 예측 가능한 운영 비용과 안정적인 서비스를 확인하세요.",
+        cta: "MSP 운영 상담 신청하기"
       },
       q4: {
         q: "데이터 보안/프라이버시는 어떻게 처리하나요?",
-        a: "엔드투엔드 암호화, 역할 기반 접근 제어(RBAC), 정기 보안 감사를 실시합니다. GDPR, 개인정보보호법 등 관련 규정을 준수하며, 고객 데이터는 고객사가 완전한 소유권을 가집니다. AI 모델 학습 시에도 고객사 명시적 동의 없이 다른 목적으로 사용하지 않으며, 필요시 온프레미스 또는 전용 클라우드 환경에서 운영할 수 있습니다."
+        a: "엔드투엔드 암호화, 역할 기반 접근 제어(RBAC), 정기 보안 감사를 실시합니다. GDPR, 개인정보보호법 등 관련 규정을 준수하며, 고객 데이터는 고객사가 완전한 소유권을 가집니다. AI 모델 학습 시에도 고객사 명시적 동의 없이 다른 목적으로 사용하지 않으며, 필요시 온프레미스 또는 전용 클라우드 환경에서 운영할 수 있습니다.",
+        ctaText: "보안 정책 상담을 통해 귀사의 데이터 보안 요구사항을 확인하고 맞춤 솔루션을 제안해드립니다.",
+        cta: "보안 정책 상담 신청하기"
+      },
+      cta: {
+        subtext: "더 궁금한 점이 있으신가요?",
+        benefit: "무료 제안서 제공",
+        text: "지금 상담 신청하기"
       }
     },
     contact: {
@@ -590,6 +659,30 @@ const translations = {
         collaborationValue: "프로젝트 단위 개발 · 월 단위 운영 계약 · PoC(파일럿) · 장기 파트너십",
         tech: "기술 스택",
         techValue: "C, C++, Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, React, Vue, AI/LLM"
+      }
+    },
+    quantitativeResults: {
+      title: "검증된 정량적 성과",
+      desc: "숫자로 증명하는 신뢰성과 전문성",
+      r1: {
+        value: "20년+",
+        title: "엔터프라이즈 시스템 구축 경험",
+        desc: "2005년부터 이어진 20년 이상의 엔터프라이즈 시스템 구축 경험으로 금융, 항공, 대형 기업 프로젝트를 성공적으로 수행했습니다."
+      },
+      r2: {
+        value: "50+",
+        title: "대형 프로젝트 수행",
+        desc: "삼성, 현대, KB손해보험, 우리카드 등 대기업과 함께 50개 이상의 대형 프로젝트를 성공적으로 완료했습니다."
+      },
+      r3: {
+        value: "30%+",
+        title: "업무 효율 향상",
+        desc: "AI 자동화 도입으로 평균 30% 이상 업무 효율 향상을 달성하며, 반복 업무 제거와 인건비 절감을 실현했습니다."
+      },
+      r4: {
+        value: "MSP",
+        title: "예측 가능한 월 고정 수익",
+        desc: "MSP 운영으로 예측 가능한 월 고정 수익 모델을 제공하여 지속적인 비즈니스 성장을 지원합니다."
       }
     },
     floatingCTA: {
@@ -851,6 +944,10 @@ const translations = {
           "Data validation and quality management automation",
           "Large-scale data migration and ETL pipelines"
         ]
+      },
+      cta: {
+        subtext: "Need a customized solution?",
+        text: "Request Custom Quote"
       }
     },
     revenueServices: {
@@ -1022,7 +1119,7 @@ const translations = {
     cases: {
       kicker: "Case Studies",
       title: "Enterprise Project Case Studies",
-      desc: "Experience building large-scale enterprise systems in finance, aviation, etc. We share the architecture and achievements of systems operating in production.",
+      desc: "Experience building large-scale enterprise systems in finance, aviation, etc. We share not only technical achievements but also business results and revenue improvement cases.",
       case1: {
         chip: "Finance",
         label: "Financial Services",
@@ -1038,7 +1135,20 @@ const translations = {
           "Kafka-based event processing system"
         ],
         result: "Results",
-        value: "10,000+ transactions/day average, 99.9% uptime"
+        value: "10,000+ transactions/day average, 99.9% uptime",
+        techResult: {
+          label: "Technical Results",
+          value: "Transaction throughput 10,000+ TPS, 99.9% monthly uptime"
+        },
+        businessResult: {
+          label: "Business Results",
+          items: [
+            "25% reduction in operational costs through automation",
+            "15% increase in new revenue",
+            "30% improvement in customer satisfaction"
+          ]
+        },
+        cta: "Request Custom Consultation"
       },
       case2: {
         chip: "Aviation",
@@ -1054,7 +1164,20 @@ const translations = {
           "Admin dashboard and reporting system"
         ],
         result: "Results",
-        value: "500+ requests/second, real-time synchronization"
+        value: "500+ requests/second, real-time synchronization",
+        techResult: {
+          label: "Technical Results",
+          value: "500+ requests/second, real-time synchronization"
+        },
+        businessResult: {
+          label: "Business Results",
+          items: [
+            "60% reduction in reservation processing time",
+            "20% reduction in labor costs",
+            "90% reduction in settlement errors"
+          ]
+        },
+        cta: "Request Custom Consultation"
       },
       case3: {
         chip: "AI Integration",
@@ -1070,7 +1193,20 @@ const translations = {
           "Real-time document processing and classification"
         ],
         result: "Results",
-        value: "Average response time 1.3s, 92% accuracy"
+        value: "Average response time 1.3s, 92% accuracy",
+        techResult: {
+          label: "Technical Results",
+          value: "Average response time 1.3s, 92% accuracy"
+        },
+        businessResult: {
+          label: "Business Results",
+          items: [
+            "80% reduction in document processing time",
+            "40% improvement in work efficiency through enhanced search accuracy",
+            "35% reduction in labor costs"
+          ]
+        },
+        cta: "Request Custom Consultation"
       },
       case4: {
         chip: "Enterprise",
@@ -1086,7 +1222,24 @@ const translations = {
           "AWS-based cloud infrastructure"
         ],
         result: "Results",
-        value: "16 countries simultaneous operation, global traffic handling"
+        value: "16 countries simultaneous operation, global traffic handling",
+        techResult: {
+          label: "Technical Results",
+          value: "16 countries simultaneous operation, global traffic handling"
+        },
+        businessResult: {
+          label: "Business Results",
+          items: [
+            "50% reduction in global market entry costs",
+            "30% reduction in site operation costs",
+            "2x improvement in efficiency through multi-country integrated management"
+          ]
+        },
+        cta: "Request Custom Consultation"
+      },
+      cta: {
+        subtext: "Want to work on a similar project?",
+        text: "Inquire About Project"
       }
     },
     founder: {
@@ -1118,7 +1271,7 @@ const translations = {
       projects: {
         title: "Major Project Leadership Experience",
         project1: {
-          title: "Woori Card WON Travel (2024.01 ~ 2025.06)",
+          title: "Aviation B2C Service Platform (2024.01 ~ 2025.06)",
           desc: "Aviation B2C service platform - Project Leader (PL, AA, TA, DA, QA, BA)",
           tech: "Microservices architecture based on Kotlin, Java, Spring Boot, Python, Oracle, React, Kafka, Docker, AWS"
         },
@@ -1155,7 +1308,9 @@ const translations = {
       desc: "We've organized the most frequently asked questions by enterprise customers regarding AI adoption, project costs, maintenance, and data security.",
       q1: {
         q: "What business changes can we expect from AI adoption?",
-        a: "AI adoption enables customer service automation, document processing automation, and improved operational efficiency. In actual cases, we've confirmed effects such as 70% reduction in response time, 30% reduction in labor costs, and 2x improvement in decision-making speed. We start with an initial PoC and gradually expand to minimize risk while accelerating business growth."
+        a: "AI adoption enables customer service automation, document processing automation, and improved operational efficiency. In actual cases, we've confirmed effects such as 70% reduction in response time, 30% reduction in labor costs, and 2x improvement in decision-making speed. We start with an initial PoC and gradually expand to minimize risk while accelerating business growth.",
+        ctaText: "We provide AI solutions tailored to your company through free AI adoption consultation.",
+        cta: "Request Free AI Consultation Now"
       },
       q2: {
         q: "What are the project timeline and costs?",
@@ -1163,11 +1318,20 @@ const translations = {
       },
       q3: {
         q: "Do you provide maintenance and operational support?",
-        a: "Yes, we provide complete operational support including 24/7 monitoring, automatic backups, security patches, and failure response. Our monthly fixed-revenue MSP (Managed Service Provider) model ensures stable operations with predictable costs. We continue to provide ongoing technical support and system improvements after development completion to grow together."
+        a: "Yes, we provide complete operational support including 24/7 monitoring, automatic backups, security patches, and failure response. Our monthly fixed-revenue MSP (Managed Service Provider) model ensures stable operations with predictable costs. We continue to provide ongoing technical support and system improvements after development completion to grow together.",
+        ctaText: "Confirm predictable operational costs and stable services through MSP operation consultation.",
+        cta: "Request MSP Operation Consultation"
       },
       q4: {
         q: "How is data security and privacy handled?",
-        a: "We implement end-to-end encryption, role-based access control (RBAC), and regular security audits. We comply with relevant regulations such as GDPR and privacy laws, and customers have complete ownership of their data. Customer data is not used for other purposes without explicit customer consent, even for AI model training, and can be operated in on-premises or dedicated cloud environments as needed."
+        a: "We implement end-to-end encryption, role-based access control (RBAC), and regular security audits. We comply with relevant regulations such as GDPR and privacy laws, and customers have complete ownership of their data. Customer data is not used for other purposes without explicit customer consent, even for AI model training, and can be operated in on-premises or dedicated cloud environments as needed.",
+        ctaText: "We confirm your company's data security requirements and propose customized solutions through security policy consultation.",
+        cta: "Request Security Policy Consultation"
+      },
+      cta: {
+        subtext: "Have more questions?",
+        benefit: "Free Proposal Provided",
+        text: "Request Consultation Now"
       }
     },
     contact: {
@@ -1189,6 +1353,30 @@ const translations = {
         collaborationValue: "Project-based development · Monthly operational contracts · PoC (pilot) · Long-term partnerships",
         tech: "Technology Stack",
         techValue: "C, C++, Kotlin, Java, Spring Boot, Python, Oracle, Kafka, Docker, AWS, React, Vue, AI/LLM"
+      }
+    },
+    quantitativeResults: {
+      title: "Verified Quantitative Results",
+      desc: "Reliability and expertise proven by numbers",
+      r1: {
+        value: "20+ Years",
+        title: "Enterprise System Development Experience",
+        desc: "Over 20 years of enterprise system development experience since 2005, successfully executing projects for finance, aviation, and large corporations."
+      },
+      r2: {
+        value: "50+",
+        title: "Large-Scale Projects Completed",
+        desc: "Successfully completed over 50 large-scale projects with major corporations including Samsung, Hyundai, KB Insurance, and Woori Card."
+      },
+      r3: {
+        value: "30%+",
+        title: "Work Efficiency Improvement",
+        desc: "Achieved an average of 30%+ work efficiency improvement through AI automation implementation, eliminating repetitive tasks and reducing labor costs."
+      },
+      r4: {
+        value: "MSP",
+        title: "Predictable Monthly Fixed Revenue",
+        desc: "Providing predictable monthly fixed revenue models through MSP operations to support sustainable business growth."
       }
     },
     floatingCTA: {
