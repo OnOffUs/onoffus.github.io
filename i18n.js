@@ -58,6 +58,7 @@ const translations = {
       uptime: "시스템 가동률"
     },
     trust: {
+      kicker: "Trust & Credibility",
       title: "20년의 엔터프라이즈 경험, 검증된 신뢰성",
       desc: "삼성, 현대, KB손해보험 등 대기업 프로젝트를 성공적으로 수행한 실적과 최신 AI 기술을 레거시 시스템과 완벽하게 통합하는 역량을 보유하고 있습니다.",
       yearsText: "2005년부터 이어진 20년의 경력",
@@ -93,9 +94,12 @@ const translations = {
       }
     },
     services: {
+      kicker: "Services",
       title: "비즈니스 성장을 위한 시스템 구축",
       desc: "기술보다 효과에 집중합니다. 빠른 시장 출시, 운영 안정성, AI 자동화로 비즈니스 성장을 가속화합니다.",
       s1: {
+        chip: "Enterprise SaaS",
+        label: "Service 01",
         title: "비즈니스 성장을 위한 SaaS 시스템 구축",
         desc: "빠른 시장 출시(Go-to-market)와 확장성, 운영 효율을 갖춘 SaaS 플랫폼을 구축합니다. 사용자 증가에 따라 자동으로 확장되는 아키텍처로 안정적인 성장을 지원합니다.",
         items: [
@@ -107,6 +111,8 @@ const translations = {
         ]
       },
       s2: {
+        chip: "AI & LLM",
+        label: "Service 02",
         title: "AI 도입 & 자동화 서비스",
         desc: "고객 상담 자동화, 문서 요약/검색/추천 엔진, RAG 기반 내부 데이터 검색으로 업무 효율을 극대화합니다. 실제 비즈니스에 즉시 적용 가능한 AI 솔루션을 제공합니다.",
         items: [
@@ -118,6 +124,8 @@ const translations = {
         ]
       },
       s3: {
+        chip: "Enterprise Systems",
+        label: "Service 03",
         title: "엔터프라이즈 안정성 중심 시스템",
         desc: "장애 대비 운영 전략과 보안, 백업, 운영 자동화를 갖춘 안정적인 시스템을 구축합니다. 금융권 수준의 신뢰성으로 비즈니스 연속성을 보장합니다.",
         items: [
@@ -129,6 +137,8 @@ const translations = {
         ]
       },
       s4: {
+        chip: "Mobile Apps",
+        label: "Service 04",
         title: "모바일 앱 개발",
         desc: "React Native, Flutter 기반 크로스 플랫폼 앱부터 네이티브 앱까지. 백엔드 API와의 안정적인 연동 및 실시간 데이터 동기화.",
         items: [
@@ -140,6 +150,8 @@ const translations = {
         ]
       },
       s5: {
+        chip: "Cloud & DevOps",
+        label: "Service 05",
         title: "클라우드 인프라 및 DevOps",
         desc: "AWS 기반 클라우드 인프라 구축, Docker/Kubernetes 컨테이너 관리, CI/CD 파이프라인 구축 및 모니터링 시스템 운영.",
         items: [
@@ -151,6 +163,8 @@ const translations = {
         ]
       },
       s6: {
+        chip: "Admin Dashboards",
+        label: "Service 06",
         title: "관리자 대시보드 개발",
         desc: "React, Vue 기반의 직관적이고 강력한 관리자 대시보드. 실시간 데이터 시각화, 권한 관리, 대량 데이터 처리까지.",
         items: [
@@ -162,6 +176,8 @@ const translations = {
         ]
       },
       s7: {
+        chip: "AI Automation",
+        label: "Service 07",
         title: "AI 데이터 자동화",
         desc: "수작업 데이터 마이그레이션을 대체하는 지능형 ETL 엔진. Python 기반 AI 모델이 데이터 품질을 검증하고 변환 규칙을 자동 학습합니다.",
         items: [
@@ -173,6 +189,8 @@ const translations = {
         ]
       },
       s8: {
+        chip: "AI Customer Service",
+        label: "Service 08",
         title: "AI 고객 응대 미들웨어",
         desc: "과거 CTI 구축 경험을 결합한 지능형 AI 상담 시스템. LLM과 음성 인식 기술을 통합하여 고객 문의를 자동으로 처리하고 복잡한 케이스는 상담사에게 스마트하게 연결합니다.",
         items: [
@@ -184,6 +202,8 @@ const translations = {
         ]
       },
       s9: {
+        chip: "AI Back Office",
+        label: "Service 09",
         title: "AI 백오피스 최적화",
         desc: "항공/금융권 백오피스 경험을 녹여낸 업무 자동화 에이전트. 반복적인 업무 프로세스를 AI가 학습하여 자동으로 처리하고, 예외 상황은 담당자에게 알림을 보내는 지능형 워크플로우 시스템.",
         items: [
@@ -193,36 +213,96 @@ const translations = {
           "예외 상황 자동 감지 및 알림 시스템",
           "Python 기반 데이터 분석 및 의사결정 지원"
         ]
+      },
+      s10: {
+        chip: "MSP",
+        label: "Service 10",
+        title: "올인원 MSP (시스템 유지관리)",
+        desc: "대기업 수준의 서버 모니터링, 보안 패치, 장애 대응을 제공합니다. 삼성, KB손해보험 등 엔터프라이즈 시스템 운영 경험을 바탕으로 안정적인 인프라 관리를 보장합니다.",
+        items: [
+          "24/7 서버 모니터링 및 성능 관리",
+          "자동화된 보안 패치 및 업데이트",
+          "실시간 장애 감지 및 즉시 대응",
+          "백업 및 재해 복구 시스템 운영",
+          "인프라 비용 최적화 및 리소스 관리"
+        ]
+      },
+      s11: {
+        chip: "Legacy Modernization",
+        label: "Service 11",
+        title: "레거시 현대화 및 AI 통합",
+        desc: "오래된 시스템을 최신 클라우드와 AI 에이전트로 연결하여 업무 효율을 높입니다. HP-UNIX부터 AWS 클라우드까지 아우르는 폭넓은 기술 스택으로 안전한 마이그레이션을 수행합니다.",
+        items: [
+          "레거시 시스템 분석 및 현대화 전략 수립",
+          "클라우드 마이그레이션 (온프레미스 → AWS/Azure)",
+          "레거시 데이터베이스와 AI 파이프라인 연동",
+          "기존 시스템과 AI 에이전트 통합",
+          "점진적 마이그레이션으로 다운타임 최소화"
+        ]
+      },
+      s12: {
+        chip: "Data Automation",
+        label: "Service 12",
+        title: "데이터 파이프라인 자동화",
+        desc: "반복적인 엑셀 작업, 데이터 수집, 리포트 생성을 100% 자동화합니다. 대규모 데이터 마이그레이션 및 통계 시스템 구축 경험을 바탕으로 효율적인 데이터 처리 시스템을 구축합니다.",
+        items: [
+          "엑셀 기반 반복 작업 자동화 (Python, RPA)",
+          "다양한 소스에서 데이터 수집 및 통합",
+          "자동 리포트 생성 및 스케줄링",
+          "데이터 검증 및 품질 관리 자동화",
+          "대규모 데이터 마이그레이션 및 ETL 파이프라인"
+        ]
       }
     },
     revenueServices: {
+      kicker: "Revenue Services",
       title: "수익형 서비스 라인업",
       desc: "20년 경력의 엔터프라이즈 전문가가 제공하는 안정적이고 지속 가능한 비즈니스 솔루션",
       msp: {
         title: "안정적 운영 (MSP)",
         desc: "서버 장애는 곧 손실입니다. 금융권 시스템을 다루던 꼼꼼함으로 귀사의 인프라를 24시간 지킵니다.",
         model: "월 고정 수익",
-        modelDesc: "예측 가능한 수익 구조와 안정적인 서비스 제공으로 지속적인 비즈니스 성장 지원"
+        modelDesc: "예측 가능한 수익 구조와 안정적인 서비스 제공으로 지속적인 비즈니스 성장 지원",
+        items: [
+          "24/7 실시간 모니터링 및 알림",
+          "자동화된 보안 패치 및 업데이트",
+          "즉시 장애 대응 및 복구",
+          "정기 성능 최적화 및 리포트"
+        ]
       },
       automation: {
         title: "비즈니스 자동화",
         desc: "반복 업무를 제거하고 AI 에이전트를 도입하여 운영 효율을 극대화합니다.",
         model: "고부가가치 프로젝트",
-        modelDesc: "AI 솔루션 구축으로 높은 ROI와 장기적 비용 절감 효과 제공"
+        modelDesc: "AI 솔루션 구축으로 높은 ROI와 장기적 비용 절감 효과 제공",
+        items: [
+          "반복 업무 AI 에이전트 구축",
+          "데이터 수집 및 리포트 자동화",
+          "지능형 의사결정 지원 시스템",
+          "인건비 절감 및 효율성 극대화"
+        ]
       },
       modernization: {
         title: "SI 및 시스템 현대화",
         desc: "낙후된 레거시 시스템을 최신 아키텍처로 안전하게 마이그레이션합니다.",
         model: "중대형 프로젝트",
-        modelDesc: "전면 현대화 프로젝트로 높은 수익성과 장기 파트너십 구축"
+        modelDesc: "전면 현대화 프로젝트로 높은 수익성과 장기 파트너십 구축",
+        items: [
+          "클라우드 마이그레이션 (온프레미스 → AWS/Azure)",
+          "레거시 데이터베이스 현대화",
+          "AI 통합 및 자동화 기능 추가",
+          "다운타임 최소화 전환 전략"
+        ]
       },
       cta: "무료 기술 상담 신청"
     },
     techStack: {
+      kicker: "Technology Stack",
       title: "풀스택 전문가 - C부터 Python AI까지",
       desc: "C, C++, Java/Spring부터 최신 Python AI 프레임워크까지 다룰 수 있는 풀스택 전문가입니다. 20년간 대규모 시스템에서 검증된 기술을 활용하여 안정적이고 확장 가능한 솔루션을 구축합니다."
     },
     aiSolutions: {
+      kicker: "AI Solutions",
       title: "프로덕션에서 운영 중인 AI 솔루션",
       desc: "이론이 아닌 실제 서비스에 통합되어 운영 중인 AI·LLM 솔루션입니다. 안정성과 성능을 검증받은 시스템만을 제공합니다.",
       rag: {
@@ -275,6 +355,7 @@ const translations = {
       }
     },
     why: {
+      kicker: "Why OnOffus",
       title: "왜 OnOffus를 선택해야 하는가",
       desc: "기술적 깊이와 엔터프라이즈 경험, 그리고 실제 운영 중인 AI 시스템. 신뢰할 수 있는 파트너의 기준을 충족합니다.",
       architecture: {
@@ -319,6 +400,7 @@ const translations = {
       }
     },
     process: {
+      kicker: "Process",
       title: "협업 프로세스",
       desc: "대규모 전면 재구축보다는, 검증 가능한 단계적 접근을 통해 리스크를 최소화하고 빠른 가치 창출을 추구합니다.",
       step1: {
@@ -339,9 +421,12 @@ const translations = {
       }
     },
     cases: {
+      kicker: "Case Studies",
       title: "엔터프라이즈 프로젝트 사례",
       desc: "금융, 항공 등 대규모 엔터프라이즈 시스템 구축 경험. 실제 운영 중인 시스템의 아키텍처와 성과를 공유합니다.",
       case1: {
+        chip: "Finance",
+        label: "금융 서비스",
         title: "카드사 항공 B2C 서비스 플랫폼",
         period: "기간: 2024.01 ~ 2025.06",
         role: "역할: 프로젝트 리더 (PL, AA, TA, DA, QA, BA)",
@@ -357,6 +442,8 @@ const translations = {
         value: "일 평균 10,000+ 트랜잭션 처리, 99.9% 가동률"
       },
       case2: {
+        chip: "Aviation",
+        label: "항공 B2B",
         title: "항공사 백오피스 시스템",
         period: "기간: 2023.04 ~ 2023.12",
         role: "역할: 프로젝트 리더 (PL, AA, TA, DA, QA, BA)",
@@ -371,6 +458,8 @@ const translations = {
         value: "초당 500+ 요청 처리, 실시간 동기화"
       },
       case3: {
+        chip: "AI Integration",
+        label: "AI 솔루션",
         title: "LLM 기반 자동화 시스템",
         period: "상태: 프로덕션 운영 중",
         tech: "기술: RAG, LLM API, Vector DB, Kafka",
@@ -385,6 +474,8 @@ const translations = {
         value: "평균 응답 시간 1.3초, 정확도 92%"
       },
       case4: {
+        chip: "Enterprise",
+        label: "대규모 시스템",
         title: "글로벌 기업 웹사이트 시스템",
         client: "고객사: 글로벌 기업 (삼성, 아모레퍼시픽 등)",
         role: "역할: 프로젝트 리더 (PL, AA)",
@@ -400,10 +491,11 @@ const translations = {
       }
     },
     founder: {
+      kicker: "Technical Leadership",
       title: "2005년부터 이어진 20년의 경력",
       desc: "2005년 이라온테크에서의 첫 시작부터 지금의 오노퍼스까지, 대한민국 IT의 격변기를 온몸으로 겪어온 개발팀장이 직접 프로젝트를 리드합니다.",
       name: "최경훈",
-      titleText: "Choi Gyeong Hun · 대표이사 / 기술 리더",
+      titleText: "Grayson Choi · 대표이사 / 기술 리더",
       info: {
         career: "경력",
         careerValue: "20년 이상 (2005년 ~ 현재)",
@@ -459,6 +551,7 @@ const translations = {
       }
     },
     faq: {
+      kicker: "FAQ",
       title: "자주 묻는 질문",
       desc: "AI 도입, 프로젝트 비용, 유지보수, 데이터 보안 등 기업 고객이 가장 궁금해하는 사항을 정리했습니다.",
       q1: {
@@ -488,6 +581,7 @@ const translations = {
       pill: "이메일·메신저 중심 비대면 협업",
       info: {
         company: "회사명",
+        registration: "사업자 등록번호",
         website: "웹사이트",
         email: "이메일",
         services: "서비스 영역",
@@ -503,7 +597,8 @@ const translations = {
     },
     footer: {
       tagline: "AI-Powered B2B SaaS & Enterprise Systems.",
-      links: "Enterprise Development · AI Solutions"
+      links: "Enterprise Development · AI Solutions",
+      registration: "사업자 등록번호: 379-88-01413 | 대표자: 최경훈"
     }
   },
   en: {
@@ -564,6 +659,7 @@ const translations = {
       uptime: "System Uptime"
     },
     trust: {
+      kicker: "Trust & Credibility",
       title: "20 Years of Enterprise Experience, Proven Reliability",
       desc: "With a track record of successfully executing projects for major corporations including Samsung, Hyundai, and KB Insurance, we possess the capability to perfectly integrate cutting-edge AI technology with legacy systems.",
       yearsText: "20 Years of Experience Since 2005",
@@ -599,9 +695,12 @@ const translations = {
       }
     },
     services: {
+      kicker: "Services",
       title: "System Development for Business Growth",
       desc: "We focus on results, not just technology. Accelerate business growth with fast time-to-market, operational stability, and AI automation.",
       s1: {
+        chip: "Enterprise SaaS",
+        label: "Service 01",
         title: "SaaS System Development for Business Growth",
         desc: "Build SaaS platforms with fast time-to-market (Go-to-market), scalability, and operational efficiency. Support stable growth with architecture that automatically scales as users increase.",
         items: [
@@ -613,6 +712,7 @@ const translations = {
         ]
       },
       s2: {
+        label: "Service 02",
         title: "AI Adoption & Automation Services",
         desc: "Maximize operational efficiency with customer service automation, document summarization/search/recommendation engines, and RAG-based internal data search. Provide AI solutions immediately applicable to real business.",
         items: [
@@ -624,6 +724,8 @@ const translations = {
         ]
       },
       s3: {
+        chip: "Enterprise Systems",
+        label: "Service 03",
         title: "Enterprise Stability-Focused Systems",
         desc: "Build stable systems with failure prevention strategies, security, backup, and operational automation. Ensure business continuity with financial-sector-level reliability.",
         items: [
@@ -635,6 +737,8 @@ const translations = {
         ]
       },
       s4: {
+        chip: "Mobile Apps",
+        label: "Service 04",
         title: "Mobile App Development",
         desc: "From React Native and Flutter-based cross-platform apps to native apps. Stable integration with backend APIs and real-time data synchronization.",
         items: [
@@ -646,6 +750,8 @@ const translations = {
         ]
       },
       s5: {
+        chip: "Cloud & DevOps",
+        label: "Service 05",
         title: "Cloud Infrastructure & DevOps",
         desc: "AWS-based cloud infrastructure construction, Docker/Kubernetes container management, CI/CD pipeline construction, and monitoring system operation.",
         items: [
@@ -657,6 +763,8 @@ const translations = {
         ]
       },
       s6: {
+        chip: "Admin Dashboards",
+        label: "Service 06",
         title: "Admin Dashboard Development",
         desc: "Intuitive and powerful admin dashboards based on React and Vue. From real-time data visualization to permission management and large-scale data processing.",
         items: [
@@ -668,6 +776,8 @@ const translations = {
         ]
       },
       s7: {
+        chip: "AI Automation",
+        label: "Service 07",
         title: "AI Data Automation",
         desc: "Intelligent ETL engine replacing manual data migration. Python-based AI models verify data quality and automatically learn transformation rules.",
         items: [
@@ -679,6 +789,8 @@ const translations = {
         ]
       },
       s8: {
+        chip: "AI Customer Service",
+        label: "Service 08",
         title: "AI Customer Service Middleware",
         desc: "Intelligent AI consultation system combining past CTI construction experience. Integrates LLM and voice recognition technology to automatically handle customer inquiries and smartly connect complex cases to consultants.",
         items: [
@@ -690,6 +802,8 @@ const translations = {
         ]
       },
       s9: {
+        chip: "AI Back Office",
+        label: "Service 09",
         title: "AI Back Office Optimization",
         desc: "Work automation agent incorporating aviation/financial sector back-office experience. AI learns repetitive work processes to handle them automatically, and intelligent workflow system that sends notifications to responsible parties for exceptional situations.",
         items: [
@@ -699,36 +813,95 @@ const translations = {
           "Automatic exception detection and notification system",
           "Python-based data analysis and decision support"
         ]
+      },
+      s10: {
+        chip: "MSP",
+        label: "Service 10",
+        title: "All-in-One MSP (System Maintenance)",
+        desc: "Provides enterprise-level server monitoring, security patches, and failure response. Ensures stable infrastructure management based on enterprise system operation experience with Samsung, KB Insurance, etc.",
+        items: [
+          "24/7 server monitoring and performance management",
+          "Automated security patches and updates",
+          "Real-time failure detection and immediate response",
+          "Backup and disaster recovery system operation",
+          "Infrastructure cost optimization and resource management"
+        ]
+      },
+      s11: {
+        label: "Service 11",
+        title: "Legacy Modernization & AI Integration",
+        desc: "Connects outdated systems to modern cloud and AI agents to improve operational efficiency. Performs safe migration with a wide range of technology stacks from HP-UNIX to AWS cloud.",
+        items: [
+          "Legacy system analysis and modernization strategy development",
+          "Cloud migration (on-premises → AWS/Azure)",
+          "Integration of legacy databases with AI pipelines",
+          "Integration of existing systems with AI agents",
+          "Minimize downtime through gradual migration"
+        ]
+      },
+      s12: {
+        chip: "Data Automation",
+        label: "Service 12",
+        title: "Data Pipeline Automation",
+        desc: "100% automation of repetitive Excel work, data collection, and report generation. Builds efficient data processing systems based on experience in large-scale data migration and statistical system construction.",
+        items: [
+          "Excel-based repetitive task automation (Python, RPA)",
+          "Data collection and integration from various sources",
+          "Automatic report generation and scheduling",
+          "Data validation and quality management automation",
+          "Large-scale data migration and ETL pipelines"
+        ]
       }
     },
     revenueServices: {
+      kicker: "Revenue Services",
       title: "Revenue Service Lineup",
       desc: "Stable and sustainable business solutions provided by 20-year enterprise experts",
       msp: {
         title: "Stable Operations (MSP)",
         desc: "Server downtime means loss. We protect your infrastructure 24/7 with the meticulousness honed from handling financial sector systems.",
         model: "Monthly Fixed Revenue",
-        modelDesc: "Supporting continuous business growth with predictable revenue structure and stable service delivery"
+        modelDesc: "Supporting continuous business growth with predictable revenue structure and stable service delivery",
+        items: [
+          "24/7 real-time monitoring and alerts",
+          "Automated security patches and updates",
+          "Immediate fault response and recovery",
+          "Regular performance optimization and reports"
+        ]
       },
       automation: {
         title: "Business Automation",
         desc: "Eliminate repetitive tasks and maximize operational efficiency by introducing AI agents.",
         model: "High-Value Projects",
-        modelDesc: "Providing high ROI and long-term cost savings through AI solution implementation"
+        modelDesc: "Providing high ROI and long-term cost savings through AI solution implementation",
+        items: [
+          "Building repetitive task AI agents",
+          "Data collection and report automation",
+          "Intelligent decision support system",
+          "Labor cost reduction and maximized efficiency"
+        ]
       },
       modernization: {
         title: "SI & System Modernization",
         desc: "Safely migrate outdated legacy systems to modern architectures.",
         model: "Large-Scale Projects",
-        modelDesc: "Building high profitability and long-term partnerships through comprehensive modernization projects"
+        modelDesc: "Building high profitability and long-term partnerships through comprehensive modernization projects",
+        items: [
+          "Cloud migration (on-premise → AWS/Azure)",
+          "Legacy database modernization",
+          "AI integration and automation feature addition",
+          "Downtime minimization transition strategy"
+        ]
       },
       cta: "Request Free Technical Consultation"
     },
     techStack: {
+      kicker: "Technology Stack",
       title: "Full-Stack Expert - From C to Python AI",
       desc: "Full-stack expert capable of handling everything from C, C++, Java/Spring to the latest Python AI frameworks. We build stable and scalable solutions using technologies proven over 20 years in large-scale systems."
     },
     aiSolutions: {
+      kicker: "AI Solutions",
       title: "AI Solutions Operating in Production",
       desc: "AI·LLM solutions integrated into real services, not just theory. We only provide systems that have been verified for stability and performance.",
       rag: {
@@ -781,6 +954,7 @@ const translations = {
       }
     },
     why: {
+      kicker: "Why OnOffus",
       title: "Why Choose OnOffus",
       desc: "Technical depth, enterprise experience, and AI systems operating in production. We meet the standards of a trustworthy partner.",
       architecture: {
@@ -825,6 +999,7 @@ const translations = {
       }
     },
     process: {
+      kicker: "Process",
       title: "Collaboration Process",
       desc: "Rather than large-scale full reconstruction, we pursue rapid value creation through verifiable step-by-step approaches while minimizing risk.",
       step1: {
@@ -845,9 +1020,12 @@ const translations = {
       }
     },
     cases: {
+      kicker: "Case Studies",
       title: "Enterprise Project Case Studies",
       desc: "Experience building large-scale enterprise systems in finance, aviation, etc. We share the architecture and achievements of systems operating in production.",
       case1: {
+        chip: "Finance",
+        label: "Financial Services",
         title: "Card Company Aviation B2C Service Platform",
         period: "Period: 2024.01 ~ 2025.06",
         role: "Role: Project Leader (PL, AA, TA, DA, QA, BA)",
@@ -863,6 +1041,8 @@ const translations = {
         value: "10,000+ transactions/day average, 99.9% uptime"
       },
       case2: {
+        chip: "Aviation",
+        label: "Aviation B2B",
         title: "Airline Back-Office System",
         period: "Period: 2023.04 ~ 2023.12",
         role: "Role: Project Leader (PL, AA, TA, DA, QA, BA)",
@@ -877,6 +1057,8 @@ const translations = {
         value: "500+ requests/second, real-time synchronization"
       },
       case3: {
+        chip: "AI Integration",
+        label: "AI Solutions",
         title: "LLM-Based Automation System",
         period: "Status: Operating in Production",
         tech: "Technology: RAG, LLM API, Vector DB, Kafka",
@@ -891,6 +1073,8 @@ const translations = {
         value: "Average response time 1.3s, 92% accuracy"
       },
       case4: {
+        chip: "Enterprise",
+        label: "Large-Scale Systems",
         title: "Global Enterprise Website System",
         client: "Client: Global enterprises (Samsung, Amorepacific, etc.)",
         role: "Role: Project Leader (PL, AA)",
@@ -906,10 +1090,11 @@ const translations = {
       }
     },
     founder: {
+      kicker: "Technical Leadership",
       title: "20 Years of Experience Since 2005",
       desc: "From the first start at Eraon Tech in 2005 to OnOffus today, a development team leader who has experienced Korea's IT transformation firsthand leads projects directly.",
-      name: "Choi Gyeong Hun",
-      titleText: "Choi Gyeong Hun · CEO / Technical Leader",
+      name: "Grayson Choi",
+      titleText: "Grayson Choi · CEO / Technical Leader",
       info: {
         career: "Experience",
         careerValue: "20+ years (2005 ~ present)",
@@ -965,6 +1150,7 @@ const translations = {
       }
     },
     faq: {
+      kicker: "FAQ",
       title: "Frequently Asked Questions",
       desc: "We've organized the most frequently asked questions by enterprise customers regarding AI adoption, project costs, maintenance, and data security.",
       q1: {
@@ -994,6 +1180,7 @@ const translations = {
       pill: "Email·Messenger-based remote collaboration",
       info: {
         company: "Company Name",
+        registration: "Business Registration Number",
         website: "Website",
         email: "Email",
         services: "Service Areas",
@@ -1009,7 +1196,8 @@ const translations = {
     },
     footer: {
       tagline: "AI-Powered B2B SaaS & Enterprise Systems.",
-      links: "Enterprise Development · AI Solutions"
+      links: "Enterprise Development · AI Solutions",
+      registration: "Business Registration: 379-88-01413 | Representative: Grayson Choi"
     }
   }
 };
@@ -1068,21 +1256,23 @@ function updateHeroSection() {
 }
 
 function updateContactSection() {
-  const contactText = document.querySelector('.contact-text');
-  if (contactText && translations[currentLang].contact.text) {
-    const text = translations[currentLang].contact.text;
-    const highlight = translations[currentLang].contact.textHighlight;
-    const textEnd = translations[currentLang].contact.textEnd;
-    
-    if (text && highlight && textEnd) {
-      contactText.innerHTML = text + '<span class="contact-highlight">' + highlight + '</span>' + textEnd;
-    }
+  // contact-text는 이미 data-i18n으로 처리되므로 별도 처리 불필요
+  // 단, contact-sub은 HTML 구조가 복잡하므로 별도 처리
+  const contactSub = document.querySelector('.contact-sub');
+  if (contactSub && translations[currentLang].contact.sub) {
+    const subText = translations[currentLang].contact.sub;
+    // 각 항목을 strong 태그로 감싸서 스타일 적용
+    const items = subText.split(' · ');
+    contactSub.innerHTML = items.map(item => {
+      const text = item.replace(/^✓\s*/, '').trim();
+      return `<strong style="color: var(--primary-soft);">✓ ${text}</strong>`;
+    }).join(' · ');
   }
 }
 
 function updateListItems() {
-  // 서비스 리스트 및 about-list 업데이트
-  const lists = document.querySelectorAll('.service-list[data-i18n-list], .about-list[data-i18n-list]');
+  // 모든 data-i18n-list 속성을 가진 리스트 업데이트
+  const lists = document.querySelectorAll('[data-i18n-list]');
   lists.forEach(list => {
     const key = list.getAttribute('data-i18n-list');
     const keys = key.split('.');
@@ -1093,12 +1283,44 @@ function updateListItems() {
     }
     
     if (Array.isArray(value)) {
-      list.innerHTML = '';
-      value.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        list.appendChild(li);
-      });
+      const existingLis = list.querySelectorAll('li');
+      if (existingLis.length === value.length) {
+        // 기존 li가 있으면 텍스트만 업데이트 (스타일과 구조 유지)
+        existingLis.forEach((li, index) => {
+          if (value[index]) {
+            // 체크마크 span 찾기
+            const checkmarkSpan = li.querySelector('span');
+            const checkmarkColor = checkmarkSpan ? checkmarkSpan.style.color || '#3b82f6' : '#3b82f6';
+            
+            // 기존 내용을 체크마크 span만 남기고 나머지 제거
+            const spanHTML = checkmarkSpan ? checkmarkSpan.outerHTML : '<span style="color: ' + checkmarkColor + '; margin-right: 0.5rem;">✓</span>';
+            li.innerHTML = spanHTML + ' ' + value[index];
+            
+            // 기존 스타일 유지
+            const originalStyle = li.getAttribute('style');
+            if (originalStyle) {
+              li.setAttribute('style', originalStyle);
+            }
+          }
+        });
+      } else {
+        // 기존 li가 없거나 개수가 다르면 전체 재생성
+        const firstLi = list.querySelector('li');
+        const checkmarkColor = firstLi?.querySelector('span')?.style?.color || '#3b82f6';
+        const liStyle = firstLi?.getAttribute('style') || 'padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);';
+        
+        list.innerHTML = '';
+        value.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.setAttribute('style', liStyle);
+          if (index === value.length - 1) {
+            // 마지막 항목은 border-bottom 제거
+            li.style.borderBottom = 'none';
+          }
+          li.innerHTML = '<span style="color: ' + checkmarkColor + '; margin-right: 0.5rem;">✓</span> ' + item;
+          list.appendChild(li);
+        });
+      }
     }
   });
   

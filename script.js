@@ -77,19 +77,19 @@ function initNeuralNetwork() {
 
     // 테마에 따른 색상 설정
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const strokeColor = isLight ? 'rgba(37, 99, 235, 0.2)' : 'rgba(96, 165, 250, 0.15)';
-    const nodeGradientStart = isLight ? 'rgba(37, 99, 235, 0.6)' : 'rgba(96, 165, 250, 0.8)';
+    const strokeColor = isLight ? 'rgba(37, 99, 235, 0.5)' : 'rgba(96, 165, 250, 0.4)';
+    const nodeGradientStart = isLight ? 'rgba(37, 99, 235, 0.9)' : 'rgba(96, 165, 250, 0.9)';
     const nodeGradientEnd = isLight ? 'rgba(37, 99, 235, 0)' : 'rgba(96, 165, 250, 0)';
-    const nodeFill = isLight ? 'rgba(37, 99, 235, 0.3)' : 'rgba(96, 165, 250, 0.4)';
+    const nodeFill = isLight ? 'rgba(37, 99, 235, 0.6)' : 'rgba(96, 165, 250, 0.5)';
 
     // 연결선 그리기
     ctx.strokeStyle = strokeColor;
-    ctx.lineWidth = 0.5;
+    ctx.lineWidth = isLight ? 1.2 : 1;
     connections.forEach(conn => {
       const from = nodes[conn.from];
       const to = nodes[conn.to];
       
-      ctx.globalAlpha = conn.opacity * (isLight ? 0.4 : 0.3);
+      ctx.globalAlpha = conn.opacity * (isLight ? 0.8 : 0.6);
       ctx.beginPath();
       ctx.moveTo(from.x, from.y);
       ctx.lineTo(to.x, to.y);
@@ -97,7 +97,7 @@ function initNeuralNetwork() {
     });
 
     // 노드 그리기
-    ctx.globalAlpha = isLight ? 0.5 : 0.6;
+    ctx.globalAlpha = isLight ? 0.9 : 0.7;
     nodes.forEach(node => {
       const gradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.radius * 2);
       gradient.addColorStop(0, nodeGradientStart);
