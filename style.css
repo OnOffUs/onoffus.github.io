@@ -142,6 +142,32 @@ header.scrolled {
   color: var(--text-sub);
 }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.lang-toggle:hover {
+  border-color: var(--primary-soft);
+  background: rgba(37,99,235,0.1);
+  transform: translateY(-1px);
+}
+
+[data-theme="light"] .lang-toggle {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(148,163,184,0.3);
+}
+
 .nav-links a {
   position: relative;
   padding-bottom: 2px;
@@ -221,14 +247,59 @@ header.scrolled {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 3.5rem 0 3rem;
+  position: relative;
+  padding: 5rem 0 4rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f172a 100%);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+}
+
+[data-theme="light"] .hero {
+  background: linear-gradient(135deg, #e8f0fe 0%, #f0f4ff 50%, #f8fafc 100%);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.neural-network-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+[data-theme="light"] .neural-network-canvas {
+  opacity: 0.15;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
-  gap: 2.5rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .badge {
@@ -246,6 +317,14 @@ header.scrolled {
   margin-bottom: 1rem;
 }
 
+[data-theme="light"] .badge {
+  background: radial-gradient(circle at top left,
+    rgba(37,99,235,0.15),
+    transparent 55%);
+  color: #475569;
+  border-color: rgba(148,163,184,0.3);
+}
+
 .badge-dot {
   width: 7px;
   height: 7px;
@@ -255,14 +334,27 @@ header.scrolled {
 }
 
 .hero-title {
-  font-size: clamp(2.1rem, 3.2vw, 2.8rem);
-  line-height: 1.15;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.2;
   font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease-out 0.1s forwards;
+  text-align: center;
+  color: var(--text-main);
+}
+
+[data-theme="light"] .hero-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .hero-title span {
+  background: linear-gradient(to right, #2563eb, #7c3aed, #dc2626);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @keyframes fadeInUp {
@@ -280,10 +372,19 @@ header.scrolled {
 }
 
 .hero-subtitle {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   color: var(--text-sub);
-  max-width: 480px;
-  margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+[data-theme="light"] .hero-subtitle {
+  color: #475569;
+}
+
+[data-theme="light"] .hero-subtitle strong {
+  color: #1e293b;
 }
 
 .hero-actions {
@@ -291,6 +392,7 @@ header.scrolled {
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .btn {
@@ -360,11 +462,20 @@ header.scrolled {
   gap: 1rem;
   font-size: 0.8rem;
   color: var(--text-sub);
+  justify-content: center;
 }
 
 .hero-meta strong {
   color: var(--text-main);
   font-weight: 600;
+}
+
+[data-theme="light"] .hero-meta {
+  color: #64748b;
+}
+
+[data-theme="light"] .hero-meta strong {
+  color: #1e293b;
 }
 
 .hero-visual {
@@ -957,11 +1068,7 @@ footer {
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .hero-inner {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .hero-visual {
-    order: -1;
+    display: flex;
   }
 
   .services-grid {
@@ -985,32 +1092,201 @@ footer {
   }
 }
 
-@media (max-width: 640px) {
-  .services-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+    /* ---------- Trust Bar ---------- */
+    #trust-bar {
+      padding: 2rem 0;
+    }
 
-  .process-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+    /* ---------- FAQ ---------- */
+    #faq .about-card {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-  .hero-visual-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
+    #faq .about-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary-soft);
+    }
 
-  .hero-kpi {
-    grid-template-columns: minmax(0, 1fr);
-  }
+    @media (max-width: 640px) {
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-visual-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-kpi {
+        grid-template-columns: minmax(0, 1fr);
+      }
 
   .hero {
-    padding-top: 3rem;
+    padding: 3rem 0;
+    min-height: 70vh;
   }
 
-  .contact-inner {
-    padding: 1.3rem;
+  .hero-content {
+    padding: 0 1rem;
   }
 
-  .nav {
-    height: 60px;
+  .hero-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
   }
-}
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+      .contact-inner {
+        padding: 1.3rem;
+      }
+
+      .nav {
+        height: 60px;
+      }
+
+      #trust-bar > div > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      /* 카드 텍스트 겹침 방지 */
+      .service-card {
+        padding: 1.2rem 0.9rem;
+        min-height: auto;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .service-card * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .service-card .service-title {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .service-card .service-desc {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        margin-bottom: 0.7rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .service-card .service-list {
+        font-size: 0.75rem;
+        line-height: 1.5;
+        gap: 0.3rem;
+      }
+
+      .service-card .service-list li {
+        margin-bottom: 0.2rem;
+      }
+
+      .about-card {
+        padding: 1rem 0.7rem;
+        min-height: auto;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .about-card * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .about-card h3 {
+        font-size: 0.88rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .about-card .about-list {
+        font-size: 0.78rem;
+        line-height: 1.6;
+        gap: 0.3rem;
+      }
+
+      .about-card .about-list li {
+        margin-bottom: 0.2rem;
+      }
+
+      /* Trust 섹션 카드 */
+      .service-card[style*="text-align: center"] {
+        padding: 1.3rem 0.8rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .service-card[style*="text-align: center"] .service-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+        line-height: 1.4;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .service-card[style*="text-align: center"] .service-desc {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      /* Trust 섹션 큰 숫자/텍스트 */
+      .service-card[style*="text-align: center"] > div[style*="font-size: 3.5rem"],
+      .service-card[style*="text-align: center"] > div[style*="font-size: 2.2rem"] {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.8rem !important;
+      }
+
+      /* 기술 스택 카드 */
+      .about-card[style*="text-align: center"] {
+        padding: 0.9rem 0.6rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .about-card[style*="text-align: center"] > div:first-child {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.4rem !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .about-card[style*="text-align: center"] > div:last-child {
+        font-size: 0.7rem !important;
+        line-height: 1.4 !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      /* FAQ 카드 */
+      #faq .about-card {
+        padding: 1.1rem 0.9rem;
+      }
+
+      #faq .about-card h3 {
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      #faq .about-card .about-list {
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+    }
