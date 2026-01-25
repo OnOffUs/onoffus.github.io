@@ -1451,7 +1451,6 @@ function updateAllTexts() {
       element.setAttribute('aria-label', value);
     }
   });
-}
   
   // 특별 처리: 리스트 아이템들
   updateListItems();

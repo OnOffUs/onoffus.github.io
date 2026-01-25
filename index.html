@@ -18,7 +18,17 @@
   <meta property="og:title" content="AI 기반 B2B SaaS & 엔터프라이즈 시스템 개발 | OnOffus">
   <meta property="og:description" content="AI/LLM 기반 자동화, SaaS, 엔터프라이즈 시스템 구축 전문. 대규모 프로젝트 경험 기반으로 무료 기술 상담 및 맞춤 제안서를 제공합니다.">
   <meta property="og:image" content="https://onoffus.com/logo-onoffus.png">
+  <!-- DNS prefetch and preconnect for faster resource loading -->
+  <link rel="dns-prefetch" href="https://www.onoffus.com">
+  <link rel="preconnect" href="https://www.onoffus.com" crossorigin>
+  
+  <!-- Preload critical resources -->
+  <!-- Preload optimized logo image -->
   <link rel="preload" href="logo-onoffus.png" as="image" />
+  <link rel="preload" href="logo-onoffus.webp" as="image" />
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="preload" href="i18n.js" as="script" />
+  <link rel="preload" href="script.js" as="script" />
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="OnOffus">
   
@@ -255,8 +265,9 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css">
-  <script src="i18n.js"></script>
+  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+  <script src="i18n.js" defer></script>
 
   <!-- Google Analytics 4 (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E07X3QCKGL"></script>
@@ -278,7 +289,10 @@
     <div class="container">
       <nav class="nav">
         <a href="#hero" class="logo" aria-label="OnOffus 홈으로 이동">
-          <img src="logo-onoffus.png" alt="OnOffus AI 기반 기업용 SaaS 개발 회사 로고" class="logo-img" width="120" height="40" loading="eager" />
+          <picture>
+            <source srcset="logo-onoffus.webp" type="image/webp">
+            <img src="logo-onoffus.png" alt="OnOffus AI 기반 기업용 SaaS 개발 회사 로고" class="logo-img" width="120" height="40" loading="eager" />
+          </picture>
         </a>
         <div class="nav-right">
           <div class="nav-links">
@@ -1607,6 +1621,20 @@
   </footer>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
+<script>
+  // Register Service Worker for caching
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered:', registration);
+        })
+        .catch((error) => {
+          console.log('Service Worker registration failed:', error);
+        });
+    });
+  }
+</script>
 </body>
 </html>
