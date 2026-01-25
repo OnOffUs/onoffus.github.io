@@ -503,6 +503,18 @@ header.scrolled {
   color: #1e293b;
 }
 
+/* Hero Stats Section */
+.hero-stats > div {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.hero-stats > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary-soft);
+}
+
 /* Hero Evidence Section */
 .hero-evidence {
   background: var(--bg-elevated);
@@ -1263,6 +1275,31 @@ footer {
       .hero-subtitle {
         font-size: 1rem !important;
         line-height: 1.6;
+      }
+
+      /* Hero Stats 모바일 최적화 */
+      .hero-stats {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0 0.5rem !important;
+      }
+
+      .hero-stats > div {
+        padding: 1.2rem !important;
+      }
+
+      .hero-stats > div > div:first-child {
+        font-size: 2rem !important;
+      }
+
+      .hero-stats > div > div:last-child {
+        font-size: 0.85rem !important;
+      }
+
+      .hero-actions .btn {
+        width: 100% !important;
+        font-size: 1rem !important;
+        padding: 1rem 2rem !important;
       }
 
       .contact-inner {

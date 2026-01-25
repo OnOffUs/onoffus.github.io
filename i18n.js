@@ -22,8 +22,23 @@ const translations = {
         line2: ""
       },
       cta: {
-        primary: "AI 프로젝트 상담 요청",
-        secondary: "상세 서비스 보기"
+        primary: "지금 무료 AI 기술 상담 받기",
+        secondary: "상세 서비스 보기",
+        subtext: "✓ 무료 상담 · ✓ 명확한 제안 · ✓ 빠른 응답"
+      },
+      stats: {
+        years: {
+          value: "20년+",
+          label: "엔터프라이즈 경험"
+        },
+        projects: {
+          value: "50+",
+          label: "대규모 프로젝트"
+        },
+        uptime: {
+          value: "99.9%",
+          label: "시스템 가동률"
+        }
       },
       evidence: {
         experience: "금융·항공·대형 시스템 구축 20년 이상 실무 경험",
@@ -513,8 +528,23 @@ const translations = {
         line2: ""
       },
       cta: {
-        primary: "Request AI Project Consultation",
-        secondary: "View Detailed Services"
+        primary: "Get Free AI Technical Consultation Now",
+        secondary: "View Detailed Services",
+        subtext: "✓ Free Consultation · ✓ Clear Proposal · ✓ Quick Response"
+      },
+      stats: {
+        years: {
+          value: "20+ Years",
+          label: "Enterprise Experience"
+        },
+        projects: {
+          value: "50+",
+          label: "Large Projects"
+        },
+        uptime: {
+          value: "99.9%",
+          label: "System Uptime"
+        }
       },
       evidence: {
         experience: "20+ years of hands-on experience in finance, aviation, and large-scale system development",
