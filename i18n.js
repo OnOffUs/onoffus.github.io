@@ -252,6 +252,11 @@ const translations = {
           "데이터 검증 및 품질 관리 자동화",
           "대규모 데이터 마이그레이션 및 ETL 파이프라인"
         ]
+      },
+      cta: {
+        subtext: "맞춤형 솔루션이 필요하신가요?",
+        text: "맞춤 견적 요청하기",
+        ariaLabel: "문의 섹션으로 이동하여 맞춤 견적 요청하기"
       }
     },
     revenueServices: {
@@ -647,6 +652,7 @@ const translations = {
       textEnd: "에 대해 무료 상담을 제공합니다.",
       sub: "✓ 무료 기술 진단 · ✓ 명확한 제안서 · ✓ 빠른 응답",
       cta: "맞춤 견적 요청하기",
+      ctaAriaLabel: "이메일로 맞춤 견적 요청하기 (support@onoffus.com)",
       pill: "이메일·메신저 중심 비대면 협업",
       info: {
         company: "회사명",
@@ -947,7 +953,8 @@ const translations = {
       },
       cta: {
         subtext: "Need a customized solution?",
-        text: "Request Custom Quote"
+        text: "Request Custom Quote",
+        ariaLabel: "Navigate to contact section to request custom quote"
       }
     },
     revenueServices: {
@@ -1341,6 +1348,7 @@ const translations = {
       textEnd: " including monthly fixed-revenue MSP, high-value AI automation, and large-scale modernization projects.",
       sub: "✓ Free Technical Assessment · ✓ Clear Proposal · ✓ Quick Response",
       cta: "Request Custom Quote",
+      ctaAriaLabel: "Request custom quote via email (support@onoffus.com)",
       pill: "Email·Messenger-based remote collaboration",
       info: {
         company: "Company Name",
@@ -1427,6 +1435,23 @@ function updateAllTexts() {
       }
     }
   });
+  
+  // aria-label 업데이트
+  const ariaElements = document.querySelectorAll('[data-i18n-aria-label]');
+  ariaElements.forEach(element => {
+    const key = element.getAttribute('data-i18n-aria-label');
+    const keys = key.split('.');
+    let value = translations[currentLang];
+    
+    for (const k of keys) {
+      value = value?.[k];
+    }
+    
+    if (value !== undefined) {
+      element.setAttribute('aria-label', value);
+    }
+  });
+}
   
   // 특별 처리: 리스트 아이템들
   updateListItems();

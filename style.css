@@ -1521,6 +1521,27 @@ footer {
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       }
 
+      /* 회사 로고 텍스트 색상 - 접근성 개선 (WCAG AA 기준 충족) */
+      .company-logo-name {
+        color: var(--text-main);
+      }
+
+      /* 삼성전자 - 다크 테마에서는 원래 색상, 라이트 테마에서는 더 밝은 색상 */
+      .company-logo-samsung {
+        color: #5b8fff;
+      }
+      [data-theme="light"] .company-logo-samsung {
+        color: #1e40af;
+      }
+
+      /* 현대증권 - 다크 테마에서는 원래 색상, 라이트 테마에서는 더 밝은 색상 */
+      .company-logo-hyundai {
+        color: #3b82f6;
+      }
+      [data-theme="light"] .company-logo-hyundai {
+        color: #1e3a8a;
+      }
+
       /* 카드 텍스트 겹침 방지 */
       .service-card {
         padding: 1.2rem 0.9rem;
