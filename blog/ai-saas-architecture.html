@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="theme-color" content="#2563eb" />
+  <title>AI SaaS 아키텍처 설계: 확장 가능한 구조 만들기 | OnOffus</title>
+  <meta name="description" content="마이크로서비스, 이벤트 드리븐 아키텍처, 멀티테넌시 설계 패턴을 실무 관점에서 설명합니다. 엔터프라이즈급 AI SaaS를 위한 아키텍처 설계 가이드.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onoffus.com/blog/ai-saas-architecture">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.onoffus.com/blog/ai-saas-architecture">
+  <meta property="og:title" content="AI SaaS 아키텍처 설계: 확장 가능한 구조 만들기">
+  <meta property="og:description" content="마이크로서비스, 이벤트 드리븐 아키텍처, 멀티테넌시 설계 패턴을 실무 관점에서 설명합니다.">
+  <meta property="og:image" content="https://www.onoffus.com/logo-onoffus.png">
+  <meta property="article:published_time" content="2025-01-25T00:00:00+09:00">
+  <meta property="article:author" content="OnOffus Engineering Team">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI SaaS 아키텍처 설계: 확장 가능한 구조 만들기">
+  <meta name="twitter:description" content="마이크로서비스, 이벤트 드리븐 아키텍처, 멀티테넌시 설계 패턴을 실무 관점에서 설명합니다.">
+  <link rel="stylesheet" href="../style.css">
+  
+  <!-- BlogPosting Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AI SaaS 아키텍처 설계: 확장 가능한 구조 만들기",
+    "description": "마이크로서비스, 이벤트 드리븐 아키텍처, 멀티테넌시 설계 패턴을 실무 관점에서 설명합니다.",
+    "image": "https://www.onoffus.com/logo-onoffus.png",
+    "datePublished": "2025-01-25T00:00:00+09:00",
+    "dateModified": "2025-01-25T00:00:00+09:00",
+    "author": {
+      "@type": "Organization",
+      "name": "OnOffus Engineering Team",
+      "url": "https://www.onoffus.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OnOffus",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.onoffus.com/logo-onoffus.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.onoffus.com/blog/ai-saas-architecture"
+    }
+  }
+  </script>
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://www.onoffus.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "인사이트",
+        "item": "https://www.onoffus.com/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI SaaS 아키텍처 설계",
+        "item": "https://www.onoffus.com/blog/ai-saas-architecture"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <a href="/" class="nav-logo">
+            <picture>
+              <source srcset="../logo-onoffus.webp" type="image/webp">
+              <img src="../logo-onoffus.png" alt="OnOffus Logo" width="120" height="40" loading="eager">
+            </picture>
+          </a>
+          <div class="nav-right">
+            <div class="nav-links">
+              <a href="/#services">서비스</a>
+              <a href="/#msp">MSP</a>
+              <a href="/#cases">사례</a>
+              <a href="/#faq">FAQ</a>
+              <a href="/blog/" style="color: var(--primary-soft); font-weight: 600;">인사이트</a>
+              <a href="/#contact">문의</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article style="max-width: 900px; margin: 0 auto; padding: 3rem 1rem;">
+        <!-- Breadcrumb -->
+        <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
+          <a href="/" style="color: var(--text-sub);">홈</a>
+          <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
+          <a href="/blog/" style="color: var(--text-sub);">인사이트</a>
+          <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
+          <span style="color: var(--text-main);">AI SaaS 아키텍처 설계</span>
+        </nav>
+
+        <!-- Article Header -->
+        <header style="margin-bottom: 3rem;">
+          <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.3;">
+            AI SaaS 아키텍처 설계:<br>확장 가능한 구조 만들기
+          </h1>
+          <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.9rem; color: var(--text-sub); margin-bottom: 2rem;">
+            <span>작성: OnOffus Engineering Team</span>
+            <span>발행일: 2025년 1월 25일</span>
+            <span>읽는 시간: 약 12분</span>
+          </div>
+          <p style="font-size: 1.2rem; color: var(--text-sub); line-height: 1.8; font-weight: 500;">
+            AI 기능을 포함한 B2B SaaS는 전통적인 웹 애플리케이션보다 복잡한 아키텍처가 필요합니다. 
+            AI 모델 추론, 벡터 검색, 실시간 데이터 처리 등 다양한 컴포넌트를 효율적으로 통합하는 방법을 실무 관점에서 설명합니다.
+          </p>
+        </header>
+
+        <!-- Article Content -->
+        <div style="font-size: 1.05rem; line-height: 1.9; color: var(--text-main);">
+          
+          <section style="margin-bottom: 4rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); padding-top: 2rem; border-top: 2px solid var(--border-subtle);">
+              마이크로서비스 아키텍처 패턴
+            </h2>
+            <p style="margin-bottom: 1.5rem;">
+              AI SaaS는 여러 독립적인 서비스로 구성됩니다: 사용자 인증, 비즈니스 로직, AI 추론, 벡터 검색, 데이터 파이프라인 등. 
+              각 서비스는 독립적으로 배포하고 확장할 수 있어야 합니다.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+              API Gateway를 통해 모든 클라이언트 요청을 라우팅하고, 서비스 간 통신은 메시지 큐(Kafka, RabbitMQ)를 통해 비동기로 처리합니다. 
+              이렇게 하면 한 서비스의 장애가 다른 서비스로 전파되지 않습니다.
+            </p>
+          </section>
+
+          <section style="margin-bottom: 4rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); padding-top: 2rem; border-top: 2px solid var(--border-subtle);">
+              이벤트 드리븐 아키텍처
+            </h2>
+            <p style="margin-bottom: 1.5rem;">
+              AI 추론은 시간이 오래 걸릴 수 있으므로, 동기 요청보다는 비동기 이벤트 처리가 적합합니다. 
+              사용자가 AI 분석을 요청하면, 즉시 작업 ID를 반환하고 백그라운드에서 처리한 후 결과를 알림으로 전달합니다.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+              Kafka 같은 이벤트 스트림 플랫폼을 사용하면, 여러 서비스가 동일한 이벤트를 구독하여 각자의 작업을 수행할 수 있습니다. 
+              예를 들어, 사용자 데이터가 업데이트되면 AI 모델 재학습, 리포트 생성, 알림 발송 등이 병렬로 실행됩니다.
+            </p>
+          </section>
+
+          <section style="margin-bottom: 4rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); padding-top: 2rem; border-top: 2px solid var(--border-subtle);">
+              멀티테넌시 설계
+            </h2>
+            <p style="margin-bottom: 1.5rem;">
+              각 고객사(테넌트)의 데이터와 설정이 완전히 격리되어야 합니다. 
+              데이터베이스 레벨에서 tenant_id로 필터링하거나, 스키마 레벨 격리를 구현합니다.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+              AI 모델의 경우, 공유 모델을 사용하되 테넌트별로 파인튜닝된 모델을 별도로 관리할 수 있습니다. 
+              벡터 데이터베이스도 테넌트별로 인덱스를 분리하여 검색 성능과 보안을 보장합니다.
+            </p>
+          </section>
+
+          <!-- Link to Pillar -->
+          <div style="background: rgba(37,99,235,0.05); border-left: 4px solid var(--primary-soft); padding: 1.5rem; margin: 3rem 0; border-radius: var(--radius-md);">
+            <p style="margin: 0; font-size: 0.95rem; color: var(--text-sub);">
+              <strong style="color: var(--primary-soft);">핵심 가이드:</strong> 
+              <a href="/blog/ai-saas-enterprise-guide" style="color: var(--primary-soft); text-decoration: underline;">AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법</a>에서 전체 프로세스를 확인하세요.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA Block -->
+        <div style="background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(147,51,234,0.1)); border-radius: var(--radius-xl); padding: 3rem; margin: 4rem 0; border: 2px solid rgba(37,99,235,0.2); text-align: center;">
+          <h2 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">
+            프로젝트에 적용하고 싶으신가요?
+          </h2>
+          <p style="font-size: 1.05rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            운영형(월 단위) 또는 6개월 이상 장기 프로젝트를 우선합니다. 무료 상담을 통해 귀사에 맞는 솔루션을 제안해드립니다.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+            <a href="/#contact" class="btn btn-primary" style="font-size: 1rem; padding: 1rem 2rem; font-weight: 600;">
+              AI SaaS 구축 상담 받기
+            </a>
+            <a href="/#msp" class="btn" style="font-size: 0.95rem; padding: 0.9rem 1.8rem; color: var(--text-sub); border: 1px solid var(--border-subtle); background: transparent;">
+              운영형 계약(MSP) 문의하기
+            </a>
+          </div>
+        </div>
+
+        <!-- Author Box -->
+        <div style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; margin: 3rem 0; border: 1px solid var(--border-subtle);">
+          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-soft), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: white;">
+              OT
+            </div>
+            <div style="flex: 1;">
+              <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">OnOffus Engineering Team</h3>
+              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 0.5rem;">
+                2005년부터 시작된 20년 시스템 전문가 팀. 삼성, 현대, 금융권 프로젝트 경험을 바탕으로 엔터프라이즈급 시스템을 구축하고 운영합니다.
+              </p>
+              <a href="/#contact" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+                프로젝트 문의하기 →
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            <div>© <span id="year"></span> 주식회사 오노퍼스 (OnOffus Co., Ltd.). <span>AI-Powered B2B SaaS & Enterprise Systems.</span></div>
+            <div style="font-size: 0.75rem; color: var(--text-sub); margin-top: 0.5rem;">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
+          </div>
+          <div class="footer-links">
+            <span>Enterprise Development · AI Solutions</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
