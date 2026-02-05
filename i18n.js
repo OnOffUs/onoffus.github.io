@@ -2,7 +2,7 @@
 const translations = {
   ko: {
     nav: {
-      services: "서비스",
+      services: "운영 효율화",
       ai: "AI 솔루션",
       why: "Why OnOffus",
       cases: "사례",
@@ -12,19 +12,19 @@ const translations = {
     },
     hero: {
       title: {
-        line1: "AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축",
+        line1: "20년 시스템 전문가가 운영하는\nAI B2B 비즈니스",
         line2: ""
       },
       subtitle: {
-        main: "비즈니스 성장을 이끄는 안정적 개발 파트너",
+        main: "기업용 AI 도입부터 24/7 운영까지,\nAI 시스템의 신뢰성을 보장하는 기술적 배경",
         line1: "",
         strong: "",
         line2: ""
       },
       cta: {
-        primary: "지금 무료 AI 기술 상담 받기",
+        primary: "우리 회사 AI 도입 가능성 진단받기",
         secondary: "상세 서비스 보기",
-        subtext: "✓ 무료 상담 · ✓ 명확한 제안 · ✓ 빠른 응답"
+        subtext: "✓ 무료 진단 · ✓ 맞춤 제안 · ✓ 빠른 응답"
       },
       stats: {
         years: {
@@ -59,32 +59,32 @@ const translations = {
     },
     trust: {
       kicker: "Trust & Credibility",
-      title: "20년의 엔터프라이즈 경험, 검증된 신뢰성",
-      desc: "삼성, 현대, KB손해보험 등 대기업 프로젝트를 성공적으로 수행한 실적과 최신 AI 기술을 레거시 시스템과 완벽하게 통합하는 역량을 보유하고 있습니다.",
+      title: "AI 시스템의 신뢰성을 보장하는 기술적 배경",
+      desc: "2005년부터 시작된 20년 시스템 전문가의 경력과 삼성, 현대, 금융권 실적이 AI 시스템의 안정성과 신뢰성을 보장합니다. 대기업 수준의 시스템 운영 경험을 바탕으로 기업용 AI 도입 및 운영의 모든 과정을 책임집니다.",
       yearsText: "2005년부터 이어진 20년의 경력",
       years: {
-        title: "Years",
-        desc: "엔터프라이즈 시스템 구축 경력",
+        title: "20년 시스템 전문가",
+        desc: "AI 시스템 신뢰성의 기술적 기반",
         items: [
-          "2005년부터 시작된 개발 경력",
-          "금융, 항공, 여행 등 다양한 도메인 경험",
-          "대규모 트랜잭션 처리 시스템 전문",
-          "프로젝트 리더(PL) 및 프로젝트 매니저(PM) 다수"
+          "2005년부터 시작된 시스템 구축 경력",
+          "금융, 항공 등 대규모 시스템 운영 전문",
+          "AI 시스템 안정성 검증 경험",
+          "프로젝트 리더(PL)로서 AI 도입 프로젝트 다수 수행"
         ]
       },
       projects: {
-        title: "Projects",
-        desc: "대기업 프로젝트 수행 실적",
+        title: "대기업 실적",
+        desc: "AI 시스템 신뢰성의 검증된 배경",
         items: [
-          "삼성: 삼성화재, 삼성네트웍스, 삼성닷컴",
-          "현대: 현대자동차 관련 프로젝트",
-          "KB손해보험: 금융 서비스 시스템",
-          "기타: SK텔링크, 아모레퍼시픽, 우리카드 등"
+          "삼성: 삼성화재, 삼성네트웍스, 삼성닷컴 (시스템 운영)",
+          "현대: 현대증권 등 금융권 시스템 구축",
+          "금융권: KB손해보험, 우리카드, 신한은행",
+          "기타: SK텔링크, 아모레퍼시픽 등 대기업 프로젝트"
         ]
       },
       aiNative: {
-        title: "Integration",
-        desc: "최신 AI 기술과 레거시 시스템의 완벽한 통합",
+        title: "AI 운영 전문",
+        desc: "AI 시스템 운영 및 유지보수 전문 역량",
         items: [
           "LLM API와 기존 백오피스 시스템 통합",
           "레거시 데이터베이스와 AI 파이프라인 연동",
@@ -260,46 +260,50 @@ const translations = {
       }
     },
     revenueServices: {
-      kicker: "Revenue Services",
-      title: "수익형 서비스 라인업",
-      desc: "20년 경력의 엔터프라이즈 전문가가 제공하는 안정적이고 지속 가능한 비즈니스 솔루션",
+      kicker: "Operational Efficiency",
+      title: "운영 효율화 솔루션",
+      desc: "운영 비용을 낮추고 본질에 집중하게 만듭니다.\nAI 에이전트, 전문 인프라 관리, 시스템 현대화를 통해 귀사의 핵심 비즈니스에만 집중할 수 있도록 지원합니다.",
       msp: {
-        title: "안정적 운영 (MSP)",
-        desc: "서버 장애는 곧 손실입니다. 금융권 시스템을 다루던 꼼꼼함으로 귀사의 인프라를 24시간 지킵니다.",
+        title: "인프라 매니지드 (MSP)",
+        desc: "시스템 장애 리스크를 제거하는 전문 운영. 24/7 관리로 인프라 걱정 없이 비즈니스 본질에만 집중하세요.",
         model: "월 고정 수익",
         modelDesc: "예측 가능한 수익 구조와 안정적인 서비스 제공으로 지속적인 비즈니스 성장 지원",
         items: [
-          "24/7 실시간 모니터링 및 알림",
-          "자동화된 보안 패치 및 업데이트",
-          "즉시 장애 대응 및 복구",
-          "정기 성능 최적화 및 리포트"
+          "24/7 전문 운영 관리로 장애 리스크 제거",
+          "실시간 모니터링 및 자동화된 보안 관리",
+          "즉시 장애 대응으로 비즈니스 연속성 보장",
+          "예측 가능한 운영 비용으로 예산 관리 최적화"
         ]
       },
       automation: {
-        title: "비즈니스 자동화",
-        desc: "반복 업무를 제거하고 AI 에이전트를 도입하여 운영 효율을 극대화합니다.",
+        title: "AI 에이전트",
+        desc: "인적 자원을 대체하는 지능형 자동화. 챗봇과 업무 자동화로 인건비를 절감하고 핵심 업무에 집중하세요.",
         model: "고부가가치 프로젝트",
         modelDesc: "AI 솔루션 구축으로 높은 ROI와 장기적 비용 절감 효과 제공",
         items: [
-          "반복 업무 AI 에이전트 구축",
-          "데이터 수집 및 리포트 자동화",
-          "지능형 의사결정 지원 시스템",
-          "인건비 절감 및 효율성 극대화"
+          "AI 챗봇으로 고객 응대 인력 대체",
+          "반복 업무 자동화로 인적 자원 최적화",
+          "지능형 업무 프로세스 자동화",
+          "인건비 절감으로 운영 비용 최소화"
         ]
       },
       modernization: {
-        title: "SI 및 시스템 현대화",
-        desc: "낙후된 레거시 시스템을 최신 아키텍처로 안전하게 마이그레이션합니다.",
+        title: "시스템 현대화",
+        desc: "노후화된 업무 프로세스를 최신 기술로 재설계. 운영 비용을 낮추고 효율성을 극대화합니다.",
         model: "중대형 프로젝트",
         modelDesc: "전면 현대화 프로젝트로 높은 수익성과 장기 파트너십 구축",
         items: [
-          "클라우드 마이그레이션 (온프레미스 → AWS/Azure)",
-          "레거시 데이터베이스 현대화",
-          "AI 통합 및 자동화 기능 추가",
-          "다운타임 최소화 전환 전략"
+          "노후 시스템을 최신 기술로 재설계",
+          "클라우드 전환으로 인프라 비용 절감",
+          "업무 프로세스 효율화로 운영 비용 감소",
+          "안전한 전환으로 비즈니스 연속성 유지"
         ]
       },
-      cta: "무료 기술 상담 신청"
+      cta: "무료 기술 상담 신청",
+      unifiedMessage: {
+        title: "운영 비용을 낮추고 본질에 집중하게 만듭니다",
+        desc: "AI 에이전트로 인건비를 절감하고, 전문 인프라 관리로 장애 리스크를 제거하며, 시스템 현대화로 운영 효율을 극대화합니다. 이 모든 것이 결국 귀사의 핵심 비즈니스에만 집중할 수 있도록 만듭니다."
+      }
     },
     techStack: {
       kicker: "Technology Stack",
@@ -308,8 +312,8 @@ const translations = {
     },
     aiSolutions: {
       kicker: "AI Solutions",
-      title: "프로덕션에서 운영 중인 AI 솔루션",
-      desc: "이론이 아닌 실제 서비스에 통합되어 운영 중인 AI·LLM 솔루션입니다. 안정성과 성능을 검증받은 시스템만을 제공합니다.",
+      title: "운영 최적화를 위한 AI 솔루션",
+      desc: "실제 비즈니스 운영에 통합되어 검증된 AI·LLM 솔루션으로 운영 효율을 극대화합니다. 인적 자원을 대체하고 업무 프로세스를 자동화하여 운영 비용을 절감합니다.",
       rag: {
         title: "RAG 기반 지식 검색 시스템",
         desc: "벡터 데이터베이스와 LLM을 결합한 지식 검색 및 질의응답 시스템. 내부 문서, FAQ, 지식베이스를 AI로 검색하고 정확한 답변을 제공합니다.",
@@ -618,14 +622,14 @@ const translations = {
       q1: {
         q: "AI 도입하면 비즈니스 변화는 어떤가요?",
         a: "AI 도입으로 고객 상담 자동화, 문서 처리 자동화, 업무 효율 향상을 실현할 수 있습니다. 실제 사례에서 응대 시간 70% 단축, 인건비 30% 절감, 의사결정 속도 2배 향상 등의 효과를 확인했습니다. 초기 PoC부터 단계적으로 도입하여 리스크를 최소화하면서 비즈니스 성장을 가속화합니다.",
-        ctaText: "무료 AI 도입 상담을 통해 귀사에 맞는 AI 솔루션을 제안해드립니다.",
-        cta: "지금 무료 AI 상담 신청하기"
+        ctaText: "AI 도입 가능성 진단을 통해 귀사에 맞는 AI 솔루션을 제안해드립니다.",
+        cta: "우리 회사 AI 도입 가능성 진단받기"
       },
       q2: {
         q: "프로젝트 기간/비용은 어떻게 되나요?",
         a: "프로젝트 규모와 요구사항에 따라 기간과 비용이 달라집니다. MVP(최소 기능 제품)는 2-3개월, 전체 시스템 구축은 6-12개월 정도 소요됩니다. 초기에는 작은 PoC(파일럿)부터 시작하여 점진적으로 확장하는 방식을 권장합니다.",
-        ctaText: "보다 정확한 견적은 무료 상담 신청을 통해 프로젝트 범위 논의 후 제공됩니다.",
-        cta: "지금 무료 상담 신청하기"
+        ctaText: "보다 정확한 견적은 AI 도입 가능성 진단을 통해 프로젝트 범위 논의 후 제공됩니다.",
+        cta: "우리 회사 AI 도입 가능성 진단받기"
       },
       q3: {
         q: "유지보수/운영은 지원하나요?",
@@ -692,7 +696,7 @@ const translations = {
       }
     },
     floatingCTA: {
-      text: "무료 기술 상담 신청"
+      text: "AI 도입 가능성 진단받기"
     },
     footer: {
       tagline: "AI-Powered B2B SaaS & Enterprise Systems.",
@@ -702,7 +706,7 @@ const translations = {
   },
   en: {
     nav: {
-      services: "Services",
+      services: "Operational Efficiency",
       ai: "AI Solutions",
       why: "Why OnOffus",
       cases: "Case Studies",
@@ -712,19 +716,19 @@ const translations = {
     },
     hero: {
       title: {
-        line1: "AI-Based B2B SaaS & Enterprise System Development Company",
+        line1: "AI B2B Business Operated by\n20-Year System Experts",
         line2: ""
       },
       subtitle: {
-        main: "A Reliable Development Partner Driving Business Growth",
+        main: "From enterprise AI adoption to 24/7 operations,\ntechnical background ensuring AI system reliability",
         line1: "",
         strong: "",
         line2: ""
       },
       cta: {
-        primary: "Get Free AI Technical Consultation Now",
+        primary: "Get AI Adoption Feasibility Diagnosis for Our Company",
         secondary: "View Detailed Services",
-        subtext: "✓ Free Consultation · ✓ Clear Proposal · ✓ Quick Response"
+        subtext: "✓ Free Diagnosis · ✓ Custom Proposal · ✓ Quick Response"
       },
       stats: {
         years: {
@@ -759,32 +763,32 @@ const translations = {
     },
     trust: {
       kicker: "Trust & Credibility",
-      title: "20 Years of Enterprise Experience, Proven Reliability",
-      desc: "With a track record of successfully executing projects for major corporations including Samsung, Hyundai, and KB Insurance, we possess the capability to perfectly integrate cutting-edge AI technology with legacy systems.",
+      title: "Technical Background Ensuring AI System Reliability",
+      desc: "The 20-year system expert career since 2005 and track record with Samsung, Hyundai, and financial sector guarantee the stability and reliability of AI systems. Based on enterprise-level system operation experience, we take responsibility for all processes from enterprise AI adoption to operations.",
       yearsText: "20 Years of Experience Since 2005",
       years: {
-        title: "Years",
-        desc: "Enterprise System Development Experience",
+        title: "20-Year System Experts",
+        desc: "Technical Foundation for AI System Reliability",
         items: [
-          "Development career since 2005",
-          "Experience across diverse domains: finance, aviation, travel",
-          "Expert in large-scale transaction processing systems",
-          "Multiple Project Leader (PL) and Project Manager (PM) roles"
+          "System development career since 2005",
+          "Expert in large-scale system operations in finance, aviation",
+          "Experience in AI system stability verification",
+          "Multiple AI adoption projects as Project Leader (PL)"
         ]
       },
       projects: {
-        title: "Projects",
-        desc: "Major Enterprise Project Track Record",
+        title: "Major Enterprise Track Record",
+        desc: "Verified Background for AI System Reliability",
         items: [
-          "Samsung: Samsung Fire & Marine, Samsung Networks, Samsung.com",
-          "Hyundai: Hyundai Motor related projects",
-          "KB Insurance: Financial service systems",
-          "Others: SK Telink, Amorepacific, Woori Card, etc."
+          "Samsung: Samsung Fire & Marine, Samsung Networks, Samsung.com (System Operations)",
+          "Hyundai: Financial sector systems including Hyundai Securities",
+          "Financial Sector: KB Insurance, Woori Card, Shinhan Bank",
+          "Others: Major enterprise projects including SK Telink, Amorepacific"
         ]
       },
       aiNative: {
-        title: "Integration",
-        desc: "Perfect Integration of Cutting-Edge AI Technology with Legacy Systems",
+        title: "AI Operations Specialist",
+        desc: "Specialized Capabilities in AI System Operations and Maintenance",
         items: [
           "Integration of LLM APIs with existing back-office systems",
           "Connection of legacy databases with AI pipelines",
@@ -958,46 +962,84 @@ const translations = {
       }
     },
     revenueServices: {
-      kicker: "Revenue Services",
-      title: "Revenue Service Lineup",
-      desc: "Stable and sustainable business solutions provided by 20-year enterprise experts",
-      msp: {
-        title: "Stable Operations (MSP)",
-        desc: "Server downtime means loss. We protect your infrastructure 24/7 with the meticulousness honed from handling financial sector systems.",
-        model: "Monthly Fixed Revenue",
-        modelDesc: "Supporting continuous business growth with predictable revenue structure and stable service delivery",
+      kicker: "AI B2B 전문 운영",
+      title: "기업용 AI 도입부터 운영까지",
+      desc: "20년 시스템 전문가가 운영하는 AI B2B 비즈니스.\n실무 최적화 AI 구축부터 24/7 지능형 운영 관리, AI를 위한 기업 데이터 체계화까지 전 과정을 책임집니다.",
+      aiSolution: {
+        title: "실무 최적화 AI 구축",
+        desc: "기업용 AI 챗봇 구축과 업무 자동화 에이전트로 실무에 즉시 적용 가능한 AI 솔루션을 제공합니다. 인건비 절감과 업무 효율 극대화를 동시에 달성합니다.",
         items: [
-          "24/7 real-time monitoring and alerts",
-          "Automated security patches and updates",
-          "Immediate fault response and recovery",
-          "Regular performance optimization and reports"
+          "기업용 AI 챗봇 구축 (고객 응대 자동화)",
+          "업무 자동화 에이전트 (반복 업무 처리)",
+          "RAG 기반 지식 검색 시스템",
+          "LLM 파이프라인 자동화"
         ]
       },
-      automation: {
-        title: "Business Automation",
-        desc: "Eliminate repetitive tasks and maximize operational efficiency by introducing AI agents.",
-        model: "High-Value Projects",
-        modelDesc: "Providing high ROI and long-term cost savings through AI solution implementation",
+      aiOperations: {
+        title: "24/7 지능형 운영 관리(MSP)",
+        desc: "AI 시스템의 안정적인 운영을 보장하는 전문 MSP 서비스. AI 유지보수부터 모니터링, 장애 대응까지 24/7 관리로 AI 시스템의 신뢰성을 보장합니다.",
         items: [
-          "Building repetitive task AI agents",
-          "Data collection and report automation",
-          "Intelligent decision support system",
-          "Labor cost reduction and maximized efficiency"
+          "AI 유지보수 및 성능 최적화",
+          "24/7 AI 시스템 모니터링 및 알림",
+          "AI 인프라 관리 및 자동 스케일링",
+          "즉시 장애 대응 및 복구 시스템"
         ]
       },
-      modernization: {
-        title: "SI & System Modernization",
-        desc: "Safely migrate outdated legacy systems to modern architectures.",
-        model: "Large-Scale Projects",
-        modelDesc: "Building high profitability and long-term partnerships through comprehensive modernization projects",
+      dataIntegration: {
+        title: "AI를 위한 기업 데이터 체계화",
+        desc: "AI가 효과적으로 학습하고 활용할 수 있도록 기업 데이터를 체계화합니다. 레거시 데이터베이스와 AI 파이프라인을 안전하게 연동하고, 데이터 품질을 보장합니다.",
         items: [
-          "Cloud migration (on-premise → AWS/Azure)",
-          "Legacy database modernization",
-          "AI integration and automation feature addition",
-          "Downtime minimization transition strategy"
+          "레거시 데이터베이스와 AI 파이프라인 연동",
+          "벡터 데이터베이스 구축 및 최적화",
+          "데이터 품질 검증 및 정제 자동화",
+          "실시간 데이터 동기화 및 ETL 파이프라인"
         ]
       },
-      cta: "Request Free Technical Consultation"
+      cta: "우리 회사 AI 도입 가능성 진단받기",
+      unifiedMessage: {
+        title: "AI B2B 전문 운영 파트너, 기업용 AI 도입부터 운영까지",
+        desc: "실무 최적화 AI 구축으로 업무 효율을 극대화하고, 24/7 지능형 운영 관리로 AI 시스템의 신뢰성을 보장하며, AI를 위한 기업 데이터 체계화로 지속적인 AI 성능 향상을 지원합니다. 20년 시스템 전문가의 기술적 배경이 AI 시스템의 신뢰성을 보장합니다."
+      }
+    },
+    revenueServices: {
+      kicker: "AI B2B Professional Operations",
+      title: "From Enterprise AI Adoption to Operations",
+      desc: "AI B2B business operated by 20-year system experts.\nWe take responsibility for all processes from practical optimization AI construction to 24/7 intelligent operations management and enterprise data systematization for AI.",
+      aiSolution: {
+        title: "Practical Optimization AI Construction",
+        desc: "Provides AI solutions immediately applicable to real business through enterprise AI chatbot construction and workflow automation agents. Achieves both labor cost reduction and work efficiency maximization.",
+        items: [
+          "Enterprise AI chatbot construction (customer service automation)",
+          "Workflow automation agents (repetitive task processing)",
+          "RAG-based knowledge search system",
+          "LLM pipeline automation"
+        ]
+      },
+      aiOperations: {
+        title: "24/7 Intelligent Operations Management (MSP)",
+        desc: "Professional MSP service ensuring stable operation of AI systems. Guarantees AI system reliability through 24/7 management from AI maintenance to monitoring and failure response.",
+        items: [
+          "AI maintenance and performance optimization",
+          "24/7 AI system monitoring and alerts",
+          "AI infrastructure management and auto-scaling",
+          "Immediate failure response and recovery system"
+        ]
+      },
+      dataIntegration: {
+        title: "Enterprise Data Systematization for AI",
+        desc: "Systematizes enterprise data so AI can effectively learn and utilize it. Safely connects legacy databases with AI pipelines and ensures data quality.",
+        items: [
+          "Integration of legacy databases with AI pipelines",
+          "Vector database construction and optimization",
+          "Data quality verification and cleaning automation",
+          "Real-time data synchronization and ETL pipelines"
+        ]
+      },
+      cta: "Get AI Adoption Feasibility Diagnosis for Our Company",
+      unifiedMessage: {
+        title: "AI B2B Professional Operations Partner, From Enterprise AI Adoption to Operations",
+        desc: "Maximize work efficiency through practical optimization AI construction, guarantee AI system reliability through 24/7 intelligent operations management, and support continuous AI performance improvement through enterprise data systematization for AI. The technical background of 20-year system experts guarantees AI system reliability."
+      }
     },
     techStack: {
       kicker: "Technology Stack",
@@ -1006,8 +1048,8 @@ const translations = {
     },
     aiSolutions: {
       kicker: "AI Solutions",
-      title: "AI Solutions Operating in Production",
-      desc: "AI·LLM solutions integrated into real services, not just theory. We only provide systems that have been verified for stability and performance.",
+      title: "AI Solutions for Operational Optimization",
+      desc: "AI·LLM solutions integrated and verified in real business operations to maximize operational efficiency. Replace human resources and automate business processes to reduce operational costs.",
       rag: {
         title: "RAG-Based Knowledge Search System",
         desc: "Knowledge search and Q&A system combining vector databases and LLM. Searches internal documents, FAQs, and knowledge bases with AI and provides accurate answers.",
@@ -1316,12 +1358,14 @@ const translations = {
       q1: {
         q: "What business changes can we expect from AI adoption?",
         a: "AI adoption enables customer service automation, document processing automation, and improved operational efficiency. In actual cases, we've confirmed effects such as 70% reduction in response time, 30% reduction in labor costs, and 2x improvement in decision-making speed. We start with an initial PoC and gradually expand to minimize risk while accelerating business growth.",
-        ctaText: "We provide AI solutions tailored to your company through free AI adoption consultation.",
-        cta: "Request Free AI Consultation Now"
+        ctaText: "We provide AI solutions tailored to your company through AI adoption feasibility diagnosis.",
+        cta: "Get AI Adoption Feasibility Diagnosis for Our Company"
       },
       q2: {
         q: "What are the project timeline and costs?",
-        a: "Timeline and costs vary depending on project scale and requirements. MVP (Minimum Viable Product) takes 2-3 months, while full system construction takes approximately 6-12 months. We recommend starting with a small PoC (pilot) and gradually expanding. Accurate quotes are provided after discussing project scope through free consultation."
+        a: "Timeline and costs vary depending on project scale and requirements. MVP (Minimum Viable Product) takes 2-3 months, while full system construction takes approximately 6-12 months. We recommend starting with a small PoC (pilot) and gradually expanding. Accurate quotes are provided after discussing project scope through AI adoption feasibility diagnosis.",
+        ctaText: "More accurate quotes are provided after discussing project scope through AI adoption feasibility diagnosis.",
+        cta: "Get AI Adoption Feasibility Diagnosis for Our Company"
       },
       q3: {
         q: "Do you provide maintenance and operational support?",
@@ -1388,7 +1432,7 @@ const translations = {
       }
     },
     floatingCTA: {
-      text: "Request Free Technical Consultation"
+      text: "Get AI Adoption Feasibility Diagnosis"
     },
     footer: {
       tagline: "AI-Powered B2B SaaS & Enterprise Systems.",
