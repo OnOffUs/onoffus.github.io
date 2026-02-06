@@ -6,7 +6,8 @@ const STATIC_ASSETS = [
   '/style.css',
   '/script.js',
   '/i18n.js',
-  '/logo-onoffus.png'
+  '/assets/logo-horizontal-dark.svg',
+  '/assets/logo-horizontal-light.svg'
 ];
 
 // Install event - cache static assets

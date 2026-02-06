@@ -1,0 +1,32 @@
+{
+  "name": "OnOffus - AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축",
+  "short_name": "OnOffus",
+  "description": "AI 기반 B2B SaaS 구축과 운영형 계약(MSP). 20년 시스템 전문가.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1128",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "ko",
+  "categories": ["business", "productivity"]
+}

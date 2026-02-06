@@ -13,18 +13,29 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://onoffus.com/">
+  <meta property="og:url" content="https://www.onoffus.com/">
   <meta property="og:title" content="AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축 + 운영(MSP) | OnOffus">
   <meta property="og:description" content="AI 기반 B2B SaaS 구축과 운영형 계약(MSP) 제공. 운영형/MSP/무료 상담. 20년 시스템 전문가가 구축부터 24/7 운영까지 책임집니다.">
-  <meta property="og:image" content="https://onoffus.com/logo-onoffus.png">
+  <meta property="og:image" content="https://www.onoffus.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <!-- DNS prefetch and preconnect for faster resource loading -->
   <link rel="dns-prefetch" href="https://www.onoffus.com">
   <link rel="preconnect" href="https://www.onoffus.com" crossorigin>
   
+  <!-- Favicon & App Icons (assets) -->
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#0a1128" />
+  
   <!-- Preload critical resources -->
-  <!-- Preload optimized logo image -->
-  <link rel="preload" href="logo-onoffus.png" as="image" />
-  <link rel="preload" href="logo-onoffus.webp" as="image" />
+  <link rel="preload" href="assets/logo-horizontal-dark.svg" as="image" />
+  <link rel="preload" href="assets/logo-horizontal-light.svg" as="image" />
   <link rel="preload" href="style.css" as="style" />
   <link rel="preload" href="i18n.js" as="script" />
   <link rel="preload" href="script.js" as="script" />
@@ -36,7 +47,7 @@
   <meta name="twitter:url" content="https://www.onoffus.com/">
   <meta name="twitter:title" content="AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축 + 운영(MSP) | OnOffus">
   <meta name="twitter:description" content="AI 기반 B2B SaaS 구축과 운영형 계약(MSP) 제공. 운영형/MSP/무료 상담. 20년 시스템 전문가가 구축부터 24/7 운영까지 책임집니다.">
-  <meta name="twitter:image" content="https://onoffus.com/logo-onoffus.png">
+  <meta name="twitter:image" content="https://www.onoffus.com/assets/og-image.png">
 
   <!-- 구조화된 데이터 (JSON-LD) -->
   <script type="application/ld+json">
@@ -48,7 +59,7 @@
     "legalName": "주식회사 오노퍼스",
     "taxID": "379-88-01413",
     "url": "https://onoffus.com",
-    "logo": "https://onoffus.com/logo-onoffus.png",
+    "logo": "https://www.onoffus.com/assets/logo-horizontal-dark.png",
     "description": "AI 기반 B2B SaaS 구축과 운영형 계약(MSP) 제공. 운영형/MSP/무료 상담. 20년 시스템 전문가가 구축부터 24/7 운영까지 책임집니다.",
     "email": "support@onoffus.com",
     "contactPoint": {
@@ -276,8 +287,11 @@
     .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
     .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; min-height: 44px; border-radius: 999px; }
     .btn-primary { background: linear-gradient(135deg, #2563eb, #1e40af); color: #f9fafb; }
-    .logo { display: flex; align-items: center; padding: 0.5rem 1rem; }
-    .logo-img { height: 36px; width: auto; }
+    .logo { display: flex; align-items: center; padding: var(--spacing-xs) 1rem; }
+    .logo-img { height: 40px; width: auto; object-fit: contain; }
+    .logo .logo-light { display: none; }
+    [data-theme="light"] .logo .logo-dark { display: none; }
+    [data-theme="light"] .logo .logo-light { display: block; }
   </style>
   <link rel="stylesheet" href="style.css">
   <script src="i18n.js" defer></script>
@@ -349,10 +363,8 @@
     <div class="container">
       <nav class="nav">
         <a href="#hero" class="logo" aria-label="OnOffus 홈으로 이동">
-          <picture>
-            <source srcset="logo-onoffus.webp" type="image/webp">
-            <img src="logo-onoffus.png" alt="OnOffus AI 기반 기업용 SaaS 개발 회사 로고" class="logo-img" width="120" height="40" loading="eager" />
-          </picture>
+          <img src="assets/logo-horizontal-dark.svg" alt="OnOffus AI 기반 기업용 SaaS 개발 회사 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
+          <img src="assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
         </a>
         <div class="nav-right">
           <div class="nav-links">
@@ -363,7 +375,7 @@
             <a href="/blog/" aria-label="인사이트 섹션으로 이동" title="인사이트">인사이트</a>
             <a href="#contact" aria-label="문의 섹션으로 이동" title="문의">문의</a>
           </div>
-          <button class="lang-toggle" id="langToggle" type="button" style="margin-right: 0.5rem; padding: 0.4rem 0.8rem; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-main); cursor: pointer; font-size: 0.85rem;">
+          <button class="lang-toggle" id="langToggle" type="button" style="margin-right: 0.5rem; padding: 0.4rem 0.8rem; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--bg-elevated); color: var(--text-main); cursor: pointer; font-size: var(--font-size-sm);">
             <span id="langLabel">EN</span>
           </button>
           <button class="theme-toggle" id="themeToggle" type="button">
@@ -388,7 +400,7 @@
               <span class="badge-dot"></span>
               <span data-i18n="hero.badge">AI B2B 전문 운영 파트너 · 2005년부터 시작된 시스템 전문가</span>
             </div>
-            <h1 class="hero-title" data-i18n="hero.title.line1" style="font-size: clamp(2rem, 4.5vw, 3.5rem); margin-bottom: 1.5rem;">
+            <h1 class="hero-title" data-i18n="hero.title.line1" style="font-size: clamp(2rem, 4.5vw, 3.5rem); margin-bottom: var(--spacing-md);">
               AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축
             </h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle.main" style="font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.7; max-width: 800px; margin: 0 auto 2rem; color: var(--text-sub);">
@@ -397,38 +409,38 @@
             </p>
             
             <!-- 정량적 수치 강조 -->
-            <div class="hero-stats" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto 2.5rem; padding: 0 1rem;">
-              <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(59,130,246,0.1)); border-radius: var(--radius-lg); border: 1px solid rgba(37,99,235,0.3);">
-                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(to right, var(--primary-soft), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.5rem; line-height: 1;" data-i18n="hero.stats.years.value">20년+</div>
-                <div style="font-size: 0.95rem; color: var(--text-sub); font-weight: 600;" data-i18n="hero.stats.years.label">엔터프라이즈 경험</div>
+            <div class="hero-stats" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); max-width: 900px; margin: 0 auto 2.5rem; padding: 0 1rem;">
+              <div style="text-align: center; padding: var(--spacing-md); background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(59,130,246,0.1)); border-radius: var(--radius-lg); border: 1px solid rgba(37,99,235,0.3);">
+                <div class="company-logo-name" style="color: #3b82f6;">20년+</div>
+                <div style="font-size: var(--font-size-base); color: var(--text-sub); font-weight: 600;" data-i18n="hero.stats.years.label">엔터프라이즈 경험</div>
               </div>
-              <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(147,51,234,0.15), rgba(168,85,247,0.1)); border-radius: var(--radius-lg); border: 1px solid rgba(147,51,234,0.3);">
-                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(to right, var(--secondary), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.5rem; line-height: 1;" data-i18n="hero.stats.projects.value">50+</div>
-                <div style="font-size: 0.95rem; color: var(--text-sub); font-weight: 600;" data-i18n="hero.stats.projects.label">대규모 프로젝트</div>
+              <div style="text-align: center; padding: var(--spacing-md); background: linear-gradient(135deg, rgba(147,51,234,0.15), rgba(168,85,247,0.1)); border-radius: var(--radius-lg); border: 1px solid rgba(147,51,234,0.3);">
+                <div class="company-logo-name" style="color: #a855f7;">50+</div>
+                <div style="font-size: var(--font-size-base); color: var(--text-sub); font-weight: 600;" data-i18n="hero.stats.projects.label">대규모 프로젝트</div>
               </div>
-              <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(22,163,74,0.1)); border-radius: var(--radius-lg); border: 1px solid rgba(34,197,94,0.3);">
-                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(to right, #22c55e, #16a34a); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.5rem; line-height: 1;" data-i18n="hero.stats.uptime.value">99.9%</div>
-                <div style="font-size: 0.95rem; color: var(--text-sub); font-weight: 600;" data-i18n="hero.stats.uptime.label">시스템 가동률</div>
+              <div style="text-align: center; padding: var(--spacing-md); background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(22,163,74,0.1)); border-radius: var(--radius-lg); border: 1px solid rgba(34,197,94,0.3);">
+                <div class="company-logo-name" style="color: #22c55e;">99.9%</div>
+                <div style="font-size: var(--font-size-base); color: var(--text-sub); font-weight: 600;" data-i18n="hero.stats.uptime.label">시스템 가동률</div>
               </div>
             </div>
 
             <!-- Who we help -->
-            <p style="text-align: center; font-size: 0.95rem; color: var(--text-sub); margin-bottom: 2rem; font-weight: 500;" data-i18n="hero.whoWeHelp">
+            <p style="text-align: center; font-size: var(--font-size-base); color: var(--text-sub); margin-bottom: var(--spacing-lg); font-weight: 500;" data-i18n="hero.whoWeHelp">
               스타트업 B2B SaaS · 중견/대기업 내부 시스템 · AI 전환 프로젝트 전문
             </p>
 
             <!-- 강조된 CTA -->
-            <div class="hero-actions" style="margin-bottom: 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-              <a href="#contact" class="btn btn-primary" data-i18n="hero.cta.primary" style="font-size: 1.15rem; padding: 1.1rem 2.5rem; box-shadow: 0 25px 50px rgba(37,99,235,0.6); font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <div class="hero-actions" style="margin-bottom: var(--spacing-md); text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--spacing-sm);">
+              <a href="#contact" class="btn btn-primary" data-i18n="hero.cta.primary" style="font-size: var(--font-size-lg); padding: 1.1rem 2.5rem; box-shadow: 0 25px 50px rgba(37,99,235,0.6); font-weight: 700; display: inline-flex; align-items: center; gap: var(--spacing-xs);">
                 <span>🚀</span>
                 <span>지금 무료 AI 기술 상담 받기</span>
               </a>
-              <a href="#msp" class="btn" data-i18n="hero.cta.secondary" style="font-size: 0.95rem; padding: 0.75rem 1.5rem; color: var(--text-sub); border: 1px solid var(--border-subtle); background: transparent; font-weight: 500;">
+              <a href="#msp" class="btn" data-i18n="hero.cta.secondary" style="font-size: var(--font-size-base); padding: 0.75rem 1.5rem; color: var(--text-sub); border: 1px solid var(--border-subtle); background: transparent; font-weight: 500;">
                 운영형 계약(MSP) 알아보기
               </a>
             </div>
             
-            <p style="text-align: center; font-size: 0.9rem; color: var(--text-sub); margin-bottom: 2rem;" data-i18n="hero.cta.subtext">
+            <p style="text-align: center; font-size: var(--font-size-base); color: var(--text-sub); margin-bottom: var(--spacing-lg);" data-i18n="hero.cta.subtext">
               ✓ 1영업일 내 회신  ✓ NDA 가능  ✓ PoC/제안서 제공  ✓ 운영(SLA) 옵션
             </p>
           </div>
@@ -438,171 +450,175 @@
 
 
     <!-- Core Services -->
-    <section id="services" style="padding: 6rem 0; background: var(--bg-elevated);">
+    <section id="services" style="padding: var(--spacing-2xl) 0; background: var(--bg-elevated);">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 4rem;">
+        <div class="section-header" style="margin-bottom: var(--spacing-xl);">
           <div class="section-kicker" data-i18n="services.kicker">Core Expertise</div>
-          <h2 id="services-title" class="section-title" data-i18n="services.title" style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; text-align: center;">
+          <h2 id="services-title" class="section-title" data-i18n="services.title" style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: var(--spacing-sm); text-align: center;">
             AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축
           </h2>
-          <p class="section-description" data-i18n="services.desc" style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+          <p class="section-description" data-i18n="services.desc" style="text-align: center; max-width: 800px; margin: 0 auto; font-size: var(--font-size-lg); line-height: 1.8;">
             구축과 운영을 함께 제공하여 지속적인 성과를 만듭니다.
           </p>
         </div>
 
         <!-- Tier 1: Core Offer (3 cards) -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto 4rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-xl); max-width: 1200px; margin: 0 auto 4rem;">
           <!-- Core 1: AI 기반 B2B SaaS 구축 & 고도화 -->
-          <article class="service-card" style="background: var(--bg-elevated); border-radius: var(--radius-xl); padding: 2.5rem; border: 2px solid rgba(37,99,235,0.4); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); transition: all 0.4s ease;">
-            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="services.core1.title">AI 기반 B2B SaaS 구축 & 고도화</h3>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 1.5rem; font-weight: 600;" data-i18n="services.core1.subtitle">성과를 만드는 SaaS 아키텍처</p>
-            <ul class="checkmark-list" style="list-style: none; margin-top: 1.5rem; padding: 0;" data-i18n-list="services.core1.items">
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #3b82f6; margin-right: 0.5rem;">✓</span> 멀티테넌시 기반 확장형 구조 설계</li>
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #3b82f6; margin-right: 0.5rem;">✓</span> 빠른 시장 출시(MVP → Scale)</li>
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub);"><span style="color: #3b82f6; margin-right: 0.5rem;">✓</span> 운영 자동화와 장애 대응 체계 포함</li>
+          <article class="service-card" style="background: var(--bg-elevated); border-radius: var(--radius-xl); padding: var(--spacing-lg); border: 2px solid rgba(37,99,235,0.4); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); transition: all 0.4s ease;">
+            <h3 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="services.core1.title">AI 기반 B2B SaaS 구축 & 고도화</h3>
+            <p style="font-size: var(--font-size-base); line-height: 1.7; color: var(--text-sub); margin-bottom: var(--spacing-md); font-weight: 600;" data-i18n="services.core1.subtitle">성과를 만드는 SaaS 아키텍처</p>
+            <ul class="checkmark-list" style="list-style: none; margin-top: var(--spacing-md); padding: 0;" data-i18n-list="services.core1.items">
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #3b82f6; margin-right: 0.5rem;">✓</span> 멀티테넌시 기반 확장형 구조 설계</li>
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #3b82f6; margin-right: 0.5rem;">✓</span> 빠른 시장 출시(MVP → Scale)</li>
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub);"><span style="color: #3b82f6; margin-right: 0.5rem;">✓</span> 운영 자동화와 장애 대응 체계 포함</li>
             </ul>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#contact" class="btn" data-i18n="services.cta" style="font-size: 0.9rem; padding: 0.6rem 1.2rem; color: var(--primary-soft); border: 1px solid var(--primary-soft); background: transparent; font-weight: 500;">이 방식으로 제안 받기 →</a>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#contact" class="btn" data-i18n="services.cta" style="font-size: var(--font-size-base); padding: 0.6rem 1.2rem; color: var(--primary-soft); border: 1px solid var(--primary-soft); background: transparent; font-weight: 500;">이 방식으로 제안 받기 →</a>
             </div>
           </article>
 
           <!-- Core 2: 엔터프라이즈 안정성 중심 시스템 -->
-          <article class="service-card" style="background: var(--bg-elevated); border-radius: var(--radius-xl); padding: 2.5rem; border: 2px solid rgba(34,197,94,0.4); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); transition: all 0.4s ease;">
-            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="services.core2.title">엔터프라이즈 안정성 중심 시스템 구축</h3>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 1.5rem; font-weight: 600;" data-i18n="services.core2.subtitle">대기업급 안정성과 보안을 기본값으로</p>
-            <ul class="checkmark-list" style="list-style: none; margin-top: 1.5rem; padding: 0;" data-i18n-list="services.core2.items">
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #22c55e; margin-right: 0.5rem;">✓</span> 무중단 배포 및 관제 시스템 구축</li>
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #22c55e; margin-right: 0.5rem;">✓</span> 보안 표준 및 규제 대응 설계</li>
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub);"><span style="color: #22c55e; margin-right: 0.5rem;">✓</span> 24/7 장애 대응 체계 설계</li>
+          <article class="service-card" style="background: var(--bg-elevated); border-radius: var(--radius-xl); padding: var(--spacing-lg); border: 2px solid rgba(34,197,94,0.4); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); transition: all 0.4s ease;">
+            <h3 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="services.core2.title">엔터프라이즈 안정성 중심 시스템 구축</h3>
+            <p style="font-size: var(--font-size-base); line-height: 1.7; color: var(--text-sub); margin-bottom: var(--spacing-md); font-weight: 600;" data-i18n="services.core2.subtitle">대기업급 안정성과 보안을 기본값으로</p>
+            <ul class="checkmark-list" style="list-style: none; margin-top: var(--spacing-md); padding: 0;" data-i18n-list="services.core2.items">
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #22c55e; margin-right: 0.5rem;">✓</span> 무중단 배포 및 관제 시스템 구축</li>
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #22c55e; margin-right: 0.5rem;">✓</span> 보안 표준 및 규제 대응 설계</li>
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub);"><span style="color: #22c55e; margin-right: 0.5rem;">✓</span> 24/7 장애 대응 체계 설계</li>
             </ul>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#contact" class="btn" data-i18n="services.cta" style="font-size: 0.9rem; padding: 0.6rem 1.2rem; color: #22c55e; border: 1px solid #22c55e; background: transparent; font-weight: 500;">이 방식으로 제안 받기 →</a>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#contact" class="btn" data-i18n="services.cta" style="font-size: var(--font-size-base); padding: 0.6rem 1.2rem; color: #22c55e; border: 1px solid #22c55e; background: transparent; font-weight: 500;">이 방식으로 제안 받기 →</a>
             </div>
           </article>
 
           <!-- Core 3: AI/LLM 자동화 적용 -->
-          <article class="service-card" style="background: var(--bg-elevated); border-radius: var(--radius-xl); padding: 2.5rem; border: 2px solid rgba(147,51,234,0.4); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); transition: all 0.4s ease;">
-            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="services.core3.title">AI/LLM 자동화 적용</h3>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--text-sub); margin-bottom: 1.5rem; font-weight: 600;" data-i18n="services.core3.subtitle">AI로 반복 업무를 제거합니다</p>
-            <ul class="checkmark-list" style="list-style: none; margin-top: 1.5rem; padding: 0;" data-i18n-list="services.core3.items">
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #a855f7; margin-right: 0.5rem;">✓</span> RAG 기반 문서 검색/요약</li>
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #a855f7; margin-right: 0.5rem;">✓</span> 고객 응대 및 내부 업무 자동화</li>
-              <li style="padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-sub);"><span style="color: #a855f7; margin-right: 0.5rem;">✓</span> 데이터 기반 의사결정 자동화</li>
+          <article class="service-card" style="background: var(--bg-elevated); border-radius: var(--radius-xl); padding: var(--spacing-lg); border: 2px solid rgba(147,51,234,0.4); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); transition: all 0.4s ease;">
+            <h3 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="services.core3.title">AI/LLM 자동화 적용</h3>
+            <p style="font-size: var(--font-size-base); line-height: 1.7; color: var(--text-sub); margin-bottom: var(--spacing-md); font-weight: 600;" data-i18n="services.core3.subtitle">AI로 반복 업무를 제거합니다</p>
+            <ul class="checkmark-list" style="list-style: none; margin-top: var(--spacing-md); padding: 0;" data-i18n-list="services.core3.items">
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #a855f7; margin-right: 0.5rem;">✓</span> RAG 기반 문서 검색/요약</li>
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub); border-bottom: 1px solid var(--border-subtle);"><span style="color: #a855f7; margin-right: 0.5rem;">✓</span> 고객 응대 및 내부 업무 자동화</li>
+              <li style="padding: 0.6rem 0; font-size: var(--font-size-base); color: var(--text-sub);"><span style="color: #a855f7; margin-right: 0.5rem;">✓</span> 데이터 기반 의사결정 자동화</li>
             </ul>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#contact" class="btn" data-i18n="services.cta" style="font-size: 0.9rem; padding: 0.6rem 1.2rem; color: #a855f7; border: 1px solid #a855f7; background: transparent; font-weight: 500;">이 방식으로 제안 받기 →</a>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#contact" class="btn" data-i18n="services.cta" style="font-size: var(--font-size-base); padding: 0.6rem 1.2rem; color: #a855f7; border: 1px solid #a855f7; background: transparent; font-weight: 500;">이 방식으로 제안 받기 →</a>
             </div>
           </article>
         </div>
 
         <!-- Who we help -->
-        <div style="text-align: center; margin-bottom: 4rem; padding: 2rem; background: rgba(37,99,235,0.05); border-radius: var(--radius-lg); border: 1px solid rgba(37,99,235,0.1);">
-          <p style="font-size: 0.95rem; color: var(--text-sub); margin-bottom: 0.5rem; font-weight: 600;" data-i18n="services.customers.title">주요 고객</p>
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-size: 1rem; color: var(--text-main);" data-i18n="services.customers.text">
+        <div style="text-align: center; margin-bottom: var(--spacing-xl); padding: var(--spacing-lg); background: rgba(37,99,235,0.05); border-radius: var(--radius-lg); border: 1px solid rgba(37,99,235,0.1);">
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); margin-bottom: var(--spacing-xs); font-weight: 600;" data-i18n="services.customers.title">주요 고객</p>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md); font-size: var(--font-size-base); color: var(--text-main);" data-i18n="services.customers.text">
             <span>스타트업/중소기업의 B2B SaaS</span><span style="color: var(--text-sub);">·</span><span>기업 내부 업무시스템</span><span style="color: var(--text-sub);">·</span><span>AI 도입/자동화 전환</span>
           </div>
         </div>
 
+        <!-- 산업별 솔루션 -->
+        <div style="text-align: center; margin-top: var(--spacing-xl);">
+          <a href="/industries/" class="btn" style="font-size: var(--font-size-base); padding: 0.9rem 1.8rem; color: var(--primary-soft); border: 1px solid var(--primary-soft); background: transparent; font-weight: 500;">산업별 솔루션 보기 →</a>
+        </div>
         <!-- Blog Link -->
-        <div style="text-align: center; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border-subtle);">
-          <p style="font-size: 1rem; color: var(--text-sub); margin-bottom: 1rem;" data-i18n="services.blog.text">실무 인사이트와 가이드를 확인하세요</p>
-          <a href="/blog/" class="btn" data-i18n="services.blog.cta" style="font-size: 0.95rem; padding: 0.9rem 1.8rem; color: var(--primary-soft); border: 1px solid var(--primary-soft); background: transparent; font-weight: 500;">인사이트 보기 →</a>
+        <div style="text-align: center; margin-top: var(--spacing-xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--border-subtle);">
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); margin-bottom: var(--spacing-sm);" data-i18n="services.blog.text">실무 인사이트와 가이드를 확인하세요</p>
+          <a href="/blog/" class="btn" data-i18n="services.blog.cta" style="font-size: var(--font-size-base); padding: 0.9rem 1.8rem; color: var(--primary-soft); border: 1px solid var(--primary-soft); background: transparent; font-weight: 500;">인사이트 보기 →</a>
         </div>
       </div>
     </section>
 
     <!-- MSP: 운영형 계약 -->
-    <section id="msp" style="padding: 6rem 0; background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
+    <section id="msp" style="padding: var(--spacing-2xl) 0; background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%);">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 4rem;">
+        <div class="section-header" style="margin-bottom: var(--spacing-xl);">
           <div class="section-kicker" style="color: var(--primary-soft);" data-i18n="msp.kicker">운영형 계약</div>
-          <h2 id="msp-title" class="section-title" data-i18n="msp.title" style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; text-align: center;">운영형 계약(MSP): 구축 이후, 월 단위로 성과를 만드는 파트너십</h2>
-          <p class="section-description" data-i18n="msp.desc" style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">단발성 프로젝트가 아니라, 성과를 함께 키우는 장기 파트너십입니다.</p>
-          <div style="text-align: center; margin-top: 1.5rem;">
-            <a href="/blog/saas-msp-operation-model" style="font-size: 0.95rem; color: var(--primary-soft); text-decoration: none; font-weight: 500;" data-i18n="msp.guideLink">MSP 모델 설계 가이드 읽기 →</a>
+          <h2 id="msp-title" class="section-title" data-i18n="msp.title" style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: var(--spacing-sm); text-align: center;">운영형 계약(MSP): 구축 이후, 월 단위로 성과를 만드는 파트너십</h2>
+          <p class="section-description" data-i18n="msp.desc" style="text-align: center; max-width: 800px; margin: 0 auto; font-size: var(--font-size-lg); line-height: 1.8;">단발성 프로젝트가 아니라, 성과를 함께 키우는 장기 파트너십입니다.</p>
+          <div style="text-align: center; margin-top: var(--spacing-md);">
+            <a href="/blog/saas-msp-operation-model" style="font-size: var(--font-size-base); color: var(--primary-soft); text-decoration: none; font-weight: 500;" data-i18n="msp.guideLink">MSP 모델 설계 가이드 읽기 →</a>
           </div>
         </div>
 
         <div style="max-width: 1000px; margin: 0 auto;">
-          <div style="background: var(--bg-elevated); padding: 2.5rem; border-radius: var(--radius-xl); border: 2px solid rgba(37,99,235,0.3); margin-bottom: 3rem;">
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main);" data-i18n="msp.included.title">포함 범위</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-              <div><div style="font-size: 0.9rem; font-weight: 600; color: var(--primary-soft); margin-bottom: 0.5rem;" data-i18n="msp.included.1.title">시스템 모니터링 및 장애 대응</div><div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="msp.included.1.desc">24/7 모니터링, 실시간 알림, 즉시 장애 대응</div></div>
-              <div><div style="font-size: 0.9rem; font-weight: 600; color: var(--primary-soft); margin-bottom: 0.5rem;" data-i18n="msp.included.2.title">SLA 기반 운영 및 성능 최적화</div><div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="msp.included.2.desc">가동률 목표 설정 및 지속적 성능 개선</div></div>
-              <div><div style="font-size: 0.9rem; font-weight: 600; color: var(--primary-soft); margin-bottom: 0.5rem;" data-i18n="msp.included.3.title">보안 패치 및 규제 대응</div><div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="msp.included.3.desc">정기 보안 업데이트 및 규제 준수 관리</div></div>
-              <div><div style="font-size: 0.9rem; font-weight: 600; color: var(--primary-soft); margin-bottom: 0.5rem;" data-i18n="msp.included.4.title">비용 최적화 및 인프라 개선</div><div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="msp.included.4.desc">인프라 비용 분석 및 지속적 최적화</div></div>
-              <div><div style="font-size: 0.9rem; font-weight: 600; color: var(--primary-soft); margin-bottom: 0.5rem;" data-i18n="msp.included.5.title">AI 기능 지속 고도화</div><div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="msp.included.5.desc">운영 중인 시스템에 AI 자동화 점진적 적용</div></div>
+          <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-xl); border: 2px solid rgba(37,99,235,0.3); margin-bottom: var(--spacing-xl);">
+            <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: var(--spacing-md); color: var(--text-main);" data-i18n="msp.included.title">포함 범위</h3>
+            <div class="msp-included-grid">
+              <div><div style="font-size: var(--font-size-base); font-weight: 600; color: var(--primary-soft); margin-bottom: var(--spacing-xs);" data-i18n="msp.included.1.title">시스템 모니터링 및 장애 대응</div><div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="msp.included.1.desc">24/7 모니터링, 실시간 알림, 즉시 장애 대응</div></div>
+              <div><div style="font-size: var(--font-size-base); font-weight: 600; color: var(--primary-soft); margin-bottom: var(--spacing-xs);" data-i18n="msp.included.2.title">SLA 기반 운영 및 성능 최적화</div><div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="msp.included.2.desc">가동률 목표 설정 및 지속적 성능 개선</div></div>
+              <div><div style="font-size: var(--font-size-base); font-weight: 600; color: var(--primary-soft); margin-bottom: var(--spacing-xs);" data-i18n="msp.included.3.title">보안 패치 및 규제 대응</div><div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="msp.included.3.desc">정기 보안 업데이트 및 규제 준수 관리</div></div>
+              <div><div style="font-size: var(--font-size-base); font-weight: 600; color: var(--primary-soft); margin-bottom: var(--spacing-xs);" data-i18n="msp.included.4.title">비용 최적화 및 인프라 개선</div><div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="msp.included.4.desc">인프라 비용 분석 및 지속적 최적화</div></div>
+              <div><div style="font-size: var(--font-size-base); font-weight: 600; color: var(--primary-soft); margin-bottom: var(--spacing-xs);" data-i18n="msp.included.5.title">AI 기능 지속 고도화</div><div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="msp.included.5.desc">운영 중인 시스템에 AI 자동화 점진적 적용</div></div>
             </div>
           </div>
 
-          <div style="text-align: center; margin-bottom: 3rem;">
-            <a href="#contact" class="btn btn-primary" data-i18n="msp.cta" style="font-size: 1rem; padding: 0.9rem 2rem; box-shadow: 0 15px 30px rgba(37,99,235,0.4); font-weight: 600;">운영형 계약 상담 받기</a>
+          <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+            <a href="#contact" class="btn btn-primary" data-i18n="msp.cta" style="font-size: var(--font-size-base); padding: 0.9rem 2rem; box-shadow: 0 15px 30px rgba(37,99,235,0.4); font-weight: 600;">운영형 계약 상담 받기</a>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-            <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Lite</div>
-              <div style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem;" data-i18n="msp.tier.lite">핵심 시스템 운영 / 정기 점검 / 월 리포트</div>
+          <div class="msp-tier-grid">
+            <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+              <div style="font-size: var(--font-size-lg); font-weight: 700; color: var(--text-main); margin-bottom: var(--spacing-xs);">Lite</div>
+              <div style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: var(--spacing-sm);" data-i18n="msp.tier.lite">핵심 시스템 운영 / 정기 점검 / 월 리포트</div>
             </div>
-            <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 2px solid var(--primary-soft);">
-              <div style="font-size: 1.1rem; font-weight: 700; color: var(--primary-soft); margin-bottom: 0.5rem;">Standard</div>
-              <div style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem;" data-i18n="msp.tier.standard">상시 모니터링 / 성능 개선 / 분기별 고도화</div>
+            <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 2px solid var(--primary-soft);">
+              <div style="font-size: var(--font-size-lg); font-weight: 700; color: var(--primary-soft); margin-bottom: var(--spacing-xs);">Standard</div>
+              <div style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: var(--spacing-sm);" data-i18n="msp.tier.standard">상시 모니터링 / 성능 개선 / 분기별 고도화</div>
             </div>
-            <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Enterprise</div>
-              <div style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem;" data-i18n="msp.tier.enterprise">24/7 대응 / 전담 엔지니어 / 지속 개선 로드맵</div>
+            <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+              <div style="font-size: var(--font-size-lg); font-weight: 700; color: var(--text-main); margin-bottom: var(--spacing-xs);">Enterprise</div>
+              <div style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: var(--spacing-sm);" data-i18n="msp.tier.enterprise">24/7 대응 / 전담 엔지니어 / 지속 개선 로드맵</div>
             </div>
           </div>
 
           <div style="text-align: center;">
-            <a href="#contact" class="btn btn-primary" data-i18n="msp.cta" style="font-size: 1.1rem; padding: 1rem 2.5rem; box-shadow: 0 20px 40px rgba(37,99,235,0.5); font-weight: 600;">운영형 계약 상담 받기</a>
+            <a href="#contact" class="btn btn-primary" data-i18n="msp.cta" style="font-size: var(--font-size-lg); padding: var(--spacing-sm) 2.5rem; box-shadow: 0 20px 40px rgba(37,99,235,0.5); font-weight: 600;">운영형 계약 상담 받기</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Supporting Capabilities -->
-    <section id="supporting" style="padding: 4rem 0; background: var(--bg-elevated);">
+    <section id="supporting" style="padding: var(--spacing-2xl) 0; background: var(--bg-elevated);">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 2rem;">
-          <div class="section-kicker" style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="supporting.kicker">지원 역량</div>
-          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; text-align: center; color: var(--text-sub);" data-i18n="supporting.title">지원 역량(필요 시): 구축 품질을 뒷받침합니다</h3>
+        <div class="section-header" style="margin-bottom: var(--spacing-lg);">
+          <div class="section-kicker" style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="supporting.kicker">지원 역량</div>
+          <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: var(--spacing-xs); text-align: center; color: var(--text-sub);" data-i18n="supporting.title">지원 역량(필요 시): 구축 품질을 뒷받침합니다</h3>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
-          <div style="text-align: center; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-            <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem;">Cloud & DevOps</div>
-            <div style="font-size: 0.8rem; color: var(--text-sub);" data-i18n="supporting.devops">AWS 인프라, CI/CD, 컨테이너 관리</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); max-width: 900px; margin: 0 auto;">
+          <div style="text-align: center; padding: var(--spacing-md); background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <div style="font-size: var(--font-size-base); font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem;">Cloud & DevOps</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="supporting.devops">AWS 인프라, CI/CD, 컨테이너 관리</div>
           </div>
-          <div style="text-align: center; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-            <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem;">Admin Dashboard</div>
-            <div style="font-size: 0.8rem; color: var(--text-sub);" data-i18n="supporting.dashboard">관리자 인터페이스 및 리포트 시스템</div>
+          <div style="text-align: center; padding: var(--spacing-md); background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <div style="font-size: var(--font-size-base); font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem;">Admin Dashboard</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="supporting.dashboard">관리자 인터페이스 및 리포트 시스템</div>
           </div>
-          <div style="text-align: center; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-            <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem;">Data Pipeline/ETL</div>
-            <div style="font-size: 0.8rem; color: var(--text-sub);" data-i18n="supporting.etl">데이터 수집, 변환, 통합 파이프라인</div>
+          <div style="text-align: center; padding: var(--spacing-md); background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <div style="font-size: var(--font-size-base); font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem;">Data Pipeline/ETL</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="supporting.etl">데이터 수집, 변환, 통합 파이프라인</div>
           </div>
-          <div style="text-align: center; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-            <div style="font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem;">Mobile Apps</div>
-            <div style="font-size: 0.8rem; color: var(--text-sub);" data-i18n="supporting.mobile">React Native, Flutter 기반 앱</div>
+          <div style="text-align: center; padding: var(--spacing-md); background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <div style="font-size: var(--font-size-base); font-weight: 600; color: var(--text-main); margin-bottom: 0.3rem;">Mobile Apps</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="supporting.mobile">React Native, Flutter 기반 앱</div>
           </div>
         </div>
 
-        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
-          <div style="text-align: center; margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; font-weight: 600; color: var(--text-sub); margin-bottom: 0.5rem;">AI Business Automation</h3>
-            <p style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="supporting.aiDesc">운영 중인 시스템에 적용 가능한 AI 자동화 솔루션</p>
+        <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--border-subtle);">
+          <div style="text-align: center; margin-bottom: var(--spacing-md);">
+            <h3 style="font-size: var(--font-size-base); font-weight: 600; color: var(--text-sub); margin-bottom: var(--spacing-xs);">AI Business Automation</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="supporting.aiDesc">운영 중인 시스템에 적용 가능한 AI 자동화 솔루션</p>
           </div>
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 800px; margin: 0 auto;">
-            <div style="font-size: 0.85rem; color: var(--text-sub); padding: 0.5rem 1rem; background: var(--bg); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" data-i18n="supporting.ai1">AI 고객 응대</div>
-            <div style="font-size: 0.85rem; color: var(--text-sub); padding: 0.5rem 1rem; background: var(--bg); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" data-i18n="supporting.ai2">AI 백오피스</div>
-            <div style="font-size: 0.85rem; color: var(--text-sub); padding: 0.5rem 1rem; background: var(--bg); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" data-i18n="supporting.ai3">AI 데이터 자동화</div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-sm); max-width: 800px; margin: 0 auto;">
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub); padding: var(--spacing-xs) 1rem; background: var(--bg); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" data-i18n="supporting.ai1">AI 고객 응대</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub); padding: var(--spacing-xs) 1rem; background: var(--bg); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" data-i18n="supporting.ai2">AI 백오피스</div>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub); padding: var(--spacing-xs) 1rem; background: var(--bg); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);" data-i18n="supporting.ai3">AI 데이터 자동화</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Trust & Credibility -->
-    <section id="trust" style="padding: 4rem 0; background: radial-gradient(circle at top, rgba(37,99,235,0.08), transparent 60%);">
+    <section id="trust" style="padding: var(--spacing-2xl) 0; background: radial-gradient(circle at top, rgba(37,99,235,0.08), transparent 60%);">
       <div class="container">
           <div class="section-header">
           <div class="section-kicker" data-i18n="trust.kicker">Trust & Credibility</div>
@@ -613,14 +629,14 @@
           </p>
         </div>
 
-        <div class="services-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem;">
+        <div class="services-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--spacing-md);">
           <article class="service-card" style="border-color: rgba(37,99,235,0.6); text-align: center;">
-            <div style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(to right, var(--primary-soft), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem;">20+</div>
-            <h3 class="service-title" style="font-size: 1.3rem; margin-bottom: 0.8rem;" data-i18n="trust.years.title">20년 시스템 전문가</h3>
-            <p class="service-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="trust.years.desc">
+            <div class="company-logo-name" style="color: transparent;">20+</div>
+            <h3 class="service-title" style="font-size: var(--font-size-xl); margin-bottom: 0.8rem;" data-i18n="trust.years.title">20년 시스템 전문가</h3>
+            <p class="service-desc" style="font-size: var(--font-size-base); line-height: 1.6; margin-bottom: var(--spacing-sm);" data-i18n="trust.years.desc">
               AI 시스템 신뢰성의 기술적 기반
             </p>
-            <ul class="service-list" style="text-align: left; font-size: 0.85rem;" data-i18n-list="trust.years.items">
+            <ul class="service-list" style="text-align: left; font-size: var(--font-size-sm);" data-i18n-list="trust.years.items">
               <li>2005년부터 시작된 시스템 구축 경력</li>
               <li>금융, 항공 등 대규모 시스템 운영 전문</li>
               <li>AI 시스템 안정성 검증 경험</li>
@@ -629,12 +645,12 @@
           </article>
 
           <article class="service-card" style="border-color: rgba(147,51,234,0.7); text-align: center;">
-            <div style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(to right, var(--secondary), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem;">50+</div>
-            <h3 class="service-title" style="font-size: 1.3rem; margin-bottom: 0.8rem;" data-i18n="trust.projects.title">대기업 실적</h3>
-            <p class="service-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="trust.projects.desc">
+            <div class="company-logo-name" style="color: transparent;">50+</div>
+            <h3 class="service-title" style="font-size: var(--font-size-xl); margin-bottom: 0.8rem;" data-i18n="trust.projects.title">대기업 실적</h3>
+            <p class="service-desc" style="font-size: var(--font-size-base); line-height: 1.6; margin-bottom: var(--spacing-sm);" data-i18n="trust.projects.desc">
               AI 시스템 신뢰성의 검증된 배경
             </p>
-            <ul class="service-list" style="text-align: left; font-size: 0.85rem;" data-i18n-list="trust.projects.items">
+            <ul class="service-list" style="text-align: left; font-size: var(--font-size-sm);" data-i18n-list="trust.projects.items">
               <li><strong>삼성:</strong> 삼성화재, 삼성네트웍스, 삼성닷컴 (시스템 운영)</li>
               <li><strong>현대:</strong> 현대증권 등 금융권 시스템 구축</li>
               <li><strong>금융권:</strong> KB손해보험, 우리카드, 신한은행</li>
@@ -643,12 +659,12 @@
           </article>
 
           <article class="service-card" style="border-color: rgba(248,113,113,0.8); text-align: center;">
-            <div style="font-size: 2.2rem; font-weight: 800; background: linear-gradient(to right, var(--accent), #ff8a95); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem; line-height: 1.2;">AI-Native</div>
-            <h3 class="service-title" style="font-size: 1.3rem; margin-bottom: 0.8rem;" data-i18n="trust.aiNative.title">AI 운영 전문</h3>
-            <p class="service-desc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="trust.aiNative.desc">
+            <div class="company-logo-name" style="color: transparent;">AI-Native</div>
+            <h3 class="service-title" style="font-size: var(--font-size-xl); margin-bottom: 0.8rem;" data-i18n="trust.aiNative.title">AI 운영 전문</h3>
+            <p class="service-desc" style="font-size: var(--font-size-base); line-height: 1.6; margin-bottom: var(--spacing-sm);" data-i18n="trust.aiNative.desc">
               AI 시스템 운영 및 유지보수 전문 역량
             </p>
-            <ul class="service-list" style="text-align: left; font-size: 0.85rem;" data-i18n-list="trust.aiNative.items">
+            <ul class="service-list" style="text-align: left; font-size: var(--font-size-sm);" data-i18n-list="trust.aiNative.items">
               <li>LLM API와 기존 백오피스 시스템 통합</li>
               <li>레거시 데이터베이스와 AI 파이프라인 연동</li>
               <li>기존 CTI 시스템과 AI 상담 솔루션 통합</li>
@@ -657,64 +673,64 @@
           </article>
         </div>
 
-        <div style="margin-top: 4rem;">
-          <div style="text-align: center; margin-bottom: 2.5rem;">
-            <p style="font-size: 1.2rem; font-weight: 700; color: var(--primary-soft); line-height: 1.6; max-width: 900px; margin: 0 auto 3rem; text-align: center; letter-spacing: -0.01em;" data-i18n="trust.yearsText">
+        <div style="margin-top: var(--spacing-xl);">
+          <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+            <p style="font-size: var(--font-size-xl); font-weight: 700; color: var(--primary-soft); line-height: 1.6; max-width: 900px; margin: 0 auto 3rem; text-align: center; letter-spacing: -0.01em;" data-i18n="trust.yearsText">
               2005년부터 이어진 20년의 경력
             </p>
           </div>
           
-          <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 3rem; text-align: center; letter-spacing: -0.02em;" data-i18n="trust.referenceTitle">
+          <h3 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: var(--spacing-xl); text-align: center; letter-spacing: -0.02em;" data-i18n="trust.referenceTitle">
             대표자의 핵심 프로젝트 레퍼런스
           </h3>
           
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; align-items: center; justify-items: center; max-width: 1400px; margin: 0 auto;">
+          <div class="reference-cards-grid" >
             <!-- 삼성전자 -->
-            <div class="company-logo-card" style="text-align: center; padding: 2.5rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease; width: 100%; max-width: 240px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: default;">
-              <div class="company-logo-name company-logo-samsung" style="font-size: 2rem; font-weight: 800; margin-bottom: 0.6rem; letter-spacing: 0.05em;">삼성전자</div>
-              <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 500;">SAMSUNG ELECTRONICS</div>
+            <div class="company-logo-card reference-card" >
+              <div class="company-logo-name company-logo-samsung">삼성전자</div>
+              <div class="company-logo-subtitle">SAMSUNG ELECTRONICS</div>
             </div>
             
             <!-- 현대증권 -->
-            <div class="company-logo-card" style="text-align: center; padding: 2.5rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease; width: 100%; max-width: 240px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: default;">
-              <div class="company-logo-name company-logo-hyundai" style="font-size: 2rem; font-weight: 800; margin-bottom: 0.6rem; letter-spacing: 0.05em;">현대증권</div>
-              <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 500;">HYUNDAI SECURITIES</div>
+            <div class="company-logo-card reference-card" >
+              <div class="company-logo-name company-logo-hyundai">현대증권</div>
+              <div class="company-logo-subtitle">HYUNDAI SECURITIES</div>
             </div>
             
             <!-- 우리카드 -->
-            <div class="company-logo-card" style="text-align: center; padding: 2.5rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease; width: 100%; max-width: 240px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: default;">
-              <div style="font-size: 2rem; font-weight: 800; color: #0064ff; margin-bottom: 0.6rem; letter-spacing: 0.05em;">우리카드</div>
-              <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 500;">WOORI CARD</div>
+            <div class="company-logo-card reference-card" >
+              <div class="company-logo-name" style="color: #0064ff;">우리카드</div>
+              <div class="company-logo-subtitle">WOORI CARD</div>
             </div>
             
             <!-- SK텔링크 -->
-            <div class="company-logo-card" style="text-align: center; padding: 2.5rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease; width: 100%; max-width: 240px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: default;">
-              <div style="font-size: 2rem; font-weight: 800; color: #e4002b; margin-bottom: 0.6rem; letter-spacing: 0.05em;">SK텔링크</div>
-              <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 500;">SK TELINK</div>
+            <div class="company-logo-card reference-card" >
+              <div class="company-logo-name" style="color: #e4002b;">SK텔링크</div>
+              <div class="company-logo-subtitle">SK TELINK</div>
             </div>
             
             <!-- 아모레퍼시픽 -->
-            <div class="company-logo-card" style="text-align: center; padding: 2.5rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease; width: 100%; max-width: 240px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: default;">
-              <div style="font-size: 2rem; font-weight: 800; color: #ff6b9d; margin-bottom: 0.6rem; letter-spacing: 0.05em;">아모레퍼시픽</div>
-              <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 500;">AMOREPACIFIC</div>
+            <div class="company-logo-card reference-card" >
+              <div class="company-logo-name" style="color: #ff6b9d;">아모레퍼시픽</div>
+              <div class="company-logo-subtitle">AMOREPACIFIC</div>
             </div>
             
             <!-- Metlife -->
-            <div class="company-logo-card" style="text-align: center; padding: 2.5rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease; width: 100%; max-width: 240px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: default;">
-              <div style="font-size: 2rem; font-weight: 800; color: #00a0df; margin-bottom: 0.6rem; letter-spacing: 0.05em;">Metlife</div>
-              <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 500;">METLIFE</div>
+            <div class="company-logo-card reference-card" >
+              <div class="company-logo-name" style="color: #00a0df;">Metlife</div>
+              <div class="company-logo-subtitle">METLIFE</div>
             </div>
             
             <!-- AIA -->
-            <div class="company-logo-card" style="text-align: center; padding: 2.5rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease; width: 100%; max-width: 240px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: default;">
-              <div style="font-size: 2rem; font-weight: 800; color: #ff6b00; margin-bottom: 0.6rem; letter-spacing: 0.05em;">AIA</div>
-              <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 500;">AIA GROUP</div>
+            <div class="company-logo-card reference-card" >
+              <div class="company-logo-name" style="color: #ff6b00;">AIA</div>
+              <div class="company-logo-subtitle">AIA GROUP</div>
             </div>
             
             <!-- KB손해보험 -->
-            <div class="company-logo-card" style="text-align: center; padding: 2.5rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease; width: 100%; max-width: 240px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: default;">
-              <div style="font-size: 2rem; font-weight: 800; color: #ff6b00; margin-bottom: 0.6rem; letter-spacing: 0.05em;">KB손해보험</div>
-              <div style="font-size: 0.8rem; color: var(--text-sub); font-weight: 500;">KB INSURANCE</div>
+            <div class="company-logo-card reference-card" >
+              <div class="company-logo-name" style="color: #ff6b00;">KB손해보험</div>
+              <div class="company-logo-subtitle">KB INSURANCE</div>
             </div>
           </div>
         </div>
@@ -724,9 +740,9 @@
     <!-- Services 섹션 제거됨 - 운영 효율화 솔루션(Revenue Services)으로 통합 -->
 
     <!-- Tech Stack -->
-    <section id="tech-stack" style="padding: 2rem 0; background: var(--bg-elevated);">
+    <section id="tech-stack" style="padding: var(--spacing-lg) 0; background: var(--bg-elevated);">
       <div class="container">
-        <div class="section-header" style="margin-bottom: 1.5rem;">
+        <div class="section-header" style="margin-bottom: var(--spacing-md);">
           <div class="section-kicker" data-i18n="techStack.kicker">Technology Stack</div>
           <h2 id="tech-stack-title" class="section-title" data-i18n="techStack.title">풀스택 전문가 - C부터 Python AI까지</h2>
           <p class="section-description" data-i18n="techStack.desc">
@@ -735,70 +751,70 @@
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; max-width: 1000px; margin: 0 auto;">
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">C</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">System</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: var(--spacing-sm); max-width: 1000px; margin: 0 auto;">
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">C</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">System</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">C++</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">System</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">C++</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">System</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Kotlin</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Backend</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Kotlin</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Backend</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Java</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Backend</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Java</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Backend</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Spring Boot</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Framework</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Spring Boot</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Framework</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Python</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">AI/Backend</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Python</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">AI/Backend</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Kafka</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Event Streaming</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Kafka</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Event Streaming</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Docker</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Container</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Docker</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Container</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">AWS</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Cloud</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">AWS</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Cloud</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">React</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Frontend</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">React</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Frontend</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Vue.js</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Frontend</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Vue.js</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Frontend</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">MongoDB</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Database</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">MongoDB</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Database</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">MySQL</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Database</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">MySQL</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Database</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Oracle</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">Database</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Oracle</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">Database</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">LLM API</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">AI/ML</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">LLM API</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">AI/ML</div>
           </div>
-          <div class="about-card" style="text-align: center; padding: 1rem 0.8rem; border-color: rgba(37,99,235,0.4);">
-            <div style="font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">Vector DB</div>
-            <div style="font-size: 0.75rem; color: var(--text-sub);">AI/ML</div>
+          <div class="about-card" style="text-align: center; padding: var(--spacing-sm) 0.8rem; border-color: rgba(37,99,235,0.4);">
+            <div style="font-weight: 600; font-size: var(--font-size-base); margin-bottom: 0.3rem;">Vector DB</div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-sub);">AI/ML</div>
           </div>
         </div>
       </div>
@@ -816,7 +832,7 @@
           </p>
         </div>
 
-        <div class="services-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem;">
+        <div class="services-grid two-cols">
           <article class="service-card" style="border-color: rgba(37,99,235,0.6);">
             <div class="service-chip" style="background: rgba(37,99,235,0.2); color: var(--primary-soft);">RAG System</div>
             <h3 class="service-title" data-i18n="aiSolutions.rag.title">RAG 기반 지식 검색 시스템</h3>
@@ -830,9 +846,9 @@
               <li>출처 추적 및 신뢰도 표시</li>
               <li>멀티모달 검색 (텍스트, 이미지)</li>
             </ul>
-            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="aiSolutions.rag.metric">응답 시간</div>
-              <div style="font-size: 1rem; font-weight: 700; color: var(--primary-soft);" data-i18n="aiSolutions.rag.value">&lt; 2초 (평균 1.3초)</div>
+            <div style="margin-top: var(--spacing-sm); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="aiSolutions.rag.metric">응답 시간</div>
+              <div style="font-size: var(--font-size-base); font-weight: 700; color: var(--primary-soft);" data-i18n="aiSolutions.rag.value">&lt; 2초 (평균 1.3초)</div>
             </div>
           </article>
 
@@ -849,9 +865,9 @@
               <li>콘텐츠 요약 및 번역</li>
               <li>품질 검증 및 오류 감지</li>
             </ul>
-            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="aiSolutions.automation.metric">처리량</div>
-              <div style="font-size: 1rem; font-weight: 700; color: var(--secondary);" data-i18n="aiSolutions.automation.value">시간당 10,000+ 문서</div>
+            <div style="margin-top: var(--spacing-sm); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="aiSolutions.automation.metric">처리량</div>
+              <div style="font-size: var(--font-size-base); font-weight: 700; color: var(--secondary);" data-i18n="aiSolutions.automation.value">시간당 10,000+ 문서</div>
             </div>
           </article>
 
@@ -868,9 +884,9 @@
               <li>A/B 테스트 및 성능 최적화</li>
               <li>콜드 스타트 문제 해결</li>
             </ul>
-            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="aiSolutions.recommendation.metric">정확도</div>
-              <div style="font-size: 1rem; font-weight: 700; color: var(--accent);" data-i18n="aiSolutions.recommendation.value">CTR 35% 향상</div>
+            <div style="margin-top: var(--spacing-sm); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="aiSolutions.recommendation.metric">정확도</div>
+              <div style="font-size: var(--font-size-base); font-weight: 700; color: var(--accent);" data-i18n="aiSolutions.recommendation.value">CTR 35% 향상</div>
             </div>
           </article>
 
@@ -887,9 +903,9 @@
               <li>자연어 기반 리포트 생성</li>
               <li>대화형 데이터 탐색 인터페이스</li>
             </ul>
-            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <div style="font-size: 0.85rem; color: var(--text-sub);" data-i18n="aiSolutions.analytics.metric">처리 속도</div>
-              <div style="font-size: 1rem; font-weight: 700; color: #22c55e;" data-i18n="aiSolutions.analytics.value">실시간 분석 가능</div>
+            <div style="margin-top: var(--spacing-sm); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <div style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="aiSolutions.analytics.metric">처리 속도</div>
+              <div style="font-size: var(--font-size-base); font-weight: 700; color: #22c55e;" data-i18n="aiSolutions.analytics.value">실시간 분석 가능</div>
             </div>
           </article>
         </div>
@@ -908,7 +924,7 @@
           </p>
         </div>
 
-        <div class="about-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem;">
+        <div class="about-grid two-cols">
           <div class="about-card">
             <h3 data-i18n="why.architecture.title">확장 가능한 아키텍처</h3>
             <ul class="about-list" data-i18n-list="why.architecture.items">
@@ -1014,42 +1030,42 @@
           </p>
         </div>
 
-        <div class="services-grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem;">
+        <div class="services-grid two-cols">
           <!-- Case 1: B2B 예약/정산 플랫폼 -->
           <article class="service-card" style="border-color: rgba(37,99,235,0.6);">
-            <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="cases.card1.title">B2B 예약/정산 플랫폼</h3>
-            <div style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem;" data-i18n="cases.card1.body">
+            <h3 class="service-title" style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-xs);" data-i18n="cases.card1.title">B2B 예약/정산 플랫폼</h3>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: var(--spacing-sm);" data-i18n="cases.card1.body">
               <div><strong>역할:</strong> 아키텍처 설계 · 백엔드 · 운영</div>
               <div><strong>기간:</strong> 구축 5개월 + 운영 12개월</div>
               <div><strong>성과:</strong> 장애율 감소(추후기입), 처리량 증가(추후기입)</div>
-              <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border-subtle);"><strong>운영 계약:</strong> ✅ 진행 중</div>
+              <div style="margin-top: var(--spacing-xs); padding-top: var(--spacing-xs); border-top: 1px solid var(--border-subtle);"><strong>운영 계약:</strong> ✅ 진행 중</div>
             </div>
           </article>
 
           <article class="service-card" style="border-color: rgba(147,51,234,0.7);">
-            <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="cases.card2.title">[99.9% 가동률]을 만든 [금융 데이터 처리 시스템] 프로젝트</h3>
-            <div style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem;" data-i18n="cases.card2.body">
+            <h3 class="service-title" style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-xs);" data-i18n="cases.card2.title">[99.9% 가동률]을 만든 [금융 데이터 처리 시스템] 프로젝트</h3>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: var(--spacing-sm);" data-i18n="cases.card2.body">
               <div><strong>역할:</strong> 시스템 재설계 · 보안 강화 · 운영</div>
               <div><strong>기간:</strong> 구축 6개월 + 운영 18개월</div>
               <div><strong>성과:</strong> 99.9% 가동률 목표</div>
-              <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border-subtle);"><strong>운영 계약:</strong> ✅ 진행 중</div>
+              <div style="margin-top: var(--spacing-xs); padding-top: var(--spacing-xs); border-top: 1px solid var(--border-subtle);"><strong>운영 계약:</strong> ✅ 진행 중</div>
             </div>
           </article>
 
           <article class="service-card" style="border-color: rgba(34,197,94,0.7);">
-            <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="cases.card3.title">[처리 시간 단축]을 만든 [AI 문서 자동화] 프로젝트</h3>
-            <div style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1rem;" data-i18n="cases.card3.body">
+            <h3 class="service-title" style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-xs);" data-i18n="cases.card3.title">[처리 시간 단축]을 만든 [AI 문서 자동화] 프로젝트</h3>
+            <div style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: var(--spacing-sm);" data-i18n="cases.card3.body">
               <div><strong>역할:</strong> AI 도입 · 자동화 파이프라인 · 운영</div>
               <div><strong>기간:</strong> 구축 4개월 + 운영 10개월</div>
               <div><strong>성과:</strong> 처리 시간 단축(추후기입)</div>
-              <div style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border-subtle);"><strong>운영 계약:</strong> ✅ 진행 중</div>
+              <div style="margin-top: var(--spacing-xs); padding-top: var(--spacing-xs); border-top: 1px solid var(--border-subtle);"><strong>운영 계약:</strong> ✅ 진행 중</div>
             </div>
           </article>
         </div>
 
-        <div style="text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border-subtle);">
-          <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 1rem; font-style: italic;" data-i18n="cases.ndatext">고객 요청 시 NDA 하에 상세 사례를 공유합니다.</p>
-          <a href="#contact" class="btn btn-primary" data-i18n="msp.cta" style="font-size: 1.05rem; padding: 1rem 2.5rem; box-shadow: 0 20px 40px rgba(37,99,235,0.5); font-weight: 600;">운영형 계약 상담 받기</a>
+        <div style="text-align: center; margin-top: var(--spacing-xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--border-subtle);">
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); margin-bottom: var(--spacing-sm); font-style: italic;" data-i18n="cases.ndatext">고객 요청 시 NDA 하에 상세 사례를 공유합니다.</p>
+          <a href="#contact" class="btn btn-primary" data-i18n="msp.cta" style="font-size: 1.05rem; padding: var(--spacing-sm) 2.5rem; box-shadow: 0 20px 40px rgba(37,99,235,0.5); font-weight: 600;">운영형 계약 상담 받기</a>
         </div>
       </div>
     </section>
@@ -1086,10 +1102,10 @@
             </div>
 
             <div class="founder-desc">
-              <p style="margin-bottom: 1.5rem; line-height: 1.8;" data-i18n="founder.story.p1">
+              <p style="margin-bottom: var(--spacing-md); line-height: 1.8;" data-i18n="founder.story.p1">
                 초등학교 3학년 때 GW-BASIC으로 가졌던 프로그래머의 꿈이 20년의 실무 경력이 되었습니다.
               </p>
-              <p style="margin-bottom: 1.5rem; line-height: 1.8;" data-i18n="founder.story.p2">
+              <p style="margin-bottom: var(--spacing-md); line-height: 1.8;" data-i18n="founder.story.p2">
                 <strong>2005년 첫 시작</strong>부터 지금의 오노퍼스까지, 
                 대한민국 IT의 격변기를 온몸으로 겪어온 개발팀장이 직접 프로젝트를 리드합니다.
               </p>
@@ -1108,30 +1124,30 @@
           </div>
 
           <div>
-            <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;" data-i18n="founder.projects.title">주요 프로젝트 리드 경험</h3>
-            <div class="about-card" style="margin-bottom: 1rem;">
-              <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--primary-soft);" data-i18n="founder.projects.project1.title">항공 B2C 서비스 플랫폼 (2024.01 ~ 2025.06)</h4>
-              <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0.5rem;" data-i18n="founder.projects.project1.desc">
+            <h3 style="font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--spacing-sm);" data-i18n="founder.projects.title">주요 프로젝트 리드 경험</h3>
+            <div class="about-card" style="margin-bottom: var(--spacing-sm);">
+              <h4 style="font-size: var(--font-size-base); margin-bottom: var(--spacing-xs); color: var(--primary-soft);" data-i18n="founder.projects.project1.title">항공 B2C 서비스 플랫폼 (2024.01 ~ 2025.06)</h4>
+              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: var(--spacing-xs);" data-i18n="founder.projects.project1.desc">
                 항공 B2C 서비스 플랫폼 - 프로젝트 리더 (PL, AA, TA, DA, QA, BA)
               </p>
-              <p style="font-size: 0.8rem; color: var(--text-sub);" data-i18n="founder.projects.project1.tech">
+              <p style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="founder.projects.project1.tech">
                 Kotlin, Java, Spring Boot, Python, Oracle, React, Kafka, Docker, AWS 기반 마이크로서비스 아키텍처
               </p>
             </div>
 
-            <div class="about-card" style="margin-bottom: 1rem;">
-              <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--primary-soft);" data-i18n="founder.projects.project2.title">항공 백오피스 시스템 (2023.04 ~ 2023.12)</h4>
-              <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0.5rem;" data-i18n="founder.projects.project2.desc">
+            <div class="about-card" style="margin-bottom: var(--spacing-sm);">
+              <h4 style="font-size: var(--font-size-base); margin-bottom: var(--spacing-xs); color: var(--primary-soft);" data-i18n="founder.projects.project2.title">항공 백오피스 시스템 (2023.04 ~ 2023.12)</h4>
+              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: var(--spacing-xs);" data-i18n="founder.projects.project2.desc">
                 항공 B2B 예약 시스템 - 프로젝트 리더
               </p>
-              <p style="font-size: 0.8rem; color: var(--text-sub);" data-i18n="founder.projects.project2.tech">
+              <p style="font-size: var(--font-size-sm); color: var(--text-sub);" data-i18n="founder.projects.project2.tech">
                 Kotlin, Spring Boot, Kafka, TeamCity, Sentry
               </p>
             </div>
 
-            <div class="about-card" style="margin-bottom: 1rem;">
-              <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--primary-soft);" data-i18n="founder.projects.project3.title">글로벌 기업 웹사이트 시스템</h4>
-              <ul class="about-list" style="font-size: 0.85rem;" data-i18n-list="founder.projects.project3.items">
+            <div class="about-card" style="margin-bottom: var(--spacing-sm);">
+              <h4 style="font-size: var(--font-size-base); margin-bottom: var(--spacing-xs); color: var(--primary-soft);" data-i18n="founder.projects.project3.title">글로벌 기업 웹사이트 시스템</h4>
+              <ul class="about-list" style="font-size: var(--font-size-sm);" data-i18n-list="founder.projects.project3.items">
                 <li>삼성닷컴 서포트 글로벌 확산 (16개국) - PL</li>
                 <li>아모레퍼시픽 라네즈 글로벌 확산 (16개국) - PL</li>
                 <li>MY-AIA 운영 및 개발 - PM</li>
@@ -1139,11 +1155,11 @@
             </div>
 
             <div class="about-card">
-              <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--primary-soft);" data-i18n="founder.projects.skills.title">풀스택 전문가 - 기술 스택 전문성</h4>
-              <p style="font-size: 0.85rem; color: var(--text-sub); margin-bottom: 0.8rem; line-height: 1.6;" data-i18n="founder.projects.skills.desc">
+              <h4 style="font-size: var(--font-size-base); margin-bottom: var(--spacing-xs); color: var(--primary-soft);" data-i18n="founder.projects.skills.title">풀스택 전문가 - 기술 스택 전문성</h4>
+              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: 0.8rem; line-height: 1.6;" data-i18n="founder.projects.skills.desc">
                 C, C++, Java/Spring부터 최신 Python AI 프레임워크까지 다룰 수 있는 풀스택 전문가입니다.
               </p>
-              <ul class="about-list" style="font-size: 0.85rem;" data-i18n-list="founder.projects.skills.items">
+              <ul class="about-list" style="font-size: var(--font-size-sm);" data-i18n-list="founder.projects.skills.items">
                 <li>Low-level: C, C++ (시스템 프로그래밍 기반)</li>
                 <li>Backend: Java, Spring Boot, Kotlin, Node.js, Python</li>
                 <li>Infrastructure: AWS, Docker, Kubernetes, Kafka, CI/CD</li>
@@ -1168,60 +1184,60 @@
           </p>
         </div>
 
-        <div style="display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
-          <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="faq.q1.q">프로젝트 기간은 얼마나 걸리나요?</h3>
-            <p style="font-size: 1rem; color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;" data-i18n="faq.q1.a">MVP는 보통 2~3개월, 전체 구축은 6개월 이상이 소요됩니다.</p>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#contact" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q1.cta">무료 상담 요청하기 →</a>
+        <div style="display: grid; gap: var(--spacing-md); max-width: 900px; margin: 0 auto;">
+          <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
+            <h3 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="faq.q1.q">프로젝트 기간은 얼마나 걸리나요?</h3>
+            <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: var(--spacing-sm);" data-i18n="faq.q1.a">MVP는 보통 2~3개월, 전체 구축은 6개월 이상이 소요됩니다.</p>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q1.cta">무료 상담 요청하기 →</a>
             </div>
           </div>
-          <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="faq.q2.q">운영형 계약도 가능한가요?</h3>
-            <p style="font-size: 1rem; color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;" data-i18n="faq.q2.a">네. 구축 이후 MSP 형태로 지속적인 개선과 운영을 제공합니다.</p>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#msp" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q2.cta">운영형 계약 상담 받기 →</a>
+          <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
+            <h3 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="faq.q2.q">운영형 계약도 가능한가요?</h3>
+            <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: var(--spacing-sm);" data-i18n="faq.q2.a">네. 구축 이후 MSP 형태로 지속적인 개선과 운영을 제공합니다.</p>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#msp" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q2.cta">운영형 계약 상담 받기 →</a>
             </div>
           </div>
-          <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="faq.q3.q">NDA 체결이 가능한가요?</h3>
-            <p style="font-size: 1rem; color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;" data-i18n="faq.q3.a">모든 상담은 NDA 체결 후 진행 가능합니다.</p>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#contact" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q1.cta">무료 상담 요청하기 →</a>
+          <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
+            <h3 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="faq.q3.q">NDA 체결이 가능한가요?</h3>
+            <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: var(--spacing-sm);" data-i18n="faq.q3.a">모든 상담은 NDA 체결 후 진행 가능합니다.</p>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q1.cta">무료 상담 요청하기 →</a>
             </div>
           </div>
-          <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="faq.q4.q">PoC는 어떻게 진행되나요?</h3>
-            <p style="font-size: 1rem; color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;" data-i18n="faq.q4.a">핵심 기능 중심의 단기 검증 프로젝트로 진행합니다.</p>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#contact" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q4.cta">PoC 제안 받기 →</a>
+          <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
+            <h3 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="faq.q4.q">PoC는 어떻게 진행되나요?</h3>
+            <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: var(--spacing-sm);" data-i18n="faq.q4.a">핵심 기능 중심의 단기 검증 프로젝트로 진행합니다.</p>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q4.cta">PoC 제안 받기 →</a>
             </div>
           </div>
-          <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="faq.q5.q">유지보수 범위는 어디까지인가요?</h3>
-            <p style="font-size: 1rem; color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;" data-i18n="faq.q5.a">운영, 보안, 성능 개선, AI 고도화까지 포함됩니다.</p>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#contact" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q5.cta">상담 요청하기 →</a>
+          <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
+            <h3 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="faq.q5.q">유지보수 범위는 어디까지인가요?</h3>
+            <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: var(--spacing-sm);" data-i18n="faq.q5.a">운영, 보안, 성능 개선, AI 고도화까지 포함됩니다.</p>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q5.cta">상담 요청하기 →</a>
             </div>
           </div>
-          <div style="background: var(--bg-elevated); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);" data-i18n="faq.q6.q">AI 데이터 보안은 어떻게 하나요?</h3>
-            <p style="font-size: 1rem; color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;" data-i18n="faq.q6.a">엔터프라이즈 기준의 데이터 보호 정책을 적용합니다.</p>
-            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
-              <a href="#contact" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q6.cta">보안 상담 요청하기 →</a>
+          <div style="background: var(--bg-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
+            <h3 style="font-size: var(--font-size-lg); font-weight: 700; margin-bottom: var(--spacing-sm); color: var(--text-main);" data-i18n="faq.q6.q">AI 데이터 보안은 어떻게 하나요?</h3>
+            <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: var(--spacing-sm);" data-i18n="faq.q6.a">엔터프라이즈 기준의 데이터 보호 정책을 적용합니다.</p>
+            <div style="margin-top: var(--spacing-md); padding-top: var(--spacing-sm); border-top: 1px solid var(--border-subtle);">
+              <a href="#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.7rem 1.5rem; font-weight: 600; display: inline-block;" data-i18n="faq.q6.cta">보안 상담 요청하기 →</a>
             </div>
           </div>
         </div>
         
         <!-- FAQ CTA -->
-        <div style="text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border-subtle);">
-          <p style="font-size: 1.1rem; color: var(--text-sub); margin-bottom: 0.5rem; font-weight: 500;" data-i18n="faq.cta.subtext">
+        <div style="text-align: center; margin-top: var(--spacing-xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--border-subtle);">
+          <p style="font-size: var(--font-size-lg); color: var(--text-sub); margin-bottom: var(--spacing-xs); font-weight: 500;" data-i18n="faq.cta.subtext">
             더 궁금한 점이 있으신가요?
           </p>
-          <p style="font-size: 0.95rem; color: var(--primary-soft); margin-bottom: 1.5rem; font-weight: 600;" data-i18n="faq.cta.benefit">
+          <p style="font-size: var(--font-size-base); color: var(--primary-soft); margin-bottom: var(--spacing-md); font-weight: 600;" data-i18n="faq.cta.benefit">
             무료 제안서 제공
           </p>
-          <a href="#contact" class="btn btn-primary" data-i18n="faq.cta.text" style="font-size: 1.05rem; padding: 1rem 2.5rem; box-shadow: 0 20px 40px rgba(37,99,235,0.5); font-weight: 600;">
+          <a href="#contact" class="btn btn-primary" data-i18n="faq.cta.text" style="font-size: 1.05rem; padding: var(--spacing-sm) 2.5rem; box-shadow: 0 20px 40px rgba(37,99,235,0.5); font-weight: 600;">
             지금 상담 신청하기
           </a>
         </div>
@@ -1233,15 +1249,15 @@
       <div class="container">
         <div class="contact-inner">
           <div>
-            <h2 id="contact-title" class="contact-title" style="font-size: 1.5rem; margin-bottom: 1rem;" data-i18n="contact.title">운영형(월 단위) 또는 6개월 이상 장기 프로젝트를 우선합니다</h2>
-            <p class="contact-text" style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1rem;" data-i18n="contact.text">운영형 계약(MSP), AI 자동화, B2B SaaS 구축 등 <strong style="color: var(--primary-soft);">지속 수익 구조</strong> 프로젝트에 대해 무료 상담을 제공합니다.</p>
-            <p class="contact-sub" style="font-size: 0.95rem; margin-bottom: 1.5rem; padding: 1rem; background: rgba(37,99,235,0.05); border-radius: var(--radius-lg); border: 1px solid rgba(37,99,235,0.1);" data-i18n="contact.bullets">✓ 영업일 1일 내 회신<br>✓ NDA 가능<br>✓ PoC 제안 제공</p>
-            <div class="contact-actions" style="display: flex; flex-direction: column; gap: 1rem; align-items: stretch;">
-              <a href="mailto:support@onoffus.com?subject=운영형 계약 문의" class="btn btn-primary contact-cta-primary" style="font-size: 1.05rem; padding: 1rem 2rem; font-weight: 600;" data-i18n="msp.cta">운영형 계약 상담 받기</a>
-              <a href="mailto:support@onoffus.com?subject=프로젝트 문의" class="btn" style="font-size: 0.95rem; padding: 0.75rem 1.5rem; color: var(--text-sub); border: 1px solid var(--border-subtle); background: transparent;" data-i18n="contact.ctaGeneral">일반 프로젝트 문의</a>
+            <h2 id="contact-title" class="contact-title" style="font-size: var(--font-size-2xl); margin-bottom: var(--spacing-sm);" data-i18n="contact.title">운영형(월 단위) 또는 6개월 이상 장기 프로젝트를 우선합니다</h2>
+            <p class="contact-text" style="font-size: 1.05rem; line-height: 1.8; margin-bottom: var(--spacing-sm);" data-i18n="contact.text">운영형 계약(MSP), AI 자동화, B2B SaaS 구축 등 <strong style="color: var(--primary-soft);">지속 수익 구조</strong> 프로젝트에 대해 무료 상담을 제공합니다.</p>
+            <p class="contact-sub" style="font-size: var(--font-size-base); margin-bottom: var(--spacing-md); padding: var(--spacing-sm); background: rgba(37,99,235,0.05); border-radius: var(--radius-lg); border: 1px solid rgba(37,99,235,0.1);" data-i18n="contact.bullets">✓ 영업일 1일 내 회신<br>✓ NDA 가능<br>✓ PoC 제안 제공</p>
+            <div class="contact-actions" style="display: flex; flex-direction: column; gap: var(--spacing-sm); align-items: stretch;">
+              <a href="mailto:support@onoffus.com?subject=운영형 계약 문의" class="btn btn-primary contact-cta-primary" style="font-size: 1.05rem; padding: var(--spacing-sm) 2rem; font-weight: 600;" data-i18n="msp.cta">운영형 계약 상담 받기</a>
+              <a href="mailto:support@onoffus.com?subject=프로젝트 문의" class="btn" style="font-size: var(--font-size-base); padding: 0.75rem 1.5rem; color: var(--text-sub); border: 1px solid var(--border-subtle); background: transparent;" data-i18n="contact.ctaGeneral">일반 프로젝트 문의</a>
               <div class="contact-note" style="text-align: center; padding: 0.75rem 1rem; background: rgba(37, 99, 235, 0.08); border-radius: 12px; border: 1px solid rgba(37, 99, 235, 0.15);">
-                <span style="font-size: 0.85rem; color: var(--text-sub); display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-                  <span style="font-size: 1rem;">💬</span>
+                <span style="font-size: var(--font-size-sm); color: var(--text-sub); display: flex; align-items: center; justify-content: center; gap: var(--spacing-xs);">
+                  <span style="font-size: var(--font-size-base);">💬</span>
                   <span data-i18n="contact.note">이메일·메신저 중심 비대면 협업</span>
                 </span>
               </div>
@@ -1287,7 +1303,7 @@
 
   <!-- Floating CTA Button -->
   <div id="floatingCTA" style="position: fixed; bottom: 2rem; right: 2rem; z-index: 50; opacity: 0; transform: translateY(20px); transition: all 0.3s ease; pointer-events: none;">
-    <a href="#contact" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.9rem 1.8rem; box-shadow: 0 20px 40px rgba(37,99,235,0.6); border-radius: 999px; display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; animation: pulse 2s infinite;">
+    <a href="#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.9rem 1.8rem; box-shadow: 0 20px 40px rgba(37,99,235,0.6); border-radius: 999px; display: flex; align-items: center; gap: var(--spacing-xs); white-space: nowrap; animation: pulse 2s infinite;">
       <span>💬</span>
       <span data-i18n="floatingCTA.text">AI 도입 가능성 진단받기</span>
     </a>
@@ -1298,7 +1314,7 @@
       <div class="footer-inner">
         <div>
           <div>© <span id="year"></span> 주식회사 오노퍼스 (OnOffus Co., Ltd.). <span data-i18n="footer.tagline">AI-Powered B2B SaaS & Enterprise Systems.</span></div>
-          <div style="font-size: 0.75rem; color: var(--text-sub); margin-top: 0.5rem;" data-i18n="footer.registration">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
+          <div style="font-size: var(--font-size-xs); color: var(--text-sub); margin-top: var(--spacing-xs);" data-i18n="footer.registration">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
         </div>
         <div class="footer-links">
           <span data-i18n="footer.links">Enterprise Development · AI Solutions</span>

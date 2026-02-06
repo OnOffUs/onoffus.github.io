@@ -1,0 +1,49 @@
+/**
+ * OnOffus 로고 패키지 - 헤더 로고 크기 권장값
+ * 기존 style.css 또는 헤더 스타일 블록에 포함하거나 참고용으로 사용.
+ */
+
+/* 헤더 로고 링크 */
+.nav .logo {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: opacity var(--transition-fast, 0.2s ease);
+}
+.nav .logo:hover {
+  opacity: 0.9;
+}
+
+/* 로고 이미지 권장 크기 (데스크톱) */
+.logo-img,
+.nav .logo img {
+  height: 40px;
+  width: auto;
+  max-height: 44px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 모바일에서 약간 축소 */
+@media (max-width: 768px) {
+  .logo-img,
+  .nav .logo img {
+    height: 36px;
+    max-height: 40px;
+  }
+}
+
+/* picture 소스 사용 시 (라이트/다크 로고 전환) */
+.nav .logo picture img {
+  height: 40px;
+  width: auto;
+  max-height: 44px;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  .nav .logo picture img {
+    height: 36px;
+    max-height: 40px;
+  }
+}

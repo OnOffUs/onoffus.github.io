@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
+  <g transform="translate(20,40)">
+
+  <defs>
+    <clipPath id="pillClip">
+      <rect x="10" y="10" width="200" height="120" rx="42.0" />
+    </clipPath>
+  </defs>
+
+  <rect x="10" y="10" width="200" height="120" rx="42.0" fill="#151d29"/>
+  <g clip-path="url(#pillClip)">
+    <rect x="114.0" y="8" width="200" height="124" fill="#399bff"/>
+    <path d="M 114.0 10 L 120.0 10 L 108.0 130 L 102.0 130 Z"
+          fill="#FFFFFF" opacity="0.9"/>
+  </g>
+  <circle cx="76.0" cy="70.0" r="19.2" fill="#FFFFFF"/>
+
+  </g>
+  <text x="268" y="152.0" fill="#FFFFFF"
+        font-family="Inter, Montserrat, Arial, Helvetica, sans-serif"
+        font-weight="800" font-size="120" letter-spacing="2">ONOFFUS</text>
+</svg>
