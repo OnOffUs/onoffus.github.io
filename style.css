@@ -405,7 +405,7 @@ header.scrolled {
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
   line-height: 1.2;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -443,7 +443,7 @@ header.scrolled {
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-base);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--text-sub);
   max-width: 700px;
   margin: 0 auto 1.5rem;
@@ -623,6 +623,22 @@ header.scrolled {
   border: 1px solid var(--border-subtle);
 }
 
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1rem;
+}
+
+.hero-stat-card {
+  text-align: center;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  height: 100%;
+}
+
 [data-theme="light"] .hero-evidence {
   background: rgba(255, 255, 255, 0.6);
   border-color: rgba(0, 0, 0, 0.1);
@@ -660,10 +676,59 @@ header.scrolled {
 
 
 @media (max-width: 640px) {
-  .reference-cards-grid {
-    grid-template-columns: repeat(2, 1fr) !important; /* Two columns on mobile */
+  .container {
     padding: 0 1rem;
   }
+  
+  /* Header Optimization for Mobile */
+  .nav-links {
+    display: none; /* Hide nav links on mobile to prevent overflow */
+  }
+
+  .logo-img {
+    width: 100px; /* Reduce logo size */
+    height: auto;
+  }
+  
+  #themeLabel {
+    display: none; /* Hide theme text */
+  }
+  
+  .nav {
+    gap: 0.5rem; /* Reduce gap between logo and right controls */
+  }
+  
+  .nav-right {
+    gap: 0.5rem; /* Reduce gap between buttons */
+  }
+  
+  .lang-toggle {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-sm);
+  }
+  .services-grid,
+  .services-grid.two-cols {
+    grid-template-columns: 1fr !important;
+  }
+  .reference-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Prevent overflow with minmax(0, 1fr) */
+    gap: var(--spacing-sm) !important;
+    padding: 0;
+  }
+  
+  .company-logo-card {
+    padding: 1rem 0.5rem;
+    min-height: 100px;
+  }
+  
+  .company-logo-name {
+    font-size: var(--font-size-lg);
+  }
+  
   .msp-included-grid,
   .msp-tier-grid {
     grid-template-columns: 1fr !important;
