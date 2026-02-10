@@ -57,16 +57,23 @@
           <div style="font-size: 0.95rem; color: var(--text-sub);">피처 엔지니어링·서빙·지표</div>
         </header>
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">피처 엔지니어링</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">행동·맥락·상품 피처를 설계하고 오프라인 평가를 수행합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">목표·지표 정의</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">추천 시스템의 목적(매출 증대, 재구매 유도, 체류시간 증가)에 따라 KPI를 설정하세요. 대표 지표로는 CTR, CVR, ARPU, 재방문률 등이 있으며, 오프라인 지표와 온라인 실험 결과를 함께 해석해야 합니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">서빙 아키텍처</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">온라인/오프라인 서빙 분리와 캐시·지연 관리로 성능을 보장합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">피처 엔지니어링·데이터 파이프라인</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">사용자 행동(클릭·조회·구매), 상품 메타데이터, 세션 컨텍스트를 결합한 피처를 설계하세요. 오프라인 평가(리콜, 랭킹, AUC)와 피처 중요도 분석을 수행하고, 피처 생산 파이프라인은 지연·정합성 검사를 포함해야 합니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">성능 지표</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">CTR·CVR·AUC 등 지표와 오프라인/온라인 실험을 설계합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">오프라인 평가와 온라인 서빙</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">오프라인에서 후보 생성·리랭킹 평가를 통과한 모델만 온라인 A/B 테스트로 올리세요. 온라인 서빙은 서빙 지연을 낮추기 위해 캐시(추천 캐시, 세션 캐시)를 적극 활용하고, 재현 가능한 랭킹을 위해 정렬 우선순위를 명확히 정의합니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">실험 설계·안전장치</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">A/B 또는 다변량 실험으로 비즈니스 영향을 검증하세요. 실험에서 부정적 영향이 감지되면 빠른 롤백 루트를 마련하고, 대상군 샘플링과 기간을 사전 정의합니다.</p>
         </section>
         <div style="margin-top: 2rem;">
           <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">추천 엔진 도입 상담</a>

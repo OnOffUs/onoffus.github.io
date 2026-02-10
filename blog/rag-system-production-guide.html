@@ -57,16 +57,28 @@
           <div style="font-size: 0.95rem; color: var(--text-sub);">벡터DB·임베딩·성능·안정성</div>
         </header>
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">벡터DB 선택 기준</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">검색 정확도·지연·운영 편의성을 기준으로 선정합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">RAG 적용 적합성 판단</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">RAG는 대량의 도메인 문서를 질의응답, 요약, 내부 문서 검색에 활용할 때 강력합니다. 실시간 민감 데이터나 엄격한 규제 데이터는 설계 시 주의가 필요합니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">임베딩 파이프라인</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">정규화·버전관리·재색인 전략을 포함합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">벡터 DB 선정 기준</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">정확도(검색 품질), 지연, 확장성, 운영 편의성(백업·모니터링), 일관된 임베딩 타입 지원 등을 기준으로 선택하세요. 관리형 서비스와 셀프호스팅의 운영 비용·유지보수 부담도 비교해야 합니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">성능·안정성 운영</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">캐싱·샤딩·모니터링과 장애 대응을 설계합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">임베딩 파이프라인과 버전 관리</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">임베딩 생성 규칙, 임베딩 모델 버전, 메타데이터 표준을 정의하세요. 문서 변경 시 증분 재색인 전략과 전체 재색인 기준(버전 변경, 품질 저하)을 명시하면 운영 리스크를 줄일 수 있습니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">성능·비용 최적화</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">캐시 적중률을 높이고, 샤딩·인덱스 파라미터 튜닝으로 레이턴시를 낮추세요. 비용 관리용으로는 쿼리 예산, 임베딩 재사용, 저비용 모델을 활용한 전처리 레이어를 고려하세요.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">운영 모니터링·재색인 전략</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">검색 품질(A/B 테스트), 쿼리 지연, 임베딩 분포 변화를 모니터링하고 기준 초과 시 재색인 또는 임베딩 재생성을 실행하세요. 재색인 전에는 샘플 검증을 통해 비용 대비 효과를 평가합니다.</p>
         </section>
         <div style="margin-top: 2rem;">
           <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">RAG 아키텍처 설계 지원</a>

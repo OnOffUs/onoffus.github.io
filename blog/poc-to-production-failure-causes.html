@@ -57,12 +57,33 @@
           <div style="font-size: 0.95rem; color: var(--text-sub);">조직·데이터·운영·성능·비용</div>
         </header>
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">대표 실패 패턴</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">데이터 품질, 모델 유지보수, 운영 미비 등으로 전환이 지연됩니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">주요 실패 패턴 요약</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">PoC는 기술적 성공을 보이지만, 상용화에서 실패하는 주요 원인은 조직 준비 부족, 데이터·품질 문제, 운영 체계 부재, 성능·비용 문제입니다. 각 영역별로 구체적 원인과 해결책을 제시합니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">극복 전략</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">표준화·관측성·온콜과 예산 계획으로 리스크를 줄입니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">조직·거버넌스 해결책</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">결정권자와 운영 주체를 명확히 하고, PoC 단계부터 운영 담당을 참여시키세요. SLA·지원범위·예산을 명문화하면 전환 시 혼선을 줄일 수 있습니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">데이터·품질 준비 단계</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">PoC에서 사용한 스냅샷 데이터가 실운영 데이터와 차이날 수 있습니다. 운영 전 데이터 계약, 모니터링, 드리프트 알림을 도입하고, 정기적인 데이터 리프레시 정책을 수립하세요.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">성능·비용 확보 방안</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">성능 테스트(부하·지연)와 비용 시뮬레이션을 통해 인프라 설계와 호출 최적화를 검증하세요. 캐시, 저지연 모델 사용, 요청 프리프로세싱 등으로 비용을 제어합니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">단계적 전환 로드맵</h2>
+          <ol style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7; margin-left: 1rem;">
+            <li>PoC 결과 검증 및 KPI 재정의</li>
+            <li>운영 파이프라인·데이터 계약·런북 구축</li>
+            <li>파일럿(제한된 고객군)으로 점진 배포</li>
+            <li>모니터링 기준 통과 시 전면 롤아웃</li>
+          </ol>
         </section>
         <div style="margin-top: 2rem;">
           <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">상용화 전환 로드맵 제안</a>

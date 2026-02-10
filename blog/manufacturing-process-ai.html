@@ -57,12 +57,28 @@
           <div style="font-size: 0.95rem; color: var(--text-sub);">설비 데이터·품질·예지보전 운영</div>
         </header>
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">설비 데이터 수집</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">현장 센서·PLC·MES 연동과 데이터 표준화를 준비합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">설비 데이터 수집 아키텍처</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">현장 센서, PLC, MES 데이터를 안정적으로 수집하려면 엣지 게이트웨이로 수집한 후 스트리밍(예: MQTT/Kafka)으로 중앙 파이프라인에 적재하세요. 데이터 지연·손실을 고려한 버퍼링과 재전송 전략을 도입합니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">품질·예지보전</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">이상 탐지·고장 예측 모델과 운영 지표를 설계합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">데이터 품질·정합성 처리</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">타임스탬프 정렬, 결측치 처리, 단위 통일, 스케일링 등 전처리 규칙을 명확히 하고 자동화하세요. 스키마 검증과 이상치 탐지를 통해 센서 이상을 조기 발견합니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">이상탐지·예지보전 모델 설계</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">시계열 이상탐지, 상태 분류, 고장 예측 모델을 조합하세요. 라벨링이 제한적이면 준지도학습·이상치 기반 접근을 고려하고, 모델 성능은 FPR/TPR과 현장 임팩트를 기준으로 판단합니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">엣지 vs 클라우드 의사결정</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">저지연 제어가 필요한 경우 엣지에서 추론을 수행하고, 배치 분석·모델 학습은 클라우드에서 수행하세요. 비용·보안·운영 편의성을 고려해 하이브리드 아키텍처를 설계합니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">운영·재학습 전략</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">모델 성능 모니터링과 데이터 드리프트 감지를 통해 재학습 주기를 자동화하세요. 재학습 전후의 성능 비교와 롤백 플랜을 갖추면 현장 장애 리스크를 줄일 수 있습니다.</p>
         </section>
         <div style="margin-top: 2rem;">
           <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">공정 데이터 AI 적용 상담</a>

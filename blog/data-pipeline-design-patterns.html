@@ -57,16 +57,23 @@
           <div style="font-size: 0.95rem; color: var(--text-sub);">배치·스트리밍·ETL/ELT·품질·모니터링</div>
         </header>
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">배치·스트리밍 선택</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">지연·일관성·비용을 기준으로 적합한 패턴을 선택합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">패턴 선택 기준: 지연·일관성·비용</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">업무 요구에 따라 배치(대량 처리, 낮은 비용)와 스트리밍(저지연, 실시간 대응)을 선택하세요. 일관성이 중요한 트랜잭션 데이터는 강한 일관성 전략을, 분석용 데이터는 최종 일관성으로 처리하는 하이브리드 접근이 흔합니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">ETL/ELT 파이프라인</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">변환·적재 전략과 실패 재시도를 포함합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">ETL / ELT 설계와 실패 복구</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">데이터 변환은 재현 가능해야 합니다. 파라미터화된 작업, 체크포인트, idempotent 설계로 재시작 시 중복과 불일치를 방지하세요. 실패 시 차등 재처리(delta processing) 전략을 적용하면 전체 파이프라인 재실행 비용을 줄일 수 있습니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">품질·모니터링</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">스키마 검증, 지표, 알림으로 데이터 품질을 유지합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">스트리밍 파이프라인 운영 고려</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">체크포인트, 오프셋 관리, 메시지 순서 보장, 처리 지연 모니터링을 구현하세요. 재처리와 중복 처리를 안전하게 하기 위해 이벤트 소스의 idempotency 키를 설계하는 것이 중요합니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">데이터 품질·모니터링·알림</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">스키마 검증, null/범위 검사, 통계적 이상 탐지(분포 변화 감지)를 자동화하고, 품질 저하 시 알림을 보냅니다. 데이터 계약 위반 시 소스 소유자에게 자동 티켓을 생성하는 연동도 검토하세요.</p>
         </section>
         <div style="margin-top: 2rem;">
           <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">데이터 파이프라인 구축 제안</a>

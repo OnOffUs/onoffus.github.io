@@ -57,20 +57,39 @@
           <div style="font-size: 0.95rem; color: var(--text-sub);">데이터·거버넌스·비용·운영 기준 부재</div>
         </header>
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">데이터 품질</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">정합성·표준화 부재는 모델 성능과 신뢰도에 직접 영향을 줍니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">실패 패턴 1 — 기대치와 가치 불일치</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">기대하는 결과(예: 사람 수준의 정확도, 완전한 자동화)와 현실적 한계가 맞지 않으면 프로젝트는 빠르게 동력을 잃습니다. 해결책: 비즈니스 가치를 먼저 정의하고, 최소 기능(핵심 가치)을 검증하는 PoC를 설계하세요.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">거버넌스·보안</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">접근제어·감사·규제 대응 미비는 운영 리스크를 키웁니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">실패 패턴 2 — 데이터 품질·정합성 부족</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">학습·평가 데이터의 편향, 라벨 오류, 표준화 부재는 모델 성능과 신뢰성에 직접 영향을 줍니다. 해결책: 데이터 계약(Data Contract), 라벨링 가이드, 자동 검증 파이프라인을 도입하고 데이터 드리프트를 모니터링하세요.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">비용 모델링</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">토큰·지연·품질 트레이드오프를 반영하지 못하면 예산이 초과됩니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">실패 패턴 3 — 거버넌스·보안 공백</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">접근 통제, 감사 로그, 데이터 보존 정책이 없으면 규제·컴플라이언스 리스크가 발생합니다. 해결책: RBAC, 감사 로깅, 키 관리, 개인정보 비식별화 절차를 표준화하세요.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">운영 기준</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">SLA·온콜·런북 부재는 장애 대응의 속도와 품질을 저하시킵니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">실패 패턴 4 — 비용 관리 실패</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">토큰 기반 과금, 높은 컨텍스트 길이, 반복적 무효 호출 등으로 예산이 급증할 수 있습니다. 해결책: 비용 시뮬레이션, 캐시 전략, 프롬프트/체인 최적화, SLA 기반 요금 구조를 설계하세요.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">실패 패턴 5 — 운영·모니터링 부재</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">모델 성능 저하, 데이터 드리프트, 응답 품질 문제를 감지할 체계가 없으면 서비스 신뢰도가 떨어집니다. 해결책: 추론 지표(정확도·응답품질), 비용 지표, 이상치 탐지, 자동 롤백 절차를 운영하세요.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">실무 체크리스트</h2>
+          <ul style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7; margin: 0 0 0 1rem;">
+            <li>PoC에 적용할 명확한 KPI 정의</li>
+            <li>데이터 계약과 자동 검증 파이프라인 구축</li>
+            <li>비용 시뮬레이션과 프롬프트 최적화 방안</li>
+            <li>감사 로그·권한 관리·암호화 정책 적용</li>
+            <li>성능·품질 모니터링과 재학습 주기 설정</li>
+          </ul>
         </section>
         <div style="margin-top: 2rem;">
           <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">LLM PoC/운영 컨설팅</a>

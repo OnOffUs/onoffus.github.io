@@ -61,24 +61,38 @@
           <div style="font-size: 0.95rem; color: var(--text-sub);">조직·보안·데이터·비용·운영 준비 등 핵심 체크리스트</div>
         </header>
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">조직·거버넌스 준비</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">업무 책임·데이터 소유·변경관리 체계를 명확히 설정합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">도입 목적과 성공 지표 정의</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">프로젝트 성공은 명확한 비즈니스 목적과 측정 가능한 KPI에서 시작합니다. 기대 효과(예: 고객 응답 시간 단축, 자동화로 인한 인건비 절감, 전환율 상승)를 정의하고, PoC와 운영 단계에서 측정할 지표를 선정하세요(예: 처리량, 정확도, 비용/토큰, 서비스 가용성).</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">보안·규제 대응</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">접근제어·로그·암호화·규제 요건을 초기 설계에 반영합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">조직·거버넌스·역할</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">프로덕트 오너, 데이터 오너, 보안 책임자, 운영팀 등 책임과 의사결정 권한을 명확히 합니다. 변경관리 프로세스(요청→검토→배포)와 승인 기준을 문서화하면 PoC에서 운영으로 전환할 때 충돌을 줄일 수 있습니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">데이터 품질·통합</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">소스 품질, 표준화, 파이프라인 모니터링을 확보합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">데이터 준비·품질 관리</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">데이터 소스 식별, 표준화, 레이블링 정책을 수립하세요. 샘플링으로 품질을 검증하고, 자동화된 스키마 검증·결측치 탐지·데이터 드리프트 알림을 파이프라인에 포함합니다. PoC 단계에서 데이터 파이프라인의 신뢰성을 검증하는 것이 핵심입니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">비용·ROI·TCO</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">구독·사용량·운영 비용을 포함한 총소유비용을 산정합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">보안·규제·프라이버시</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">개인정보·민감정보 분류, 암호화(전송·저장), 접근제어, 감사 로그 보존 정책을 설계하세요. 규제(예: 개인정보보호법, GDPR)가 대상인지 초기 검토하고, 필요하면 익명화·Pseudonymization 절차를 도입합니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">운영·SLA·온콜</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">가용성 목표, 장애 대응, 런북·온콜 체계를 정의합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">비용·TCO 계산과 ROI 검증</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">구독형 AI 비용, 추론 비용(토큰), 인프라·운영 인건비를 포함한 TCO를 산출하세요. PoC 시나리오별 비용 시뮬레이션을 통해 ROI(예상 절감/증가 매출)를 산정하면 의사결정이 쉬워집니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">PoC 설계·평가 기준</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">PoC 목표, 기간, 성공 기준(정량·정성)을 정의합니다. 데이터셋, 샘플 쿼리, 성능 요구치, 검증 방법(A/B 테스트, 사용자 피드백)을 명시하고, PoC 종료 시점에 따른 전환 결정 체크리스트를 준비하세요.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">운영 준비: SLA·온콜·런북</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">가용성 목표, 응답시간(p95) 목표, 온콜 체계와 런북을 미리 설계하세요. 모니터링 지표(서비스 가용성, 에러율, 비용 이상 징후)를 정의하고, 알림·에스컬레이션 정책을 수립하면 안정적 운영으로 전환하기 수월합니다.</p>
         </section>
         <div style="margin-top: 2rem;">
           <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">무료 도입 진단 요청</a>

@@ -57,12 +57,23 @@
           <div style="font-size: 0.95rem; color: var(--text-sub);">토큰·컨텍스트·캐시·파인튜닝</div>
         </header>
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">비용 요소</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">입출력 토큰, 컨텍스트 길이, 캐시·파인튜닝 비용을 고려합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">비용 구성 요소 정리</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">LLM 비용은 주로 입력·출력 토큰 비용, 컨텍스트 길이(동시 사용량과 메모리), 모델 응답 지연에 따른 인프라 비용, 파인튜닝 및 관리 비용으로 구성됩니다. 사용 패턴(챗봇, 배치 처리, RAG)에 따라 항목 비중이 달라집니다.</p>
         </section>
+
         <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">최적화 포인트</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">프롬프트 최적화·캐시·RAG로 비용을 절감합니다.</p>
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">시나리오별 비용 계산 예시</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">예: 챗봇(대화형) — 1회 대화 평균 입력 300토큰, 출력 150토큰, 월 50만회 호출인 경우 토큰 비용을 곱해 월별 비용을 산출합니다. FAQ(배치)나 백오피스 자동화는 호출 횟수와 컨텍스트 길이가 달라 비용 구조가 달라집니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">절감 전략</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">프롬프트 최적화로 불필요 토큰을 줄이고, 응답 요약·중복 제거·캐시(정적 응답) 적용, RAG로 고비용 모델 호출을 줄이세요. 파인튜닝은 특정 고정작업에 비용효율적일 수 있으나 초기 비용과 운영 비용을 반드시 계산해야 합니다.</p>
+        </section>
+
+        <section style="margin-bottom: 2rem;">
+          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">운영·모니터링 지표</h2>
+          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">토큰 사용량, 호출당 평균 토큰, 캐시 적중률, 모델 호출 빈도, 에러율 등을 수집해 비용 이상 징후를 자동으로 탐지하고 알림을 설정하세요.</p>
         </section>
         <div style="margin-top: 2rem;">
           <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">LLM 비용 시뮬레이션</a>
