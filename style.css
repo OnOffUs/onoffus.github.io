@@ -18,6 +18,7 @@ img {
   --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.25);
   --transition-fast: 0.18s ease-out;
   --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  --header-height: 64px;
   
   /* Font display optimization to prevent layout shift */
   font-display: swap;
@@ -126,26 +127,29 @@ img {
 header {
   position: sticky;
   top: 0;
-  z-index: 40;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  background: rgba(2,6,23,0.82);
+  z-index: 9999;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: var(--bg);
+  background-color: var(--bg);
   border-bottom: 1px solid rgba(148,163,184,0.2);
   transition: all 0.3s ease;
 }
 
 header.scrolled {
-  background: rgba(2,6,23,0.92);
+  background: var(--bg);
+  background-color: var(--bg);
   border-bottom-color: rgba(148,163,184,0.4);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 [data-theme="light"] header {
-  background: rgba(249,250,251,0.92);
+  background: var(--bg);
+  background-color: var(--bg);
   border-bottom-color: rgba(148,163,184,0.4);
 }
 
 .nav {
-  height: 64px;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -871,6 +875,12 @@ header.scrolled {
 /* ---------- Section 공통 ---------- */
 main {
   background: radial-gradient(circle at top, rgba(15,23,42,0.05), transparent 60%), var(--bg);
+}
+
+/* Do not make in-content headers sticky (keep only the top site header sticky) */
+main header {
+  position: static;
+  top: auto;
 }
 
 section {
