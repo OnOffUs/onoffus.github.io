@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="금융·핀테크 AI SaaS 구축 | OnOffus">
   <meta name="twitter:description" content="금융권 규제·보안을 고려한 AI B2B SaaS 구축. 무료 상담·운영형 계약(MSP) 제공.">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="industries.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,7 +36,7 @@
     "name": "금융·핀테크 AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축",
     "description": "금융권 규제·보안을 고려한 AI B2B SaaS 및 엔터프라이즈 시스템 구축·운영형 계약(MSP)",
     "url": "https://www.onoffus.com/industries/finance.html",
-    "publisher": { "@type": "Organization", "name": "OnOffus", "url": "https://www.onoffus.com", "logo": "https://www.onoffus.com/assets/logo-horizontal-dark.png" }
+    "publisher": { "@type": "Organization", "name": "OnOffus", "url": "https://www.onoffus.com", "logo": "https://www.onoffus.com/assets/logo-horizontal-light.png" }
   }
   </script>
   <script type="application/ld+json">
@@ -52,101 +53,113 @@
 </head>
 <body>
   <div class="page">
-    <header>
-      <div class="container">
-        <nav class="nav">
-          <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
-            <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img" width="120" height="40" loading="eager" />
-          </a>
-          <div class="nav-right">
-            <div class="nav-links">
-              <a href="/#services">서비스</a>
-              <a href="/#msp">MSP</a>
-              <a href="/#cases">사례</a>
-              <a href="/industries/">산업별</a>
-              <a href="/blog/">인사이트</a>
-              <a href="/#contact">문의</a>
-            </div>
+      <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
+          <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
+          <img src="../assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
+        </a>
+        
+        
+        <div class="nav-right">
+          <div class="nav-links">
+<a href="/#services" title="서비스">서비스</a>
+            <a href="/#msp" title="운영형 계약">MSP</a>
+            <a href="/#cases" title="사례">사례</a>
+            <a href="/#faq" title="FAQ">FAQ</a>
+            <a href="/#contact" title="문의">문의</a>
+            <a href="/industries/" title="산업별">산업별</a>
+            <a href="/blog/" title="인사이트">인사이트</a>
           </div>
-        </nav>
-      </div>
-    </header>
+
+          <button class="theme-toggle" id="themeToggle" type="button">
+            <span class="icon" id="themeIcon">🌙</span>
+            <span id="themeLabel">Dark</span>
+          </button>
+        </div>
+      </nav>
+
+
+    </div>
+  </header>
+
 
     <main>
       <!-- 1. Hero -->
-      <section id="hero" style="padding: 5rem 0; background: linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 100%);">
+      <section id="hero" class="industry-hero">
         <div class="container">
-          <nav style="margin-bottom: 1.5rem; font-size: 0.9rem;">
-            <a href="/" style="color: var(--text-sub);">홈</a>
-            <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
-            <a href="/industries/" style="color: var(--text-sub);">산업별 솔루션</a>
-            <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
-            <span style="color: var(--text-main);">금융·핀테크</span>
+          <nav class="industry-breadcrumb">
+            <a href="/" class="breadcrumb-link">홈</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="/industries/" class="breadcrumb-link">산업별 솔루션</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">금융·핀테크</span>
           </nav>
-          <h1 style="font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 700; margin-bottom: 1rem; color: var(--text-main); text-align: center;">
+          <h1 class="industry-hero-title is-centered">
             금융·핀테크 AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축
           </h1>
-          <p style="font-size: var(--font-size-lg); color: var(--text-sub); max-width: 720px; margin: 0 auto 2rem; line-height: 1.7; text-align: center;">
+          <p class="industry-hero-subtitle is-centered">
             규제·감사·보안 부담을 줄이고, 정산·리포팅·고객 응대를 안정적으로. 금융권 실적 기반으로 구축부터 운영형 계약(MSP)까지 책임집니다.
           </p>
-          <ul style="list-style: none; padding: 0; margin: 0 auto 2rem; max-width: 560px; font-size: 0.95rem; color: var(--text-sub); text-align: center;">
-            <li style="margin-bottom: 0.5rem;">✓ 1영업일 내 회신</li>
-            <li style="margin-bottom: 0.5rem;">✓ NDA 가능</li>
-            <li style="margin-bottom: 0.5rem;">✓ 운영형 계약(MSP) 가능</li>
+          <ul class="industry-hero-list">
+            <li class="industry-hero-item">✓ 1영업일 내 회신</li>
+            <li class="industry-hero-item">✓ NDA 가능</li>
+            <li class="industry-hero-item">✓ 운영형 계약(MSP) 가능</li>
           </ul>
-          <div style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-            <a href="#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.9rem 2rem;">무료 기술 상담 받기</a>
-            <a href="#msp" class="btn" style="font-size: 0.95rem; padding: 0.75rem 1.5rem; color: var(--text-sub); border: 1px solid var(--border-subtle);">운영형 계약(MSP) 알아보기</a>
+          <div class="industry-hero-actions">
+            <a href="#contact" class="btn btn-primary industry-btn-primary">무료 기술 상담 받기</a>
+            <a href="#msp" class="btn industry-btn-secondary">운영형 계약(MSP) 알아보기</a>
           </div>
         </div>
       </section>
 
       <!-- 2. Industry pain points -->
-      <section style="padding: 4rem 0; background: var(--bg-elevated);">
+      <section class="industry-section industry-section--elevated">
         <div class="container">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 2rem; color: var(--text-main); text-align: center;">금융·핀테크가 겪는 현업 과제</h2>
-          <ul style="list-style: none; padding: 0; max-width: 800px; margin: 0 auto;">
-            <li style="padding: 1rem 1.5rem; margin-bottom: 1rem; background: var(--bg); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-soft); color: var(--text-main);">규제·감사 대응과 보안 요구가 높아 시스템 설계·운영 부담이 큽니다.</li>
-            <li style="padding: 1rem 1.5rem; margin-bottom: 1rem; background: var(--bg); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-soft); color: var(--text-main);">정산·리포팅·회계 연동 등 반복 업무가 많아 인력과 시간이 듭니다.</li>
-            <li style="padding: 1rem 1.5rem; margin-bottom: 1rem; background: var(--bg); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-soft); color: var(--text-main);">레거시와 신규 시스템 통합·마이그레이션 시 리스크와 비용이 부담됩니다.</li>
-            <li style="padding: 1rem 1.5rem; margin-bottom: 1rem; background: var(--bg); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-soft); color: var(--text-main);">고객 응대·CS와 내부 문의 처리를 효율화할 수단이 필요합니다.</li>
-            <li style="padding: 1rem 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-soft); color: var(--text-main);">가용성·장애 대응 수준을 금융권에 맞게 유지해야 합니다.</li>
+          <h2 class="industry-section-title">금융·핀테크가 겪는 현업 과제</h2>
+          <ul class="industry-pain-list">
+            <li class="industry-pain-item">규제·감사 대응과 보안 요구가 높아 시스템 설계·운영 부담이 큽니다.</li>
+            <li class="industry-pain-item">정산·리포팅·회계 연동 등 반복 업무가 많아 인력과 시간이 듭니다.</li>
+            <li class="industry-pain-item">레거시와 신규 시스템 통합·마이그레이션 시 리스크와 비용이 부담됩니다.</li>
+            <li class="industry-pain-item">고객 응대·CS와 내부 문의 처리를 효율화할 수단이 필요합니다.</li>
+            <li class="industry-pain-item">가용성·장애 대응 수준을 금융권에 맞게 유지해야 합니다.</li>
           </ul>
         </div>
       </section>
 
       <!-- 3. Solution mapping -->
-      <section style="padding: 4rem 0; background: var(--bg);">
+      <section class="industry-section">
         <div class="container">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 2rem; color: var(--text-main); text-align: center;">핵심 역량을 금융 도메인에 적용</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
-            <div style="background: var(--bg-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: var(--font-size-base); font-weight: 700; margin-bottom: 0.75rem; color: var(--primary-soft);">AI/LLM 자동화</h3>
-              <ul style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.7; padding-left: 1.2rem;">
+          <h2 class="industry-section-title">핵심 역량을 금융 도메인에 적용</h2>
+          <div class="industry-grid industry-grid--sm">
+            <div class="industry-card">
+              <h3 class="industry-card-title">AI/LLM 자동화</h3>
+              <ul class="industry-card-list">
                 <li>문서·계약 검토 자동화</li>
                 <li>리포팅·감사 자료 생성</li>
                 <li>고객/내부 문의 자동 응답</li>
               </ul>
             </div>
-            <div style="background: var(--bg-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: var(--font-size-base); font-weight: 700; margin-bottom: 0.75rem; color: var(--primary-soft);">B2B SaaS</h3>
-              <ul style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.7; padding-left: 1.2rem;">
+            <div class="industry-card">
+              <h3 class="industry-card-title">B2B SaaS</h3>
+              <ul class="industry-card-list">
                 <li>멀티테넌시 정산·과금 플랫폼</li>
                 <li>내부 업무·승인 워크플로우</li>
                 <li>관리자·운영 대시보드</li>
               </ul>
             </div>
-            <div style="background: var(--bg-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: var(--font-size-base); font-weight: 700; margin-bottom: 0.75rem; color: var(--primary-soft);">엔터프라이즈 안정성</h3>
-              <ul style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.7; padding-left: 1.2rem;">
+            <div class="industry-card">
+              <h3 class="industry-card-title">엔터프라이즈 안정성</h3>
+              <ul class="industry-card-list">
                 <li>무중단·무손실 배포</li>
                 <li>접근제어·감사 로그</li>
                 <li>백업·DR 설계</li>
               </ul>
             </div>
-            <div style="background: var(--bg-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: var(--font-size-base); font-weight: 700; margin-bottom: 0.75rem; color: var(--primary-soft);">운영(MSP)</h3>
-              <ul style="font-size: 0.9rem; color: var(--text-sub); line-height: 1.7; padding-left: 1.2rem;">
+            <div class="industry-card">
+              <h3 class="industry-card-title">운영(MSP)</h3>
+              <ul class="industry-card-list">
                 <li>24/7 모니터링·장애 대응</li>
                 <li>SLA 기반 성능·가동률 관리</li>
                 <li>보안 패치·규제 대응 지원</li>
@@ -157,38 +170,38 @@
       </section>
 
       <!-- 4. Use cases -->
-      <section style="padding: 4rem 0; background: var(--bg-elevated);">
+      <section class="industry-section industry-section--elevated">
         <div class="container">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 2rem; color: var(--text-main); text-align: center;">금융 도메인 활용 사례</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-            <div style="background: var(--bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">문서·정산 자동화</h3>
-              <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.75rem;">계약·보고서 검토와 정산 데이터 생성을 자동화해 인력·시간을 절감합니다.</p>
-              <ul style="font-size: var(--font-size-sm); color: var(--text-sub); padding-left: 1.2rem;">
+          <h2 class="industry-section-title">금융 도메인 활용 사례</h2>
+          <div class="industry-grid industry-grid--md">
+            <div class="industry-card industry-card--plain">
+              <h3 class="industry-card-title industry-card-title--main">문서·정산 자동화</h3>
+              <p class="industry-card-text">계약·보고서 검토와 정산 데이터 생성을 자동화해 인력·시간을 절감합니다.</p>
+              <ul class="industry-card-list industry-card-list--sm">
                 <li>계약서·규정 문서 요약·검색</li>
                 <li>정산·리포팅 파이프라인 자동화</li>
               </ul>
             </div>
-            <div style="background: var(--bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">고객응대·CS</h3>
-              <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.75rem;">상담·문의 1차 응답과 업무 분배를 AI로 보조해 CS 효율을 높입니다.</p>
-              <ul style="font-size: var(--font-size-sm); color: var(--text-sub); padding-left: 1.2rem;">
+            <div class="industry-card industry-card--plain">
+              <h3 class="industry-card-title industry-card-title--main">고객응대·CS</h3>
+              <p class="industry-card-text">상담·문의 1차 응답과 업무 분배를 AI로 보조해 CS 효율을 높입니다.</p>
+              <ul class="industry-card-list industry-card-list--sm">
                 <li>FAQ·규정 기반 답변 자동화</li>
                 <li>이슈 분류·에스컬레이션 지원</li>
               </ul>
             </div>
-            <div style="background: var(--bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">데이터 통합·리포팅</h3>
-              <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.75rem;">여러 소스 데이터를 한곳에 모아 감사·경영 리포팅을 안정적으로 제공합니다.</p>
-              <ul style="font-size: var(--font-size-sm); color: var(--text-sub); padding-left: 1.2rem;">
+            <div class="industry-card industry-card--plain">
+              <h3 class="industry-card-title industry-card-title--main">데이터 통합·리포팅</h3>
+              <p class="industry-card-text">여러 소스 데이터를 한곳에 모아 감사·경영 리포팅을 안정적으로 제공합니다.</p>
+              <ul class="industry-card-list industry-card-list--sm">
                 <li>ETL·데이터 파이프라인 구축</li>
                 <li>대시보드·리포트 자동 생성</li>
               </ul>
             </div>
-            <div style="background: var(--bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">업무 워크플로우</h3>
-              <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.75rem;">승인·검토·배치 업무를 워크플로우로 정리해 추적과 감사를 용이하게 합니다.</p>
-              <ul style="font-size: var(--font-size-sm); color: var(--text-sub); padding-left: 1.2rem;">
+            <div class="industry-card industry-card--plain">
+              <h3 class="industry-card-title industry-card-title--main">업무 워크플로우</h3>
+              <p class="industry-card-text">승인·검토·배치 업무를 워크플로우로 정리해 추적과 감사를 용이하게 합니다.</p>
+              <ul class="industry-card-list industry-card-list--sm">
                 <li>승인·검토 프로세스 시스템화</li>
                 <li>배치·스케줄 자동 실행</li>
               </ul>
@@ -198,135 +211,135 @@
       </section>
 
       <!-- 5. Architecture & Security -->
-      <section style="padding: 4rem 0; background: var(--bg);">
+      <section class="industry-section">
         <div class="container">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 2rem; color: var(--text-main); text-align: center;">아키텍처·보안·신뢰</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); max-width: 720px; margin: 0 auto 1.5rem; line-height: 1.7; text-align: center;">
+          <h2 class="industry-section-title">아키텍처·보안·신뢰</h2>
+          <p class="industry-section-lead is-centered">
             보안·접근제어·감사 로그·가용성·백업·DR을 설계 단계부터 반영합니다. 금융권에서 요구하는 ISMS·개인정보보호 등 규제 준수를 지원하는 수준으로 설계·구축하며, 구체적 인증 요건은 프로젝트 범위에 따라 협의합니다.
           </p>
-          <ul style="list-style: none; padding: 0; max-width: 600px; margin: 0 auto; font-size: 0.95rem; color: var(--text-sub);">
-            <li style="padding: 0.5rem 0;">✓ 역할 기반 접근 제어(RBAC)·감사 로그</li>
-            <li style="padding: 0.5rem 0;">✓ 암호화·전송 보안</li>
-            <li style="padding: 0.5rem 0;">✓ 고가용성·백업·DR 설계</li>
+          <ul class="industry-checklist">
+            <li class="industry-checklist-item">✓ 역할 기반 접근 제어(RBAC)·감사 로그</li>
+            <li class="industry-checklist-item">✓ 암호화·전송 보안</li>
+            <li class="industry-checklist-item">✓ 고가용성·백업·DR 설계</li>
           </ul>
         </div>
       </section>
 
       <!-- 6. MSP -->
-      <section id="msp" style="padding: 4rem 0; background: var(--bg-elevated);">
+      <section id="msp" class="industry-section industry-section--elevated">
         <div class="container">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main); text-align: center;">운영형 계약(MSP)</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); max-width: 720px; margin: 0 auto 2rem; line-height: 1.7; text-align: center;">
+          <h2 class="industry-section-title industry-section-title--tight">운영형 계약(MSP)</h2>
+          <p class="industry-section-lead is-centered industry-section-lead--spaced">
             구축 이후 월 단위로 모니터링·장애 대응·성능 개선·보안 패치·AI 고도화를 이어갑니다.
           </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-            <div style="background: var(--bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); text-align: center;">
-              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Lite</div>
-              <div style="font-size: var(--font-size-sm); color: var(--text-sub);">핵심 시스템 운영 / 정기 점검 / 월 리포트</div>
+          <div class="industry-grid industry-grid--xs industry-grid--spaced">
+            <div class="industry-plan-card">
+              <div class="industry-plan-title">Lite</div>
+              <div class="industry-plan-desc">핵심 시스템 운영 / 정기 점검 / 월 리포트</div>
             </div>
-            <div style="background: var(--bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 2px solid var(--primary-soft); text-align: center;">
-              <div style="font-weight: 700; color: var(--primary-soft); margin-bottom: 0.5rem;">Standard</div>
-              <div style="font-size: var(--font-size-sm); color: var(--text-sub);">상시 모니터링 / 성능 개선 / 분기별 고도화</div>
+            <div class="industry-plan-card industry-plan-card--highlight">
+              <div class="industry-plan-title industry-plan-title--highlight">Standard</div>
+              <div class="industry-plan-desc">상시 모니터링 / 성능 개선 / 분기별 고도화</div>
             </div>
-            <div style="background: var(--bg); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); text-align: center;">
-              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem;">Enterprise</div>
-              <div style="font-size: var(--font-size-sm); color: var(--text-sub);">24/7 대응 / 전담 엔지니어 / 지속 개선 로드맵</div>
+            <div class="industry-plan-card">
+              <div class="industry-plan-title">Enterprise</div>
+              <div class="industry-plan-desc">24/7 대응 / 전담 엔지니어 / 지속 개선 로드맵</div>
             </div>
           </div>
-          <div style="text-align: center;">
-            <a href="#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.9rem 2rem;">운영형 계약 상담 받기</a>
+          <div class="industry-center">
+            <a href="#contact" class="btn btn-primary industry-btn-primary">운영형 계약 상담 받기</a>
           </div>
         </div>
       </section>
 
       <!-- 7. Case snippet -->
-      <section style="padding: 4rem 0; background: var(--bg);">
+      <section class="industry-section">
         <div class="container">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 2rem; color: var(--text-main); text-align: center;">금융 도메인 사례 요약</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-            <div style="background: var(--bg-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <div style="font-weight: 700; color: var(--primary-soft); margin-bottom: 0.75rem;">금융 데이터 처리 시스템</div>
-              <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.5rem;">역할: 시스템 재설계·보안 강화·운영</p>
-              <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.5rem;">기간: 구축 6개월 + 운영 18개월</p>
-              <p style="font-size: 0.9rem; color: var(--text-sub);">성과: 99.9% 가동률 목표 · 운영 계약 진행 중</p>
+          <h2 class="industry-section-title">금융 도메인 사례 요약</h2>
+          <div class="industry-grid industry-grid--lg">
+            <div class="industry-card">
+              <div class="industry-summary-label">금융 데이터 처리 시스템</div>
+              <p class="industry-summary-text">역할: 시스템 재설계·보안 강화·운영</p>
+              <p class="industry-summary-text">기간: 구축 6개월 + 운영 18개월</p>
+              <p class="industry-summary-result">성과: 99.9% 가동률 목표 · 운영 계약 진행 중</p>
             </div>
-            <div style="background: var(--bg-elevated); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <div style="font-weight: 700; color: var(--primary-soft); margin-bottom: 0.75rem;">B2B 예약·정산 플랫폼</div>
-              <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.5rem;">역할: 아키텍처 설계·백엔드·운영</p>
-              <p style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 0.5rem;">기간: 구축 5개월 + 운영 12개월</p>
-              <p style="font-size: 0.9rem; color: var(--text-sub);">성과: 장애율 감소·처리량 증가 · 운영 계약 진행 중</p>
+            <div class="industry-card">
+              <div class="industry-summary-label">B2B 예약·정산 플랫폼</div>
+              <p class="industry-summary-text">역할: 아키텍처 설계·백엔드·운영</p>
+              <p class="industry-summary-text">기간: 구축 5개월 + 운영 12개월</p>
+              <p class="industry-summary-result">성과: 장애율 감소·처리량 증가 · 운영 계약 진행 중</p>
             </div>
           </div>
-          <p style="font-size: 0.9rem; color: var(--text-sub); text-align: center; margin-top: 1.5rem;">고객 요청 시 NDA 하에 상세 사례를 공유합니다.</p>
+          <p class="industry-summary-note">고객 요청 시 NDA 하에 상세 사례를 공유합니다.</p>
         </div>
       </section>
 
       <!-- 8. FAQ -->
-      <section style="padding: 4rem 0; background: var(--bg-elevated);">
+      <section class="industry-section industry-section--elevated">
         <div class="container">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 2rem; color: var(--text-main); text-align: center;">자주 묻는 질문</h2>
-          <div style="max-width: 720px; margin: 0 auto;">
-            <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">프로젝트 기간·비용은 어떻게 되나요?</h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.7;">MVP는 보통 2~3개월, 전체 구축은 6개월 이상이 소요됩니다. 범위에 따라 견적이 달라지므로 무료 상담 후 제안드립니다.</p>
-              <a href="#contact" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500;">무료 상담 요청하기 →</a>
+          <h2 class="industry-section-title">자주 묻는 질문</h2>
+          <div class="industry-faq">
+            <div class="industry-faq-item">
+              <h3 class="industry-card-title industry-card-title--main">프로젝트 기간·비용은 어떻게 되나요?</h3>
+              <p class="industry-faq-text">MVP는 보통 2~3개월, 전체 구축은 6개월 이상이 소요됩니다. 범위에 따라 견적이 달라지므로 무료 상담 후 제안드립니다.</p>
+              <a href="#contact" class="industry-faq-link">무료 상담 요청하기 →</a>
             </div>
-            <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">운영형 계약도 가능한가요?</h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.7;">네. 구축 이후 MSP 형태로 지속적인 개선과 운영을 제공합니다.</p>
-              <a href="#contact" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500;">운영형 계약 상담 받기 →</a>
+            <div class="industry-faq-item">
+              <h3 class="industry-card-title industry-card-title--main">운영형 계약도 가능한가요?</h3>
+              <p class="industry-faq-text">네. 구축 이후 MSP 형태로 지속적인 개선과 운영을 제공합니다.</p>
+              <a href="#contact" class="industry-faq-link">운영형 계약 상담 받기 →</a>
             </div>
-            <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">NDA 체결이 가능한가요?</h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.7;">모든 상담은 NDA 체결 후 진행 가능합니다.</p>
-              <a href="#contact" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500;">무료 상담 요청하기 →</a>
+            <div class="industry-faq-item">
+              <h3 class="industry-card-title industry-card-title--main">NDA 체결이 가능한가요?</h3>
+              <p class="industry-faq-text">모든 상담은 NDA 체결 후 진행 가능합니다.</p>
+              <a href="#contact" class="industry-faq-link">무료 상담 요청하기 →</a>
             </div>
-            <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">PoC는 어떻게 진행되나요?</h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.7;">핵심 기능 중심의 단기 검증 프로젝트로 진행합니다. PoC 제안 요청을 남겨주시면 범위·기간을 제안드립니다.</p>
-              <a href="#contact" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500;">PoC 제안 받기 →</a>
+            <div class="industry-faq-item">
+              <h3 class="industry-card-title industry-card-title--main">PoC는 어떻게 진행되나요?</h3>
+              <p class="industry-faq-text">핵심 기능 중심의 단기 검증 프로젝트로 진행합니다. PoC 제안 요청을 남겨주시면 범위·기간을 제안드립니다.</p>
+              <a href="#contact" class="industry-faq-link">PoC 제안 받기 →</a>
             </div>
-            <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">유지보수 범위는 어디까지인가요?</h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.7;">운영, 보안, 성능 개선, AI 고도화까지 포함됩니다. 플랜별 상세는 상담 시 안내드립니다.</p>
-              <a href="#contact" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500;">상담 요청하기 →</a>
+            <div class="industry-faq-item">
+              <h3 class="industry-card-title industry-card-title--main">유지보수 범위는 어디까지인가요?</h3>
+              <p class="industry-faq-text">운영, 보안, 성능 개선, AI 고도화까지 포함됩니다. 플랜별 상세는 상담 시 안내드립니다.</p>
+              <a href="#contact" class="industry-faq-link">상담 요청하기 →</a>
             </div>
-            <div style="padding: 1.5rem; background: var(--bg); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
-              <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">데이터 보안은 어떻게 하나요?</h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.7;">엔터프라이즈 기준의 데이터 보호·접근제어·감사 로그를 설계·운영합니다. 규제 요건은 프로젝트별로 반영합니다.</p>
-              <a href="#contact" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500;">보안 상담 요청하기 →</a>
+            <div class="industry-callout">
+              <h3 class="industry-card-title industry-card-title--main">데이터 보안은 어떻게 하나요?</h3>
+              <p class="industry-faq-text">엔터프라이즈 기준의 데이터 보호·접근제어·감사 로그를 설계·운영합니다. 규제 요건은 프로젝트별로 반영합니다.</p>
+              <a href="#contact" class="industry-faq-link">보안 상담 요청하기 →</a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- 9. Contact -->
-      <section id="contact" style="padding: 4rem 0; background: var(--bg);">
+      <section id="contact" class="industry-section industry-contact">
         <div class="container">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main); text-align: center;">문의</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); max-width: 640px; margin: 0 auto 1.5rem; line-height: 1.7; text-align: center;">
+          <h2 class="industry-section-title industry-section-title--tight">문의</h2>
+          <p class="industry-contact-lead">
             운영형(월 단위) 또는 6개월 이상 장기 프로젝트를 우선합니다.
           </p>
-          <p style="font-size: 0.95rem; color: var(--text-sub); text-align: center; margin-bottom: 2rem;">✓ 영업일 1일 내 회신 · ✓ NDA 가능 · ✓ PoC 제안 제공</p>
-          <div style="text-align: center;">
-            <a href="mailto:support@onoffus.com?subject=금융·핀테크 프로젝트 문의" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 0.9rem 2rem;">운영형 계약 상담 받기</a>
-            <a href="mailto:support@onoffus.com?subject=금융·핀테크 일반 문의" class="btn" style="font-size: 0.95rem; padding: 0.75rem 1.5rem; color: var(--text-sub); border: 1px solid var(--border-subtle); margin-left: 0.75rem;">일반 문의</a>
+          <p class="industry-contact-hint">✓ 영업일 1일 내 회신 · ✓ NDA 가능 · ✓ PoC 제안 제공</p>
+          <div class="industry-center">
+            <a href="mailto:support@onoffus.com?subject=금융·핀테크 프로젝트 문의" class="btn btn-primary industry-btn-primary">운영형 계약 상담 받기</a>
+            <a href="mailto:support@onoffus.com?subject=금융·핀테크 일반 문의" class="btn industry-btn-secondary industry-btn-secondary--spaced">일반 문의</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer style="padding: 2rem 0; border-top: 1px solid var(--border-subtle); background: var(--bg-elevated);">
+    <footer class="industry-footer industry-footer--elevated">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-          <div style="font-size: 0.9rem; color: var(--text-sub);">© <span id="year"></span> 주식회사 오노퍼스. AI-Powered B2B SaaS & Enterprise Systems.</div>
-          <a href="/" style="font-size: 0.9rem; color: var(--primary-soft);">홈</a>
-          <a href="/industries/" style="font-size: 0.9rem; color: var(--primary-soft);">산업별 솔루션</a>
-          <a href="/blog/ai-saas-enterprise-guide.html" style="font-size: 0.9rem; color: var(--primary-soft);">AI SaaS 구축 가이드</a>
+        <div class="industry-footer-inner">
+          <div class="industry-footer-text">© <span id="year"></span> 주식회사 오노퍼스. AI-Powered B2B SaaS & Enterprise Systems.</div>
+          <a href="/" class="industry-footer-link">홈</a>
+          <a href="/industries/" class="industry-footer-link">산업별 솔루션</a>
+          <a href="/blog/ai-saas-enterprise-guide.html" class="industry-footer-link">AI SaaS 구축 가이드</a>
         </div>
       </div>
     </footer>
   </div>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="../script.js" defer></script>
 </body>
 </html>

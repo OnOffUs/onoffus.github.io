@@ -209,12 +209,14 @@ const labelEl = document.getElementById('themeLabel');
 
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
-  if (theme === 'light') {
-    iconEl.textContent = '☀️';
-    labelEl.textContent = 'Light';
-  } else {
-    iconEl.textContent = '🌙';
-    labelEl.textContent = 'Dark';
+  if (iconEl && labelEl) {
+    if (theme === 'light') {
+      iconEl.textContent = '☀️';
+      labelEl.textContent = 'Light';
+    } else {
+      iconEl.textContent = '🌙';
+      labelEl.textContent = 'Dark';
+    }
   }
   localStorage.setItem('onoffus-theme', theme);
 }
@@ -227,10 +229,13 @@ if (savedTheme === 'light' || savedTheme === 'dark') {
   applyTheme('dark');
 }
 
-toggleBtn.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme') || 'dark';
-  applyTheme(current === 'dark' ? 'light' : 'dark');
-});
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  });
+}
+
 
 // Header scroll effect (강제 리플로우 방지)
 let lastScroll = 0;
@@ -455,3 +460,65 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionObserver.observe(section);
   });
 });
+
+
+// 메뉴 활성화
+function initActiveMenu() {
+  function clearActive() {
+    document.querySelectorAll('.nav-links a').forEach(function(a){ a.classList.remove('active'); });
+  }
+  function setActiveByHref(href) {
+    if (!href) return;
+    var target = document.querySelector('.nav-links a[href="' + href + '"]');
+    if (target) target.classList.add('active');
+  }
+  function isPathMatch(path, segment) {
+    return path.indexOf('/' + segment + '/') !== -1 || path.indexOf('/' + segment + '.') !== -1 || path.endsWith('/' + segment) || path.endsWith('/' + segment + '/');
+  }
+  function setActiveLink() {
+    var path = window.location.pathname || '';
+    clearActive();
+    if (isPathMatch(path, 'blog')) {
+      setActiveByHref('/blog/');
+      return;
+    }
+    if (isPathMatch(path, 'industries')) {
+      setActiveByHref('/industries/');
+      return;
+    }
+    var hash = window.location.hash;
+    if (hash) {
+      setActiveByHref(hash);
+    } else {
+      setActiveByHref('#services');
+    }
+  }
+  function initObserver() {
+    var path = window.location.pathname || '';
+    if (!((path === '/' || path.endsWith('/index.html')))) return;
+    if (!('IntersectionObserver' in window)) return;
+    var sections = ['services','msp','cases','faq','contact'];
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          clearActive();
+          setActiveByHref('#' + entry.target.id);
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0.01 });
+    sections.forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  }
+  setActiveLink();
+  window.addEventListener('hashchange', setActiveLink);
+  window.addEventListener('load', setActiveLink);
+  initObserver();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initActiveMenu);
+} else {
+  initActiveMenu();
+}

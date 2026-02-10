@@ -183,6 +183,22 @@ header.scrolled {
   filter: drop-shadow(0 0 16px rgba(96, 165, 250, 0.6)) brightness(1.2) contrast(1.3);
 }
 
+.logo .logo-light {
+  display: none;
+}
+
+.logo .logo-dark {
+  display: block;
+}
+
+[data-theme="light"] .logo .logo-dark {
+  display: none;
+}
+
+[data-theme="light"] .logo .logo-light {
+  display: block;
+}
+
 [data-theme="light"] .logo:hover {
   opacity: 0.9;
 }
@@ -257,6 +273,15 @@ header.scrolled {
 
 .nav-links a:hover {
   color: var(--text-main);
+}
+
+.nav-links a.active {
+  color: var(--primary-soft);
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-links a:hover::after {
@@ -1917,3 +1942,12 @@ footer {
         font-size: var(--font-size-xs) !important;
       }
     }
+
+.nav-links a.active {
+  color: var(--primary-soft);
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}

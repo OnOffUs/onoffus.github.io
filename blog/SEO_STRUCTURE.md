@@ -46,7 +46,7 @@
   "@type": "BlogPosting",
   "headline": "기사 제목",
   "description": "메타 설명",
-  "image": "https://www.onoffus.com/logo-onoffus.png",
+  "image": "https://www.onoffus.com/assets/logo-horizontal-light.png",
   "datePublished": "2025-01-25T00:00:00+09:00",
   "dateModified": "2025-01-25T00:00:00+09:00",
   "author": {
@@ -59,7 +59,7 @@
     "name": "OnOffus",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.onoffus.com/logo-onoffus.png"
+      "url": "https://www.onoffus.com/assets/logo-horizontal-light.png"
     }
   },
   "mainEntityOfPage": {

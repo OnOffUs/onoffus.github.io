@@ -7,128 +7,252 @@
   <title>데이터 파이프라인 설계 패턴 | OnOffus</title>
   <meta name="description" content="배치·스트리밍·ETL/ELT 패턴과 품질·모니터링 설계의 핵심을 정리합니다.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.onoffus.com/blog/data-pipeline-design-patterns">
+  <link rel="canonical" href="https://www.onoffus.com/blog/data-pipeline-design-patterns.html">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.onoffus.com/blog/data-pipeline-design-patterns">
+  <meta property="og:url" content="https://www.onoffus.com/blog/data-pipeline-design-patterns.html">
   <meta property="og:title" content="데이터 파이프라인 설계 패턴">
-  <meta property="og:description" content="배치·스트리밍·ETL/ELT 패턴과 품질·모니터링 설계.">
+  <meta property="og:description" content="배치·스트리밍·ETL/ELT 패턴과 품질·모니터링 설계의 핵심을 정리합니다.">
   <meta property="og:image" content="https://www.onoffus.com/assets/og-image.png">
   <meta property="article:published_time" content="2026-02-08T00:00:00+09:00">
   <meta property="article:author" content="OnOffus Engineering Team">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="데이터 파이프라인 설계 패턴">
-  <meta name="twitter:description" content="파이프라인 패턴과 품질·모니터링 설계.">
+  <meta name="twitter:description" content="배치·스트리밍·ETL/ELT 패턴과 품질·모니터링 설계의 핵심을 정리합니다.">
   <link rel="stylesheet" href="../style.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"데이터 파이프라인 설계 패턴","description":"배치·스트리밍·ETL/ELT 패턴과 품질·모니터링 설계의 핵심을 정리합니다.","image":"https://www.onoffus.com/assets/og-image.png","datePublished":"2026-02-08T00:00:00+09:00","dateModified":"2026-02-08T00:00:00+09:00","author":{"@type":"Organization","name":"OnOffus Engineering Team","url":"https://www.onoffus.com"},"publisher":{"@type":"Organization","name":"OnOffus","logo":{"@type":"ImageObject","url":"https://www.onoffus.com/logo-onoffus.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.onoffus.com/blog/data-pipeline-design-patterns"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.onoffus.com/"},{"@type":"ListItem","position":2,"name":"인사이트","item":"https://www.onoffus.com/blog/"},{"@type":"ListItem","position":3,"name":"데이터 파이프라인","item":"https://www.onoffus.com/blog/data-pipeline-design-patterns"}]}</script>
+  <link rel="stylesheet" href="blog.css">
+  
+  <!-- BlogPosting Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "데이터 파이프라인 설계 패턴",
+    "description": "배치·스트리밍·ETL/ELT 패턴과 품질·모니터링 설계의 핵심을 정리합니다.",
+    "image": "https://www.onoffus.com/assets/og-image.png",
+    "datePublished": "2026-02-08T00:00:00+09:00",
+    "dateModified": "2026-02-08T00:00:00+09:00",
+    "author": {
+      "@type": "Organization",
+      "name": "OnOffus Engineering Team",
+      "url": "https://www.onoffus.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OnOffus",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.onoffus.com/assets/logo-horizontal-light.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.onoffus.com/blog/data-pipeline-design-patterns.html"
+    }
+  }
+  </script>
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": "https://www.onoffus.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "인사이트",
+        "item": "https://www.onoffus.com/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "데이터 파이프라인 설계 패턴",
+        "item": "https://www.onoffus.com/blog/data-pipeline-design-patterns"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="app">
     <header>
       <div class="container">
         <nav class="nav">
-          <a href="/" class="nav-logo">
-            <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" width="120" height="40" loading="eager">
+          <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
+            <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
+            <img src="../assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
           </a>
           <div class="nav-right">
             <div class="nav-links">
-              <a href="/#services">서비스</a>
-              <a href="/#msp">MSP</a>
-              <a href="/#cases">사례</a>
-              <a href="/#faq">FAQ</a>
-              <a href="/blog/" style="color: var(--primary-soft); font-weight: 600;">인사이트</a>
-              <a href="/#contact">문의</a>
+              <a href="/#services" title="서비스">서비스</a>
+              <a href="/#msp" title="운영형 계약">MSP</a>
+              <a href="/#cases" title="사례">사례</a>
+              <a href="/#faq" title="FAQ">FAQ</a>
+              <a href="/#contact" title="문의">문의</a>
+              <a href="/industries/" title="산업별">산업별</a>
+              <a href="/blog/" title="인사이트">인사이트</a>
             </div>
+            <button class="theme-toggle" id="themeToggle" type="button">
+              <span class="icon" id="themeIcon">🌙</span>
+              <span id="themeLabel">Dark</span>
+            </button>
           </div>
         </nav>
       </div>
     </header>
+
     <main>
-      <article style="max-width: 900px; margin: 0 auto; padding: 3rem 1rem;">
-        <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
-          <a href="/" style="color: var(--text-sub);">홈</a>
-          <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
-          <a href="/blog/" style="color: var(--text-sub);">인사이트</a>
-          <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
-          <span style="color: var(--text-main);">데이터 파이프라인</span>
+      <article class="blog-article">
+        <!-- Breadcrumb -->
+        <nav class="blog-breadcrumb">
+          <a href="/" class="breadcrumb-link">홈</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/blog/" class="breadcrumb-link">인사이트</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">데이터 파이프라인 설계 패턴</span>
         </nav>
-        <header style="margin-bottom: 3rem;">
-          <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.3;">데이터 파이프라인 설계 패턴</h1>
-          <div style="font-size: 0.95rem; color: var(--text-sub);">배치·스트리밍·ETL/ELT·품질·모니터링</div>
+
+        <!-- Article Header -->
+        <header class="blog-header">
+          <h1 class="blog-title">
+            데이터 파이프라인 설계 패턴
+          </h1>
+          <div class="blog-meta">
+            <span>작성: OnOffus Engineering Team</span>
+            <span>발행일: </span>
+            <span>읽는 시간: 약 10분</span>
+          </div>
+          <p class="blog-intro">
+            
+          </p>
         </header>
-        <!-- Expanded Content -->
-        <section style="margin: 3rem 0 2rem;">
-          <h2 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">데이터 파이프라인 실전 설계 포인트</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;">데이터 파이프라인의 성공 여부는 스키마/품질와 배치/스트리밍 같은 핵심 축을 얼마나 일찍 결정하느냐에 달려 있습니다. 초기에는 단순하게 시작하되, 확장 시점에 병목이 생길 부분을 미리 가정하고 대응 전략을 준비해야 합니다.</p>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8;">특히 라인리지 영역은 운영 단계에서 비용과 안정성에 직접적인 영향을 줍니다. 기준을 문서화하고 팀 간 합의를 만들면 변경 비용을 줄일 수 있습니다.</p>
-        </section>
 
-        <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">단계별 로드맵</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;">1단계에서는 핵심 문제를 검증하는 최소 범위를 정의합니다. 2단계에서는 운영 기준과 확장 기준을 맞추며, 3단계에서는 자동화와 비용 통제를 체계화합니다.</p>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8;">로드맵은 기능 중심이 아니라 리스크 중심으로 설계하는 것이 효과적입니다. 실패 확률이 높은 구간을 먼저 해결하면 전체 일정이 안정됩니다.</p>
-        </section>
+        <!-- Article Content -->
+        <div class="blog-content">
+          <!-- Expanded Content -->
+          <section class="blog-section blog-section--lead">
+            <h2 class="blog-cta-title">데이터 파이프라인 실전 설계 포인트</h2>
+            <p class="blog-paragraph blog-paragraph--spaced">데이터 파이프라인의 성공 여부는 스키마/품질와 배치/스트리밍 같은 핵심 축을 얼마나 일찍 결정하느냐에 달려 있습니다. 초기에는 단순하게 시작하되, 확장 시점에 병목이 생길 부분을 미리 가정하고 대응 전략을 준비해야 합니다.</p>
+            <p class="blog-paragraph">특히 라인리지 영역은 운영 단계에서 비용과 안정성에 직접적인 영향을 줍니다. 기준을 문서화하고 팀 간 합의를 만들면 변경 비용을 줄일 수 있습니다.</p>
+          </section>
 
-        <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">운영·지표·최적화</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8; margin-bottom: 1rem;">운영 단계에서는 성능(p95), 품질, 비용 지표를 동시에 관리해야 합니다. 지표가 하나라도 빠지면 문제가 늦게 발견되어 비용이 증가합니다.</p>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.8;">정기 리뷰로 지표의 기준값과 목표값을 업데이트하고, 기준을 넘는 경우 자동 알림과 대응 정책을 실행하도록 설계하세요.</p>
-        </section>
+          <section class="blog-section">
+            <h2 class="blog-cta-title">단계별 로드맵</h2>
+            <p class="blog-paragraph blog-paragraph--spaced">1단계에서는 핵심 문제를 검증하는 최소 범위를 정의합니다. 2단계에서는 운영 기준과 확장 기준을 맞추며, 3단계에서는 자동화와 비용 통제를 체계화합니다.</p>
+            <p class="blog-paragraph">로드맵은 기능 중심이 아니라 리스크 중심으로 설계하는 것이 효과적입니다. 실패 확률이 높은 구간을 먼저 해결하면 전체 일정이 안정됩니다.</p>
+          </section>
 
-        <section style="margin: 3rem 0 2rem;">
-          <h2 style="font-size: var(--font-size-2xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">심화 가이드</h2>
+          <section class="blog-section">
+            <h2 class="blog-cta-title">운영·지표·최적화</h2>
+            <p class="blog-paragraph blog-paragraph--spaced">운영 단계에서는 성능(p95), 품질, 비용 지표를 동시에 관리해야 합니다. 지표가 하나라도 빠지면 문제가 늦게 발견되어 비용이 증가합니다.</p>
+            <p class="blog-paragraph">정기 리뷰로 지표의 기준값과 목표값을 업데이트하고, 기준을 넘는 경우 자동 알림과 대응 정책을 실행하도록 설계하세요.</p>
+          </section>
 
-          <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin: 1.5rem 0 0.6rem; color: var(--text-main);">스키마 관리</h3>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">스키마 변경은 품질 사고의 원인입니다. 버전 관리와 호환성 규칙을 마련하세요.</p>
+          <section class="blog-section blog-section--lead">
+            <h2 class="blog-heading-lg">심화 가이드</h2>
 
-          <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin: 1.5rem 0 0.6rem; color: var(--text-main);">배치/스트리밍 혼합</h3>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">실시간 처리와 배치 처리 간 데이터 일관성을 맞추는 정책이 필요합니다.</p>
+            <h3 class="blog-heading-md">스키마 관리</h3>
+            <p class="blog-paragraph blog-paragraph--tight">스키마 변경은 품질 사고의 원인입니다. 버전 관리와 호환성 규칙을 마련하세요.</p>
 
-          <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin: 1.5rem 0 0.6rem; color: var(--text-main);">관측성과 라인지</h3>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">라인리지 추적은 장애 원인 분석과 품질 개선에 필수입니다.</p>
+            <h3 class="blog-heading-md">배치/스트리밍 혼합</h3>
+            <p class="blog-paragraph blog-paragraph--tight">실시간 처리와 배치 처리 간 데이터 일관성을 맞추는 정책이 필요합니다.</p>
 
-        </section>
+            <h3 class="blog-heading-md">관측성과 라인지</h3>
+            <p class="blog-paragraph blog-paragraph--tight">라인리지 추적은 장애 원인 분석과 품질 개선에 필수입니다.</p>
 
-        
+          </section>
 
-        
-        
+          <section class="blog-section">
+            <h2 class="blog-heading-sm">패턴 선택 기준: 지연·일관성·비용</h2>
+            <p class="blog-paragraph blog-paragraph--tight">업무 요구에 따라 배치(대량 처리, 낮은 비용)와 스트리밍(저지연, 실시간 대응)을 선택하세요. 일관성이 중요한 트랜잭션 데이터는 강한 일관성 전략을, 분석용 데이터는 최종 일관성으로 처리하는 하이브리드 접근이 흔합니다.</p>
+          </section>
 
-        
+          <section class="blog-section">
+            <h2 class="blog-heading-sm">ETL / ELT 설계와 실패 복구</h2>
+            <p class="blog-paragraph blog-paragraph--tight">데이터 변환은 재현 가능해야 합니다. 파라미터화된 작업, 체크포인트, idempotent 설계로 재시작 시 중복과 불일치를 방지하세요. 실패 시 차등 재처리(delta processing) 전략을 적용하면 전체 파이프라인 재실행 비용을 줄일 수 있습니다.</p>
+          </section>
 
-        
+          <section class="blog-section">
+            <h2 class="blog-heading-sm">스트리밍 파이프라인 운영 고려</h2>
+            <p class="blog-paragraph blog-paragraph--tight">체크포인트, 오프셋 관리, 메시지 순서 보장, 처리 지연 모니터링을 구현하세요. 재처리와 중복 처리를 안전하게 하기 위해 이벤트 소스의 idempotency 키를 설계하는 것이 중요합니다.</p>
+          </section>
 
-        
-
-
-        <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">패턴 선택 기준: 지연·일관성·비용</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">업무 요구에 따라 배치(대량 처리, 낮은 비용)와 스트리밍(저지연, 실시간 대응)을 선택하세요. 일관성이 중요한 트랜잭션 데이터는 강한 일관성 전략을, 분석용 데이터는 최종 일관성으로 처리하는 하이브리드 접근이 흔합니다.</p>
-        </section>
-
-        <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">ETL / ELT 설계와 실패 복구</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">데이터 변환은 재현 가능해야 합니다. 파라미터화된 작업, 체크포인트, idempotent 설계로 재시작 시 중복과 불일치를 방지하세요. 실패 시 차등 재처리(delta processing) 전략을 적용하면 전체 파이프라인 재실행 비용을 줄일 수 있습니다.</p>
-        </section>
-
-        <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">스트리밍 파이프라인 운영 고려</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">체크포인트, 오프셋 관리, 메시지 순서 보장, 처리 지연 모니터링을 구현하세요. 재처리와 중복 처리를 안전하게 하기 위해 이벤트 소스의 idempotency 키를 설계하는 것이 중요합니다.</p>
-        </section>
-
-        <section style="margin-bottom: 2rem;">
-          <h2 style="font-size: var(--font-size-xl); margin-bottom: 0.75rem;">데이터 품질·모니터링·알림</h2>
-          <p style="font-size: var(--font-size-base); color: var(--text-sub); line-height: 1.7;">스키마 검증, null/범위 검사, 통계적 이상 탐지(분포 변화 감지)를 자동화하고, 품질 저하 시 알림을 보냅니다. 데이터 계약 위반 시 소스 소유자에게 자동 티켓을 생성하는 연동도 검토하세요.</p>
-        </section>
-        <div style="margin-top: 2rem;">
-          <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">데이터 파이프라인 구축 제안</a>
+          <section class="blog-section">
+            <h2 class="blog-heading-sm">데이터 품질·모니터링·알림</h2>
+            <p class="blog-paragraph blog-paragraph--tight">스키마 검증, null/범위 검사, 통계적 이상 탐지(분포 변화 감지)를 자동화하고, 품질 저하 시 알림을 보냅니다. 데이터 계약 위반 시 소스 소유자에게 자동 티켓을 생성하는 연동도 검토하세요.</p>
+          </section>
+          <div class="blog-inline-cta">
+            <a href="/#contact" class="btn btn-primary blog-inline-cta-link">데이터 파이프라인 구축 제안</a>
+          </div>
         </div>
-      
-        
 
-        
-</article>
+        <!-- Link to Pillar -->
+        <div class="blog-pillar">
+          <p class="blog-pillar-text">
+            <strong class="blog-pillar-label">핵심 가이드:</strong> 
+            <a href="/blog/ai-saas-enterprise-guide.html" class="blog-pillar-link">AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법</a>에서 전체 프로세스를 확인하세요.
+          </p>
+        </div>
+
+        <!-- CTA Block -->
+        <div class="blog-cta">
+          <h2 class="blog-cta-title">
+            프로젝트에 적용하고 싶으신가요?
+          </h2>
+          <p class="blog-cta-text">
+            운영형(월 단위) 또는 6개월 이상 장기 프로젝트를 우선합니다. 무료 상담을 통해 귀사에 맞는 솔루션을 제안해드립니다.
+          </p>
+          <div class="blog-cta-actions">
+            <a href="/#contact" class="btn btn-primary blog-cta-primary">
+              AI SaaS 구축 상담 받기
+            </a>
+            <a href="/#msp" class="btn blog-cta-secondary">
+              운영형 계약(MSP) 문의하기
+            </a>
+          </div>
+        </div>
+
+        <!-- Author Box -->
+        <div class="blog-author">
+          <div class="blog-author-inner">
+            <div class="blog-author-avatar">
+              OT
+            </div>
+            <div class="blog-author-body">
+              <h3 class="blog-author-name">OnOffus Engineering Team</h3>
+              <p class="blog-author-text">
+                2005년부터 시작된 20년 시스템 전문가 팀. 삼성, 현대, 금융권 프로젝트 경험을 바탕으로 엔터프라이즈급 시스템을 구축하고 운영합니다.
+              </p>
+              <a href="/#contact" class="blog-author-link">
+                프로젝트 문의하기 →
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
     </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            <div>© <span id="year"></span> 주식회사 오노퍼스 (OnOffus Co., Ltd.). <span>AI-Powered B2B SaaS & Enterprise Systems.</span></div>
+            <div class="footer-business">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
+          </div>
+          <div class="footer-links">
+            <span>Enterprise Development · AI Solutions</span>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
+
+  <script src="../script.js" defer></script>
 </body>
 </html>

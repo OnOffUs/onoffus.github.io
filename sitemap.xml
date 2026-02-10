@@ -13,19 +13,19 @@
   </url>
 
   <url>
-    <loc>https://www.onoffus.com/blog/ai-saas-architecture</loc>
+    <loc>https://www.onoffus.com/blog/ai-saas-architecture.html</loc>
     <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.onoffus.com/blog/ai-saas-enterprise-guide</loc>
+    <loc>https://www.onoffus.com/blog/ai-saas-enterprise-guide.html</loc>
     <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.onoffus.com/blog/saas-msp-operation-model</loc>
+    <loc>https://www.onoffus.com/blog/saas-msp-operation-model.html</loc>
     <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -68,27 +68,27 @@
   </url>
   
   <!-- Blog: New Topics -->
-  <url><loc>https://www.onoffus.com/blog/ai-saas-adoption-checklist-7</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/msp-vs-outsourcing-cost</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/enterprise-llm-fail-patterns-5</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/b2b-saas-multitenancy-guide</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/enterprise-cloud-migration-checklist</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/ai-saas-adoption-checklist-7.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/msp-vs-outsourcing-cost.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/enterprise-llm-fail-patterns-5.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/b2b-saas-multitenancy-guide.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/enterprise-cloud-migration-checklist.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   
-  <url><loc>https://www.onoffus.com/blog/rag-system-production-guide</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/high-traffic-architecture</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/data-pipeline-design-patterns</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/ci-cd-automation-best-practices</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/saas-costing-models</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/rag-system-production-guide.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/high-traffic-architecture.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/data-pipeline-design-patterns.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/ci-cd-automation-best-practices.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/saas-costing-models.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   
-  <url><loc>https://www.onoffus.com/blog/finance-ai-automation-case-structure</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/commerce-recommendation-system-design</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/travel-booking-architecture</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/manufacturing-process-ai</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/healthcare-ai-document-automation</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/finance-ai-automation-case-structure.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/commerce-recommendation-system-design.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/travel-booking-architecture.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/manufacturing-process-ai.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/healthcare-ai-document-automation.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   
-  <url><loc>https://www.onoffus.com/blog/inhouse-vs-outsourcing-vs-msp</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/poc-to-production-failure-causes</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/llm-api-cost-calculation</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/saas-scaling-bottlenecks</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.onoffus.com/blog/enterprise-incident-response</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/inhouse-vs-outsourcing-vs-msp.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/poc-to-production-failure-causes.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/llm-api-cost-calculation.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/saas-scaling-bottlenecks.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.onoffus.com/blog/enterprise-incident-response.html</loc><lastmod>2026-02-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

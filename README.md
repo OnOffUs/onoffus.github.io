@@ -74,7 +74,7 @@ onoffus.github.io/
 ├── script.js           # 메인 JavaScript 로직
 ├── i18n.js             # 다국어 번역 데이터
 ├── sw.js               # Service Worker (캐싱)
-├── logo-onoffus.png    # 회사 로고 (PNG)
+├── logo-horizontal-light.png    # 회사 로고 (PNG)
 ├── logo-onoffus.webp   # 회사 로고 (WebP, 최적화)
 ├── robots.txt          # 검색 엔진 크롤러 설정
 ├── sitemap.xml         # 사이트맵

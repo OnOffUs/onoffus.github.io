@@ -1,7 +1,7 @@
 # 이미지 최적화 가이드
 
 ## 현재 상황
-- `logo-onoffus.png`: 5.1 KiB
+- `logo-horizontal-light.png`: 5.1 KiB
 - 예상 절감 용량: 4.4 KiB (약 86% 감소 가능)
 
 ## 최적화 방법
@@ -21,17 +21,17 @@ WebP는 PNG보다 약 25-35% 작은 파일 크기를 제공합니다.
 brew install webp
 
 # 변환
-cwebp -q 80 logo-onoffus.png -o logo-onoffus.webp
+cwebp -q 80 logo-horizontal-light.png -o logo-onoffus.webp
 
 # 품질 조정 (0-100, 기본값 75)
-cwebp -q 90 logo-onoffus.png -o logo-onoffus.webp  # 고품질
-cwebp -q 70 logo-onoffus.png -o logo-onoffus.webp  # 더 작은 파일
+cwebp -q 90 logo-horizontal-light.png -o logo-onoffus.webp  # 고품질
+cwebp -q 70 logo-horizontal-light.png -o logo-onoffus.webp  # 더 작은 파일
 ```
 
 #### Node.js 사용:
 ```bash
 npm install -g sharp-cli
-sharp -i logo-onoffus.png -o logo-onoffus.webp --webp
+sharp -i logo-horizontal-light.png -o logo-onoffus.webp --webp
 ```
 
 ### 2. PNG 압축 최적화
@@ -48,8 +48,8 @@ WebP를 사용할 수 없는 경우 PNG를 최적화:
 brew install pngquant optipng
 
 # PNG 압축
-pngquant --quality=65-80 logo-onoffus.png
-optipng -o7 logo-onoffus.png
+pngquant --quality=65-80 logo-horizontal-light.png
+optipng -o7 logo-horizontal-light.png
 ```
 
 ### 3. AVIF 형식 (최신 브라우저)
@@ -61,7 +61,7 @@ AVIF는 WebP보다 더 작은 파일 크기를 제공하지만 브라우저 지�
 brew install libavif
 
 # 변환
-avifenc -c aom -s 4 logo-onoffus.png logo-onoffus.avif
+avifenc -c aom -s 4 logo-horizontal-light.png logo-onoffus.avif
 ```
 
 ### 4. 구현 완료 사항
@@ -71,7 +71,7 @@ avifenc -c aom -s 4 logo-onoffus.png logo-onoffus.avif
 ```html
 <picture>
   <source srcset="logo-onoffus.webp" type="image/webp">
-  <img src="logo-onoffus.png" alt="..." class="logo-img" width="120" height="40" loading="eager" />
+  <img src="logo-horizontal-light.png" alt="..." class="logo-img" width="120" height="40" loading="eager" />
 </picture>
 ```
 

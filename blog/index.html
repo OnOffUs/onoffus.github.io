@@ -7,9 +7,9 @@
   <title>AI B2B SaaS & 엔터프라이즈 시스템 인사이트 | OnOffus 블로그</title>
   <meta name="description" content="AI 기반 B2B SaaS 구축, 엔터프라이즈 시스템 운영, LLM 도입, MSP 모델 등 실무 인사이트와 가이드. 20년 시스템 전문가의 경험을 공유합니다.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.onoffus.com/blog/">
+  <link rel="canonical" href="https://www.onoffus.com/blog/index.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.onoffus.com/blog/">
+  <meta property="og:url" content="https://www.onoffus.com/blog/index.html">
   <meta property="og:title" content="AI B2B SaaS & 엔터프라이즈 시스템 인사이트 | OnOffus 블로그">
   <meta property="og:description" content="AI 기반 B2B SaaS 구축, 엔터프라이즈 시스템 운영, LLM 도입, MSP 모델 등 실무 인사이트와 가이드.">
   <meta property="og:image" content="https://www.onoffus.com/assets/og-image.png">
@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="AI B2B SaaS & 엔터프라이즈 시스템 인사이트 | OnOffus 블로그">
   <meta name="twitter:description" content="AI 기반 B2B SaaS 구축, 엔터프라이즈 시스템 운영, LLM 도입, MSP 모델 등 실무 인사이트와 가이드.">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="blog.css">
   
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
@@ -51,458 +52,470 @@
     "publisher": {
       "@type": "Organization",
       "name": "OnOffus",
-      "logo": "https://www.onoffus.com/logo-onoffus.png"
+      "logo": "https://www.onoffus.com/assets/logo-horizontal-light.png"
     }
   }
   </script>
 </head>
 <body>
   <div class="app">
-    <header>
-      <div class="container">
-        <nav class="nav">
-          <a href="/" class="nav-logo">
-<img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" width="120" height="40" loading="eager">
-          </a>
-          <div class="nav-right">
-            <div class="nav-links">
-              <a href="/#services">서비스</a>
-              <a href="/#msp">MSP</a>
-              <a href="/#cases">사례</a>
-              <a href="/#faq">FAQ</a>
-              <a href="/#contact">문의</a>
-              <a href="/blog/" style="color: var(--primary-soft); font-weight: 600;">인사이트</a>
-            </div>
+      <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
+          <img src="/assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
+          <img src="/assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
+        </a>
+        
+        
+        <div class="nav-right">
+          <div class="nav-links">
+<a href="/#services" title="서비스">서비스</a>
+            <a href="/#msp" title="운영형 계약">MSP</a>
+            <a href="/#cases" title="사례">사례</a>
+            <a href="/#faq" title="FAQ">FAQ</a>
+            <a href="/#contact" title="문의">문의</a>
+            <a href="/industries/" title="산업별">산업별</a>
+            <a href="/blog/" title="인사이트">인사이트</a>
           </div>
-        </nav>
-      </div>
-    </header>
+
+          <button class="theme-toggle" id="themeToggle" type="button">
+            <span class="icon" id="themeIcon">🌙</span>
+            <span id="themeLabel">Dark</span>
+          </button>
+        </div>
+      </nav>
+
+
+    </div>
+  </header>
+
 
     <main>
       <!-- Blog Header -->
-      <section style="padding: 4rem 0 2rem; background: linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 100%);">
+      <section class="blog-hero">
         <div class="container">
-          <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
-            <a href="/" style="color: var(--text-sub);">홈</a>
-            <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
-            <span style="color: var(--text-main);">인사이트</span>
+          <nav class="blog-breadcrumb">
+            <a href="/" class="breadcrumb-link">홈</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">인사이트</span>
           </nav>
-          <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">
+          <h1 class="blog-hero-title">
             AI B2B SaaS & 엔터프라이즈 시스템 인사이트
           </h1>
-          <p style="font-size: var(--font-size-lg); color: var(--text-sub); max-width: 700px; line-height: 1.7;">
+          <p class="blog-hero-subtitle">
             20년 시스템 전문가가 공유하는 AI 기반 B2B SaaS 구축, 엔터프라이즈 운영, LLM 도입, MSP 모델의 실무 가이드와 인사이트입니다.
           </p>
         </div>
       </section>
-      <section style="padding: 2.5rem 0; background: var(--bg);">
-        <div class="container" style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-          <div style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <div style="font-size: var(--font-size-sm); color: var(--primary-soft); font-weight: 600; margin-bottom: 0.5rem;">도입 상담 패키지</div>
-            <div style="font-size: var(--font-size-lg); color: var(--text-main); font-weight: 700; margin-bottom: 0.5rem;">무료 진단</div>
-            <p style="color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">요구사항/데이터/보안 기준을 1주 내 정리하고 PoC 범위를 제안합니다.</p>
-            <a href="/#contact" class="btn btn-primary" style="font-weight: 600;">무료 도입 진단</a>
+      <section class="blog-offer-section">
+        <div class="container blog-offer-grid">
+          <div class="blog-offer-card">
+            <div class="blog-offer-kicker">도입 상담 패키지</div>
+            <div class="blog-offer-title">무료 진단</div>
+            <p class="blog-offer-text">요구사항/데이터/보안 기준을 1주 내 정리하고 PoC 범위를 제안합니다.</p>
+            <a href="/#contact" class="btn btn-primary blog-inline-cta-link">무료 도입 진단</a>
           </div>
-          <div style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <div style="font-size: var(--font-size-sm); color: var(--primary-soft); font-weight: 600; margin-bottom: 0.5rem;">아키텍처 리뷰</div>
-            <div style="font-size: var(--font-size-lg); color: var(--text-main); font-weight: 700; margin-bottom: 0.5rem;">구조 개선</div>
-            <p style="color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">확장성/보안/운영 관점에서 개선 포인트를 제시합니다.</p>
-            <a href="/#contact" class="btn" style="font-weight: 600; border: 1px solid var(--border-subtle); background: transparent; color: var(--text-sub);">리뷰 요청</a>
+          <div class="blog-offer-card">
+            <div class="blog-offer-kicker">아키텍처 리뷰</div>
+            <div class="blog-offer-title">구조 개선</div>
+            <p class="blog-offer-text">확장성/보안/운영 관점에서 개선 포인트를 제시합니다.</p>
+            <a href="/#contact" class="btn blog-offer-link">리뷰 요청</a>
           </div>
-          <div style="background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <div style="font-size: var(--font-size-sm); color: var(--primary-soft); font-weight: 600; margin-bottom: 0.5rem;">운영형(MSP)</div>
-            <div style="font-size: var(--font-size-lg); color: var(--text-main); font-weight: 700; margin-bottom: 0.5rem;">장기 운영</div>
-            <p style="color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">SLA, 온콜, 비용 통제까지 포함한 운영형 계약이 가능합니다.</p>
-            <a href="/#msp" class="btn" style="font-weight: 600; border: 1px solid var(--border-subtle); background: transparent; color: var(--text-sub);">운영형 문의</a>
+          <div class="blog-offer-card">
+            <div class="blog-offer-kicker">운영형(MSP)</div>
+            <div class="blog-offer-title">장기 운영</div>
+            <p class="blog-offer-text">SLA, 온콜, 비용 통제까지 포함한 운영형 계약이 가능합니다.</p>
+            <a href="/#msp" class="btn blog-offer-link">운영형 문의</a>
           </div>
         </div>
       </section>
 
 
       <!-- Pillar Article Highlight -->
-      <section style="padding: 3rem 0; background: var(--bg-elevated);">
+      <section class="blog-highlight-section">
         <div class="container">
-          <div style="background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(147,51,234,0.1)); border-radius: var(--radius-xl); padding: 3rem; border: 2px solid rgba(37,99,235,0.2); margin-bottom: 4rem;">
-            <div style="font-size: var(--font-size-sm); font-weight: 600; color: var(--primary-soft); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">핵심 가이드</div>
-            <h2 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">
-              <a href="/blog/ai-saas-enterprise-guide" style="color: inherit; text-decoration: none; transition: color 0.2s;">
+          <div class="blog-highlight-card">
+            <div class="blog-kicker">핵심 가이드</div>
+            <h2 class="blog-cta-title">
+              <a href="/blog/ai-saas-enterprise-guide.html" class="blog-highlight-link">
                 AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법
               </a>
             </h2>
-            <p style="font-size: 1.05rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 1.5rem;">
+            <p class="blog-highlight-text">
               멀티테넌시 아키텍처부터 보안·규제 대응, 운영형 계약(MSP) 모델까지. 엔터프라이즈급 B2B SaaS를 구축하고 운영하는 전 과정을 다룹니다.
             </p>
-            <a href="/blog/ai-saas-enterprise-guide" class="btn btn-primary" style="display: inline-block; font-size: var(--font-size-base); padding: 0.9rem 2rem; font-weight: 600;">
+            <a href="/blog/ai-saas-enterprise-guide.html" class="btn btn-primary blog-highlight-button">
               가이드 읽기 →
             </a>
           </div>
 
           <!-- Article Grid -->
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+          <div class="blog-grid">
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">AI/LLM</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/ai-saas-adoption-checklist-7.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">AI/LLM</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/ai-saas-adoption-checklist-7.html" class="blog-card-link">
                   AI SaaS 도입 전에 반드시 검토해야 할 7가지
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 조직·보안·데이터·비용·운영 준비 등 AI SaaS 도입 전 필수 점검 항목 7가지를 실무 관점에서 정리합니다.
               </p>
-              <a href="/blog/ai-saas-adoption-checklist-7.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/ai-saas-adoption-checklist-7.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">기술</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/ai-saas-architecture.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">기술</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/ai-saas-architecture.html" class="blog-card-link">
                   AI SaaS 아키텍처 설계: 확장 가능한 구조 만들기
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 마이크로서비스, 이벤트 드리븐 아키텍처, 멀티테넌시 설계 패턴을 실무 관점에서 설명합니다. 엔터프라이즈급 AI SaaS를 위한 아키텍처 설계 가이드.
               </p>
-              <a href="/blog/ai-saas-architecture.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/ai-saas-architecture.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">AI/LLM</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/ai-saas-enterprise-guide.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">AI/LLM</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/ai-saas-enterprise-guide.html" class="blog-card-link">
                   AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 멀티테넌시 아키텍처부터 보안·규제 대응, 운영형 계약(MSP) 모델까지. 엔터프라이즈급 AI 기반 B2B SaaS를 구축하고 운영하는 전 과정 가이드.
               </p>
-              <a href="/blog/ai-saas-enterprise-guide.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/ai-saas-enterprise-guide.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">SaaS/MSP</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/b2b-saas-multitenancy-guide.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">SaaS/MSP</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/b2b-saas-multitenancy-guide.html" class="blog-card-link">
                   B2B SaaS 멀티테넌시 구조 완전 가이드
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 테넌트 분리, 데이터·리소스 격리, 과금·운영 고려사항까지 멀티테넌시 설계의 핵심을 정리합니다.
               </p>
-              <a href="/blog/b2b-saas-multitenancy-guide.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/b2b-saas-multitenancy-guide.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">일반</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/ci-cd-automation-best-practices.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">일반</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/ci-cd-automation-best-practices.html" class="blog-card-link">
                   CI/CD 자동화 베스트 프랙티스
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 브랜치 전략, 테스트 게이트, 배포 자동화 표준 등 CI/CD 베스트 프랙티스를 정리합니다.
               </p>
-              <a href="/blog/ci-cd-automation-best-practices.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/ci-cd-automation-best-practices.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">AI/LLM</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/llm-api-cost-calculation.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">AI/LLM</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/llm-api-cost-calculation.html" class="blog-card-link">
                   LLM API 비용 계산법
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 토큰·컨텍스트·캐시·파인튜닝/베드록 등 요소별 LLM API 비용 계산법과 최적화 포인트를 정리합니다.
               </p>
-              <a href="/blog/llm-api-cost-calculation.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/llm-api-cost-calculation.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">SaaS/MSP</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/msp-vs-outsourcing-cost.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">SaaS/MSP</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/msp-vs-outsourcing-cost.html" class="blog-card-link">
                   MSP 운영 계약이 외주보다 비용이 낮은 이유
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 TCO 관점에서 MSP가 외주보다 장기 비용을 낮추는 구조와 사례를 설명합니다.
               </p>
-              <a href="/blog/msp-vs-outsourcing-cost.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/msp-vs-outsourcing-cost.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">일반</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/poc-to-production-failure-causes.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">일반</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/poc-to-production-failure-causes.html" class="blog-card-link">
                   PoC 이후 상용화 실패 원인
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 조직·데이터·운영·성능·비용 관점에서 PoC 이후 상용화가 실패하는 대표 원인을 분석합니다.
               </p>
-              <a href="/blog/poc-to-production-failure-causes.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/poc-to-production-failure-causes.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">AI/LLM</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/rag-system-production-guide.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">AI/LLM</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/rag-system-production-guide.html" class="blog-card-link">
                   RAG 시스템 운영 환경에서 구축하는 법
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 벡터DB 선택, 임베딩 파이프라인, 성능·안정성 운영 팁까지 프로덕션 RAG 구축 가이드.
               </p>
-              <a href="/blog/rag-system-production-guide.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/rag-system-production-guide.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">SaaS/MSP</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/saas-costing-models.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">SaaS/MSP</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/saas-costing-models.html" class="blog-card-link">
                   SaaS 비용 산정 방식
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 구독·사용량·티어별 과금 모델과 비용 최적화 포인트를 정리합니다.
               </p>
-              <a href="/blog/saas-costing-models.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/saas-costing-models.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">SaaS/MSP</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/saas-msp-operation-model.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">SaaS/MSP</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/saas-msp-operation-model.html" class="blog-card-link">
                   SaaS 운영형 계약(MSP) 모델: 지속 수익 구조 만들기
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 구축 이후 지속적인 운영과 개선을 위한 MSP 모델 설계, SLA 정의, 비용 구조. 예측 가능한 운영 비용으로 안정적인 서비스를 제공하는 방법.
               </p>
-              <a href="/blog/saas-msp-operation-model.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/saas-msp-operation-model.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">SaaS/MSP</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/saas-scaling-bottlenecks.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">SaaS/MSP</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/saas-scaling-bottlenecks.html" class="blog-card-link">
                   SaaS 확장 시 병목 포인트
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 데이터베이스·큐·캐시·스토리지·네트워크 등 확장 시 병목 포인트와 해결 전략을 정리합니다.
               </p>
-              <a href="/blog/saas-scaling-bottlenecks.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/saas-scaling-bottlenecks.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">AI/LLM</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/finance-ai-automation-case-structure.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">AI/LLM</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/finance-ai-automation-case-structure.html" class="blog-card-link">
                   금융사 AI 자동화 성공 사례 구조
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 규제 대응·보안·관제 체계를 포함한 금융사 AI 자동화 아키텍처와 성공 구조를 정리합니다.
               </p>
-              <a href="/blog/finance-ai-automation-case-structure.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/finance-ai-automation-case-structure.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">AI/LLM</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/enterprise-llm-fail-patterns-5.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">AI/LLM</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/enterprise-llm-fail-patterns-5.html" class="blog-card-link">
                   기업용 LLM 도입이 실패하는 5가지 패턴
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 데이터 품질·거버넌스·비용·운영 기준 부재 등 LLM 도입 실패의 대표적 패턴과 해결 접근을 제시합니다.
               </p>
-              <a href="/blog/enterprise-llm-fail-patterns-5.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/enterprise-llm-fail-patterns-5.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">기술</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/high-traffic-architecture.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">기술</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/high-traffic-architecture.html" class="blog-card-link">
                   대규모 트래픽 처리 아키텍처
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 수평 확장, 캐시·큐·스트리밍을 활용해 대규모 트래픽을 처리하는 아키텍처 전략을 정리합니다.
               </p>
-              <a href="/blog/high-traffic-architecture.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/high-traffic-architecture.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">기술</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/data-pipeline-design-patterns.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">기술</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/data-pipeline-design-patterns.html" class="blog-card-link">
                   데이터 파이프라인 설계 패턴
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 배치·스트리밍·ETL/ELT 패턴과 품질·모니터링 설계의 핵심을 정리합니다.
               </p>
-              <a href="/blog/data-pipeline-design-patterns.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/data-pipeline-design-patterns.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">AI/LLM</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/healthcare-ai-document-automation.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">AI/LLM</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/healthcare-ai-document-automation.html" class="blog-card-link">
                   병원 AI 문서 자동화
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 의무기록·청구·동의서 등 문서 자동화를 위한 데이터 보호·정확도·운영 고려사항을 정리합니다.
               </p>
-              <a href="/blog/healthcare-ai-document-automation.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/healthcare-ai-document-automation.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">SaaS/MSP</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/inhouse-vs-outsourcing-vs-msp.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">SaaS/MSP</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/inhouse-vs-outsourcing-vs-msp.html" class="blog-card-link">
                   사내 개발 vs 외주 vs MSP
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 조직 적합성·비용·속도·품질 관점에서 사내 개발, 외주, MSP의 장단점을 비교합니다.
               </p>
-              <a href="/blog/inhouse-vs-outsourcing-vs-msp.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/inhouse-vs-outsourcing-vs-msp.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">일반</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/enterprise-cloud-migration-checklist.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">일반</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/enterprise-cloud-migration-checklist.html" class="blog-card-link">
                   엔터프라이즈 시스템 클라우드 전환 체크리스트
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 네트워크·보안·데이터 마이그레이션·SLA·비용 계획까지 클라우드 전환에 필요한 체크리스트를 제공합니다.
               </p>
-              <a href="/blog/enterprise-cloud-migration-checklist.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/enterprise-cloud-migration-checklist.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">일반</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/enterprise-incident-response.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">일반</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/enterprise-incident-response.html" class="blog-card-link">
                   엔터프라이즈 장애 대응 체계
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 관측성·온콜·런북·커뮤니케이션·리뷰까지 엔터프라이즈 장애 대응 표준 체계를 정리합니다.
               </p>
-              <a href="/blog/enterprise-incident-response.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/enterprise-incident-response.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">기술</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/travel-booking-architecture.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">기술</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/travel-booking-architecture.html" class="blog-card-link">
                   여행 예약 시스템 아키텍처
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 재고·요금·결제 연동과 성능·가용성 확보 전략을 포함한 여행 예약 시스템 아키텍처.
               </p>
-              <a href="/blog/travel-booking-architecture.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/travel-booking-architecture.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">기술</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/manufacturing-process-ai.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">기술</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/manufacturing-process-ai.html" class="blog-card-link">
                   제조 공정 데이터 AI 적용
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 설비 데이터 수집·품질·예지보전 모델 운영 등 제조 공정 데이터의 AI 적용 전략을 정리합니다.
               </p>
-              <a href="/blog/manufacturing-process-ai.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/manufacturing-process-ai.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
 
             <!-- Article Card -->
-            <article style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-subtle); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); color: var(--primary-soft); margin-bottom: 0.75rem; font-weight: 600;">일반</div>
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/blog/commerce-recommendation-system-design.html" style="color: inherit; text-decoration: none;">
+            <article class="blog-card">
+              <div class="blog-card-category">일반</div>
+              <h3 class="blog-card-title">
+                <a href="/blog/commerce-recommendation-system-design.html" class="blog-card-link">
                   커머스 추천 시스템 설계
                 </a>
               </h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="blog-card-desc">
                 피처 엔지니어링, 온라인/오프라인 서빙, 성능 지표로 커머스 추천 시스템을 설계합니다.
               </p>
-              <a href="/blog/commerce-recommendation-system-design.html" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/blog/commerce-recommendation-system-design.html" class="blog-card-cta">
                 읽기 →
               </a>
             </article>
@@ -511,34 +524,34 @@
       </section>
 
       <!-- Popular Tags Section -->
-      <section style="padding: 4rem 0; background: var(--bg-elevated);">
+      <section class="blog-tags-section">
         <div class="container">
-          <h2 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 2rem; color: var(--text-main); text-align: center;">
+          <h2 class="blog-tags-title">
             추천 태그
           </h2>
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; max-width: 800px; margin: 0 auto;">
-            <a href="/blog/" style="background: rgba(37,99,235,0.1); color: var(--primary-soft); padding: 0.75rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(37,99,235,0.2);">
+          <div class="blog-tags">
+            <a href="/blog/" class="blog-tag">
               #AI/LLM
             </a>
-            <a href="/blog/" style="background: rgba(37,99,235,0.1); color: var(--primary-soft); padding: 0.75rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(37,99,235,0.2);">
+            <a href="/blog/" class="blog-tag">
               #SaaS/MSP
             </a>
-            <a href="/blog/" style="background: rgba(37,99,235,0.1); color: var(--primary-soft); padding: 0.75rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(37,99,235,0.2);">
+            <a href="/blog/" class="blog-tag">
               #기술
             </a>
-            <a href="/blog/" style="background: rgba(37,99,235,0.1); color: var(--primary-soft); padding: 0.75rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(37,99,235,0.2);">
+            <a href="/blog/" class="blog-tag">
               #엔터프라이즈
             </a>
-            <a href="/blog/" style="background: rgba(37,99,235,0.1); color: var(--primary-soft); padding: 0.75rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(37,99,235,0.2);">
+            <a href="/blog/" class="blog-tag">
               #아키텍처
             </a>
-            <a href="/blog/" style="background: rgba(37,99,235,0.1); color: var(--primary-soft); padding: 0.75rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(37,99,235,0.2);">
+            <a href="/blog/" class="blog-tag">
               #DevOps
             </a>
-            <a href="/blog/" style="background: rgba(37,99,235,0.1); color: var(--primary-soft); padding: 0.75rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(37,99,235,0.2);">
+            <a href="/blog/" class="blog-tag">
               #데이터
             </a>
-            <a href="/blog/" style="background: rgba(37,99,235,0.1); color: var(--primary-soft); padding: 0.75rem 1.5rem; border-radius: 999px; font-size: 0.95rem; font-weight: 500; text-decoration: none; transition: all 0.2s ease; border: 1px solid rgba(37,99,235,0.2);">
+            <a href="/blog/" class="blog-tag">
               #클라우드
             </a>
           </div>
@@ -546,20 +559,20 @@
       </section>
 
       <!-- CTA Section -->
-      <section style="padding: 4rem 0; background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(147,51,234,0.1));">
+      <section class="blog-cta-section">
         <div class="container">
-          <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-            <h2 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">
+          <div class="blog-cta-inner">
+            <h2 class="blog-cta-title">
               프로젝트에 적용하고 싶으신가요?
             </h2>
-            <p style="font-size: 1.05rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 2rem;">
+            <p class="blog-cta-section-text">
               운영형(월 단위) 또는 6개월 이상 장기 프로젝트를 우선합니다. 무료 상담을 통해 귀사에 맞는 솔루션을 제안해드립니다.
             </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-              <a href="/#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 1rem 2rem; font-weight: 600;">
+            <div class="blog-cta-actions">
+              <a href="/#contact" class="btn btn-primary blog-cta-primary">
                 운영형 계약 상담 받기
               </a>
-              <a href="/#contact" class="btn" style="font-size: 0.95rem; padding: 0.9rem 1.8rem; color: var(--text-sub); border: 1px solid var(--border-subtle); background: transparent;">
+              <a href="/#contact" class="btn blog-cta-section-button">
                 AI SaaS 구축 상담 받기
               </a>
             </div>
@@ -573,7 +586,7 @@
         <div class="footer-inner">
           <div>
             <div>© <span id="year"></span> 주식회사 오노퍼스 (OnOffus Co., Ltd.). <span>AI-Powered B2B SaaS & Enterprise Systems.</span></div>
-            <div style="font-size: var(--font-size-xs); color: var(--text-sub); margin-top: 0.5rem;">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
+            <div class="footer-business">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
           </div>
           <div class="footer-links">
             <span>Enterprise Development · AI Solutions</span>
@@ -583,8 +596,6 @@
     </footer>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="../script.js" defer></script>
 </body>
 </html>

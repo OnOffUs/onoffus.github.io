@@ -19,6 +19,7 @@
   <meta name="twitter:title" content="{{ARTICLE_TITLE}}">
   <meta name="twitter:description" content="{{ARTICLE_DESCRIPTION}}">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../blog.css">
   
   <!-- BlogPosting Schema -->
   <script type="application/ld+json">
@@ -40,7 +41,7 @@
       "name": "OnOffus",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.onoffus.com/logo-onoffus.png"
+        "url": "https://www.onoffus.com/assets/logo-horizontal-light.png"
       }
     },
     "mainEntityOfPage": {
@@ -83,92 +84,98 @@
     <header>
       <div class="container">
         <nav class="nav">
-          <a href="/" class="nav-logo">
-            <img src="../../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" width="120" height="40" loading="eager">
+          <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
+            <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
+            <img src="../assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
           </a>
           <div class="nav-right">
             <div class="nav-links">
-              <a href="/#services">서비스</a>
-              <a href="/#msp">MSP</a>
-              <a href="/#cases">사례</a>
-              <a href="/#faq">FAQ</a>
-              <a href="/blog/" style="color: var(--primary-soft); font-weight: 600;">인사이트</a>
-              <a href="/#contact">문의</a>
+              <a href="/#services" title="서비스">서비스</a>
+              <a href="/#msp" title="운영형 계약">MSP</a>
+              <a href="/#cases" title="사례">사례</a>
+              <a href="/#faq" title="FAQ">FAQ</a>
+              <a href="/#contact" title="문의">문의</a>
+              <a href="/industries/" title="산업별">산업별</a>
+              <a href="/blog/" title="인사이트">인사이트</a>
             </div>
+            <button class="theme-toggle" id="themeToggle" type="button">
+              <span class="icon" id="themeIcon">🌙</span>
+              <span id="themeLabel">Dark</span>
+            </button>
           </div>
         </nav>
       </div>
     </header>
 
     <main>
-      <article style="max-width: 900px; margin: 0 auto; padding: 3rem 1rem;">
+      <article class="blog-article">
         <!-- Breadcrumb -->
-        <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
-          <a href="/" style="color: var(--text-sub);">홈</a>
-          <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
-          <a href="/blog/" style="color: var(--text-sub);">인사이트</a>
-          <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
-          <span style="color: var(--text-main);">{{ARTICLE_TITLE}}</span>
+        <nav class="blog-breadcrumb">
+          <a href="/" class="breadcrumb-link">홈</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/blog/" class="breadcrumb-link">인사이트</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">{{ARTICLE_TITLE}}</span>
         </nav>
 
         <!-- Article Header -->
-        <header style="margin-bottom: 3rem;">
-          <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.3;">
+        <header class="blog-header">
+          <h1 class="blog-title">
             {{ARTICLE_TITLE}}
           </h1>
-          <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.9rem; color: var(--text-sub); margin-bottom: 2rem;">
+          <div class="blog-meta">
             <span>작성: OnOffus Engineering Team</span>
             <span>발행일: {{PUBLISH_DATE_FORMATTED}}</span>
             <span>읽는 시간: 약 {{READ_TIME}}분</span>
           </div>
-          <p style="font-size: var(--font-size-xl); color: var(--text-sub); line-height: 1.8; font-weight: 500;">
+          <p class="blog-intro">
             {{ARTICLE_INTRO}}
           </p>
         </header>
 
         <!-- Article Content -->
-        <div style="font-size: 1.05rem; line-height: 1.9; color: var(--text-main);">
+        <div class="blog-content">
           {{ARTICLE_CONTENT}}
         </div>
 
         <!-- Link to Pillar -->
-        <div style="background: rgba(37,99,235,0.05); border-left: 4px solid var(--primary-soft); padding: 1.5rem; margin: 3rem 0; border-radius: var(--radius-md);">
-          <p style="margin: 0; font-size: 0.95rem; color: var(--text-sub);">
-            <strong style="color: var(--primary-soft);">핵심 가이드:</strong> 
-            <a href="/blog/ai-saas-enterprise-guide" style="color: var(--primary-soft); text-decoration: underline;">AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법</a>에서 전체 프로세스를 확인하세요.
+        <div class="blog-pillar">
+          <p class="blog-pillar-text">
+            <strong class="blog-pillar-label">핵심 가이드:</strong> 
+            <a href="/blog/ai-saas-enterprise-guide.html" class="blog-pillar-link">AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법</a>에서 전체 프로세스를 확인하세요.
           </p>
         </div>
 
         <!-- CTA Block -->
-        <div style="background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(147,51,234,0.1)); border-radius: var(--radius-xl); padding: 3rem; margin: 4rem 0; border: 2px solid rgba(37,99,235,0.2); text-align: center; position: sticky; bottom: 2rem; z-index: 10; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
-          <h2 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">
+        <div class="blog-cta">
+          <h2 class="blog-cta-title">
             프로젝트에 적용하고 싶으신가요?
           </h2>
-          <p style="font-size: 1.05rem; color: var(--text-sub); line-height: 1.7; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+          <p class="blog-cta-text">
             운영형(월 단위) 또는 6개월 이상 장기 프로젝트를 우선합니다. 무료 상담을 통해 귀사에 맞는 솔루션을 제안해드립니다.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-            <a href="/#contact" class="btn btn-primary" style="font-size: var(--font-size-base); padding: 1rem 2rem; font-weight: 600;">
+          <div class="blog-cta-actions">
+            <a href="/#contact" class="btn btn-primary blog-cta-primary">
               {{CTA_PRIMARY}}
             </a>
-            <a href="/#msp" class="btn" style="font-size: 0.95rem; padding: 0.9rem 1.8rem; color: var(--text-sub); border: 1px solid var(--border-subtle); background: transparent;">
+            <a href="/#msp" class="btn blog-cta-secondary">
               운영형 계약(MSP) 문의하기
             </a>
           </div>
         </div>
 
         <!-- Author Box -->
-        <div style="background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 2rem; margin: 3rem 0; border: 1px solid var(--border-subtle);">
-          <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-soft), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: var(--font-size-2xl); font-weight: 700; color: white;">
+        <div class="blog-author">
+          <div class="blog-author-inner">
+            <div class="blog-author-avatar">
               OT
             </div>
-            <div style="flex: 1;">
-              <h3 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.5rem; color: var(--text-main);">OnOffus Engineering Team</h3>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 0.5rem;">
+            <div class="blog-author-body">
+              <h3 class="blog-author-name">OnOffus Engineering Team</h3>
+              <p class="blog-author-text">
                 2005년부터 시작된 20년 시스템 전문가 팀. 삼성, 현대, 금융권 프로젝트 경험을 바탕으로 엔터프라이즈급 시스템을 구축하고 운영합니다.
               </p>
-              <a href="/#contact" style="font-size: 0.9rem; color: var(--primary-soft); font-weight: 500; text-decoration: none;">
+              <a href="/#contact" class="blog-author-link">
                 프로젝트 문의하기 →
               </a>
             </div>
@@ -182,7 +189,7 @@
         <div class="footer-inner">
           <div>
             <div>© <span id="year"></span> 주식회사 오노퍼스 (OnOffus Co., Ltd.). <span>AI-Powered B2B SaaS & Enterprise Systems.</span></div>
-            <div style="font-size: var(--font-size-xs); color: var(--text-sub); margin-top: 0.5rem;">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
+            <div class="footer-business">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
           </div>
           <div class="footer-links">
             <span>Enterprise Development · AI Solutions</span>
@@ -192,8 +199,6 @@
     </footer>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="../script.js" defer></script>
 </body>
 </html>

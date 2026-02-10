@@ -17,6 +17,7 @@
   <meta name="twitter:title" content="산업별 AI SaaS·엔터프라이즈 솔루션 | OnOffus">
   <meta name="twitter:description" content="금융, 여행, 커머스, 제조, 헬스케어, 기업 IT. 산업별 AI B2B SaaS 구축·운영형 계약(MSP). 무료 상담.">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="industries.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,142 +35,154 @@
     "name": "OnOffus 산업별 솔루션",
     "description": "금융, 여행, 커머스, 제조, 헬스케어, 기업 IT 산업별 AI 기반 B2B SaaS 및 엔터프라이즈 시스템 구축·운영",
     "url": "https://www.onoffus.com/industries/",
-    "publisher": { "@type": "Organization", "name": "OnOffus", "url": "https://www.onoffus.com", "logo": "https://www.onoffus.com/assets/logo-horizontal-dark.png" }
+    "publisher": { "@type": "Organization", "name": "OnOffus", "url": "https://www.onoffus.com", "logo": "https://www.onoffus.com/assets/logo-horizontal-light.png" }
   }
   </script>
 </head>
 <body>
   <div class="page">
-    <header>
-      <div class="container">
-        <nav class="nav">
-          <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
-            <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img" width="120" height="40" loading="eager" />
-          </a>
-          <div class="nav-right">
-            <div class="nav-links">
-              <a href="/#services">서비스</a>
-              <a href="/#msp">MSP</a>
-              <a href="/#cases">사례</a>
-              <a href="/#faq">FAQ</a>
-              <a href="/blog/">인사이트</a>
-              <a href="/#contact">문의</a>
-            </div>
+      <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
+          <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
+          <img src="../assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
+        </a>
+        
+        
+        <div class="nav-right">
+          <div class="nav-links">
+<a href="/#services" title="서비스">서비스</a>
+            <a href="/#msp" title="운영형 계약">MSP</a>
+            <a href="/#cases" title="사례">사례</a>
+            <a href="/#faq" title="FAQ">FAQ</a>
+            <a href="/#contact" title="문의">문의</a>
+            <a href="/industries/" title="산업별">산업별</a>
+            <a href="/blog/" title="인사이트">인사이트</a>
           </div>
-        </nav>
-      </div>
-    </header>
+
+          <button class="theme-toggle" id="themeToggle" type="button">
+            <span class="icon" id="themeIcon">🌙</span>
+            <span id="themeLabel">Dark</span>
+          </button>
+        </div>
+      </nav>
+
+
+    </div>
+  </header>
+
 
     <main>
-      <section style="padding: 4rem 0 2rem; background: linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 100%);">
+      <section class="industry-hero industry-hero--compact">
         <div class="container">
-          <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
-            <a href="/" style="color: var(--text-sub);">홈</a>
-            <span style="color: var(--text-sub); margin: 0 0.5rem;">/</span>
-            <span style="color: var(--text-main);">산업별 솔루션</span>
+          <nav class="industry-breadcrumb industry-breadcrumb--wide">
+            <a href="/" class="breadcrumb-link">홈</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">산업별 솔루션</span>
           </nav>
-          <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">
+          <h1 class="industry-hero-title">
             산업별 AI 기반 B2B SaaS & 엔터프라이즈 시스템
           </h1>
-          <p style="font-size: var(--font-size-lg); color: var(--text-sub); max-width: 700px; line-height: 1.7;">
+          <p class="industry-hero-subtitle">
             금융·여행·커머스·제조·헬스케어·기업 IT. 업종별 과제에 맞춘 AI SaaS 구축과 운영형 계약(MSP)으로 지속 가능한 성과를 만듭니다.
           </p>
         </div>
       </section>
 
-      <section style="padding: 3rem 0 5rem; background: var(--bg-elevated);">
+      <section class="industry-section industry-section--grid">
         <div class="container">
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
-            <article style="background: var(--bg); border-radius: var(--radius-lg); padding: 2rem; border: 2px solid rgba(37,99,235,0.3); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); font-weight: 600; color: var(--primary-soft); margin-bottom: 0.75rem;">금융·핀테크</div>
-              <h2 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/industries/finance.html" style="color: inherit; text-decoration: none;">금융·핀테크</a>
+          <div class="industry-index-grid">
+            <article class="industry-index-card industry-index-card--finance">
+              <div class="industry-index-kicker">금융·핀테크</div>
+              <h2 class="industry-index-title">
+                <a href="/industries/finance.html" class="industry-index-link">금융·핀테크</a>
               </h2>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="industry-index-desc">
                 규제·보안·감사 대응과 안정적 정산·리포팅. 금융권 실적 기반의 AI SaaS 및 운영형 계약.
               </p>
-              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: 1rem;">타겟 키워드: 금융권 시스템 구축, 핀테크 SaaS, 금융 AI 자동화</p>
-              <a href="/industries/finance.html" class="btn btn-primary" style="display: inline-block; font-size: 0.9rem; padding: 0.7rem 1.5rem;">자세히 보기 →</a>
+              <p class="industry-index-keywords">타겟 키워드: 금융권 시스템 구축, 핀테크 SaaS, 금융 AI 자동화</p>
+              <a href="/industries/finance.html" class="btn btn-primary industry-index-button--primary">자세히 보기 →</a>
             </article>
 
-            <article style="background: var(--bg); border-radius: var(--radius-lg); padding: 2rem; border: 2px solid rgba(147,51,234,0.3); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); font-weight: 600; color: var(--secondary); margin-bottom: 0.75rem;">여행·예약·정산</div>
-              <h2 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/industries/travel.html" style="color: inherit; text-decoration: none;">여행·예약·정산</a>
+            <article class="industry-index-card industry-index-card--travel">
+              <div class="industry-index-kicker">여행·예약·정산</div>
+              <h2 class="industry-index-title">
+                <a href="/industries/travel.html" class="industry-index-link">여행·예약·정산</a>
               </h2>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="industry-index-desc">
                 B2B 예약·정산 플랫폼, 피크 트래픽 대응, 백오피스 자동화. 항공·숙박 실무 경험 반영.
               </p>
-              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: 1rem;">타겟 키워드: 여행 예약 시스템, B2B 정산 플랫폼, 항공 백오피스</p>
-              <a href="/industries/travel.html" class="btn" style="display: inline-block; font-size: 0.9rem; padding: 0.7rem 1.5rem; color: var(--secondary); border: 1px solid var(--secondary);">자세히 보기 →</a>
+              <p class="industry-index-keywords">타겟 키워드: 여행 예약 시스템, B2B 정산 플랫폼, 항공 백오피스</p>
+              <a href="/industries/travel.html" class="btn industry-index-button">자세히 보기 →</a>
             </article>
 
-            <article style="background: var(--bg); border-radius: var(--radius-lg); padding: 2rem; border: 2px solid rgba(34,197,94,0.3); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); font-weight: 600; color: #22c55e; margin-bottom: 0.75rem;">커머스·유통</div>
-              <h2 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/industries/commerce.html" style="color: inherit; text-decoration: none;">커머스·유통</a>
+            <article class="industry-index-card industry-index-card--commerce">
+              <div class="industry-index-kicker">커머스·유통</div>
+              <h2 class="industry-index-title">
+                <a href="/industries/commerce.html" class="industry-index-link">커머스·유통</a>
               </h2>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="industry-index-desc">
                 주문·재고·정산 통합, 피크 대응, 데이터 리포팅 자동화. 확장 가능한 커머스 플랫폼.
               </p>
-              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: 1rem;">타겟 키워드: 커머스 플랫폼 구축, 유통 시스템, 주문 자동화</p>
-              <a href="/industries/commerce.html" class="btn" style="display: inline-block; font-size: 0.9rem; padding: 0.7rem 1.5rem; color: #22c55e; border: 1px solid #22c55e;">자세히 보기 →</a>
+              <p class="industry-index-keywords">타겟 키워드: 커머스 플랫폼 구축, 유통 시스템, 주문 자동화</p>
+              <a href="/industries/commerce.html" class="btn industry-index-button">자세히 보기 →</a>
             </article>
 
-            <article style="background: var(--bg); border-radius: var(--radius-lg); padding: 2rem; border: 2px solid rgba(248,113,113,0.3); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); font-weight: 600; color: var(--accent); margin-bottom: 0.75rem;">제조·설비·공정</div>
-              <h2 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/industries/manufacturing.html" style="color: inherit; text-decoration: none;">제조·설비·공정</a>
+            <article class="industry-index-card industry-index-card--manufacturing">
+              <div class="industry-index-kicker">제조·설비·공정</div>
+              <h2 class="industry-index-title">
+                <a href="/industries/manufacturing.html" class="industry-index-link">제조·설비·공정</a>
               </h2>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="industry-index-desc">
                 설비 데이터 수집·분석, 공정 자동화, 품질·리포팅. 제조 현장 데이터 파이프라인 구축.
               </p>
-              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: 1rem;">타겟 키워드: 제조 시스템 구축, 설비 데이터, 공정 자동화</p>
-              <a href="/industries/manufacturing.html" class="btn" style="display: inline-block; font-size: 0.9rem; padding: 0.7rem 1.5rem; color: var(--accent); border: 1px solid var(--accent);">자세히 보기 →</a>
+              <p class="industry-index-keywords">타겟 키워드: 제조 시스템 구축, 설비 데이터, 공정 자동화</p>
+              <a href="/industries/manufacturing.html" class="btn industry-index-button">자세히 보기 →</a>
             </article>
 
-            <article style="background: var(--bg); border-radius: var(--radius-lg); padding: 2rem; border: 2px solid rgba(59,130,246,0.3); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); font-weight: 600; color: var(--primary-soft); margin-bottom: 0.75rem;">헬스케어·의료</div>
-              <h2 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/industries/healthcare.html" style="color: inherit; text-decoration: none;">헬스케어·의료</a>
+            <article class="industry-index-card industry-index-card--healthcare">
+              <div class="industry-index-kicker">헬스케어·의료</div>
+              <h2 class="industry-index-title">
+                <a href="/industries/healthcare.html" class="industry-index-link">헬스케어·의료</a>
               </h2>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="industry-index-desc">
                 진료·예약·빌링·데이터 보안. 의료 규제를 고려한 안정적 시스템 구축과 운영.
               </p>
-              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: 1rem;">타겟 키워드: 의료 시스템 구축, 헬스케어 SaaS, 의료 데이터 보안</p>
-              <a href="/industries/healthcare.html" class="btn" style="display: inline-block; font-size: 0.9rem; padding: 0.7rem 1.5rem; color: var(--primary-soft); border: 1px solid var(--primary-soft);">자세히 보기 →</a>
+              <p class="industry-index-keywords">타겟 키워드: 의료 시스템 구축, 헬스케어 SaaS, 의료 데이터 보안</p>
+              <a href="/industries/healthcare.html" class="btn industry-index-button">자세히 보기 →</a>
             </article>
 
-            <article style="background: var(--bg); border-radius: var(--radius-lg); padding: 2rem; border: 2px solid rgba(148,163,184,0.4); transition: all 0.3s ease;">
-              <div style="font-size: var(--font-size-sm); font-weight: 600; color: var(--text-sub); margin-bottom: 0.75rem;">기업 내부업무·ERP</div>
-              <h2 style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);">
-                <a href="/industries/enterprise-it.html" style="color: inherit; text-decoration: none;">기업 내부업무·그룹웨어·ERP 연계</a>
+            <article class="industry-index-card industry-index-card--enterprise">
+              <div class="industry-index-kicker">기업 내부업무·ERP</div>
+              <h2 class="industry-index-title">
+                <a href="/industries/enterprise-it.html" class="industry-index-link">기업 내부업무·그룹웨어·ERP 연계</a>
               </h2>
-              <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; margin-bottom: 1rem;">
+              <p class="industry-index-desc">
                 그룹웨어·ERP 연동, 업무 워크플로우 자동화, 내부 데이터 통합. 기업 IT 현대화.
               </p>
-              <p style="font-size: var(--font-size-sm); color: var(--text-sub); margin-bottom: 1rem;">타겟 키워드: 그룹웨어 연동, ERP 연계, 기업 업무 자동화</p>
-              <a href="/industries/enterprise-it.html" class="btn" style="display: inline-block; font-size: 0.9rem; padding: 0.7rem 1.5rem; color: var(--text-sub); border: 1px solid var(--border-subtle);">자세히 보기 →</a>
+              <p class="industry-index-keywords">타겟 키워드: 그룹웨어 연동, ERP 연계, 기업 업무 자동화</p>
+              <a href="/industries/enterprise-it.html" class="btn industry-index-button">자세히 보기 →</a>
             </article>
           </div>
 
-          <div style="text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border-subtle);">
-            <p style="font-size: var(--font-size-base); color: var(--text-sub); margin-bottom: 1rem;">공통: AI 기반 B2B SaaS 구축 · 엔터프라이즈 안정성 · 운영형 계약(MSP) · 무료 기술 상담</p>
-            <a href="/#contact" class="btn btn-primary" style="display: inline-block; font-size: var(--font-size-base); padding: 0.9rem 2rem;">무료 기술 상담 받기</a>
+          <div class="industry-index-cta">
+            <p class="industry-index-cta-text">공통: AI 기반 B2B SaaS 구축 · 엔터프라이즈 안정성 · 운영형 계약(MSP) · 무료 기술 상담</p>
+            <a href="/#contact" class="btn btn-primary industry-index-cta-button">무료 기술 상담 받기</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer style="padding: 2rem 0; border-top: 1px solid var(--border-subtle); background: var(--bg);">
+    <footer class="industry-footer">
       <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div class="industry-footer-inner">
           <div>© <span id="year"></span> 주식회사 오노퍼스. AI-Powered B2B SaaS & Enterprise Systems.</div>
-          <a href="/" style="font-size: 0.9rem; color: var(--primary-soft);">홈으로</a>
+          <a href="/" class="industry-footer-link">홈으로</a>
         </div>
       </div>
     </footer>
   </div>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="../script.js" defer></script>
 </body>
 </html>
