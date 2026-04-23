@@ -6,16 +6,9 @@
 /blog/
   ├── index.html                    # 블로그 인덱스 페이지 (완료)
   ├── ai-saas-enterprise-guide.html # Pillar 페이지 (완료, 1,500+ 단어)
-  ├── saas-msp-operation-model.html # 클러스터: MSP 모델 (완료)
-  ├── ai-saas-architecture.html     # 클러스터: 아키텍처 (완료)
-  ├── enterprise-ai-adoption.html   # 클러스터: AI 도입 (생성 필요)
-  ├── llm-rag-in-production.html    # 클러스터: RAG 시스템 (생성 필요)
-  ├── devops-for-ai-systems.html    # 클러스터: DevOps (생성 필요)
-  ├── data-pipeline-enterprise.html # 클러스터: 데이터 파이프라인 (생성 필요)
-  ├── ai-backoffice-automation.html # 클러스터: 백오피스 자동화 (생성 필요)
-  ├── poc-to-production-ai.html     # 클러스터: PoC 전환 (생성 필요)
-  ├── b2b-saas-cost-estimation.html  # 클러스터: 비용 추정 (생성 필요)
-  ├── enterprise-system-modernization.html # 클러스터: 현대화 (생성 필요)
+  ├── llmops-cost-optimization.html # 클러스터: LLMOps 실제 사례 (완료)
+  ├── ai-saas-architecture.html     # 클러스터: 전문 아키텍처 (완료)
+  ├── saas-msp-operation-model.html # 클러스터: 비즈니스 운영 모델 (완료)
   ├── templates/
   │   └── article-template.html     # 재사용 가능한 템플릿
   ├── SEO_STRUCTURE.md              # SEO 구조 가이드

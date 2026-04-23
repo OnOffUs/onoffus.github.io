@@ -278,8 +278,8 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-  // Service cards
-  document.querySelectorAll('.service-card').forEach((card, index) => {
+  // Service and Industry cards
+  document.querySelectorAll('.service-card, .industry-index-card').forEach((card, index) => {
     card.style.transitionDelay = `${index * 0.1}s`;
     observer.observe(card);
   });

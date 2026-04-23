@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="theme-color" content="#2563eb" />
+  <title>LLMOps: AI 모델의 프로덕션 운영과 비용 최적화 | OnOffus</title>
+  <meta name="description" content="API 비용을 40% 절감하면서 응답 속도를 개선한 실무 사례와 모니터링 체계. LLMOps를 통한 지속 가능한 AI 운영 전략을 공개합니다.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.onoffus.com/blog/llmops-cost-optimization.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.onoffus.com/blog/llmops-cost-optimization.html">
+  <meta property="og:title" content="LLMOps: AI 모델의 프로덕션 운영과 비용 최적화">
+  <meta property="og:description" content="API 비용을 40% 절감하면서 응답 속도를 개선한 실무 사례와 모니터링 체계.">
+  <meta property="og:image" content="https://www.onoffus.com/assets/og-image.png">
+  <meta property="article:published_time" content="2025-02-15T00:00:00+09:00">
+  <meta property="article:author" content="OnOffus Engineering Team">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <!-- BlogPosting Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "LLMOps: AI 모델의 프로덕션 운영과 비용 최적화",
+    "description": "API 비용을 40% 절감하면서 응답 속도를 개선한 실무 사례와 모니터링 체계.",
+    "image": "https://www.onoffus.com/assets/og-image.png",
+    "datePublished": "2025-02-15T00:00:00+09:00",
+    "dateModified": "2025-02-15T00:00:00+09:00",
+    "author": {
+      "@type": "Organization",
+      "name": "OnOffus Engineering Team",
+      "url": "https://www.onoffus.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OnOffus",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.onoffus.com/assets/logo-horizontal-light.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.onoffus.com/blog/llmops-cost-optimization.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
+            <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
+            <img src="../assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
+          </a>
+          <div class="nav-right">
+            <div class="nav-links">
+              <a href="/#services">서비스</a>
+              <a href="/#msp">MSP</a>
+              <a href="/#cases">사례</a>
+              <a href="/#faq">FAQ</a>
+              <a href="/#contact">문의</a>
+              <a href="/industries/">산업별</a>
+              <a href="/blog/" class="active">인사이트</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="blog-article">
+        <nav class="blog-breadcrumb">
+          <a href="/" class="breadcrumb-link">홈</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="/blog/" class="breadcrumb-link">인사이트</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">LLMOps와 비용 최적화</span>
+        </nav>
+
+        <header class="blog-header">
+          <div class="blog-kicker">LLMOps Insight</div>
+          <h1 class="blog-title">LLMOps: AI 모델의 프로덕션 운영과 비용 최적화</h1>
+          <div class="blog-meta">
+            <span>작성: OnOffus Engineering Team</span>
+            <span>발행일: 2025년 2월 15일</span>
+            <span>읽는 시간: 약 12분</span>
+          </div>
+          <p class="blog-intro">
+            단순한 챗봇 PoC를 넘어 실제 비즈니스에 AI를 적용할 때 가장 큰 장벽은 '예측 불가능한 비용'과 '성능 유지'입니다. 
+            본 아티클에서는 오노퍼스가 실제 프로젝트에서 API 비용을 40% 절감하면서도 p95 응답 속도를 개선한 LLMOps 실무 전략을 공유합니다.
+          </p>
+        </header>
+
+        <div class="blog-content">
+          <section class="blog-section">
+            <h2 class="blog-heading-xl">1. 왜 LLM 프로덕션에는 '운영(Ops)'이 필요한가?</h2>
+            <p class="blog-paragraph">
+              많은 기업들이 OpenAI의 GPT-4나 Anthropic의 Claude를 사용하여 멋진 데모를 만듭니다. 하지만 실제 사용자가 몰리기 시작하면 다음과 같은 문제에 직면합니다.
+            </p>
+            <ul class="blog-list">
+              <li class="blog-list-item"><strong>비용 폭증:</strong> 무분별한 프롬프트 호출로 인한 월 수천만 원 단위의 API 청구서</li>
+              <li class="blog-list-item"><strong>지연 시간(Latency):</strong> 사용자 경험을 해치는 느린 응답 속도</li>
+              <li class="blog-list-item"><strong>환각 현상(Hallucination):</strong> 업데이트되지 않은 정보나 잘못된 답변 제공</li>
+            </ul>
+            <p class="blog-paragraph">
+              LLMOps는 이러한 리스크를 제어하고 AI를 '지속 가능한 비즈니스 자산'으로 만드는 기술적 기반입니다.
+            </p>
+          </section>
+
+          <section class="blog-section">
+            <h2 class="blog-heading-xl">2. API 비용 40% 절감의 3가지 핵심 전략</h2>
+            
+            <h3 class="blog-heading-xxl">가. 시맨틱 캐싱 (Semantic Caching) 도입</h3>
+            <p class="blog-paragraph">
+              동일한 질문이나 유사한 의도를 가진 질문에 대해 매번 LLM을 호출하는 것은 낭비입니다. 오노퍼스는 <strong>Redis와 Vector DB를 결합한 시맨틱 캐싱</strong>을 적용했습니다. 
+              의미론적으로 유사한 질문이 들어오면 기존의 답변을 반환함으로써 API 호출 횟수를 25% 이상 줄일 수 있었습니다.
+            </p>
+
+            <h3 class="blog-heading-xxl">나. 모델 라우팅 (Model Routing) 최적화</h3>
+            <p class="blog-paragraph">
+              모든 요청에 GPT-4와 같은 고비용 모델이 필요한 것은 아닙니다. 단순 요약이나 분류 작업은 GPT-4o-mini나 로컬 Llama 3 모델로 라우팅하고, 복잡한 추론이 필요한 경우에만 고성능 모델을 사용하도록 <strong>지능형 게이트웨이</strong>를 설계했습니다.
+            </p>
+
+            <h3 class="blog-heading-xxl">다. 프롬프트 토큰 압축</h3>
+            <p class="blog-paragraph">
+              프롬프트에 포함되는 불필요한 맥락을 제거하고, 핵심 정보만 전달하는 토큰 압축 기법을 적용했습니다. 이는 비용 절감뿐만 아니라 모델의 컨텍스트 윈도우 효율을 높여 응답의 정확도를 향상시키는 효과도 가져왔습니다.
+            </p>
+          </section>
+
+          <section class="blog-section">
+            <h2 class="blog-heading-xl">3. 실시간 모니터링과 관측성 (Observability)</h2>
+            <p class="blog-paragraph">
+              운영 중인 AI 시스템에서 무엇이 잘못되고 있는지 모르면 개선할 수 없습니다. 오노퍼스는 다음과 같은 지표를 대시보드화하여 관리합니다.
+            </p>
+            <ul class="blog-list">
+              <li class="blog-list-item"><strong>Token-per-Request:</strong> 요청당 소모되는 평균 토큰 및 비용</li>
+              <li class="blog-list-item"><strong>TTFT (Time To First Token):</strong> 첫 번째 글자가 출력될 때까지의 속도</li>
+              <li class="blog-list-item"><strong>Answer Relevancy:</strong> RAG 시스템에서 실제 문서와 답변의 일치도</li>
+            </ul>
+          </section>
+
+          <section class="blog-section">
+            <h2 class="blog-heading-xl">4. 결론: AI는 구축보다 운영이 핵심입니다</h2>
+            <p class="blog-paragraph">
+              AI 전환의 성패는 단순히 '도입했는가'가 아니라 '수익성 있게 운영하고 있는가'에서 갈립니다. 오노퍼스의 20년 엔터프라이즈 시스템 구축 경험은 단순한 개발을 넘어, 안정적이고 효율적인 AI 운영 환경을 보장합니다.
+            </p>
+          </section>
+        </div>
+
+        <!-- Link to Pillar -->
+        <div class="blog-pillar">
+          <p class="blog-pillar-text">
+            <strong class="blog-pillar-label">핵심 가이드:</strong> 
+            <a href="/blog/ai-saas-enterprise-guide.html" class="blog-pillar-link">AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법</a>에서 전체 프로세스를 확인하세요.
+          </p>
+        </div>
+
+        <!-- CTA Block -->
+        <div class="blog-cta">
+          <h2 class="blog-cta-title">귀사의 AI 시스템, 비용 최적화가 필요하신가요?</h2>
+          <p class="blog-cta-text">
+            운영형 계약(MSP)을 통해 AI 시스템의 성능을 유지하고 비용을 획기적으로 낮출 수 있습니다. 지금 전문가와 상담하세요.
+          </p>
+          <div class="blog-cta-actions">
+            <a href="/#contact" class="btn btn-primary blog-cta-primary">무료 AI 기술 상담 받기</a>
+            <a href="/#msp" class="btn blog-cta-secondary">운영형 계약(MSP) 알아보기</a>
+          </div>
+        </div>
+
+        <!-- Author Box -->
+        <div class="blog-author">
+          <div class="blog-author-inner">
+            <div class="blog-author-avatar">OT</div>
+            <div class="blog-author-body">
+              <h3 class="blog-author-name">OnOffus Engineering Team</h3>
+              <p class="blog-author-text">
+                2005년부터 시작된 20년 경력의 전문가들이 최신 LLMOps 트렌드와 엔터프라이즈 시스템 운영 노하우를 공유합니다.
+              </p>
+              <a href="/#contact" class="blog-author-link">프로젝트 문의하기 →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="blog-related">
+          <h2 class="blog-heading-lg">함께 읽으면 좋은 글</h2>
+          <div class="blog-related-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            <article class="blog-related-card" style="padding: 1.5rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+              <h3 class="blog-related-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+                <a href="/blog/ai-saas-enterprise-guide.html" style="color: var(--primary-soft);">Enterprise RAG 구축 전략</a>
+              </h3>
+              <p class="blog-related-desc" style="font-size: 0.9rem; color: var(--text-sub);">보안과 정확도를 보장하는 아키텍처 설계법</p>
+            </article>
+            <article class="blog-related-card" style="padding: 1.5rem; background: var(--bg-elevated); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+              <h3 class="blog-related-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+                <a href="/blog/ai-saas-architecture.html" style="color: var(--primary-soft);">멀티테넌시 AI 아키텍처</a>
+              </h3>
+              <p class="blog-related-desc" style="font-size: 0.9rem; color: var(--text-sub);">B2B SaaS를 위한 확장 가능한 구조 설계</p>
+            </article>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <div>© <span id="year">2025</span> 주식회사 오노퍼스 (OnOffus Co., Ltd.). <span data-i18n="footer.tagline">AI-Powered B2B SaaS & Enterprise Systems.</span></div>
+            <div style="font-size: 0.8rem; color: var(--text-sub); margin-top: 0.5rem;" data-i18n="footer.registration">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
+          </div>
+          <div class="footer-links" style="display: flex; gap: 1.5rem;">
+            <a href="/">홈</a>
+            <a href="/blog/" style="margin-left: 1.5rem;">인사이트</a>
+            <a href="/#contact" style="margin-left: 1.5rem;">문의</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../script.js"></script>
+  <script>
+    // 다국어 전환 시 인덱스 페이지로 리다이렉트하거나 새로고침 처리
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+      langToggle.addEventListener('click', () => {
+        // i18n.js의 로직에 따라 언어가 변경된 후 현재 페이지를 새로고침하여 번역 적용
+        setTimeout(() => window.location.reload(), 50);
+      });
+    }
+  </script>
+</body>
+</html>

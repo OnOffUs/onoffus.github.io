@@ -23,10 +23,10 @@ const translations = {
     },
     // Hero Section
     hero: {
-      "title.line1": "AI 기반 B2B SaaS & 엔터프라이즈 시스템 구축",
-      "subtitle.main": "구축 이후가 진짜 시작입니다.<br>운영(MSP)·고도화·AI 자동화까지 <strong style=\"color: var(--primary-soft);\">'지속 수익' 구조</strong>로 함께 갑니다.",
+      "title.line1": "Enterprise AI Transformation & LLM Operations",
+      "subtitle.main": "단순한 AI 도입을 넘어, 실제 비즈니스 가치를 만드는 <strong style=\"color: var(--primary-soft);\">AI 에이전트와 RAG 시스템</strong>을 구축합니다. 20년 엔터프라이즈 기술력으로 AI의 프로덕션 운영(LLMOps)을 책임집니다.",
       "stats.years.value": "20년+",
-      "stats.years.label": "엔터프라이즈 경험",
+      "stats.years.label": "시스템 엔지니어링",
       "stats.projects.value": "50+",
       "stats.projects.label": "대규모 프로젝트",
       "stats.uptime.value": "99.9%",
@@ -34,7 +34,7 @@ const translations = {
       "cta.primary": "🚀 지금 무료 AI 기술 상담 받기",
       "cta.secondary": "운영형 계약(MSP) 알아보기",
       "cta.subtext": "✓ 1영업일 내 회신  ✓ NDA 가능  ✓ PoC/제안서 제공  ✓ 운영(SLA) 옵션",
-      badge: "AI B2B 전문 운영 파트너 · 2005년부터 시작된 시스템 전문가",
+      badge: "Enterprise AI & LLM Specialist",
       whoWeHelp: "스타트업 B2B SaaS · 중견/대기업 내부 시스템 · AI 전환 프로젝트 전문"
     },
     // Services Section
@@ -128,7 +128,7 @@ const translations = {
     aiSolutions: {
       kicker: "AI Solutions",
       title: "운영 최적화를 위한 AI 솔루션",
-      desc: "실제 비즈니스 운영에 통합되어 검증된 AI·LLM 솔루션으로 운영 효율을 극대화합니다. 인적 자원을 대체하고 업무 프로세스를 자동화하여 운영 비용을 절감합니다.",
+      desc: "단순 챗봇이 아닌, 기업의 내부 데이터와 연동되어 스스로 판단하고 업무를 수행하는 AI Agent 시스템을 구축합니다.",
       rag: {
         title: "RAG 기반 지식 검색 시스템",
         desc: "벡터 데이터베이스와 LLM을 결합한 지식 검색 및 질의응답 시스템. 내부 문서, FAQ, 지식베이스를 AI로 검색하고 정확한 답변을 제공합니다.",
@@ -355,7 +355,63 @@ const translations = {
       registration: "사업자 등록번호: 379-88-01413 | 대표자: 최경훈",
       links: "Enterprise Development · AI Solutions"
     },
-    floatingCTA: { text: "AI 도입 가능성 진단받기" }
+    floatingCTA: { text: "AI 도입 가능성 진단받기" },
+    // Blog Index Section
+    blogIndex: {
+      title: "Technical Insights",
+      subtitle: "AI와 엔터프라이즈 시스템 구축을 위한 실무 기술 가이드",
+      post1: {
+        title: "성공적인 Enterprise RAG 시스템 구축을 위한 5가지 전략",
+        desc: "단순한 챗봇을 넘어 기업 데이터의 보안과 정확도를 보장하는 RAG 아키텍처 설계법"
+      },
+      post2: {
+        title: "LLMOps: AI 모델의 프로덕션 운영과 비용 최적화",
+        desc: "API 비용을 40% 절감하면서 응답 속도를 개선한 실무 사례와 모니터링 체계"
+      },
+      post3: {
+        title: "B2B SaaS를 위한 멀티테넌시 AI 아키텍처",
+        desc: "고객사별 데이터 격리와 맞춤형 AI 모델 적용을 위한 확장 가능한 구조 설계"
+      },
+      post4: {
+        title: "SaaS 운영형 계약(MSP) 모델 가이드",
+        desc: "구축을 넘어 지속 가능한 수익 구조와 안정적인 시스템 운영을 만드는 방법"
+      }
+    },
+    // Industries Index Section
+    industriesIndex: {
+      title: "Industry Solutions",
+      subtitle: "산업별 도메인 지식과 AI 기술이 만나는 지점",
+      finance: {
+        title: "금융 & 핀테크",
+        desc: "고도화된 보안 환경에서의 AI FDS(이상거래탐지) 아키텍처 및 Enterprise RAG를 활용한 금융 규제(Compliance) 자동 대응 및 감사 리포팅 시스템",
+        tech: "AI FDS · Enterprise RAG · Compliance"
+      },
+      logistics: {
+        title: "물류 & 유통",
+        desc: "시계열 데이터 기반 수요 예측 엔진과 Agentic Workflow를 연동한 실시간 재고 관리 및 글로벌 물류 배송 경로 자동 최적화 시스템",
+        tech: "Demand Forecasting · Agentic Workflow"
+      },
+      healthcare: {
+        title: "디지털 헬스케어",
+        desc: "방대한 의료 논문 및 임상 데이터를 학습한 Medical RAG 기반 진단 지원 솔루션 및 개인정보보호 가이드라인을 준수하는 의료 행정 자동화",
+        tech: "Medical RAG · HIPAA Compliance"
+      },
+      manufacturing: {
+        title: "스마트 제조",
+        desc: "Edge AI 기술을 활용한 고속 비전 품질 검수 자동화 및 센서 데이터 분석을 통한 설비 예지 보전(PdM) 및 생산 공정 지능화",
+        tech: "Computer Vision · Predictive Maintenance"
+      },
+      commerce: {
+        title: "커머스 & 유통",
+        desc: "개인화 추천 엔진 및 Agentic Workflow 기반의 주문/재고 관리 자동화 솔루션",
+        tech: "Personalized AI · Supply Chain Agent"
+      },
+      enterprise: {
+        title: "엔터프라이즈 IT",
+        desc: "기업 내부 지식 베이스 아카이빙 및 RAG 기반의 사내 업무 지원 시스템 구축",
+        tech: "Internal RAG · Workflow Automation"
+      }
+    }
   },
   en: {
     meta: {
@@ -379,19 +435,19 @@ const translations = {
     },
     // Hero Section
     hero: {
-      "title.line1": "AI-Powered B2B SaaS & Enterprise System Development",
-      "subtitle.main": "The real work begins after deployment.<br>We partner with you through <strong style=\"color: var(--primary-soft);\">recurring revenue models</strong> including operations (MSP), enhancement, and AI automation.",
+      "title.line1": "Enterprise AI Transformation & LLM Operations",
+      "subtitle.main": "Going beyond simple AI adoption, we build <strong style=\"color: var(--primary-soft);\">AI Agents and RAG systems</strong> that create real business value. With 20 years of enterprise expertise, we take full responsibility for production AI operations (LLMOps).",
       "stats.years.value": "20+",
-      "stats.years.label": "Years Enterprise Experience",
+      "stats.years.label": "System Engineering",
       "stats.projects.value": "50+",
       "stats.projects.label": "Large-Scale Projects",
       "stats.uptime.value": "99.9%",
       "stats.uptime.label": "System Uptime",
-      "cta.primary": "🚀 Get Free AI Consultation Now",
-      "cta.secondary": "Learn about MSP (Managed Services)",
+      "cta.primary": "🚀 Get Free AI Technical Consultation",
+      "cta.secondary": "Learn about Managed Services (MSP)",
       "cta.subtext": "✓ Reply within 1 business day  ✓ NDA available  ✓ PoC/proposal provided  ✓ Operations (SLA) option",
-      badge: "AI B2B operations partner · System expert since 2005",
-      whoWeHelp: "Startup B2B SaaS · Enterprise internal systems · AI adoption projects"
+      badge: "Enterprise AI & LLM Specialist",
+      whoWeHelp: "Specializing in Startup B2B SaaS · Enterprise Internal Systems · AI Transformation"
     },
     // Services Section
     services: {
@@ -484,7 +540,7 @@ const translations = {
     aiSolutions: {
       kicker: "AI Solutions",
       title: "AI Solutions for Operational Optimization",
-      desc: "Maximize operational efficiency with proven AI·LLM solutions integrated into actual business operations. Reduce operational costs by replacing human resources and automating business processes.",
+      desc: "We build AI Agent systems that don't just chat, but integrate with your internal data to make decisions and perform tasks autonomously.",
       rag: {
         title: "RAG-Based Knowledge Search System",
         desc: "Knowledge search and Q&A system combining vector databases with LLMs. Search internal documents, FAQs, and knowledge bases with AI and provide accurate answers.",
@@ -709,7 +765,63 @@ const translations = {
       registration: "Business registration: 379-88-01413 | Representative: Grayson Choi",
       links: "Enterprise Development · AI Solutions"
     },
-    floatingCTA: { text: "Get AI adoption assessment" }
+    floatingCTA: { text: "Get AI adoption assessment" },
+    // Blog Index Section (EN)
+    blogIndex: {
+      title: "Technical Insights",
+      subtitle: "Practical technical guides for AI & Enterprise systems",
+      post1: {
+        title: "5 Strategies for Successful Enterprise RAG Systems",
+        desc: "Designing RAG architectures that ensure security and accuracy for corporate data."
+      },
+      post2: {
+        title: "LLMOps: Production AI Operations & Cost Optimization",
+        desc: "Real-world cases and monitoring systems that reduced API costs by 40%."
+      },
+      post3: {
+        title: "Multi-tenant AI Architecture for B2B SaaS",
+        desc: "Scalable structures for data isolation and customized AI models for each client."
+      },
+      post4: {
+        title: "SaaS Managed Services (MSP) Model Guide",
+        desc: "Building recurring revenue and ensuring system stability beyond initial deployment."
+      }
+    },
+    // Industries Index Section (EN)
+    industriesIndex: {
+      title: "Industry Solutions",
+      subtitle: "Where domain expertise meets cutting-edge AI technology",
+      finance: {
+        title: "Finance & Fintech",
+        desc: "Advanced AI FDS architecture and automated compliance response systems using Enterprise RAG for auditing and regulatory reporting.",
+        tech: "AI FDS · Enterprise RAG · Compliance"
+      },
+      logistics: {
+        title: "Logistics & Retail",
+        desc: "Real-time inventory management and global logistics route optimization integrating time-series demand forecasting with Agentic Workflows.",
+        tech: "Demand Forecasting · Agentic Workflow"
+      },
+      healthcare: {
+        title: "Digital Healthcare",
+        desc: "Medical RAG-based diagnostic support utilizing clinical data, and healthcare administrative automation compliant with privacy regulations.",
+        tech: "Medical RAG · HIPAA Compliance"
+      },
+      manufacturing: {
+        title: "Smart Manufacturing",
+        desc: "High-speed automated vision inspection using Edge AI and Predictive Maintenance (PdM) through sensor data analysis and process intelligence.",
+        tech: "Computer Vision · Predictive Maintenance"
+      },
+      commerce: {
+        title: "Commerce & Retail",
+        desc: "Personalized recommendation engines and Agentic Workflow-based order/inventory automation.",
+        tech: "Personalized AI · Supply Chain Agent"
+      },
+      enterprise: {
+        title: "Enterprise IT",
+        desc: "Corporate knowledge base archiving and RAG-based internal support systems.",
+        tech: "Internal RAG · Workflow Automation"
+      }
+    }
   }
 };
 

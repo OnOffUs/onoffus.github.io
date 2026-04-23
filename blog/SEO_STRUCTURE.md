@@ -6,16 +6,9 @@
 /blog/
   ├── index.html                    # 블로그 인덱스 페이지
   ├── ai-saas-enterprise-guide.html # Pillar 페이지 (핵심 가이드)
-  ├── saas-msp-operation-model.html # 클러스터 (MSP 모델)
-  ├── ai-saas-architecture.html     # 클러스터 (아키텍처)
-  ├── enterprise-ai-adoption.html   # 클러스터 (AI 도입)
-  ├── llm-rag-in-production.html     # 클러스터 (RAG 시스템)
-  ├── devops-for-ai-systems.html    # 클러스터 (DevOps)
-  ├── data-pipeline-enterprise.html # 클러스터 (데이터 파이프라인)
-  ├── ai-backoffice-automation.html # 클러스터 (백오피스 자동화)
-  ├── poc-to-production-ai.html      # 클러스터 (PoC 전환)
-  ├── b2b-saas-cost-estimation.html # 클러스터 (비용 추정)
-  ├── enterprise-system-modernization.html # 클러스터 (시스템 현대화)
+  ├── llmops-cost-optimization.html # 클러스터 (실사례 기반 비용 최적화)
+  ├── ai-saas-architecture.html     # 클러스터 (기술적 아키텍처 설계)
+  ├── saas-msp-operation-model.html # 클러스터 (MSP 협업 모델)
   └── templates/
       └── article-template.html      # 재사용 가능한 템플릿
 ```

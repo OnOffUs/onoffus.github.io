@@ -1,5 +1,5 @@
 // Service Worker for caching static assets
-const CACHE_NAME = 'onoffus-v1.0.2';
+const CACHE_NAME = 'onoffus-v1.0.3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',

@@ -1,188 +1,125 @@
 <!DOCTYPE html>
 <html lang="ko" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-  <meta name="theme-color" content="#2563eb" />
-  <title>산업별 AI SaaS·엔터프라이즈 솔루션 | OnOffus</title>
-  <meta name="description" content="금융, 여행, 커머스, 제조, 헬스케어, 기업 IT. 산업별 AI 기반 B2B SaaS 및 엔터프라이즈 시스템 구축·운영형 계약(MSP). 무료 상담 제공.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.onoffus.com/industries/">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.onoffus.com/industries/">
-  <meta property="og:title" content="산업별 AI SaaS·엔터프라이즈 솔루션 | OnOffus">
-  <meta property="og:description" content="금융, 여행, 커머스, 제조, 헬스케어, 기업 IT. 산업별 AI B2B SaaS 구축·운영형 계약(MSP). 무료 상담.">
-  <meta property="og:image" content="https://www.onoffus.com/assets/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="산업별 AI SaaS·엔터프라이즈 솔루션 | OnOffus">
-  <meta name="twitter:description" content="금융, 여행, 커머스, 제조, 헬스케어, 기업 IT. 산업별 AI B2B SaaS 구축·운영형 계약(MSP). 무료 상담.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industry Solutions | OnOffus AI Transformation</title>
+  <meta name="description" content="금융, 물류, 제조, 의료 등 산업별 도메인에 최적화된 AI 솔루션을 제공합니다.">
+  <meta property="og:title" content="Industry Solutions | OnOffus">
+  <meta property="og:image" content="../assets/og-image.png">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="industries.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://www.onoffus.com/" },
-      { "@type": "ListItem", "position": 2, "name": "산업별 솔루션", "item": "https://www.onoffus.com/industries/" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "OnOffus 산업별 솔루션",
-    "description": "금융, 여행, 커머스, 제조, 헬스케어, 기업 IT 산업별 AI 기반 B2B SaaS 및 엔터프라이즈 시스템 구축·운영",
-    "url": "https://www.onoffus.com/industries/",
-    "publisher": { "@type": "Organization", "name": "OnOffus", "url": "https://www.onoffus.com", "logo": "https://www.onoffus.com/assets/logo-horizontal-light.png" }
-  }
-  </script>
+  <script src="../i18n.js" defer></script>
 </head>
 <body>
-  <div class="page">
-      <header>
+  <header>
     <div class="container">
       <nav class="nav">
-        <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
-          <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
-          <img src="../assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
+        <a href="../#hero" class="logo">
+          <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus" class="logo-img logo-dark" width="120" height="40" loading="eager" />
+          <img src="../assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" />
         </a>
-        
-        
         <div class="nav-right">
           <div class="nav-links">
-<a href="/#services" title="서비스">서비스</a>
-            <a href="/#msp" title="운영형 계약">MSP</a>
-            <a href="/#cases" title="사례">사례</a>
-            <a href="/#faq" title="FAQ">FAQ</a>
-            <a href="/#contact" title="문의">문의</a>
-            <a href="/industries/" title="산업별">산업별</a>
-            <a href="/blog/" title="인사이트">인사이트</a>
+            <a href="../#services" data-i18n="nav.services">서비스</a>
+            <a href="../#msp" data-i18n="nav.msp">MSP</a>
+            <a href="../#cases" data-i18n="nav.cases">사례</a>
+            <a href="../#faq" data-i18n="nav.faq">FAQ</a>
+            <a href="/industries/" class="active" data-i18n="nav.industries">산업별</a>
+            <a href="../blog/" data-i18n="nav.insights">인사이트</a>
+            <a href="../#contact" data-i18n="nav.contact">문의</a>
           </div>
-
-          <button class="theme-toggle" id="themeToggle" type="button">
-            <span class="icon" id="themeIcon">🌙</span>
-            <span id="themeLabel">Dark</span>
-          </button>
+          <button class="lang-toggle" id="langToggle"><span id="langLabel">EN</span></button>
         </div>
       </nav>
-
-
     </div>
   </header>
 
+  <main class="container" style="padding: var(--spacing-2xl) 1.5rem;">
+    <div class="section-header" style="text-align: center; margin-bottom: var(--spacing-2xl);">
+      <h1 class="section-title" data-i18n="industriesIndex.title">Industry Solutions</h1>
+      <p class="section-description" style="margin: 0 auto;" data-i18n="industriesIndex.subtitle">산업별 도메인 지식과 AI 기술이 만나는 지점</p>
+    </div>
 
-    <main>
-      <section class="industry-hero industry-hero--compact">
-        <div class="container">
-          <nav class="industry-breadcrumb industry-breadcrumb--wide">
-            <a href="/" class="breadcrumb-link">홈</a>
-            <span class="breadcrumb-sep">/</span>
-            <span class="breadcrumb-current">산업별 솔루션</span>
-          </nav>
-          <h1 class="industry-hero-title">
-            산업별 AI 기반 B2B SaaS & 엔터프라이즈 시스템
-          </h1>
-          <p class="industry-hero-subtitle">
-            금융·여행·커머스·제조·헬스케어·기업 IT. 업종별 과제에 맞춘 AI SaaS 구축과 운영형 계약(MSP)으로 지속 가능한 성과를 만듭니다.
-          </p>
+    <div class="industry-index-grid">
+      <!-- Finance -->
+      <div class="industry-index-card industry-index-card--finance animate">
+        <div class="industry-index-kicker">Finance</div>
+        <h2 class="industry-index-title" data-i18n="industriesIndex.finance.title">금융 & 핀테크</h2>
+        <div class="industry-index-tech" data-i18n="industriesIndex.finance.tech">AI FDS · Enterprise RAG</div>
+        <p class="industry-index-desc" data-i18n="industriesIndex.finance.desc">고도화된 보안 환경에서의 AI 기반 이상거래 탐지 및 자동화 정산 시스템</p>
+        <a href="finance.html" class="industry-index-button">전문 솔루션 보기</a>
+      </div>
+
+      <!-- Logistics -->
+      <div class="industry-index-card industry-index-card--logistics animate">
+        <div class="industry-index-kicker">Travel & Logistics</div>
+        <h2 class="industry-index-title" data-i18n="industriesIndex.logistics.title">물류 & 유통</h2>
+        <div class="industry-index-tech" data-i18n="industriesIndex.logistics.tech">SCM Agent · Routing</div>
+        <p class="industry-index-desc" data-i18n="industriesIndex.logistics.desc">실시간 수요 예측 및 경로 최적화 에이전트를 통한 운영 효율 극대화</p>
+        <a href="logistics.html" class="industry-index-button">전문 솔루션 보기</a>
+      </div>
+
+      <!-- Healthcare -->
+      <div class="industry-index-card industry-index-card--healthcare animate">
+        <div class="industry-index-kicker">Healthcare</div>
+        <h2 class="industry-index-title" data-i18n="industriesIndex.healthcare.title">디지털 헬스케어</h2>
+        <div class="industry-index-tech" data-i18n="industriesIndex.healthcare.tech">Medical RAG · Automation</div>
+        <p class="industry-index-desc" data-i18n="industriesIndex.healthcare.desc">의료 문서 자동 분류 및 RAG 기반 지식 검색 솔루션</p>
+        <a href="healthcare.html" class="industry-index-button">전문 솔루션 보기</a>
+      </div>
+
+      <!-- Manufacturing -->
+      <div class="industry-index-card industry-index-card--manufacturing animate">
+        <div class="industry-index-kicker">Manufacturing</div>
+        <h2 class="industry-index-title" data-i18n="industriesIndex.manufacturing.title">스마트 제조</h2>
+        <div class="industry-index-tech" data-i18n="industriesIndex.manufacturing.tech">Edge AI · PdM Model</div>
+        <p class="industry-index-desc" data-i18n="industriesIndex.manufacturing.desc">설비 예지 보전 및 공정 최적화 AI 모델 구축을 통한 가동률 향상</p>
+        <a href="manufacturing.html" class="industry-index-button">전문 솔루션 보기</a>
+      </div>
+
+      <!-- Commerce -->
+      <div class="industry-index-card industry-index-card--commerce animate">
+        <div class="industry-index-kicker">Commerce</div>
+        <h2 class="industry-index-title" data-i18n="industriesIndex.commerce.title">커머스 & 유통</h2>
+        <div class="industry-index-tech" data-i18n="industriesIndex.commerce.tech">Personalized AI · Supply Chain Agent</div>
+        <p class="industry-index-desc" data-i18n="industriesIndex.commerce.desc">개인화 추천 엔진 및 주문/재고 관리 자동화 솔루션</p>
+        <a href="commerce.html" class="industry-index-button">전문 솔루션 보기</a>
+      </div>
+
+      <!-- Enterprise IT -->
+      <div class="industry-index-card industry-index-card--enterprise animate">
+        <div class="industry-index-kicker">Enterprise</div>
+        <h2 class="industry-index-title" data-i18n="industriesIndex.enterprise.title">엔터프라이즈 IT</h2>
+        <div class="industry-index-tech" data-i18n="industriesIndex.enterprise.tech">Internal RAG · Workflow Automation</div>
+        <p class="industry-index-desc" data-i18n="industriesIndex.enterprise.desc">기업 내부 지식 베이스 아카이빙 및 사내 업무 지원 시스템</p>
+        <a href="enterprise-it.html" class="industry-index-button">전문 솔루션 보기</a>
+      </div>
+    </div>
+
+    <div class="industry-index-cta">
+      <p class="industry-index-cta-text">찾으시는 산업군이 없으신가요?</p>
+      <p style="color: var(--text-sub); margin-bottom: 1.5rem;">오노퍼스는 기술적 한계를 극복해야 하는 모든 산업군의 도전 과제를 환영합니다.</p>
+      <a href="../#contact" class="btn btn-primary industry-index-cta-button">맞춤형 AI 솔루션 문의하기</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div>© <span id="year">2025</span> 주식회사 오노퍼스 (OnOffus Co., Ltd.). <span data-i18n="footer.tagline">AI-Powered B2B SaaS & Enterprise Systems.</span></div>
+          <div style="font-size: 0.8rem; color: var(--text-sub); margin-top: 0.5rem;" data-i18n="footer.registration">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
         </div>
-      </section>
-
-      <section class="industry-section industry-section--grid">
-        <div class="container">
-          <div class="industry-index-grid">
-            <article class="industry-index-card industry-index-card--finance">
-              <div class="industry-index-kicker">금융·핀테크</div>
-              <h2 class="industry-index-title">
-                <a href="/industries/finance.html" class="industry-index-link">금융·핀테크</a>
-              </h2>
-              <p class="industry-index-desc">
-                규제·보안·감사 대응과 안정적 정산·리포팅. 금융권 실적 기반의 AI SaaS 및 운영형 계약.
-              </p>
-              <p class="industry-index-keywords">타겟 키워드: 금융권 시스템 구축, 핀테크 SaaS, 금융 AI 자동화</p>
-              <a href="/industries/finance.html" class="btn btn-primary industry-index-button--primary">자세히 보기 →</a>
-            </article>
-
-            <article class="industry-index-card industry-index-card--travel">
-              <div class="industry-index-kicker">여행·예약·정산</div>
-              <h2 class="industry-index-title">
-                <a href="/industries/travel.html" class="industry-index-link">여행·예약·정산</a>
-              </h2>
-              <p class="industry-index-desc">
-                B2B 예약·정산 플랫폼, 피크 트래픽 대응, 백오피스 자동화. 항공·숙박 실무 경험 반영.
-              </p>
-              <p class="industry-index-keywords">타겟 키워드: 여행 예약 시스템, B2B 정산 플랫폼, 항공 백오피스</p>
-              <a href="/industries/travel.html" class="btn industry-index-button">자세히 보기 →</a>
-            </article>
-
-            <article class="industry-index-card industry-index-card--commerce">
-              <div class="industry-index-kicker">커머스·유통</div>
-              <h2 class="industry-index-title">
-                <a href="/industries/commerce.html" class="industry-index-link">커머스·유통</a>
-              </h2>
-              <p class="industry-index-desc">
-                주문·재고·정산 통합, 피크 대응, 데이터 리포팅 자동화. 확장 가능한 커머스 플랫폼.
-              </p>
-              <p class="industry-index-keywords">타겟 키워드: 커머스 플랫폼 구축, 유통 시스템, 주문 자동화</p>
-              <a href="/industries/commerce.html" class="btn industry-index-button">자세히 보기 →</a>
-            </article>
-
-            <article class="industry-index-card industry-index-card--manufacturing">
-              <div class="industry-index-kicker">제조·설비·공정</div>
-              <h2 class="industry-index-title">
-                <a href="/industries/manufacturing.html" class="industry-index-link">제조·설비·공정</a>
-              </h2>
-              <p class="industry-index-desc">
-                설비 데이터 수집·분석, 공정 자동화, 품질·리포팅. 제조 현장 데이터 파이프라인 구축.
-              </p>
-              <p class="industry-index-keywords">타겟 키워드: 제조 시스템 구축, 설비 데이터, 공정 자동화</p>
-              <a href="/industries/manufacturing.html" class="btn industry-index-button">자세히 보기 →</a>
-            </article>
-
-            <article class="industry-index-card industry-index-card--healthcare">
-              <div class="industry-index-kicker">헬스케어·의료</div>
-              <h2 class="industry-index-title">
-                <a href="/industries/healthcare.html" class="industry-index-link">헬스케어·의료</a>
-              </h2>
-              <p class="industry-index-desc">
-                진료·예약·빌링·데이터 보안. 의료 규제를 고려한 안정적 시스템 구축과 운영.
-              </p>
-              <p class="industry-index-keywords">타겟 키워드: 의료 시스템 구축, 헬스케어 SaaS, 의료 데이터 보안</p>
-              <a href="/industries/healthcare.html" class="btn industry-index-button">자세히 보기 →</a>
-            </article>
-
-            <article class="industry-index-card industry-index-card--enterprise">
-              <div class="industry-index-kicker">기업 내부업무·ERP</div>
-              <h2 class="industry-index-title">
-                <a href="/industries/enterprise-it.html" class="industry-index-link">기업 내부업무·그룹웨어·ERP 연계</a>
-              </h2>
-              <p class="industry-index-desc">
-                그룹웨어·ERP 연동, 업무 워크플로우 자동화, 내부 데이터 통합. 기업 IT 현대화.
-              </p>
-              <p class="industry-index-keywords">타겟 키워드: 그룹웨어 연동, ERP 연계, 기업 업무 자동화</p>
-              <a href="/industries/enterprise-it.html" class="btn industry-index-button">자세히 보기 →</a>
-            </article>
-          </div>
-
-          <div class="industry-index-cta">
-            <p class="industry-index-cta-text">공통: AI 기반 B2B SaaS 구축 · 엔터프라이즈 안정성 · 운영형 계약(MSP) · 무료 기술 상담</p>
-            <a href="/#contact" class="btn btn-primary industry-index-cta-button">무료 기술 상담 받기</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="industry-footer">
-      <div class="container">
-        <div class="industry-footer-inner">
-          <div>© <span id="year"></span> 주식회사 오노퍼스. AI-Powered B2B SaaS & Enterprise Systems.</div>
-          <a href="/" class="industry-footer-link">홈으로</a>
+        <div class="footer-links" style="display: flex; gap: 1.5rem;">
+          <a href="/" style="font-size: var(--font-size-xs); color: var(--text-sub);">홈</a>
+          <a href="../blog/" style="font-size: var(--font-size-xs); color: var(--text-sub);">인사이트</a>
+          <a href="../#contact" style="font-size: var(--font-size-xs); color: var(--text-sub);">문의</a>
         </div>
       </div>
-    </footer>
-  </div>
-    <script src="../script.js" defer></script>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>
