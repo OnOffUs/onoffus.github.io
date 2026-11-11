@@ -69,20 +69,16 @@ AI 기반 B2B SaaS & 엔터프라이즈 시스템 개발 전문 회사 OnOffus�
 
 ```
 onoffus.github.io/
-├── index.html          # 메인 HTML 파일
-├── style.css           # 모든 스타일시트
-├── script.js           # 메인 JavaScript 로직
-├── i18n.js             # 다국어 번역 데이터
-├── sw.js               # Service Worker (캐싱)
-├── logo-horizontal-light.png    # 회사 로고 (PNG)
-├── logo-onoffus.webp   # 회사 로고 (WebP, 최적화)
-├── robots.txt          # 검색 엔진 크롤러 설정
-├── sitemap.xml         # 사이트맵
-├── CNAME               # 커스텀 도메인 설정
-├── .htaccess           # Apache 캐시 설정 (참고용)
-├── README.md           # 프로젝트 문서
-├── CACHE_HEADERS.md    # 캐시 설정 가이드
-└── IMAGE_OPTIMIZATION.md # 이미지 최적화 가이드
+├── index.html            # 홈 (서비스 · 진행 방식 · MSP · 경력 · 산업별 · 인사이트 · FAQ · 문의)
+├── style.css             # 전체 공용 디자인 시스템 (라이트/다크 토큰)
+├── script.js             # 공용 스크립트 (테마, 모바일 메뉴, 스크롤 애니메이션, GA4, SW 등록)
+├── i18n.js               # 영어 번역 (한국어 원문은 HTML에 있음 · 홈/인사이트/산업별 목록에 적용)
+├── sw.js                 # Service Worker (HTML 네트워크 우선, 정적 파일 SWR)
+├── 404.html
+├── blog/                 # 인사이트 (목록 + 글 4개, templates/ 는 noindex 템플릿)
+├── industries/           # 산업별 솔루션 (목록 + 7개 산업)
+├── assets/               # 로고 · 파비콘 · OG 이미지
+├── sitemap.xml · robots.txt · site.webmanifest · CNAME
 ```
 
 ## 🚀 시작하기
@@ -185,16 +181,12 @@ GitHub Pages는 `main` 브랜치의 변경사항을 자동으로 배포합니다
 
 ## 📝 주요 섹션
 
-- **Hero**: 메인 헤드라인 및 CTA
-- **Revenue Services**: 수익형 서비스 소개
-- **Services**: 주요 서비스 목록
-- **Trust**: 신뢰성 및 레퍼런스
-- **AI Solutions**: AI 솔루션 소개
-- **Why OnOffus**: 차별화 포인트
-- **Case Studies**: 성공 사례
-- **Founder**: 대표자 소개
-- **FAQ**: 자주 묻는 질문
-- **Contact**: 문의 섹션
+- **Hero**: 핵심 메시지, 상담 CTA, 프로젝트 진행 흐름
+- **Services**: 3대 핵심 역량 + 지원 역량
+- **Process**: 4단계 진행 방식
+- **MSP**: 운영형 계약 범위와 Lite/Standard/Enterprise
+- **Experience**: 대표 경력, 주요 프로젝트, 참여 고객사
+- **Industries / Insights / FAQ / Contact**
 
 ## 🔧 커스터마이징
 

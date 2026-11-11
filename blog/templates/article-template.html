@@ -1,204 +1,124 @@
+<!--
+  새 글 작성용 템플릿 (검색 노출 안 됨: noindex)
+  1) 이 파일을 /blog/{slug}.html 로 복사
+  2) %%...%% 자리표시자를 채우고 noindex를 'index, follow'로, canonical·og:url을 추가
+  3) BlogPosting·BreadcrumbList JSON-LD를 기존 글에서 복사해 수정
+  4) /blog/index.html, /index.html(인사이트 섹션), /sitemap.xml에 링크 추가
+-->
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
-  <meta name="theme-color" content="#2563eb" />
-  <title>{{ARTICLE_TITLE}} | OnOffus</title>
-  <meta name="description" content="{{ARTICLE_DESCRIPTION}}">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.onoffus.com/blog/{{ARTICLE_SLUG}}">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://www.onoffus.com/blog/{{ARTICLE_SLUG}}">
-  <meta property="og:title" content="{{ARTICLE_TITLE}}">
-  <meta property="og:description" content="{{ARTICLE_DESCRIPTION}}">
-  <meta property="og:image" content="https://www.onoffus.com/assets/og-image.png">
-  <meta property="article:published_time" content="{{PUBLISH_DATE}}">
-  <meta property="article:author" content="OnOffus Engineering Team">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ARTICLE_TITLE}}">
-  <meta name="twitter:description" content="{{ARTICLE_DESCRIPTION}}">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../blog.css">
-  
-  <!-- BlogPosting Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "{{ARTICLE_TITLE}}",
-    "description": "{{ARTICLE_DESCRIPTION}}",
-    "image": "https://www.onoffus.com/assets/og-image.png",
-    "datePublished": "{{PUBLISH_DATE}}",
-    "dateModified": "{{PUBLISH_DATE}}",
-    "author": {
-      "@type": "Organization",
-      "name": "OnOffus Engineering Team",
-      "url": "https://www.onoffus.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "OnOffus",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.onoffus.com/assets/logo-horizontal-light.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.onoffus.com/blog/{{ARTICLE_SLUG}}"
-    }
-  }
-  </script>
-  
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "홈",
-        "item": "https://www.onoffus.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "인사이트",
-        "item": "https://www.onoffus.com/blog/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "{{ARTICLE_TITLE}}",
-        "item": "https://www.onoffus.com/blog/{{ARTICLE_SLUG}}"
-      }
-    ]
-  }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>%%TITLE%% | OnOffus</title>
+<meta name="description" content="%%DESCRIPTION%%">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0f17">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OnOffus">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="%%TITLE%% | OnOffus">
+<meta property="og:description" content="%%DESCRIPTION%%">
+<meta property="og:image" content="https://www.onoffus.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="%%TITLE%% | OnOffus">
+<meta name="twitter:description" content="%%DESCRIPTION%%">
+<meta name="twitter:image" content="https://www.onoffus.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script>try{var t=localStorage.getItem('onoffus:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/style.css?v=20261111">
+<script src="/script.js?v=20261111" defer></script>
+
 </head>
 <body>
-  <div class="app">
-    <header>
-      <div class="container">
-        <nav class="nav">
-          <a href="/" class="logo" aria-label="OnOffus 홈으로 이동">
-            <img src="../assets/logo-horizontal-dark.svg" alt="OnOffus 로고" class="logo-img logo-dark" width="120" height="40" loading="eager" />
-            <img src="../assets/logo-horizontal-light.svg" alt="" class="logo-img logo-light" width="120" height="40" loading="eager" aria-hidden="true" />
-          </a>
-          <div class="nav-right">
-            <div class="nav-links">
-              <a href="/#services" title="서비스">서비스</a>
-              <a href="/#msp" title="운영형 계약">MSP</a>
-              <a href="/#cases" title="사례">사례</a>
-              <a href="/#faq" title="FAQ">FAQ</a>
-              <a href="/#contact" title="문의">문의</a>
-              <a href="/industries/" title="산업별">산업별</a>
-              <a href="/blog/" title="인사이트">인사이트</a>
-            </div>
-            <button class="theme-toggle" id="themeToggle" type="button">
-              <span class="icon" id="themeIcon">🌙</span>
-              <span id="themeLabel">Dark</span>
-            </button>
-          </div>
-        </nav>
+<a class="skip-link" href="#main" data-i18n="skip">본문 바로가기</a>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="주요 메뉴">
+      <a class="brand" href="/" aria-label="OnOffus 홈">
+        <img class="logo-on-light" src="/assets/logo-horizontal-light.svg" alt="OnOffus" width="123" height="30">
+        <img class="logo-on-dark" src="/assets/logo-horizontal-dark.svg" alt="OnOffus" width="123" height="30">
+      </a>
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="/#services" data-i18n="nav.services">서비스</a></li><li><a href="/#msp" data-i18n="nav.msp">운영(MSP)</a></li><li><a href="/#experience" data-i18n="nav.experience">경력</a></li><li><a href="/industries/" data-i18n="nav.industries">산업별</a></li><li><a href="/blog/" data-i18n="nav.insights" aria-current="page">인사이트</a></li>
+      </ul>
+      <div class="nav-actions">
+        
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="다크 모드로 전환"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+        <a class="btn btn-primary nav-cta" href="/#contact" data-track="header_contact" data-i18n="nav.cta">상담 신청</a>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="메뉴 열기"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       </div>
-    </header>
-
-    <main>
-      <article class="blog-article">
-        <!-- Breadcrumb -->
-        <nav class="blog-breadcrumb">
-          <a href="/" class="breadcrumb-link">홈</a>
-          <span class="breadcrumb-sep">/</span>
-          <a href="/blog/" class="breadcrumb-link">인사이트</a>
-          <span class="breadcrumb-sep">/</span>
-          <span class="breadcrumb-current">{{ARTICLE_TITLE}}</span>
-        </nav>
-
-        <!-- Article Header -->
-        <header class="blog-header">
-          <h1 class="blog-title">
-            {{ARTICLE_TITLE}}
-          </h1>
-          <div class="blog-meta">
-            <span>작성: OnOffus Engineering Team</span>
-            <span>발행일: {{PUBLISH_DATE_FORMATTED}}</span>
-            <span>읽는 시간: 약 {{READ_TIME}}분</span>
-          </div>
-          <p class="blog-intro">
-            {{ARTICLE_INTRO}}
-          </p>
-        </header>
-
-        <!-- Article Content -->
-        <div class="blog-content">
-          {{ARTICLE_CONTENT}}
-        </div>
-
-        <!-- Link to Pillar -->
-        <div class="blog-pillar">
-          <p class="blog-pillar-text">
-            <strong class="blog-pillar-label">핵심 가이드:</strong> 
-            <a href="/blog/ai-saas-enterprise-guide.html" class="blog-pillar-link">AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법</a>에서 전체 프로세스를 확인하세요.
-          </p>
-        </div>
-
-        <!-- CTA Block -->
-        <div class="blog-cta">
-          <h2 class="blog-cta-title">
-            프로젝트에 적용하고 싶으신가요?
-          </h2>
-          <p class="blog-cta-text">
-            운영형(월 단위) 또는 6개월 이상 장기 프로젝트를 우선합니다. 무료 상담을 통해 귀사에 맞는 솔루션을 제안해드립니다.
-          </p>
-          <div class="blog-cta-actions">
-            <a href="/#contact" class="btn btn-primary blog-cta-primary">
-              {{CTA_PRIMARY}}
-            </a>
-            <a href="/#msp" class="btn blog-cta-secondary">
-              운영형 계약(MSP) 문의하기
-            </a>
-          </div>
-        </div>
-
-        <!-- Author Box -->
-        <div class="blog-author">
-          <div class="blog-author-inner">
-            <div class="blog-author-avatar">
-              OT
-            </div>
-            <div class="blog-author-body">
-              <h3 class="blog-author-name">OnOffus Engineering Team</h3>
-              <p class="blog-author-text">
-                2005년부터 시작된 20년 시스템 전문가 팀. 삼성, 현대, 금융권 프로젝트 경험을 바탕으로 엔터프라이즈급 시스템을 구축하고 운영합니다.
-              </p>
-              <a href="/#contact" class="blog-author-link">
-                프로젝트 문의하기 →
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-    </main>
-
-    <footer>
-      <div class="container">
-        <div class="footer-inner">
-          <div>
-            <div>© <span id="year"></span> 주식회사 오노퍼스 (OnOffus Co., Ltd.). <span>AI-Powered B2B SaaS & Enterprise Systems.</span></div>
-            <div class="footer-business">사업자 등록번호: 379-88-01413 | 대표자: 최경훈</div>
-          </div>
-          <div class="footer-links">
-            <span>Enterprise Development · AI Solutions</span>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </nav>
   </div>
-
-  <script src="../script.js" defer></script>
+</header>
+<main id="main">
+<article>
+<header class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="현재 위치"><ol><li><a href="/">홈</a></li><li><a href="/blog/">인사이트</a></li><li><span aria-current="page">%%TITLE%%</span></li></ol></nav>
+    <p class="eyebrow">%%TAG%%</p>
+    <h1>%%TITLE%%</h1>
+    <p class="lead">%%INTRO%%</p>
+    <p class="article-meta"><span>오노퍼스 엔지니어링팀</span><span>발행 <time datetime="%%DATE%%">%%DATE%%</time></span><span>읽는 시간 약 %%MIN%%분</span></p>
+  </div>
+</header>
+<div class="section article-body">
+  <div class="container">
+    <div class="article-layout">
+      <div class="prose">
+        <h2 id="section-1">첫 번째 소제목</h2>
+        <p>본문. 각 h2에는 id를 붙이고, 아래 목차에 같은 id로 링크합니다.</p>
+      </div>
+      <nav class="toc" aria-label="목차"><h2>목차</h2><ol><li><a href="#section-1">첫 번째 소제목</a></li></ol></nav>
+    </div>
+  </div>
+</div>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="logo-on-light" src="/assets/logo-horizontal-light.svg" alt="OnOffus" width="107" height="26" loading="lazy">
+        <img class="logo-on-dark" src="/assets/logo-horizontal-dark.svg" alt="" width="107" height="26" loading="lazy">
+        <p data-i18n="footer.tagline">AI 기반 B2B SaaS와 엔터프라이즈 시스템을 구축하고 운영합니다.</p>
+      </div>
+      <div>
+        <h2 data-i18n="footer.services">서비스</h2>
+        <ul data-i18n="footer.links.services">
+          <li><a href="/#services">B2B SaaS 구축</a></li>
+          <li><a href="/#services">엔터프라이즈 시스템</a></li>
+          <li><a href="/#services">AI·LLM 자동화</a></li>
+          <li><a href="/#msp">운영형 계약(MSP)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 data-i18n="footer.industries">산업별</h2>
+        <ul><li><a href="/industries/finance.html" data-i18n="industry.finance.title">금융·보험</a></li><li><a href="/industries/travel.html" data-i18n="industry.travel.title">여행·항공·예약</a></li><li><a href="/industries/commerce.html" data-i18n="industry.commerce.title">커머스·리테일</a></li><li><a href="/industries/logistics.html" data-i18n="industry.logistics.title">물류·SCM</a></li><li><a href="/industries/manufacturing.html" data-i18n="industry.manufacturing.title">제조</a></li><li><a href="/industries/healthcare.html" data-i18n="industry.healthcare.title">헬스케어</a></li><li><a href="/industries/enterprise-it.html" data-i18n="industry.enterprise-it.title">기업 내부업무</a></li></ul>
+      </div>
+      <div>
+        <h2 data-i18n="footer.company">회사</h2>
+        <ul data-i18n="footer.links.company">
+          <li><a href="/#experience">경력·레퍼런스</a></li>
+          <li><a href="/blog/">인사이트</a></li>
+          <li><a href="/#faq">자주 묻는 질문</a></li>
+          <li><a href="/#contact">문의</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© <span id="year">2026</span> OnOffus</span>
+      <span data-i18n="footer.legal">주식회사 오노퍼스 · 대표 최경훈 · 사업자등록번호 379-88-01413 · <a href="mailto:support@onoffus.com">support@onoffus.com</a></span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

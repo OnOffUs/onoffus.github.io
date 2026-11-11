@@ -1,122 +1,151 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+<html lang="ko" data-page="blog">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insights - OnOffus AI Technical Blog</title>
-  <link rel="stylesheet" href="../style.css">
-  <script src="../i18n.js" defer></script>
-  <style>
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: var(--spacing-lg);
-      margin-top: var(--spacing-xl);
-    }
-    .blog-card {
-      background: var(--bg-elevated);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid var(--border-subtle);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-    }
-    .blog-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--primary-soft);
-      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
-    }
-    .blog-content {
-      padding: var(--spacing-md);
-      flex: 1;
-    }
-    .blog-tag {
-      font-size: var(--font-size-xs);
-      color: var(--primary-soft);
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: var(--spacing-xs);
-    }
-    .blog-title {
-      font-size: var(--font-size-xl);
-      font-weight: 700;
-      margin-bottom: var(--spacing-sm);
-      line-height: 1.4;
-    }
-    .blog-excerpt {
-      font-size: var(--font-size-sm);
-      color: var(--text-sub);
-      line-height: 1.6;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인사이트 | OnOffus</title>
+<meta name="description" content="AI 기반 B2B SaaS 아키텍처, LLMOps 비용 최적화, 운영형 계약(MSP) 등 시스템을 만들고 운영하며 얻은 실무 가이드.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.onoffus.com/blog/">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0f17">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OnOffus">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://www.onoffus.com/blog/">
+<meta property="og:title" content="인사이트 | OnOffus">
+<meta property="og:description" content="AI 기반 B2B SaaS 아키텍처, LLMOps 비용 최적화, 운영형 계약(MSP) 등 시스템을 만들고 운영하며 얻은 실무 가이드.">
+<meta property="og:image" content="https://www.onoffus.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="인사이트 | OnOffus">
+<meta name="twitter:description" content="AI 기반 B2B SaaS 아키텍처, LLMOps 비용 최적화, 운영형 계약(MSP) 등 시스템을 만들고 운영하며 얻은 실무 가이드.">
+<meta name="twitter:image" content="https://www.onoffus.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script>try{var t=localStorage.getItem('onoffus:theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/style.css?v=20261111">
+<script src="/script.js?v=20261111" defer></script>
+<script src="/i18n.js?v=20261111" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"OnOffus 인사이트","url":"https://www.onoffus.com/blog/","inLanguage":"ko","publisher":{"@type":"Organization","@id":"https://www.onoffus.com/#organization","name":"OnOffus"},"blogPost":[{"@type":"BlogPosting","headline":"AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법","url":"https://www.onoffus.com/blog/ai-saas-enterprise-guide.html","datePublished":"2025-01-25"},{"@type":"BlogPosting","headline":"AI SaaS 아키텍처 설계: 확장 가능한 구조 만들기","url":"https://www.onoffus.com/blog/ai-saas-architecture.html","datePublished":"2025-01-25"},{"@type":"BlogPosting","headline":"LLMOps: AI 서비스의 프로덕션 운영과 비용 최적화","url":"https://www.onoffus.com/blog/llmops-cost-optimization.html","datePublished":"2025-02-15"},{"@type":"BlogPosting","headline":"SaaS 운영형 계약(MSP) 모델: 지속 가능한 운영 구조 만들기","url":"https://www.onoffus.com/blog/saas-msp-operation-model.html","datePublished":"2025-01-25"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.onoffus.com/"},{"@type":"ListItem","position":2,"name":"인사이트","item":"https://www.onoffus.com/blog/"}]}</script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav class="nav">
-        <a href="../#hero" class="logo">
-          <img src="../assets/logo-horizontal-dark.svg" class="logo-img logo-dark" width="120">
-          <img src="../assets/logo-horizontal-light.svg" class="logo-img logo-light" width="120">
+<a class="skip-link" href="#main" data-i18n="skip">본문 바로가기</a>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="주요 메뉴">
+      <a class="brand" href="/" aria-label="OnOffus 홈">
+        <img class="logo-on-light" src="/assets/logo-horizontal-light.svg" alt="OnOffus" width="123" height="30">
+        <img class="logo-on-dark" src="/assets/logo-horizontal-dark.svg" alt="OnOffus" width="123" height="30">
+      </a>
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="/#services" data-i18n="nav.services">서비스</a></li><li><a href="/#msp" data-i18n="nav.msp">운영(MSP)</a></li><li><a href="/#experience" data-i18n="nav.experience">경력</a></li><li><a href="/industries/" data-i18n="nav.industries">산업별</a></li><li><a href="/blog/" data-i18n="nav.insights" aria-current="page">인사이트</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Switch to English">EN</button>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="다크 모드로 전환"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+        <a class="btn btn-primary nav-cta" href="/#contact" data-track="header_contact" data-i18n="nav.cta">상담 신청</a>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="메뉴 열기"><svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="현재 위치"><ol><li><a href="/">홈</a></li><li><span aria-current="page">인사이트</span></li></ol></nav>
+    <p class="eyebrow" data-i18n="page.eyebrow">인사이트</p>
+    <h1 data-i18n="page.title">실무에서 얻은 설계·운영 노하우</h1>
+    <p class="lead" data-i18n="page.lead">AI 기반 B2B SaaS와 엔터프라이즈 시스템을 만들고 운영하며 정리한 실무 가이드입니다.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+        <a class="card post-card reveal" href="/blog/ai-saas-enterprise-guide.html">
+          <span class="tag" data-i18n="post.ai-saas-enterprise-guide.tag">핵심 가이드</span>
+          <h2 class="card-title" data-i18n="post.ai-saas-enterprise-guide.title">AI 기반 B2B SaaS 구축 가이드: 엔터프라이즈까지 확장하는 방법</h2>
+          <p data-i18n="post.ai-saas-enterprise-guide.desc">아키텍처, 멀티테넌시, 보안·규제, 운영형 계약(MSP), 비용, AI 통합까지 — 엔터프라이즈 고객을 받는 B2B SaaS를 만들고 운영하는 전 과정을 정리했습니다.</p>
+          <p class="meta"><time datetime="2025-01-25">2025.01.25</time> · 15분</p>
         </a>
-        <div class="nav-right">
-          <button class="lang-toggle" id="langToggle"><span id="langLabel">EN</span></button>
-        </div>
-      </nav>
+        <a class="card post-card reveal" href="/blog/ai-saas-architecture.html">
+          <span class="tag" data-i18n="post.ai-saas-architecture.tag">아키텍처</span>
+          <h2 class="card-title" data-i18n="post.ai-saas-architecture.title">AI SaaS 아키텍처 설계: 확장 가능한 구조 만들기</h2>
+          <p data-i18n="post.ai-saas-architecture.desc">AI 추론, 벡터 검색, 데이터 파이프라인을 포함한 SaaS를 설계할 때 지켜야 할 서비스 경계, 비동기 처리, 테넌트 격리, 관측성, 장애 격리 원칙.</p>
+          <p class="meta"><time datetime="2025-01-25">2025.01.25</time> · 10분</p>
+        </a>
+        <a class="card post-card reveal" href="/blog/llmops-cost-optimization.html">
+          <span class="tag" data-i18n="post.llmops-cost-optimization.tag">LLMOps</span>
+          <h2 class="card-title" data-i18n="post.llmops-cost-optimization.title">LLMOps: AI 서비스의 프로덕션 운영과 비용 최적화</h2>
+          <p data-i18n="post.llmops-cost-optimization.desc">시맨틱 캐싱, 프롬프트 캐싱, 모델 라우팅, 컨텍스트 최적화로 LLM 비용을 줄이고, 평가 세트와 모니터링 지표로 품질을 지키는 방법.</p>
+          <p class="meta"><time datetime="2025-02-15">2025.02.15</time> · 9분</p>
+        </a>
+        <a class="card post-card reveal" href="/blog/saas-msp-operation-model.html">
+          <span class="tag" data-i18n="post.saas-msp-operation-model.tag">운영 모델</span>
+          <h2 class="card-title" data-i18n="post.saas-msp-operation-model.title">SaaS 운영형 계약(MSP) 모델: 지속 가능한 운영 구조 만들기</h2>
+          <p data-i18n="post.saas-msp-operation-model.desc">구축 이후 시스템을 누가, 어떤 기준으로 운영할 것인가. MSP 서비스 범위, SLA 정의, 비용 구조, 운영 도구와 계약 전 체크리스트.</p>
+          <p class="meta"><time datetime="2025-01-25">2025.01.25</time> · 10분</p>
+        </a>
     </div>
-  </header>
-
-  <main class="container" style="padding: var(--spacing-2xl) 1.5rem;">
-    <div class="section-header" style="text-align: center; margin-bottom: var(--spacing-2xl);">
-      <h1 class="section-title" data-i18n="blogIndex.title">Technical Insights</h1>
-      <p class="section-description" style="margin: 0 auto;" data-i18n="blogIndex.subtitle">AI와 엔터프라이즈 시스템 구축을 위한 실무 기술 가이드</p>
-    </div>
-
-    <div class="blog-grid">
-      <article class="blog-card" onclick="location.href='ai-saas-enterprise-guide.html'">
-        <div class="blog-content">
-          <div class="blog-tag">Enterprise RAG</div>
-          <h2 class="blog-title" data-i18n="blogIndex.post1.title">성공적인 Enterprise RAG 시스템 구축 전략</h2>
-          <p class="blog-excerpt" data-i18n="blogIndex.post1.desc">단순한 챗봇을 넘어 기업 데이터의 보안과 정확도를 보장하는 아키텍처 설계법</p>
-        </div>
-      </article>
-
-      <article class="blog-card" onclick="location.href='llmops-cost-optimization.html'">
-        <div class="blog-content">
-          <div class="blog-tag">LLMOps</div>
-          <h2 class="blog-title" data-i18n="blogIndex.post2.title">AI 모델의 프로덕션 운영과 비용 최적화</h2>
-          <p class="blog-excerpt" data-i18n="blogIndex.post2.desc">API 비용을 40% 절감하면서 응답 속도를 개선한 실무 사례</p>
-        </div>
-      </article>
-
-      <article class="blog-card" onclick="location.href='ai-saas-architecture.html'">
-        <div class="blog-content">
-          <div class="blog-tag">SaaS Architecture</div>
-          <h2 class="blog-title" data-i18n="blogIndex.post3.title">B2B SaaS를 위한 멀티테넌시 AI 아키텍처</h2>
-          <p class="blog-excerpt" data-i18n="blogIndex.post3.desc">고객사별 데이터 격리와 맞춤형 AI 모델 적용을 위한 구조 설계</p>
-        </div>
-      </article>
-
-      <article class="blog-card" onclick="location.href='saas-msp-operation-model.html'">
-        <div class="blog-content">
-          <div class="blog-tag">Business Model</div>
-          <h2 class="blog-title" data-i18n="blogIndex.post4.title">SaaS 운영형 계약(MSP) 모델 가이드</h2>
-          <p class="blog-excerpt" data-i18n="blogIndex.post4.desc">구축을 넘어 지속 가능한 수익 구조와 안정적인 시스템 운영을 만드는 방법</p>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div>© <span id="year">2024</span> OnOffus Co., Ltd.</div>
-        <div class="footer-links" data-i18n="footer.links">Enterprise Development · AI Solutions</div>
+  </div>
+</section>
+<section class="section" aria-label="상담 문의">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2 data-i18n="cta.title">프로젝트를 고민하고 계신가요?</h2>
+        <p data-i18n="cta.desc">운영형(월 단위) 계약 또는 6개월 이상 프로젝트를 우선 검토합니다. 1영업일 내에 회신드립니다.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:support@onoffus.com?subject=%5BOnOffus%5D%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%83%81%EB%8B%B4%20%EB%AC%B8%EC%9D%98&body=%ED%9A%8C%EC%82%AC%EB%AA%85%3A%0A%EB%8B%B4%EB%8B%B9%EC%9E%90%20/%20%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EB%AC%B8%EC%9D%98%20%EC%9C%A0%ED%98%95%20%28%EC%8B%A0%EA%B7%9C%20%EA%B5%AC%EC%B6%95%20/%20%EC%9A%B4%EC%98%81%ED%98%95%20%EA%B3%84%EC%95%BD%28MSP%29%20/%20AI%20%EC%9E%90%EB%8F%99%ED%99%94%20/%20PoC%20/%20%EA%B8%B0%ED%83%80%29%3A%0A%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B0%9C%EC%9A%94%3A%0A%ED%9D%AC%EB%A7%9D%20%EC%9D%BC%EC%A0%95%3A%0A%EC%98%88%EC%82%B0%20%EB%B2%94%EC%9C%84%28%EC%84%A0%ED%83%9D%29%3A%0A" data-track="band_contact" data-i18n="cta.primary">상담 메일 보내기</a>
+        <a class="btn btn-secondary" href="mailto:support@onoffus.com?subject=%5BOnOffus%5D%20%EC%9A%B4%EC%98%81%ED%98%95%20%EA%B3%84%EC%95%BD%28MSP%29%20%EB%AC%B8%EC%9D%98&body=%ED%9A%8C%EC%82%AC%EB%AA%85%3A%0A%EB%8B%B4%EB%8B%B9%EC%9E%90%20/%20%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EB%AC%B8%EC%9D%98%20%EC%9C%A0%ED%98%95%20%28%EC%8B%A0%EA%B7%9C%20%EA%B5%AC%EC%B6%95%20/%20%EC%9A%B4%EC%98%81%ED%98%95%20%EA%B3%84%EC%95%BD%28MSP%29%20/%20AI%20%EC%9E%90%EB%8F%99%ED%99%94%20/%20PoC%20/%20%EA%B8%B0%ED%83%80%29%3A%0A%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B0%9C%EC%9A%94%3A%0A%ED%9D%AC%EB%A7%9D%20%EC%9D%BC%EC%A0%95%3A%0A%EC%98%88%EC%82%B0%20%EB%B2%94%EC%9C%84%28%EC%84%A0%ED%83%9D%29%3A%0A" data-track="band_msp" data-i18n="cta.msp">운영형 계약 문의</a>
       </div>
     </div>
-  </footer>
-
-  <script src="../script.js"></script>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="logo-on-light" src="/assets/logo-horizontal-light.svg" alt="OnOffus" width="107" height="26" loading="lazy">
+        <img class="logo-on-dark" src="/assets/logo-horizontal-dark.svg" alt="" width="107" height="26" loading="lazy">
+        <p data-i18n="footer.tagline">AI 기반 B2B SaaS와 엔터프라이즈 시스템을 구축하고 운영합니다.</p>
+      </div>
+      <div>
+        <h2 data-i18n="footer.services">서비스</h2>
+        <ul data-i18n="footer.links.services">
+          <li><a href="/#services">B2B SaaS 구축</a></li>
+          <li><a href="/#services">엔터프라이즈 시스템</a></li>
+          <li><a href="/#services">AI·LLM 자동화</a></li>
+          <li><a href="/#msp">운영형 계약(MSP)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 data-i18n="footer.industries">산업별</h2>
+        <ul><li><a href="/industries/finance.html" data-i18n="industry.finance.title">금융·보험</a></li><li><a href="/industries/travel.html" data-i18n="industry.travel.title">여행·항공·예약</a></li><li><a href="/industries/commerce.html" data-i18n="industry.commerce.title">커머스·리테일</a></li><li><a href="/industries/logistics.html" data-i18n="industry.logistics.title">물류·SCM</a></li><li><a href="/industries/manufacturing.html" data-i18n="industry.manufacturing.title">제조</a></li><li><a href="/industries/healthcare.html" data-i18n="industry.healthcare.title">헬스케어</a></li><li><a href="/industries/enterprise-it.html" data-i18n="industry.enterprise-it.title">기업 내부업무</a></li></ul>
+      </div>
+      <div>
+        <h2 data-i18n="footer.company">회사</h2>
+        <ul data-i18n="footer.links.company">
+          <li><a href="/#experience">경력·레퍼런스</a></li>
+          <li><a href="/blog/">인사이트</a></li>
+          <li><a href="/#faq">자주 묻는 질문</a></li>
+          <li><a href="/#contact">문의</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© <span id="year">2026</span> OnOffus</span>
+      <span data-i18n="footer.legal">주식회사 오노퍼스 · 대표 최경훈 · 사업자등록번호 379-88-01413 · <a href="mailto:support@onoffus.com">support@onoffus.com</a></span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
